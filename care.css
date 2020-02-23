@@ -5,7 +5,7 @@
 
 /*COMMONLY USED*/
 .wrapper{
-    width : 1170px;
+    width : 1300px;
     margin : 0 auto;
 }
 
@@ -41,10 +41,22 @@ header{
 
 .menubar li ul{
     display: none;
-    padding : 0;
+    padding : 0 5px;
     margin : 0;
     position : absolute;
     line-height: 40px;
+    border-right: 2px solid #F7A12A;
+    border-left: 2px solid #F7A12A;
+    border-bottom: 2px solid #F7A12A;
+    text-align: left;
+}
+
+#centorintro{
+    margin-right: 20px;
+}
+
+#programintro{
+    margin-left: 16px;
 }
 
 #menulist a:link{
@@ -61,3 +73,65 @@ header{
 }
 
 /*Article*/
+article{
+    width : 1300px;
+    margin : 0 auto;
+}
+.main_banner{
+    margin : 0 auto;
+    width : 1300px;
+    height: 700px;
+    border: 1px solid black;
+}
+
+.content{
+    margin : 0 auto;
+    margin-top: -1px;
+}
+
+.post{
+    float : left;
+    width : 400px;
+    height : 300px;
+    border : 1px solid black;
+    margin-right: 50px;
+}
+
+.photo{
+    float : left;
+    width : 400px;
+    height: 300px;
+    border : 1px solid black;
+}
+
+.meal{
+    float : left;
+    width : 400px;
+    height: 300px;
+    border : 1px solid black;
+    margin-right: 50px;
+}
+
+
+/*Footer*/
+footer{
+    width : 1300px;
+    margin : 0 auto;
+}
+
+.left_footer{
+    float : left;
+    width : 700px;
+    height : 150px;
+    border : 1px solid black;
+    margin-top : -1px;
+}
+
+.right_footer{
+    float : left;
+    width : 601px;
+    height : 150px;
+    border : 1px solid black;
+    margin-top : -1px;
+    margin-left : -1px;
+}
