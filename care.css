@@ -13,15 +13,16 @@ a:visited{
 }
 
 /*HEADER*/
-.wrapper{
-    width : 1300px;
-    margin : 0 auto;
-}
 header{
     width : 100%;
     height : 100px;
     margin : 0 auto;
     background-color: #F7A12A;
+}
+
+.wrapper{
+    width : 1300px;
+    margin : 0 auto;
 }
 
 #logo{
@@ -81,19 +82,18 @@ article{
     margin : 0 auto;
     width : 1300px;
     height: 700px;
-    border: 1px solid black;
+
 }
 
 .content{
     margin : 0 auto;
-    margin-top: -1px;
+    
 }
 
 .post{
     float : left;
     width : 400px;
     height : 300px;
-    border : 1px solid black;
     margin-right: 50px;
 }
 
@@ -101,14 +101,13 @@ article{
     float : left;
     width : 400px;
     height: 300px;
-    border : 1px solid black;
+ 
 }
 
 .meal{
     float : left;
     width : 400px;
     height: 300px;
-    border : 1px solid black;
     margin-right: 50px;
 }
 
@@ -123,66 +122,60 @@ footer{
     float : left;
     width : 700px;
     height : 150px;
-    border : 1px solid black;
-    margin-top : -1px;
+
 }
 
 .right_footer{
     float : left;
-    width : 601px;
+    width : 600px;
     height : 150px;
-    border : 1px solid black;
-    margin-top : -1px;
-    margin-left : -1px;
 }
 
 /* ------------------------------------------------------------------------------------ */
 
 /*Centorintro.html - css*/
+
 .container{
-    margin : 0 auto;
-}
-
-.container article{
+    width : 1600px;
+    height : 700px;
     float : left;
-    width : 1300px;
-    height : 600px;
-    border: 1px solid black;
-    margin-top:-1px;
-}
-
-.introbanner{
-    width : 1300px;
-    height : 100px;
-    float: left;
-    border: 1px solid black;
+    
 }
 
 aside{
     float : left;
     width : 310px;
-    height : 200px;
+    height: 100%;
+    background-color: blanchedalmond;
+}
+
+.con_list{
     text-align: center;
-    margin-top: 200px;
+    line-height: 40px;
+    padding : 80px;
 }
 
-aside li{
-    background-color: #F7A12A;
-    padding : 10px 0;
-    font-size: 1em;
-}
-
-aside li ul li{
-    padding: 10px 0;
-    background-color: white;
-    border-bottom: 1px solid white;
-}
-
-#side_center{
+#main_list{
     font-size: 2em;
 }
 
-.center_left_footer{
-
+.centerArticle{
+    float : left;
+    width : 1290px;
+    height : 700px; 
 }
+
+.centerBanner{
+    float : left;
+    width : 100%;
+    height: 80px;
+}
+
+.sector{
+    float : left;
+    width : 100%;
+    height : 620px;
+}
+
+
 /* -------------------------------------------------------------------------------------- */
