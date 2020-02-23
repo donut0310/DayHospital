@@ -38,7 +38,7 @@ header{
 }
 
 .menubar a {
-    padding : 0 15px;
+    padding-right : 15px;
 }
 
 #menulist>li{
@@ -182,4 +182,7 @@ aside li ul li{
     font-size: 2em;
 }
 
+.center_left_footer{
+
+}
 /* -------------------------------------------------------------------------------------- */
