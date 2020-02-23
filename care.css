@@ -136,13 +136,21 @@ footer{
     margin-left : -1px;
 }
 
+/* ------------------------------------------------------------------------------------ */
 
 /*Centorintro.html - css*/
 .container{
-    float: left;
-    width : 1300px;
     margin : 0 auto;
 }
+
+.container article{
+    float : left;
+    width : 1300px;
+    height : 600px;
+    border: 1px solid black;
+    margin-top:-1px;
+}
+
 .introbanner{
     width : 1300px;
     height : 100px;
@@ -158,7 +166,7 @@ aside{
     margin-top: 200px;
 }
 
-#ahead>li{
+aside li{
     background-color: #F7A12A;
     padding : 10px 0;
     font-size: 1em;
@@ -170,10 +178,8 @@ aside li ul li{
     border-bottom: 1px solid white;
 }
 
-article{
-    float : left;
-    width : 1300px;
-    height : 610px;
-    border : 1px solid black;
-    margin-top: -1px;
+#side_center{
+    font-size: 2em;
 }
+
+/* -------------------------------------------------------------------------------------- */
