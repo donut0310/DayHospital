@@ -1,15 +1,14 @@
-*{
+/*Commonly used*/
+.container{
     box-sizing: border-box;
     font-family: Georgia, "Malgun Gothic", serif;
 }
 
-/*COMMONLY USED*/
+/*HEADER*/
 .wrapper{
     width : 1300px;
     margin : 0 auto;
 }
-
-/*HEADER*/
 header{
     width : 100%;
     height : 100px;
