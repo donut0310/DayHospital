@@ -1,7 +1,15 @@
 /*Commonly used*/
-.container{
+*{
     box-sizing: border-box;
-    font-family: Georgia, "Malgun Gothic", serif;
+    font-family: Georgia, 'Nanum Gothic',serif;
+}
+a:link{
+    text-decoration: none;
+    color : black;
+}
+a:visited{
+    text-decoration: none;
+    color : black;
 }
 
 /*HEADER*/
@@ -58,14 +66,7 @@ header{
     margin-left: 16px;
 }
 
-#menulist a:link{
-    text-decoration: none;
-    color : black;
-}
-#menulist a:visited{
-    text-decoration: none;
-    color : black;
-}
+
 
 .menubar li:hover ul{
     display: block;
@@ -133,4 +134,46 @@ footer{
     border : 1px solid black;
     margin-top : -1px;
     margin-left : -1px;
+}
+
+
+/*Centorintro.html - css*/
+.container{
+    float: left;
+    width : 1300px;
+    margin : 0 auto;
+}
+.introbanner{
+    width : 1300px;
+    height : 100px;
+    float: left;
+    border: 1px solid black;
+}
+
+aside{
+    float : left;
+    width : 310px;
+    height : 200px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#ahead>li{
+    background-color: #F7A12A;
+    padding : 10px 0;
+    font-size: 1em;
+}
+
+aside li ul li{
+    padding: 10px 0;
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+article{
+    float : left;
+    width : 1300px;
+    height : 610px;
+    border : 1px solid black;
+    margin-top: -1px;
 }
