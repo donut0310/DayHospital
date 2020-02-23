@@ -13,16 +13,16 @@ a:visited{
 }
 
 /*HEADER*/
+
+.wrapper{
+    width : 1300px;
+    margin : 0 auto;
+}
 header{
     width : 100%;
     height : 100px;
     margin : 0 auto;
     background-color: #F7A12A;
-}
-
-.wrapper{
-    width : 1300px;
-    margin : 0 auto;
 }
 
 #logo{
@@ -31,47 +31,42 @@ header{
     float : left;
 }
 
-.menubar{
+.topMenu{
     padding : 0;
     margin : 0;
     float : right;
     line-height: 100px;
 }
 
-.menubar a {
-    padding-right : 15px;
+.topMenu a {
+    padding : 0 15px;
 }
 
-#menulist>li{
+.dept01>li{
     list-style-type: none;
     float : left;
 }
 
-.menubar li ul{
+.topMenu li ul{
     display: none;
     padding : 0 5px;
     margin : 0;
     position : absolute;
     line-height: 40px;
-    border-right: 2px solid #F7A12A;
-    border-left: 2px solid #F7A12A;
+    /*border-right: 2px solid #F7A12A;
+    border-left: 2px solid #F7A12A;*/
     border-bottom: 2px solid #F7A12A;
     text-align: left;
 }
 
-#centorintro{
-    margin-right: 20px;
+#border1{
+    border-left: 2px solid #F7A12A;
 }
 
-#programintro{
-    margin-left: 16px;
+#border2{
+    border-right: 2px solid #F7A12A;
 }
 
-
-
-.menubar li:hover ul{
-    display: block;
-}
 
 /*Article*/
 article{
