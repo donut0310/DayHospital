@@ -13,10 +13,13 @@ a:visited{
 }
 
 /*HEADER*/
-
 .wrapper{
-    width : 1300px;
+    width : 70%;
     margin : 0 auto;
+}
+
+#index_wrapper{
+    width:1300px;
 }
 header{
     width : 100%;
@@ -68,6 +71,26 @@ header{
 }
 
 
+
+/*.topMenu li:hover ul{
+    display: block;
+}*/
+/*.dept01 li:hover{
+    display:block;
+}*/
+
+/*#centorintro{
+    margin-right: 20px;
+}
+
+#programintro{
+    margin-left: 16px;
+}*/
+
+
+
+
+
 /*Article*/
 article{
     width : 1300px;
@@ -77,18 +100,19 @@ article{
     margin : 0 auto;
     width : 1300px;
     height: 700px;
-
+    border: 1px solid black;
 }
 
 .content{
     margin : 0 auto;
-    
+    margin-top: -1px;
 }
 
 .post{
     float : left;
     width : 400px;
     height : 300px;
+    border : 1px solid black;
     margin-right: 50px;
 }
 
@@ -96,81 +120,87 @@ article{
     float : left;
     width : 400px;
     height: 300px;
- 
+    border : 1px solid black;
 }
 
 .meal{
     float : left;
     width : 400px;
     height: 300px;
+    border : 1px solid black;
     margin-right: 50px;
 }
 
 
 /*Footer*/
 footer{
-    width : 1300px;
+    width : 70%;
     margin : 0 auto;
 }
 
 .left_footer{
     float : left;
-    width : 700px;
+    width : 55%;
     height : 150px;
-
+    border : 1px solid black;
+    margin-top : -1px;
 }
 
 .right_footer{
     float : left;
-    width : 600px;
+    width : 45%;
     height : 150px;
+    border : 1px solid black;
+    margin-top : -1px;
+    margin-left : -1px;
+}
+
+.index_footer{
+    width : 1300px;
 }
 
 /* ------------------------------------------------------------------------------------ */
 
 /*Centorintro.html - css*/
-
 .container{
-    width : 1600px;
-    height : 700px;
+    margin : 0 auto;
+}
+
+.container article{
     float : left;
-    
+    width : 70%;
+    height : 600px;
+    border: 1px solid black;
+    margin-top:-1px;
+}
+
+.introbanner{
+    width : 70%;
+    height : 100px;
+    float: left;
+    border: 1px solid black;
 }
 
 aside{
     float : left;
-    width : 310px;
-    height: 100%;
-    background-color: blanchedalmond;
-}
-
-.con_list{
+    width : 15%;
+    height : 200px;
     text-align: center;
-    line-height: 40px;
-    padding : 80px;
+    margin-top: 200px;
 }
 
-#main_list{
+aside li{
+    background-color: #F7A12A;
+    padding : 10px 0;
+    font-size: 1em;
+}
+
+aside li ul li{
+    padding: 10px 0;
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
+#side_center{
     font-size: 2em;
 }
-
-.centerArticle{
-    float : left;
-    width : 1290px;
-    height : 700px; 
-}
-
-.centerBanner{
-    float : left;
-    width : 100%;
-    height: 80px;
-}
-
-.sector{
-    float : left;
-    width : 100%;
-    height : 620px;
-}
-
-
-/* -------------------------------------------------------------------------------------- */
