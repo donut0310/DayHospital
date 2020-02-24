@@ -12,14 +12,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
 </head>
 
 <body>
     <header>
-        <div class="wrapper" id="index_wrapper">
-            <a href="#"><img src="../assets/images/logo.jpg" id="logo"></a>
+
+        <div class="wrapper">
+            <a href="./Daycare.html"><img src="../assets/images/logo.jpg" id="logo"></a>
             <!--항상 위로 fix-->
+
             <nav>
 
                 <div class="topMenu" , id="menu1">
@@ -42,7 +43,7 @@
                                 <li>생활프로그램</li>
                                 <li>전문재활치료서비스</li>
                                 <li>인지재활프로그램</li>
-                                <li>의료보건케어서비스</li>
+                                <li>의료보건케어서비스</li> 
                                 <li>멘토링서비스</li>
                             </ul>
                         </li>
@@ -62,21 +63,30 @@
 
     </header>
 
-    <article>
-        <div class="main_banner"></div>
-
-        <div class="content">
-            <div class="post">post</div>
-
-            <div class="photo">photo</div>
-
-            <div class="meal">meal</div>
-
-            <div class="calendar">canlendar</div>
+    <aside>
+        <ul>
+            <li><a href="" id=centeri>센터소개</a>
+                <ul>
+                    <li>인사말</li>
+                    <li>센터장소개</li>
+                    <li>데이케어란?</li>
+                    <li>시설현황</li>
+                    <li>찾아오시는 길</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    
+    <div class="container">
+        <div class="introbanner">
+            banner
         </div>
-    </article>
-
-    <footer class="index_footer">
+        <article id="introarticle">
+            Article
+        </article>
+    </div>
+    
+    <footer>
         <div class="left_footer">
             left footer
         </div>
@@ -85,7 +95,7 @@
             right footer
         </div>
     </footer>
-
+    
     <script>
         $(document).ready(function () {
             // code ...
@@ -99,6 +109,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>
