@@ -33,7 +33,6 @@ header{
     width : 100px;
     height : 100px;
     float : left;
-    margin-left : 10px;
 }
 
 .topMenu{
@@ -142,14 +141,14 @@ footer{
     float : left;
     width : 55%;
     height : 150px;
-    border : 1px solid black;
+    
 }
 
 .right_footer{
     float : left;
     width : 45%;
     height : 150px;
-    border : 1px solid black;
+    
 }
 
 .index_footer{
@@ -168,14 +167,14 @@ footer{
     float : left;
     width : 65%;
     height : 600px;
-    border : 1px solid black;
+    
 }
 
 .introbanner{
     width : 65%;
     height : 100px;
     float: left;
-    border : 1px solid black;
+    
 }
 
 aside{
@@ -207,6 +206,22 @@ aside li ul li{
 
 /*pmpc.html-css*/
 
+.pArticleHead{
+    height:100px;
+}
+
 #pPost{
+    float : left;
+    margin-top :0.83em;
+    margin-left : 35px;
+}
+
+#pNav{
+    float : right;
+    margin-top : 2.83em;
+    color:#F7A12A
+}
+
+.tb_1{
     
 }
