@@ -70,8 +70,6 @@ header{
     border-right: 2px solid #F7A12A;
 }
 
-
-
 /*.topMenu li:hover ul{
     display: block;
 }*/
@@ -86,10 +84,6 @@ header{
 #programintro{
     margin-left: 16px;
 }*/
-
-
-
-
 
 /*Article*/
 article{
@@ -110,27 +104,30 @@ article{
 
 .post{
     float : left;
-    width : 400px;
+    width : 40%;
     height : 300px;
-    border : 1px solid black;
-    margin-right: 50px;
 }
 
 .photo{
     float : left;
-    width : 400px;
+    width : 60%;
     height: 300px;
-    border : 1px solid black;
+    
 }
 
 .meal{
     float : left;
-    width : 400px;
+    width : 60%;
     height: 300px;
-    border : 1px solid black;
-    margin-right: 50px;
+    
 }
 
+.calendar{
+    float : left;
+    width : 40%;
+    height: 300px;
+    
+}
 
 /*Footer*/
 footer{
@@ -161,7 +158,7 @@ footer{
 
 /* ------------------------------------------------------------------------------------ */
 
-/*Centorintro.html - css*/
+/*centerintro.html - css*/
 .container{
     margin : 0 auto;
 }
