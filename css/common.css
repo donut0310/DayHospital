@@ -94,7 +94,6 @@ article{
     margin : 0 auto;
     width : 1300px;
     height: 700px;
-    border: 1px solid black;
 }
 
 .content{
@@ -139,7 +138,6 @@ footer{
     float : left;
     width : 55%;
     height : 150px;
-    border : 1px solid black;
     margin-top : -1px;
 }
 
@@ -147,7 +145,6 @@ footer{
     float : left;
     width : 45%;
     height : 150px;
-    border : 1px solid black;
     margin-top : -1px;
     margin-left : -1px;
 }
@@ -167,7 +164,6 @@ footer{
     float : left;
     width : 70%;
     height : 600px;
-    border: 1px solid black;
     margin-top:-1px;
 }
 
@@ -175,7 +171,6 @@ footer{
     width : 70%;
     height : 100px;
     float: left;
-    border: 1px solid black;
 }
 
 aside{
