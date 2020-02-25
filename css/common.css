@@ -183,19 +183,22 @@ aside{
     height : 600px;
     text-align: center;
     margin-top: 200px;
-    margin-right : 50px;    
+    margin-right : 50px;
 }
 
 aside li{
     background-color: #F7A12A;
     padding : 10px 0;
     font-size: 1em;
+    border : 1px solid #F7A12A;
 }
 
 aside li ul li{
-    padding: 10px 0;
+    padding: 0px 0;
     background-color: white;
     border-bottom: 1px solid white;
+    height : 50px;
+    line-height: 50px;
 }
 
 #side_center{
@@ -213,15 +216,48 @@ aside li ul li{
 #pPost{
     float : left;
     margin-top :0.83em;
-    margin-left : 35px;
+    margin-left : 10%;
 }
 
 #pNav{
     float : right;
     margin-top : 2.83em;
+    margin-right : 10%;
     color:#F7A12A
 }
 
+#asideNav{
+    color : #F7A12A;
+}
+
 .tb_1{
+    width : 65%;
+    margin-left : 15%;
+    margin-top : 0.83em;
+    float : left;
     
+}
+.tb_1 th{
+    padding : 1%;
+    text-align: center;
+    background-color: bisque;
+    border-top: 4px solid #F7A12A;
+    border-bottom: 1px solid black;
+}
+.th_num{
+    border-right: 1px solid black;
+    width : 10%;
+}
+.th_title{
+    border-right: 1px solid black;
+    width : 70%;
+}
+.th_regist{
+    width : 20%;
+}
+
+.tb_1 td{
+    text-align: center;
+    padding : 1%;
+    border-bottom:1px solid black;
 }
