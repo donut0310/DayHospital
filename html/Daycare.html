@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="keywords"
-      content="데이케어센터, 데이케어, 성모사랑, 창동 데이케어"
-      id="metaDescription"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="author" content="" />
-    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="데이케어센터, 데이케어, 성모사랑, 창동 데이케어" id="metaDescription">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </head>
-  <body>
+
+
+</head>
+
+<body>
     <header>
         <div class="wrapper" id="index_wrapper">
             <a href="#"><img src="../assets/images/logo.jpg" id="logo"></a>
@@ -67,11 +67,12 @@
         </div>
 
     </header>
-    <article>
-      <div class="main_banner">main banner</div>
 
-      <div class="content">
-        <div class="post">post</div>
+    <article>
+        <div class="main_banner"></div>
+
+        <div class="content">
+            <div class="post">post</div>
 
             <div class="photo">photo</div>
 
@@ -80,6 +81,7 @@
             <div class="calendar">canlendar</div>
         </div>
     </article>
+
     <footer class="index_footer">
         <div class="left_footer">
             left footer
@@ -89,7 +91,19 @@
             right footer
         </div>
     </footer>
+
     <script>
+        $(document).ready(function () {
+            // code ...
+        });
+        $(document).on('mouseover', '.topMenu span', function () {
+            $('.dept02').slideDown(200);
+        });
+        $(document).on('mouseleave', 'div', function () {
+            if (!$(this).hasClass('menubar')) {
+                $('.dept02').slideUp(200);
+            }
+        });
       $(document).ready(function() {
         // code ...
       });
@@ -102,5 +116,7 @@
         }
       });
     </script>
+</body>
+
   </body>
 </html>
