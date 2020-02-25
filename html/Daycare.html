@@ -104,7 +104,19 @@
                 $('.dept02').slideUp(200);
             }
         });
+      $(document).ready(function() {
+        // code ...
+      });
+      $(document).on("mouseover", ".topMenu span", function() {
+        $(".dept02").slideDown(200);
+      });
+      $(document).on("mouseleave", "div", function() {
+        if (!$(this).hasClass("menubar")) {
+          $(".dept02").slideUp(200);
+        }
+      });
     </script>
 </body>
 
+  </body>
 </html>
