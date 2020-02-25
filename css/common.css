@@ -42,7 +42,7 @@ header{
     line-height: 100px;
 }
 
-.topMenu a {
+.topMenu span a {
     padding : 0 30px;
 }
 
