@@ -14,7 +14,7 @@ a:visited{
 
 /*HEADER*/
 .wrapper{
-    width : 70%;
+    width : 66%;
     margin : 0 auto;
 }
 
@@ -32,6 +32,7 @@ header{
     width : 100px;
     height : 100px;
     float : left;
+    margin-left : 10px;
 }
 
 .topMenu{
@@ -94,11 +95,12 @@ article{
     margin : 0 auto;
     width : 1300px;
     height: 700px;
+    border : 1px solid black;
 }
 
 .content{
     margin : 0 auto;
-    margin-top: -1px;
+    
 }
 
 .post{
@@ -130,7 +132,7 @@ article{
 
 /*Footer*/
 footer{
-    width : 70%;
+    width : 66%;
     margin : 0 auto;
 }
 
@@ -138,15 +140,14 @@ footer{
     float : left;
     width : 55%;
     height : 150px;
-    margin-top : -1px;
+    border : 1px solid black;
 }
 
 .right_footer{
     float : left;
     width : 45%;
     height : 150px;
-    margin-top : -1px;
-    margin-left : -1px;
+    border : 1px solid black;
 }
 
 .index_footer{
@@ -162,23 +163,25 @@ footer{
 
 .container article{
     float : left;
-    width : 70%;
+    width : 65%;
     height : 600px;
-    margin-top:-1px;
+    border : 1px solid black;
 }
 
 .introbanner{
-    width : 70%;
+    width : 65%;
     height : 100px;
     float: left;
+    border : 1px solid black;
 }
 
 aside{
     float : left;
     width : 15%;
-    height : 200px;
+    height : 600px;
     text-align: center;
     margin-top: 200px;
+    margin-right : 50px;
 }
 
 aside li{
