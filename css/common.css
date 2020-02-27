@@ -46,6 +46,8 @@ header{
 
 .topMenu span a {
     padding : 0 30px;
+.topMenu li{
+    text-align: center;
 }
 
 .dept01>li{
