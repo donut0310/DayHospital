@@ -74,31 +74,31 @@ header{
 
 #border1{
     border-left: 2px solid #F7A12A;
-    background-color:gray;
+    background-color:white;
     width:124px;
 }
 
 #border2{
     border-right: 2px solid #F7A12A;
-    background-color:gray;
+    background-color:white;
     width:225.63px;
 }
 
 #border3{
     padding-bottom: 80px;
-    background-color:gray;
+    background-color:white;
     width:124px;
 }
 
 #border4{
     padding-bottom: 200px;
-    background-color:gray;
+    background-color:white;
     width:193.63px;
 }
 
 #border5{
     padding-bottom: 200px;
-    background-color:gray;
+    background-color:white;
     width:151.25px;
 }
 
