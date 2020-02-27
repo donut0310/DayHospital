@@ -12,14 +12,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
 </head>
 
-<body>
+<body id="pmpcBody">
     <header>
-        <div class="wrapper" id="index_wrapper">
-            <a href="#"><img src="../assets/images/logo.jpg" id="logo"></a>
+
+        <div class="wrapper">
+            <a href="./Daycare.html"><img src="../assets/images/logo.jpg" id="logo"></a>
             <!--항상 위로 fix-->
+
             <nav>
 
                 <div class="topMenu" , id="menu1">
@@ -43,7 +44,7 @@
                                 <li><a href="cureservi.html">전문재활치료서비스</a></li>
                                 <li><a href="recogproi.html">인지재활프로그램</a></li>
                                 <li><a href="careservi.html">의료보건케어서비스</a></li>
-                                <li><a href="mentori.html">"멘토링서비스</a></li>
+                                <li><a href="mentori.html">멘토링서비스</a></li>
                             </ul>
                         </li>
                         <li>
@@ -57,9 +58,15 @@
                         </li>
                         <li>
                             <span><a href="">노인 장기요양보험</a></span>
+                            <ul class="dept02" id="border4">
+                                <li>노인 장기요양보험</li>
+                            </ul>
                         </li>
                         <li>
                             <span><a href="">문의 및 상담</a></span>
+                            <ul class="dept02" id="border5">
+                                <li>문의 및 상담</li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -68,21 +75,31 @@
 
     </header>
 
-    <article>
-        <div class="main_banner"></div>
-
-        <div class="content">
-            <div class="post"></div>
-
-            <div class="photo"></div>
-
-            <div class="meal"></div>
-
-            <div class="calendar"></div>
+    <aside>
+        <ul>
+            <li><a href="./programintro.html" id=programi>성모사랑 프로그램안내</a>
+                <ul>
+                    <li><a href="plani.html">프로그램운영계획표</a></li>
+                    <li><a href="lifeproi.html"   id="asideNav">생활프로그램</a></li>
+                    <li><a href="cureservi.html">전문재활치료서비스</a></li>
+                    <li><a href="recogproi.html">인지재활프로그램</a></li>
+                    <li><a href="careservi.html">의료보건케어서비스</a></li>
+                    <li><a href="mentori.html">"멘토링서비스</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    
+    <div class="container">
+        <div class="introbanner">
+            
         </div>
-    </article>
-
-    <footer class="index_footer">
+        <article id="introarticle">
+            
+        </article>
+    </div>
+    
+    <footer>
         <div class="left_footer">
             <div class="footer_logo_class"><a href="./Daycare.html"><img src="../assets/images/logo.jpg" id="footer_logo"></a></div>
             <div class="information_box">
@@ -95,7 +112,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         $(document).ready(function () {
             // code ...
@@ -103,24 +120,13 @@
         $(document).on('mouseover', '.topMenu span', function () {
             $('.dept02').slideDown(200);
         });
-        $(document).on('mouseleave', 'div', function () {
-            if (!$(this).hasClass('menubar')) {
-                $('.dept02').slideUp(200);
-            }
-        });
-      $(document).ready(function() {
-        // code ...
-      });
-      $(document).on("mouseover", ".topMenu span", function() {
-        $(".dept02").slideDown(200);
-      });
-      $(document).on("mouseleave", "div", function() {
-        if (!$(this).hasClass("menubar")) {
-          $(".dept02").slideUp(200);
-        }
-      });
+         $(document).on('mouseleave', 'div', function () {
+             if (!$(this).hasClass('menubar')) {
+                 $('.dept02').slideUp(200);
+             }
+         });
     </script>
+
 </body>
 
-  </body>
 </html>
