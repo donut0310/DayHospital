@@ -74,32 +74,56 @@ header{
 
 #border1{
     border-left: 2px solid #F7A12A;
+<<<<<<< HEAD
     background-color:#dddddd;
+=======
+    background-color:white;
+>>>>>>> c713da070b6505bfb073a744536658afc8837275
     width:124px;
 }
 
 #border2{
+<<<<<<< HEAD
     border-right: 2px solid #F7A12A;
     background-color : #dddddd;
+=======
+    border-left: 2px solid #F7A12A;
+    background-color:white;
+>>>>>>> c713da070b6505bfb073a744536658afc8837275
     width:225.63px;
 }
 
 #border3{
     padding-bottom: 80px;
+<<<<<<< HEAD
     background-color : #dddddd;
+=======
+    border-left: 2px solid #F7A12A;
+    background-color:white;
+>>>>>>> c713da070b6505bfb073a744536658afc8837275
     width:124px;
 }
 
 #border4{
     padding-bottom: 200px;
+<<<<<<< HEAD
     background-color : #dddddd;
+=======
+    border-left: 2px solid #F7A12A;
+    background-color:white;
+>>>>>>> c713da070b6505bfb073a744536658afc8837275
     width:193.63px;
 }
 
 #border5{
     padding-bottom: 200px;
+<<<<<<< HEAD
     background-color : #dddddd;
     width:151.25px;
+=======
+    border-left: 2px solid #F7A12A;
+    background-color:white;    width:151.25px;
+>>>>>>> c713da070b6505bfb073a744536658afc8837275
 }
 
 .dept01{
