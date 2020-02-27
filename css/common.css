@@ -142,7 +142,6 @@ article{
 
 .content{
     margin : 0 auto;
-    
 }
 
 .post{
@@ -244,8 +243,8 @@ aside{
 }
 
 aside li{
-    background-color: #F7A12A;
     padding : 10px 0;
+    margin : 0 0 10px 0;
     font-size: 1em;
     border : 1px solid #F7A12A;
 }
