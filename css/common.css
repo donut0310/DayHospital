@@ -148,8 +148,10 @@ footer{
 }
 
 .index_footer{
-    width : 1300px;
-    float:none;
+    width : 65%;
+    float: left;
+    margin-left : 300px;
+    background-color: #cccccc;
 }
 
 #first_line_footer{
