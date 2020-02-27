@@ -69,35 +69,36 @@ header{
 
 .topMenu ul li ul li{
     line-height:40px;
+    text-align: center;
 }
 
 #border1{
     border-left: 2px solid #F7A12A;
-    background-color:coral;
+    background-color:gray;
     width:124px;
 }
 
 #border2{
     border-right: 2px solid #F7A12A;
-    background-color:coral;
+    background-color:gray;
     width:225.63px;
 }
 
 #border3{
     padding-bottom: 80px;
-    background-color:coral;
+    background-color:gray;
     width:124px;
 }
 
 #border4{
     padding-bottom: 200px;
-    background-color:coral;
+    background-color:gray;
     width:193.63px;
 }
 
 #border5{
     padding-bottom: 200px;
-    background-color:coral;
+    background-color:gray;
     width:151.25px;
 }
 
