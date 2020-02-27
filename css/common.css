@@ -3,6 +3,7 @@
     box-sizing: border-box;
     font-family: Georgia, 'Nanum Gothic',serif;
 }
+
 a:link{
     text-decoration: none;
     color : black;
@@ -14,7 +15,7 @@ a:visited{
 
 /*HEADER*/
 .wrapper{
-    width : 65%;
+    width : 65vw;
     margin : 0 auto;
 }
 
@@ -40,6 +41,7 @@ header{
     margin : 0;
     float : right;
     line-height: 100px;
+    width:830px;
 }
 
 .topMenu span a {
@@ -51,26 +53,62 @@ header{
     float : left;
 }
 
-.topMenu li ul{
+.topMenu ul li ul{
     display: none;
     padding : 0 5px;
     margin : 0;
-    position : absolute;
+    position :absolute;
     line-height: 40px;
-    /*border-right: 2px solid #F7A12A;
-    border-left: 2px solid #F7A12A;*/
+    border-right: 2px solid #F7A12A;
+    border-left: 2px solid #F7A12A;
     border-bottom: 2px solid #F7A12A;
     text-align: left;
+    font-size:16px;
+    width:100%;
+}
+
+.topMenu ul li ul li{
+    line-height:40px;
 }
 
 #border1{
     border-left: 2px solid #F7A12A;
+    background-color:coral;
+    width:124px;
 }
 
 #border2{
     border-right: 2px solid #F7A12A;
+    background-color:coral;
+    width:225.63px;
 }
 
+#border3{
+    padding-bottom: 80px;
+    background-color:coral;
+    width:124px;
+}
+
+#border4{
+    padding-bottom: 200px;
+    background-color:coral;
+    width:193.63px;
+}
+
+#border5{
+    padding-bottom: 200px;
+    background-color:coral;
+    width:151.25px;
+}
+
+.dept01{
+    width:100%;
+    
+}
+
+.dept01 ul li {
+    width:100%;
+}
 /*.topMenu li:hover ul{
     display: block;
 }*/
