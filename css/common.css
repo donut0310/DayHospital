@@ -171,7 +171,7 @@ article{
 /*Footer*/
 footer{
     float:left;
-    width : 65%;
+    width : 65vw;
     margin : 0 auto;
     background-color: #cccccc;
 }
