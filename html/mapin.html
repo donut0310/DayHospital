@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body id="pmpcBody">
     <header>
 
         <div class="wrapper">
@@ -58,9 +58,15 @@
                         </li>
                         <li>
                             <span><a href="">노인 장기요양보험</a></span>
+                            <ul class="dept02" id="border4">
+                                <li>노인 장기요양보험</li>
+                            </ul>
                         </li>
                         <li>
                             <span><a href="">문의 및 상담</a></span>
+                            <ul class="dept02" id="border5">
+                                <li>문의 및 상담</li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -71,15 +77,15 @@
 
     <aside>
         <div class = "navHead">
-            <span>성모사랑 프로그램안내</span>
+            <span>센&nbsp;터&nbsp;소&nbsp;개</span>
         </div>
         <ul class="testdiv">
-            <li><a href="plani.html">프로그램운영계획표</a></li>
-            <li><a href="lifeproi.html">생활프로그램</a></li>
-            <li><a href="cureservi.html">전문재활치료서비스</a></li>
-            <li><a href="recogproi.html">인지재활프로그램</a></li>
-            <li><a href="careservi.html">의료보건케어서비스</a></li>
-            <li><a href="mentori.html">"멘토링서비스</a></li>
+            <li><a href="./centerintro.html">인사말</a></li>
+            <li><a href="./ceoi.html">센터장소개</a></li>
+            <li><a href="./daycarein.html">데이케어란</a></li>
+            <li><a href="./facilityin.html">시설현황</a></li>
+            <li><a href="./enterin.html">입소안내</a></li>
+            <li><a href="./mapin.html" id="asideNav">찾아오시는 길</a></li>
         </ul>
     </aside>
     
@@ -113,11 +119,11 @@
         $(document).on('mouseover', '.topMenu span', function () {
             $('.dept02').slideDown(200);
         });
-        $(document).on('mouseleave', 'div', function () {
-            if (!$(this).hasClass('menubar')) {
-                $('.dept02').slideUp(200);
-            }
-        });
+         $(document).on('mouseleave', 'div', function () {
+             if (!$(this).hasClass('menubar')) {
+                 $('.dept02').slideUp(200);
+             }
+         });
     </script>
 
 </body>
