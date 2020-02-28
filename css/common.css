@@ -85,7 +85,7 @@ header{
 }
 
 #border3{
-    padding-bottom: 80px;
+    padding-bottom: 120px;
     background-color : #dddddd;
     width:124px;
 }
@@ -124,6 +124,7 @@ header{
     margin-left: 16px;
 }*/
 
+
 /*Article*/
 article{
     width : 1300px;
@@ -132,9 +133,10 @@ article{
 
 .main_banner{
     margin : 0 auto;
-    width : 1300px;
+    float : left;
+    width : 650px;
     height: 700px;
-    
+    border : 1px solid black;
 }
 
 .content{
@@ -143,29 +145,32 @@ article{
 
 .post{
     float : left;
-    width : 40%;
-    height : 300px;
+    width : 25%;
+    height : 350px;
+    border : 1px solid black;
 }
 
 .photo{
     float : left;
-    width : 60%;
-    height: 300px;
+    width : 25%;
+    height: 350px;
+    border : 1px solid black;
     
 }
 
 .meal{
     float : left;
-    width : 60%;
-    height: 300px;
+    width : 25%;
+    height: 350px;
+    border : 1px solid black;
     
 }
 
 .calendar{
     float : left;
-    width : 40%;
-    height: 300px;
-    
+    width : 25%;
+    height: 350px;
+    border : 1px solid black;
 }
 
 /*Footer*/
