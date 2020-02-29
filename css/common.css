@@ -59,8 +59,6 @@ header{
     margin : 0;
     position :absolute;
     line-height: 40px;
-    border-right: 2px solid #F7A12A;
-    border-left: 2px solid #F7A12A;
     border-bottom: 2px solid #F7A12A;
     text-align: left;
     font-size:16px;
@@ -74,32 +72,33 @@ header{
 
 #border1{
     border-left: 2px solid #F7A12A;
-    background-color:#dddddd;
+    background-color:white;
     width:124px;
+    padding-bottom : 80px;
 }
 
 #border2{
-    border-right: 2px solid #F7A12A;
-    background-color : #dddddd;
+    background-color : white;
     width:225.63px;
 }
 
 #border3{
-    padding-bottom: 120px;
-    background-color : #dddddd;
+    padding-bottom: 160px;
+    background-color : white;
     width:124px;
 }
 
 #border4{
-    padding-bottom: 160px;
-    background-color : #dddddd;
+    padding-bottom: 200px;
+    background-color : white;
     width:193.63px;
 }
 
 #border5{
-    padding-bottom: 160px;
-    background-color : #dddddd;
+    padding-bottom: 200px;
+    background-color : white;
     width:151.25px;
+    border-right: 2px solid #F7A12A;
 }
 
 .dept01{
@@ -109,21 +108,6 @@ header{
 .dept01 ul li {
     width:100%;
 }
-/*.topMenu li:hover ul{
-    display: block;
-}*/
-/*.dept01 li:hover{
-    display:block;
-}*/
-
-/*#centorintro{
-    margin-right: 20px;
-}
-
-#programintro{
-    margin-left: 16px;
-}*/
-
 
 /*Article*/
 article{
@@ -150,9 +134,23 @@ article{
     border : 1px solid black;
 }
 
+#iPost{
+    margin : -5px 15px;
+    float : left;
+}
+
+#iPost_more{
+    margin : 15px 15px;
+    float : right;
+}
+article div a:visited{
+    color : #aaaaaa;
+    font-weight: bold;
+}
+
 .photo{
     float : left;
-    width : 25%;
+    width : 50%;
     height: 350px;
     border : 1px solid black;
     
@@ -166,11 +164,8 @@ article{
     
 }
 
-.calendar{
-    float : left;
-    width : 25%;
-    height: 350px;
-    border : 1px solid black;
+.post, .photo, .meal{
+    background-color: #eeeeee;
 }
 
 /*Footer*/
@@ -178,7 +173,7 @@ footer{
     float:left;
     width : 65vw;
     margin : 0 auto;
-    background-color: #cccccc;
+    background-color: #cecece;
 }
 
 .left_footer{
@@ -193,7 +188,8 @@ footer{
     width : 80%;
     float: left;
     margin-left : 150px;
-    background-color: #cccccc;
+    margin-top : 30px;
+    background-color: #cecece;
 }
 
 #first_line_footer{
