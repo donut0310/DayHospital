@@ -255,7 +255,7 @@ footer{
 .container article{
     float : left;
     width : 65%;
-    height : 700px;
+    height : 1000px;
     
 }
 
@@ -268,7 +268,7 @@ footer{
 aside{
     float : left;
     width : 15%;
-    height : 800px;
+    height : 1100px;
     text-align: center;
     margin-top: 100px;
     margin-right : 50px;
