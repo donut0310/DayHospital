@@ -168,6 +168,41 @@ article div a:visited{
     background-color: #eeeeee;
 }
 
+.postlist, .meallist{
+    margin : 60px 10px 10px 30px;
+    list-style-type: circle;
+}
+
+.postlist li,
+.meallist li{
+    margin : 7px 0;
+}
+
+.photozone{
+    width : 100%;
+    height : 300px;
+    margin-top : 50px;
+}
+
+.photo1, .photo4{
+    margin-left : 15px;
+}
+
+.photo1, .photo2, .photo3{
+    margin-bottom : 10px;
+}
+
+.photo1, .photo2,
+.photo3, .photo4,
+.photo5, .photo6{
+    width : 30%;
+    height : 120px;
+    margin-right : 15px;
+    margin-top : 15px;
+    border : 1px solid black;
+    float : left;
+}
+
 /*Footer*/
 footer{
     float:left;
@@ -220,7 +255,7 @@ footer{
 .container article{
     float : left;
     width : 65%;
-    height : 600px;
+    height : 700px;
     
 }
 
@@ -233,7 +268,7 @@ footer{
 aside{
     float : left;
     width : 15%;
-    height : 700px;
+    height : 800px;
     text-align: center;
     margin-top: 100px;
     margin-right : 50px;
