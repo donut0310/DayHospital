@@ -431,11 +431,24 @@ aside li ul li{
       resize: none;
       width:100%;
   }
+
+  #modallogo{
+      width:10%;
+      height:10%;
+      float : left;
+      margin-bottom:1%;
+      margin-right:1%;
+  }
+
+  .modalspan{
+      float : left;
+      margin-top : 2%;
+  }
   /* The Close Button */
   .close {
     color: #aaa;
     float: right;
-    margin-top:-40px;
+    margin-top:-440px;
     font-size: 18px;
     font-weight: bold;
   }
