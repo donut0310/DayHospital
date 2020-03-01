@@ -312,6 +312,39 @@ aside li ul li{
     height:100px;
 }
 
+.pArticleBody{
+    width : 70%;
+    margin : 0 auto;
+}
+
+.pabNum{
+    width : 15%;
+    float : left;
+}
+
+.pabTitle{
+    width : 65%;
+    float : left;
+}
+
+.pabDate{
+    width : 20%;
+    float : left;
+}
+
+.pabNum, .pabTitle, .pabDate{
+    border-top : 2px solid rgb(65, 61, 56);
+    border-bottom : 2px solid #F7A12A;
+    text-align: center;
+    padding : 10px 0;
+}
+
+.pabContent{
+    width : 100%;
+    height : 600px;
+    float : left;;
+}
+
 #pPost{
     float : left;
     margin-top :0.83em;
@@ -360,3 +393,51 @@ aside li ul li{
     border-bottom:1px solid black;
     font-size : 0.8em;
 }
+
+/***********************************************/
+
+/*Custom - question, consulting*/
+.buttons{
+    float : right;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */
+  }
+  
+  .mod_text_question{
+      word-break: break-all;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>상담신청</title>
+        <meta charset="utf-8">
+        <link type = "text/css" rel="stylesheet" href="./css/style.css"/>
+    </head>
+    <body>
+        <div id = "contain">
+            <input id = "input_name" type = "text" placeholder="이름" onkeyup = "pressKey();" autofocus/>
+            <input id = "input_pw" type = "password" placeholder="비밀번호" onkeyup = "pressKey();" />
+            <input id = "content" type = "text" placeholder="내용" onkeyup = "pressKey();" />
+            <input class = "submit_btn" type = "submit" value = "submit"/>
+        </div>
+        <div id = "savedField">
+            <ul class = "saveCusData">
+
+            </ul>    
+        </div>
+        <div id = findName>
+            <input id = "findText" type = "text"/>
+            <input id = "findBtn" type = "button" value = "검색"/>
+        </div>
+        <div id = "parsedName">
+            <ul class = "saveParsedName">
+
+            </ul>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+        <script src = "../js/consInput.js"></script>
+    </body>
+</html>
