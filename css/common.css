@@ -59,8 +59,6 @@ header{
     margin : 0;
     position :absolute;
     line-height: 40px;
-    border-right: 2px solid #F7A12A;
-    border-left: 2px solid #F7A12A;
     border-bottom: 2px solid #F7A12A;
     text-align: left;
     font-size:16px;
@@ -74,32 +72,33 @@ header{
 
 #border1{
     border-left: 2px solid #F7A12A;
-    background-color:#dddddd;
+    background-color:white;
     width:124px;
+    padding-bottom : 80px;
 }
 
 #border2{
-    border-right: 2px solid #F7A12A;
-    background-color : #dddddd;
+    background-color : white;
     width:225.63px;
 }
 
 #border3{
-    padding-bottom: 80px;
-    background-color : #dddddd;
+    padding-bottom: 160px;
+    background-color : white;
     width:124px;
 }
 
 #border4{
-    padding-bottom: 160px;
-    background-color : #dddddd;
+    padding-bottom: 200px;
+    background-color : white;
     width:193.63px;
 }
 
 #border5{
-    padding-bottom: 160px;
-    background-color : #dddddd;
+    padding-bottom: 200px;
+    background-color : white;
     width:151.25px;
+    border-right: 2px solid #F7A12A;
 }
 
 .dept01{
@@ -109,20 +108,6 @@ header{
 .dept01 ul li {
     width:100%;
 }
-/*.topMenu li:hover ul{
-    display: block;
-}*/
-/*.dept01 li:hover{
-    display:block;
-}*/
-
-/*#centorintro{
-    margin-right: 20px;
-}
-
-#programintro{
-    margin-left: 16px;
-}*/
 
 /*Article*/
 article{
@@ -147,10 +132,25 @@ article{
     height : 300px;
 }
 
+#iPost{
+    margin : -5px 15px;
+    float : left;
+}
+
+#iPost_more{
+    margin : 15px 15px;
+    float : right;
+}
+article div a:visited{
+    color : #aaaaaa;
+    font-weight: bold;
+}
+
 .photo{
     float : left;
-    width : 60%;
-    height: 300px;
+    width : 50%;
+    height: 350px;
+    border : 1px solid black;
     
 }
 
@@ -161,11 +161,43 @@ article{
     
 }
 
-.calendar{
+.post, .photo, .meal{
+    background-color: #eeeeee;
+}
+
+.postlist, .meallist{
+    margin : 60px 10px 10px 30px;
+    list-style-type: circle;
+}
+
+.postlist li,
+.meallist li{
+    margin : 7px 0;
+}
+
+.photozone{
+    width : 100%;
+    height : 300px;
+    margin-top : 50px;
+}
+
+.photo1, .photo4{
+    margin-left : 15px;
+}
+
+.photo1, .photo2, .photo3{
+    margin-bottom : 10px;
+}
+
+.photo1, .photo2,
+.photo3, .photo4,
+.photo5, .photo6{
+    width : 30%;
+    height : 120px;
+    margin-right : 15px;
+    margin-top : 15px;
+    border : 1px solid black;
     float : left;
-    width : 40%;
-    height: 300px;
-    
 }
 
 /*Footer*/
@@ -173,8 +205,7 @@ footer{
     float:left;
     width : 65vw;
     margin : 0 auto;
-    background-color: #cccccc;
-    text-align: center;
+    background-color: #cecece;
 }
 
 .left_footer{
@@ -189,7 +220,8 @@ footer{
     width : 80%;
     float: left;
     margin-left : 150px;
-    background-color: #cccccc;
+    margin-top : 30px;
+    background-color: #cecece;
 }
 
 #first_line_footer{
@@ -220,7 +252,7 @@ footer{
 .container article{
     float : left;
     width : 65%;
-    height : 600px;
+    height : 1000px;
     
 }
 
@@ -233,7 +265,7 @@ footer{
 aside{
     float : left;
     width : 15%;
-    height : 700px;
+    height : 1100px;
     text-align: center;
     margin-top: 100px;
     margin-right : 50px;
@@ -324,4 +356,41 @@ aside li ul li{
     padding : 1%;
     border-bottom:1px solid black;
     font-size : 0.8em;
+}
+
+.pArticleBody{
+    width : 70%;
+    margin : 0 auto;
+}
+
+.pabNum{
+    width : 15%;
+    float : left;
+}
+
+.pabTitle{
+    width : 65%;
+    float : left;
+}
+
+.pabDate{
+    width : 20%;
+    float : left;
+}
+
+.pabNum, .pabTitle, .pabDate{
+    border-top : 2px solid #F7A12A;
+    border-bottom : 2px solid #F7A12A;
+    text-align: center;
+    padding : 10px 0;
+}
+
+.pabContent{
+    width : 100%;
+    height : 600px;
+    float : left;;
+}
+
+.pabPhoto{
+
 }

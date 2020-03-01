@@ -77,9 +77,9 @@
             <span>성모사랑 프로그램안내</span>
         </div>
         <ul class="testdiv">
-            <li><a href="./daycarein.html">데이케어란?</a></li>
+            <li><a href="./daycarein.html" id="asideNav">데이케어란?</a></li>
             <li><a href="./plani.html">프로그램운영계획표</a></li>
-            <li><a href="./lifeproi.html" id="asideNav">생활프로그램</a></li>
+            <li><a href="./lifeproi.html">생활프로그램</a></li>
             <li><a href="./cureservi.html">전문재활치료서비스</a></li>
             <li><a href="./recogproi.html">인지재활프로그램</a></li>
             <li><a href="./careservi.html" >의료보건케어서비스</a></li>
@@ -93,8 +93,8 @@
         </div>
         <article id="introarticle">
             <div class="pArticleHead">
-                <span id="pPost"><h1>생활프로그램</h1></span>
-                <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="programintro.html">성모사랑프로그램안내</a>&nbsp;>&nbsp;생활프로그램</span>     
+                <span id="pPost"><h1>의료보건케어서비스</h1></span>
+                <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="programintro.html">성모사랑프로그램안내</a>&nbsp;>&nbsp;의료보건케어서비스</span>     
             </div>
         </article>
     </div>
@@ -120,11 +120,11 @@
         $(document).on('mouseover', '.topMenu span', function () {
             $('.dept02').slideDown(200);
         });
-         $(document).on('mouseleave', 'div', function () {
-             if (!$(this).hasClass('menubar')) {
-                 $('.dept02').slideUp(200);
-             }
-         });
+        $(document).on('mouseleave', 'div', function () {
+            if (!$(this).hasClass('menubar')) {
+                $('.dept02').slideUp(200);
+            }
+        });
     </script>
 
 </body>
