@@ -33,23 +33,23 @@
                             </ul>
                         </li>
                         <li style="width:225.63px">
-                            <span><a href="./programintro.html">성모사랑 프로그램안내</a></span>
+                            <span><a href="../programintro/programintro.html">성모사랑 프로그램안내</a></span>
                             <ul class="dept02" id="border2">
-                                <li><a href="./daycarein.html">데이케어란?</a></li>
-                                <li><a href="./plani.html">프로그램운영계획표</a></li>
-                                <li><a href="./lifeproi.html">생활프로그램</a></li>
-                                <li><a href="./cureservi.html">전문재활치료서비스</a></li>
-                                <li><a href="./recogproi.html">인지재활프로그램</a></li>
-                                <li><a href="./careservi.html">의료보건케어서비스</a></li>
-                                <li><a href="./mentori.html">멘토링서비스</a></li>
+                                <li><a href="../programintro/daycarein.html">데이케어란?</a></li>
+                                <li><a href="../programintro/plani.html">프로그램운영계획표</a></li>
+                                <li><a href="../programintro/lifeproi.html">생활프로그램</a></li>
+                                <li><a href="../programintro/cureservi.html">전문재활치료서비스</a></li>
+                                <li><a href="../programintro/recogproi.html">인지재활프로그램</a></li>
+                                <li><a href="../programintro/careservi.html">의료보건케어서비스</a></li>
+                                <li><a href="../programintro/mentori.html">멘토링서비스</a></li>
                             </ul>
                         </li>
                         <li style="width:124px">
-                            <span><a href="../pmpc/pmpc.html">알림마당</a></span>
+                            <span><a href="./pmpc.html">알림마당</a></span>
                             <ul class="dept02" id="border3">
-                                <li><a href="../pmpc.html">공지사항</a></li>
-                                <li><a href="../pmpc/meal_i.html">주간식단표</a></li>
-                                <li><a href="../pmpc/photo.html">성모사랑 사진</a></li>
+                                <li><a href="./pmpc.html">공지사항</a></li>
+                                <li><a href="./meal_i.html">주간식단표</a></li>
+                                <li><a href="./photo.html">성모사랑 사진</a></li>
                             </ul>
                         </li>
                         <li style="width:193.63px">
@@ -71,19 +71,14 @@
             </nav>
         </div>
     </header>
-
     <aside>
         <div class = "navHead">
-            <span>성모사랑 프로그램안내</span>
+            <span>알&nbsp;림&nbsp;마&nbsp;당</span>
         </div>
         <ul class="testdiv">
-            <li><a href="./daycarein.html">데이케어란?</a></li>
-            <li><a href="./plani.html">프로그램운영계획표</a></li>
-            <li><a href="./lifeproi.html">생활프로그램</a></li>
-            <li><a href="./cureservi.html" id="asideNav">전문재활치료서비스</a></li>
-            <li><a href="./recogproi.html">인지재활프로그램</a></li>
-            <li><a href="./careservi.html" >의료보건케어서비스</a></li>
-            <li><a href="./mentori.html">멘토링서비스</a></li>
+            <li><a href="./pmpc.html" id="asideNav">공지사항</a></li>
+            <li><a href="./meal_i.html" >주간식단표</a></li>
+            <li><a href="./photo.html">성모사랑 사진</a></li>
         </ul>
     </aside>
     
@@ -93,8 +88,27 @@
         </div>
         <article id="introarticle">
             <div class="pArticleHead">
-                <span id="pPost"><h1>의료보건케어서비스</h1></span>
-                <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="programintro.html">성모사랑프로그램안내</a>&nbsp;>&nbsp;의료보건케어서비스</span>     
+               <span id="pPost"><h1>공지사항</h1></span>
+               <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="pmpc.html">알림마당</a>&nbsp;>&nbsp;공지사항</span>     
+            </div>
+            <table cellspacing="0" cellpadding="0" class="tb_1">
+                <tbody>
+                    <tr>
+                        <th class="th_num">&nbsp;번&nbsp;호&nbsp;</th>
+                        <th class="th_title">&nbsp;제&nbsp;목&nbsp;</th>
+                        <th class="th_regist">&nbsp;등&nbsp;록&nbsp;일&nbsp;</th>
+                    </tr>
+                    <tr>
+                        <td class="th_num">1</td>
+                        <td class="th_title"><a href="pmpc_board.html">안녕하세요 성모사랑데이케어센터입니다.</a></td>
+                        <td class="th_regist">2020-02-25</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="buttons">
+                <input type="button" title="글쓰기">
+                <input type="button" title="삭제">
+                <input type="button" title="수정">
             </div>
         </article>
     </div>
@@ -120,11 +134,11 @@
         $(document).on('mouseover', '.topMenu span', function () {
             $('.dept02').slideDown(200);
         });
-         $(document).on('mouseleave', 'div', function () {
-             if (!$(this).hasClass('menubar')) {
-                 $('.dept02').slideUp(200);
-             }
-         });
+        $(document).on('mouseleave', 'div', function () {
+            if (!$(this).hasClass('menubar')) {
+                $('.dept02').slideUp(200);
+            }
+        });
     </script>
 
 </body>
