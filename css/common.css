@@ -117,9 +117,10 @@ article{
 
 .main_banner{
     margin : 0 auto;
-    width : 1300px;
+    float : left;
+    width : 650px;
     height: 700px;
-    
+    border : 1px solid black;
 }
 
 .content{
@@ -128,8 +129,9 @@ article{
 
 .post{
     float : left;
-    width : 40%;
-    height : 300px;
+    width : 25%;
+    height : 350px;
+    border : 1px solid black;
 }
 
 #iPost{
@@ -156,8 +158,9 @@ article div a:visited{
 
 .meal{
     float : left;
-    width : 60%;
-    height: 300px;
+    width : 25%;
+    height: 350px;
+    border : 1px solid black;
     
 }
 
@@ -229,7 +232,7 @@ footer{
 }
 
 .footer_information{
-    font-size : 0.75em; 
+    font-size : 0.75em;
 }
 
 .information_box{
@@ -309,6 +312,39 @@ aside li ul li{
     height:100px;
 }
 
+.pArticleBody{
+    width : 70%;
+    margin : 0 auto;
+}
+
+.pabNum{
+    width : 15%;
+    float : left;
+}
+
+.pabTitle{
+    width : 65%;
+    float : left;
+}
+
+.pabDate{
+    width : 20%;
+    float : left;
+}
+
+.pabNum, .pabTitle, .pabDate{
+    border-top : 2px solid rgb(65, 61, 56);
+    border-bottom : 2px solid #F7A12A;
+    text-align: center;
+    padding : 10px 0;
+}
+
+.pabContent{
+    width : 100%;
+    height : 600px;
+    float : left;;
+}
+
 #pPost{
     float : left;
     margin-top :0.83em;
@@ -358,39 +394,55 @@ aside li ul li{
     font-size : 0.8em;
 }
 
-.pArticleBody{
-    width : 70%;
-    margin : 0 auto;
+/***********************************************/
+
+/*Custom - question, consulting*/
+.buttons{
+    float : right;
+}
+#modalspan{
+    font-size : 0.8em;
 }
 
-.pabNum{
-    width : 15%;
-    float : left;
-}
-
-.pabTitle{
-    width : 65%;
-    float : left;
-}
-
-.pabDate{
-    width : 20%;
-    float : left;
-}
-
-.pabNum, .pabTitle, .pabDate{
-    border-top : 2px solid #F7A12A;
-    border-bottom : 2px solid #F7A12A;
-    text-align: center;
-    padding : 10px 0;
-}
-
-.pabContent{
-    width : 100%;
-    height : 600px;
-    float : left;;
-}
-
-.pabPhoto{
-    
-}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  #mod_cont_question{
+      resize: none;
+      width:100%;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    margin-top:-40px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
