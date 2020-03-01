@@ -45,9 +45,9 @@
                             </ul>
                         </li>
                         <li style="width:124px">
-                            <span><a href="../pmpc/pmpc.html">알림마당</a></span>
+                            <span><a href="../pmpc/cus_pmpc.html">알림마당</a></span>
                             <ul class="dept02" id="border3">
-                                <li><a href="../pmpc.html">공지사항</a></li>
+                                <li><a href="../pmpc/cus_pmpc.html">공지사항</a></li>
                                 <li><a href="../pmpc/meal_i.html">주간식단표</a></li>
                                 <li><a href="../pmpc/photo.html">성모사랑 사진</a></li>
                             </ul>
@@ -86,10 +86,20 @@
             
         </div>
         <article id="introarticle">
-             <div class="pArticleHead">
+            <div class="pArticleHead">
                 <span id="pPost"><h1>컨설팅문의 및 상담</h1></span>
                 <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="question.html">문의 및 상담</a>&nbsp;>&nbsp;컨설팅문의 및 상담</span>     
              </div>
+             <div class="buttons">
+                <button id="wri_question">글쓰기</button>
+            </div>
+             <div class="pArticleBody">
+                <div class="pabNum">1</div> 
+                <div class="pabTitle"><a>제목</a></div>
+                <div class="pabDate"><a>2020-02-29</a></div>
+                <div class="pabContent"></div>
+            </div>
+            
         </article>
     </div>
     
@@ -106,7 +116,14 @@
             </div>
         </div>
     </footer>
-    
+    <div  id="modal_question" class="modal">
+        <div class="modal-content">
+            <span id="modalspan">제목&nbsp;<input type="text" title="제목" size="85"></span>
+            <input type="submit"><br><br>
+            <textarea name="content_question" id="mod_cont_question" cols="90" rows="30"></textarea>
+            <span class="close">&times;</span>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
             // code ...
@@ -119,6 +136,32 @@
                 $('.dept02').slideUp(200);
             }
         });
+
+                // Get the modal
+        var modal = document.getElementById("modal_question");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("wri_question");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            }
+        }
     </script>
 
 </body>
