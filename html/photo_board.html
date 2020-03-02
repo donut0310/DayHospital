@@ -45,11 +45,11 @@
                             </ul>
                         </li>
                         <li style="width:124px">
-                            <span><a href="../pmpc/cus_pmpc.html">알림마당</a></span>
+                            <span><a href="./pmpc.html">알림마당</a></span>
                             <ul class="dept02" id="border3">
-                                <li><a href="../pmpc/cus_pmpc.html">공지사항</a></li>
-                                <li><a href="../pmpc/meal_i.html">주간식단표</a></li>
-                                <li><a href="../pmpc/photo.html">성모사랑 사진</a></li>
+                                <li><a href="./pmpc.html">공지사항</a></li>
+                                <li><a href="./meal_i.html">주간식단표</a></li>
+                                <li><a href="./photo.html">성모사랑 사진</a></li>
                             </ul>
                         </li>
                         <li style="width:193.63px">
@@ -60,10 +60,10 @@
                             </ul>
                         </li>
                         <li style="width:151.25px">
-                            <span><a href="./question.html">문의 및 상담</a></span>
+                            <span><a href="../question/question.html">문의 및 상담</a></span>
                             <ul class="dept02" id="border5">
-                                <li><a href="./question.html">입소문의 및 상담</a></li>
-                                <li><a href="./consulting.html">컨설팅문의 및 상담</a></li>
+                                <li><a href="../questiong/question.html">입소문의 및 상담</a></li>
+                                <li><a href="../question/consulting.html">컨설팅문의 및 상담</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -72,65 +72,56 @@
         </div>
     </header>
     <aside>
-        <div class = "navHead">
-            <span>문의 및 상담</span>
+        <div class="navHead">
+            <span>알&nbsp;림&nbsp;마&nbsp;당</span>
         </div>
         <ul class="testdiv">
-            <li><a href="./question.html">입소문의 및 상담</a></li>
-            <li><a href="./consulting.html" id="asideNav">컨설팅문의 및 상담</a></li>
+            <li><a href="./pmpc.html">공지사항</a></li>
+            <li><a href="./meal_i.html">주간식단표</a></li>
+            <li><a href="./photo.html" id="asideNav">성모사랑 사진</a></li>
         </ul>
     </aside>
-    
+
     <div class="container">
         <div class="introbanner">
-            
+
         </div>
         <article id="introarticle">
             <div class="pArticleHead">
-                <span id="pPost"><h1>컨설팅문의 및 상담</h1></span>
-                <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="question.html">문의 및 상담</a>&nbsp;>&nbsp;컨설팅문의 및 상담</span>     
-             </div>
-             <div class="buttons">
-                <button id="wri_question">글쓰기</button>
+                <span id="pPost">
+                    <h1>성모사랑 사진</h1>
+                </span>
+                <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a
+                        href="photo.html">알림마당</a>&nbsp;>&nbsp;성모사랑 사진</span>
+
             </div>
-             <div class="pArticleBody">
-                <div class="pabNum">1</div> 
+
+            <div class="pArticleBody">
+                <div class="pabNum">1</div>
                 <div class="pabTitle"><a>제목</a></div>
                 <div class="pabDate"><a>2020-02-29</a></div>
-                <div class="pabContent"></div>
+                <div class="pabPhoto"></div>
+                <div class="pabPhotoContent"></div>
             </div>
-            
+
         </article>
     </div>
-    
+
     <footer>
         <div class="left_footer">
-            <div class="footer_logo_class"><a href="../Daycare.html"><img src="../../assets/images/logo.jpg" id="footer_logo"></a></div>
+            <div class="footer_logo_class"><a href="../Daycare.html"><img src="../../assets/images/logo.jpg"
+                        id="footer_logo"></a></div>
             <div class="information_box">
                 <span id="first_line_footer">개인정보처리방침 | 서비스 급여 종류 : 가정방문급여</span><br>
                 <div class="footer_information">
                     <span>전화 : 00-000-0000 / 팩스 : - / 대표자 : 신우진</span><br>
-                    <span>주소 : (우-----) 서울 도봉구 창동 --- / 사업자등록번호 : </span><br>
+                    <span>주소 : (우-----) 서울 도봉구 창동 181-3(마들로13길 165) 세영빌딩 5층 / 사업자등록번호 : </span><br>
                     <span>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</span>
                 </div>
             </div>
         </div>
     </footer>
-    <div  id="modal_question" class="modal">
-        <div class="modal-content">
-            <img src="../../assets/images/logo.jpg" id="modallogo">
-            <div class="modalspan">
-                <span id="modalspan">제목&nbsp;<input type="text" title="제목" size="85"></span>
-                <input type="submit"><br><br>
-                <span id="modalspan">이름&nbsp;<input type="text" title="이름" size="10"></span>
-                <span id="modalspan">비밀번호&nbsp;<input type="password" title="pwd" size="35"></span>
-                <span id="modalspan">전화번호&nbsp;<input type="text" title="phone" size="35"></span>
-                <br><br>
-            </div>
-            <textarea name="content_question" id="mod_cont_question" cols="90" rows="30"></textarea>
-            <span class="close">&times;</span>
-        </div>
-    </div>
+
     <script>
         $(document).ready(function () {
             // code ...
@@ -143,32 +134,6 @@
                 $('.dept02').slideUp(200);
             }
         });
-
-                // Get the modal
-        var modal = document.getElementById("modal_question");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("wri_question");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-        modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            }
-        }
     </script>
 
 </body>

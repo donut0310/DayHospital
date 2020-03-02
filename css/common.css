@@ -459,3 +459,51 @@ aside li ul li{
     text-decoration: none;
     cursor: pointer;
   }
+
+  /* photo.html */
+  
+  .photo_list{
+      clear:both;
+      line-height: 20px;
+  }
+
+  .photo_list table{
+      table-layout: fixed;
+      width: 100%;
+      clear:both;
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+
+  
+  .photo_view{
+
+  }
+
+  .photo_i img{
+      width:90%;
+      margin-top:10px;
+      margin-bottom:5px;
+  }
+
+  .photo_content{
+
+  }
+
+  .photo_title{
+      color:dodgerblue;
+  }
+
+  .photo_date{
+      color:#F7A12A;
+  }
+
+  .photo_text{
+
+  }
+
+  #photo_article{
+      float:left;
+      width:65%;
+  }
+
