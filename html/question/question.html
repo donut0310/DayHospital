@@ -91,19 +91,17 @@
                 <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="question.html">문의 및 상담</a>&nbsp;>&nbsp;입소문의 및 상담</span>     
              </div>
              <div class="pArticleBody">
-                <div class="pabNum">1</div> 
+                <div class="pabNum"><a>번호</a></div> 
                 <div class="pabTitle"><a>제목</a></div>
-                <div class="pabDate"><a>2020-02-29</a></div>
-                <div class="pabContent"></div>
-            </div>
+                <div class="pabDate"><a>날짜</a></div>
+             </div>
             <div class="pArticleFooter">
                 <div class="searchPlace">
                     <select name="searchBy" id="selectBy">
-                        <option value="0">제목</option>
+                        <option value="0" selected>제목</option>
                         <option value="1">작성자</option>
                     </select>
-                    <input type="text" placeholder="내용을 입력해주세요." style="width:200px;">
-                    <button>검색</button>
+<input type="text" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">                    <button id = 'searchBtn'>검색</button>
                 </div>
                 <div class="buttons">
                     <button id="wri_question">글쓰기</button>
@@ -130,17 +128,19 @@
         <div class="modal-content">
             <img src="../../assets/images/logo.jpg" id="modallogo">
             <div class="modalspan">
-                <span id="modalspan">제목&nbsp;<input type="text" title="제목" size="85"></span>
-                <input type="submit"><br><br>
-                <span id="modalspan">이름&nbsp;<input type="text" title="이름" size="10"></span>
-                <span id="modalspan">비밀번호&nbsp;<input type="password" title="pwd" size="35"></span>
-                <span id="modalspan">전화번호&nbsp;<input type="text" title="phone" size="35"></span>
+                <span id="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85"></span>
+                <input type="submit" id="submitBut"><br><br>
+                <span id="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10"></span>
+                <span id="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="35"></span>
+                <span id="modalspan">전화번호&nbsp;<input id='uphone' type="text" title="phone" size="35"></span>
                 <br><br>
             </div>
             <textarea name="content_question" id="mod_cont_question" cols="90" rows="30"></textarea>
             <span class="close">&times;</span>
         </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+    <script src = "../../js/custom/cus_questionjs.js"></script>
     <script>
         $(document).ready(function () {
             // code ...
