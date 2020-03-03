@@ -205,6 +205,7 @@ article div a:visited{
 
 /*Footer*/
 footer{
+    bottom:0px;
     float:left;
     width : 65vw;
     margin : 0 auto;
