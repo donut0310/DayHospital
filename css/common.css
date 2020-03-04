@@ -222,7 +222,6 @@ article div a:visited{
 
 /*Footer*/
 footer{
-    bottom:0px;
     float:left;
     width : 65vw;
     margin : 0 auto;
@@ -359,7 +358,7 @@ aside li ul li{
 
 .pmpc_searchPlace{
     float : left;
-    margin-left : 24vw;
+    margin-left : 26vw;
     margin-bottom : 5px;
 }
 
@@ -457,7 +456,7 @@ aside li ul li{
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
-    margin: 8% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
@@ -542,7 +541,6 @@ aside li ul li{
     width:65%;
 }
 
-/*포토 보드*/
 .main_photo_box{
     padding:20px;
     margin:0;
