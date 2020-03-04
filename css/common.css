@@ -542,3 +542,41 @@ aside li ul li{
     width:65%;
 }
 
+/*포토 보드*/
+.main_photo_box{
+    padding:20px;
+    margin:0;
+    border:1px solid #ccc;
+}
+
+.main_photo{
+    float:left;
+}
+
+.main_photo img{
+    display:block;
+    max-width:400px;
+    margin:0 auto;
+}
+
+.main_photo_box h3{
+    font-size:22px;
+    padding:10px 0 20px 20px;
+}
+
+.main_photo_box p{
+    font-size:15px;
+}
+
+.main_photo_box p strong:after{
+    display:inline-block;
+    padding-right:10px;
+    padding-left:10px;
+    content:":";
+}
+
+.main_photo_box:after{
+    display:block;
+    clear:both;
+    content:"";
+}
