@@ -113,7 +113,7 @@
         <div class="left_footer">
             <div class="footer_logo_class"><a href="./Daycare.html"><img src="../assets/images/logo.jpg" id="footer_logo"></a></div>
             <div class="information_box">
-                <span id="first_line_footer">개인정보처리방침 | 서비스 급여 종류 : 가정방문급여</span><br>
+                <span id="first_line_footer">개인정보처리방침<button id="insight">자세히보기</button>&nbsp;|&nbsp; 서비스 급여 종류 : 가정방문급여</span><br>
                 <div class="footer_information">
                     <span>전화 : 00-000-0000 / 팩스 : - / 대표자 : 신우진</span><br>
                     <span>주소 : (우-----) 서울 도봉구 창동 181-3(마들로13길 165) 세영빌딩 5층 / 사업자등록번호 : </span><br>
@@ -122,6 +122,15 @@
             </div>
         </div>
     </footer>
+    <div  id="modal_footer" class="modal">
+        <div class="personalInfor">
+           <div class="persHeader"><h2>개인정보 처리방침</h2></div>
+           <div class="persContent">
+               
+           </div>
+            <span class="pers_close">&times;</span>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
     <script src = "../js/custom/Daycarejs.js"></script>
     <script>
@@ -137,6 +146,31 @@
           $(".dept02").slideUp(200);
         }
       });
+             // Get the modal
+            var persFooter = document.getElementById("modal_footer");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("insight");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("pers_close")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+            persFooter.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+            persFooter.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == persFooter) {
+                persFooter.style.display = "none";
+                }
+}
     </script>
 </body>
 

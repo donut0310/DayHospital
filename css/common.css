@@ -136,7 +136,6 @@ article{
     float : left;
     width : 650px;
     height: 700px;
-    border : 1px solid black;
 }
 
 .content{
@@ -147,7 +146,7 @@ article{
     float : left;
     width : 25%;
     height : 350px;
-    border : 1px solid black;
+    border-right : 1px solid black;
 }
 
 #iPost{
@@ -169,16 +168,13 @@ article div a:visited{
     float : left;
     width : 50%;
     height: 350px;
-    border : 1px solid black;
-    
+    border-top : 1px solid black;
 }
 
 .meal{
     float : left;
     width : 25%;
     height: 350px;
-    border : 1px solid black;
-    
 }
 
 .post, .photo, .meal{
@@ -488,6 +484,34 @@ aside li ul li{
       float : left;
       margin-top : 2%;
   }
+
+  /*Personal Information*/
+
+  .personalInfor{
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height : 500px;
+  }
+
+  .persHeader{
+      width : 80%;
+      height : 30px;
+      float : left;
+      margin-left: 2vw;
+      font-size: 1em;
+      font-weight: bold;
+  }
+  .persContent{
+      width : 80%;
+      height : 400px;
+      float : left;
+      margin-left: 2vw;
+      font-size:0.7em;
+      font-weight: lighter;
+  }
   /* The Close Button */
   .close {
     color: #aaa;
@@ -503,6 +527,22 @@ aside li ul li{
     text-decoration: none;
     cursor: pointer;
   }
+
+  .pers_close {
+    color: #aaa;
+    float: right;
+    margin-top:0px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .pers_close:hover,
+  .pers_close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 
   /* photo.html */
   
