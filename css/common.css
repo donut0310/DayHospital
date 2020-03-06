@@ -331,7 +331,6 @@ aside li ul li{
     height : 50px;
     line-height: 50px;
     color : white;
-    border: 3px solid brown;
 }
 /* ------------------------------------------------------------------------------------ */
 
@@ -339,6 +338,10 @@ aside li ul li{
 
 .pArticleHead{
     height:100px;
+}
+
+.pArticleSearch{
+    height : 30px;
 }
 
 .pArticleBody{
@@ -349,6 +352,7 @@ aside li ul li{
     width : 100%;
     margin : 0 auto;
     float : left;
+    margin-top : 30vw;
 }
 
 .pmpc_footer{ /*pmpcpage container searchplacer*/
@@ -363,8 +367,8 @@ aside li ul li{
 }
 
 .searchPlace{
-    float : left;
-    margin-left : 22vw;
+    float : right;
+    margin-right: 6vw;
 }
 
 .pabNum{
@@ -432,8 +436,13 @@ aside li ul li{
 
 /*Custom - question, consulting*/
 .buttons{
-    float : left;
-    margin-left : 5vw
+    float : right;
+    margin-right : 6vw;
+}
+#wri_question{
+    padding : 10px;
+    font-size: 1em;
+    background-color: #F5a01a;
 }
 #modalspan{
     font-size : 0.8em;

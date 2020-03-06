@@ -90,26 +90,28 @@
                 <span id="pPost"><h1>입소문의 및 상담</h1></span>
                 <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="question.html">문의 및 상담</a>&nbsp;>&nbsp;입소문의 및 상담</span>     
              </div>
+             <div class="pArticleSearch">
+                <div class="searchPlace">
+                    <select name="searchBy" id="selectBy">
+                        <option value="0" selected>제목</option>
+                        <option value="1">작성자</option>
+                    </select>
+                    <input type="text" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText"><button id = 'searchBtn'>검색</button>
+                </div>
+             </div>
              <div class="pArticleBody">
                 <div class="pabNum"><a>번호</a></div> 
                 <div class="pabTitle"><a>제목</a></div>
                 <div class="pabDate"><a>날짜</a></div>
              </div>
             <div class="pArticleFooter">
-                <div class="searchPlace">
-                    <select name="searchBy" id="selectBy">
-                        <option value="0" selected>제목</option>
-                        <option value="1">작성자</option>
-                    </select>
-<input type="text" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">                    <button id = 'searchBtn'>검색</button>
-                </div>
                 <div class="buttons">
-                    <button id="wri_question">글쓰기</button>
+                    <button id="wri_question">상담신청</button>
                 </div>
             </div>
-            <div id="pArticleBtns">
+            <div id="pArticleBtns"> <!--페이지 넘기는 거-->
                 <div id="page_btns">
-                
+                    
                 </div>
             </div>
             
