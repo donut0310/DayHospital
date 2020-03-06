@@ -327,6 +327,14 @@ aside li ul li{
     height : 50px;
     line-height: 50px;
     color : white;
+    position: fixed;
+    width:15%;
+}
+
+.testdiv{
+    position: fixed;
+    width:15%;
+    margin-top:50px;
 }
 /* ------------------------------------------------------------------------------------ */
 
@@ -656,3 +664,4 @@ aside li ul li{
 .btn_con{
     text-align: center;
 }
+
