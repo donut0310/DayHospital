@@ -240,6 +240,11 @@ footer{
     background-color: #cecece;
 }
 
+.index_footer a:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 #first_line_footer{
     font-size : 1.2em;
 }
