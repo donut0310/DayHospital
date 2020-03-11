@@ -240,9 +240,8 @@ footer{
     background-color: #cecece;
 }
 
-.index_footer a:hover{
+footer a:hover{
     text-decoration: underline;
-    font-weight: bold;
 }
 
 #first_line_footer{
