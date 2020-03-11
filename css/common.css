@@ -354,13 +354,18 @@ aside li ul li{
 
 .pArticleBody{
     width : 70%;
+    height : 600px;
     margin : 0 auto;
 }
 .pArticleFooter{ /**/
     width : 100%;
     margin : 0 auto;
     float : left;
-    margin-top : 30vw;
+}
+
+#page_btns{
+    float : left;
+    margin-right: 20vw;
 }
 
 .pmpc_footer{ /*pmpcpage container searchplacer*/
