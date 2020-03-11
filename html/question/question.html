@@ -96,7 +96,7 @@
                         <option value="0" selected>제목</option>
                         <option value="1">작성자</option>
                     </select>
-                    <input type="text" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText"><button id = 'searchBtn'>검색</button>
+                    <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText"><button id = 'searchBtn'>검색</button>
                 </div>
              </div>
              <div class="pArticleBody">
@@ -104,16 +104,17 @@
                 <div class="pabTitle"><a>제목</a></div>
                 <div class="pabDate"><a>날짜</a></div>
              </div>
+             <div id="pArticleBtns"> <!--페이지 넘기는 거-->
+                <div id="page_btns">
+                    <button>0</button>
+                </div>
+            </div>
             <div class="pArticleFooter">
                 <div class="buttons">
                     <button id="wri_question">상담신청</button>
                 </div>
             </div>
-            <div id="pArticleBtns"> <!--페이지 넘기는 거-->
-                <div id="page_btns">
-                    
-                </div>
-            </div>
+            
             
         </article>
     </div>
@@ -131,10 +132,35 @@
             </div>
         </div>
     </footer>
+    <div id = 'check_pw_modal' class = 'modal'>
+        <div id = 'check_pw' class = 'modal-content'>
+            <input id = 'inputPw' placeholder="비밀번호 입력" type = 'password' style = "width:20% ; height: 20%"/>
+            <input type = 'submit' id = 'submit_pw'>
+            <span id = 'check_close' class="close">&times;</span>
+        </div>    
+    </div>
+    <div id = 'err_modal' class = 'modal'>
+        <div id = 'pw_err' class = 'modal-content'>
+            <a>비밀번호가 틀립니다.</a>
+            <button id = 'ok'>재입력</button>
+            <span id = 'err_close' class="close">&times;</span>
+        </div>
+    </div>
+    <div id = 'post_modal' class = 'modal'>
+        <div id = 'post_modal_content' class = 'modal-content'>
+            <img src="../../assets/images/logo.jpg" id="modallogo">
+            <span id = 'post_close' class="close">&times;</span>
+            <div id = 'inputData' class = 'modalspan'>
+                <!--
+                    동적으로 생성
+                -->
+            </div>
+        </div>
+    </div>
     <div  id="modal_question" class="modal">
         <div class="modal-content">
             <img src="../../assets/images/logo.jpg" id="modallogo">
-            <span class="close">&times;</span>
+            <span id = 'question_close' class="close">&times;</span>
             <div class="modalspan">
                 <span id="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85"></span>
                 <input type="submit" id="submitBut"><br><br>
@@ -161,32 +187,6 @@
                 $('.dept02').slideUp(200);
             }
         });
-
-                // Get the modal
-        var modal = document.getElementById("modal_question");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("wri_question");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-        modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            }
-        }
     </script>
 
 </body>
