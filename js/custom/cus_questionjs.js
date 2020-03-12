@@ -21,7 +21,7 @@ const question_close = document.querySelector("#question_close");
 
 //dynamic add elements
 const totalList = document.querySelector('.pArticleBody');
-const pArticleBtns = document.querySelector('#pArticleBtns');
+//const pArticleFooter = document.querySelector('#pArticleFooter');
 const page_btns = document.querySelector('#page_btns');
 const initData = document.querySelector('#searchText');
 //
@@ -61,8 +61,10 @@ function initShow(item = []){
 
     pages = dbData.length/5; //한 페이지당 게시글 5개
     createBtns(pages);
+    let cnt = dbData.length - 1;
     //초기 최신글 5개 출력
     for(i=0;i<5;i++){
+        if(cnt<i)break;
         let pabNum = document.createElement('div');
         let pabTitle = document.createElement('div');
         let pabDate = document.createElement('div');
@@ -201,12 +203,12 @@ function showSearched(item = []){
 
 //페이지 버튼
 function createBtns(cnt){
-    pArticleBtns.style.width = '100%';
-    pArticleBtns.style.margin = '0 auto';
-    pArticleBtns.style.float = 'left';
+    // buttons.style.width = '100%';
+    // buttons.style.margin = '10 auto';
+    // buttons.style.float = 'left';
 
-    page_btns.style.float = 'left';
-    page_btns.style.marginLeft = '30vw';
+    //page_btns.style.float = 'left';
+    //page_btns.style.marginLeft = '30vw';
 
     for(i=0;i<cnt;i++){
         let btn = document.createElement('button');
@@ -216,7 +218,7 @@ function createBtns(cnt){
         btn.value = i+1;
         btn.addEventListener('click',showList);
         page_btns.appendChild(btn);
-        pArticleBtns.appendChild(page_btns);
+        //buttons.appendChild(page_btns);
     }
 
 }
