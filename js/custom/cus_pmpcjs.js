@@ -57,26 +57,6 @@ function createSearchedBtns(item = []){
     }
 }
 
-//해당 페이지에 로드할 리스트들(게시글)
-function deleteAndGet(){
-    let page_num = this.value;
-    
-    //이전 데이터 삭제
-    resetTable();
-    
-    //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
-    
-    axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
-        if(res.status === 200){
-            if(res.data["result"] == "success"){ 
-                    addList(res.data["data"]);
-            }
-        }
-    });
-}
-
 //게시글 검색
 function search(){
     let target = document.querySelector('#selectBy');
@@ -138,6 +118,26 @@ function showSearchedInit(item = []){
 }
 
 //해당 페이지에 로드할 리스트들(게시글)
+function deleteAndGet(){
+    let page_num = this.value;
+    
+    //이전 데이터 삭제
+    resetTable();
+    
+    //이후 데이터 출력 위해 db 호출
+    let sendData = {};
+    sendData['page_num'] = page_num;
+    
+    axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                    addList(res.data["data"]);
+            }
+        }
+    });
+}
+
+//해당 페이지에 로드할 검색된 리스트들(게시글)
 function searchedDeleteAndGet(){
     let page_num = this.value;
     let target = document.querySelector('#selectBy');
@@ -163,8 +163,7 @@ function searchedDeleteAndGet(){
                     else {addList(res.data['data']);}
             }
         }
-    });
-    
+    }); 
 }
 
 //table에 추가할 공지사항 list 함수
