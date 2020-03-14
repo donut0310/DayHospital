@@ -140,9 +140,16 @@
     </div>
     <div id = 'err_modal' class = 'modal'>
         <div id = 'pw_err' class = 'modal-content'>
-            <a>비밀번호가 틀립니다.</a>
+            <a></a>
             <button id = 'ok'>재입력</button>
             <span id = 'err_close' class="close">&times;</span>
+        </div>
+    </div>
+    <div id = 'submit_err_modal' class = 'modal'>
+        <div id = 'submit_err' class = 'modal-content'>
+            <a>내용을 입력하세요.</a>
+            <button id = 'submit_err_ok'>확인</button>
+            <span id = 'submit_err_close' class="close">&times;</span>
         </div>
     </div>
     <div id = 'post_modal' class = 'modal'>
@@ -166,7 +173,7 @@
                 
                 <span id="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10"></span>
                 <span id="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="35"></span>
-                <span id="modalspan">전화번호&nbsp;<input id='uphone' type="text" title="phone" size="35"></span>
+                <span id="modalspan">전화번호&nbsp;<input placeholder="XXX-XXXX-XXXX" id='uphone' type="text" title="phone" size="35"></span>
                 <br><br>
             </div>
             <textarea name="content_question" id="mod_cont_question" cols="90" rows="30"></textarea>
