@@ -22,7 +22,10 @@ function initShow(item = []){
     let pabDate = document.querySelector('.pabDate');
     let pabContent = document.querySelector('.pabContent');
     
-    pabNum.innterText = item[0].content_order;
+    let a = document.createElement('a');
+    a.innerText = item[0].content_order;
+
+    pabNum.appendChild(a);
     pabTitle.innerText = item[0].title;
     pabDate.innerText = item[0].date;
     pabContent.innerText = item[0].content;

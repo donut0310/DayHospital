@@ -11,6 +11,9 @@ wri_btn.addEventListener('click',wri_modal);
 const submit_pw_btn = document.querySelector('#submit_pw');
 
 const okBtn = document.querySelector('#ok');
+
+const submit_err_okBtn = document.querySelector('#submit_err_ok');
+
 //
 // close btn
 const check_close = document.querySelector("#check_close");
@@ -35,6 +38,8 @@ const modal_question = document.querySelector("#modal_question");
 const check_pw_modal = document.querySelector('#check_pw_modal');
 // 경고창 모달
 const err_modal = document.querySelector('#err_modal');
+// 글쓰기 조건 미충족시 경고 모달
+const submit_err_modal = document.querySelector('#submit_err_modal');
 
 //페이지 분리 
 const para = window.location.href.split('?');
@@ -131,23 +136,48 @@ function insertContent(){
     if(day<10){
         day = '0'+day;
     }
+    if(uname==''||upw==''||utitle==''||uphone==''||ucon==''){
+        submit_err_modal.style.display = 'block';
+        submit_err_modal.style.zIndex = 2;
 
-    let sendData = {};
-    sendData['content_order'] = db_cnts['cnt']+1;
-    sendData['uname'] = uname;
-    sendData['upw'] = upw;
-    sendData['utitle'] = utitle;
-    sendData['ucon'] = ucon;
-    sendData['uphone'] = uphone;
-    sendData['date'] = year+'-'+month+'-'+day;
-
-    axios.post('/cus_question/insertData', sendData).then((res)=>{
-        if(res.status === 200){
-            if(res.data == "success"){
-                window.location.reload();
+        submit_err_okBtn.onclick = function(){
+            submit_err_modal.style.display = 'none';
+            let input;
+            if(utitle==''){
+                input = document.querySelector('#utitle');
+                input.focus();
+            }else if(uname==''){
+                input = document.querySelector('#uname');
+                input.focus();
+            }else if(upw==''){
+                input = document.querySelector('#upw');
+                input.focus();
+            }else if(uphone==''){
+                input = document.querySelector('#uphone');
+                input.focus();
+            }else if(ucon==''){
+                input = document.querySelector('#mod_cont_question');
+                input.focus();
             }
-        }
-    });
+        }   
+    }else{
+        let sendData = {};
+        sendData['content_order'] = db_cnts['cnt']+1;
+        sendData['uname'] = uname;
+        sendData['upw'] = upw;
+        sendData['utitle'] = utitle;
+        sendData['ucon'] = ucon;
+        sendData['uphone'] = uphone;
+        sendData['date'] = year+'-'+month+'-'+day;
+
+        axios.post('/cus_question/insertData', sendData).then((res)=>{
+            if(res.status === 200){
+                if(res.data == "success"){
+                    window.location.reload();
+                }
+            }
+        });
+    }
 }
 
 //고객 정보 검색
@@ -285,6 +315,8 @@ function pressKey(){
 //modal control functions
  function wri_modal(){
     modal_question.style.display = 'block';
+    let utitle = document.querySelector('#utitle');
+    utitle.focus();
  }
 
  window.onclick = function(event) {
@@ -292,6 +324,12 @@ function pressKey(){
 
     if (event.target == modal_question) {
        modal_question.style.display = "none";
+       let removeEle = document.querySelectorAll('#modalspan input');
+        removeEle.forEach(function(data){
+            data.value = null;
+        });
+        let removeContent = document.querySelector('#mod_cont_question');
+        removeContent.value = null;
         }else if(event.target == post_modal){
             post_modal.style.display = "none";
             //이전 div에 추가되었던 데이터 삭제
@@ -306,7 +344,9 @@ function pressKey(){
            reset_pw.value = null;
            reset_pw.focus();
            err_modal.style.display = 'none';
-       }
+       }else if(event.target == submit_err_modal){
+        submit_err_modal.style.display = 'none';
+    }
  }
 
 check_close.onclick = function(){
@@ -329,22 +369,28 @@ post_close.onclick = function(){
     
 }
 question_close.onclick = function(){
+    //입력되었던 내용 모두 리셋
     modal_question.style.display = 'none';
+    let removeEle = document.querySelectorAll('#modalspan input');
+    removeEle.forEach(function(data){
+        data.value = null;
+    });
+    let removeContent = document.querySelector('#mod_cont_question');
+    removeContent.value = null;
 }
 
 // 해당 게시글 클릭시 간단한 본인 비밀번호 입력
 let order; // 해당 게시글 고유 순서
 
- function checkPw(item, pw){ 
+function checkPw(item, pw){ 
     // 비번 일치 시 내용 출력 아니면 경고창 모달
     let reset_pw = document.querySelector('#inputPw');
-    if(pw == item[0].USER_PASSWORD){
-        showContent(item);
-        reset_pw.value = null;
-        check_pw_modal.style.display = 'none';
-    }else{
+    let a = document.querySelector('#pw_err a');
+    if(pw==''){
         check_pw_modal.style.display = 'none';
         err_modal.style.display = 'block';
+        
+        a.innerText = '비밀번호를 입력하세요';
         okBtn.onclick = function(event){
             if(event.target == okBtn){
                 err_modal.style.display = 'none';
@@ -354,7 +400,25 @@ let order; // 해당 게시글 고유 순서
             }
         }
     }
- }
+    else if(pw == item[0].USER_PASSWORD){
+        showContent(item);
+        reset_pw.value = null;
+        check_pw_modal.style.display = 'none';
+    }else{
+        check_pw_modal.style.display = 'none';
+        err_modal.style.display = 'block';
+        
+        a.innerText = '비밀번호가 틀렸습니다.';
+        okBtn.onclick = function(event){
+            if(event.target == okBtn){
+                err_modal.style.display = 'none';
+                check_pw_modal.style.display = 'block';
+                reset_pw.value = null;
+                reset_pw.focus();
+            }
+        }
+    }
+}
 
 submit_pw_btn.onclick = function(event){
     if(event.target == submit_pw_btn){
