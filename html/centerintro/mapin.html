@@ -11,6 +11,8 @@
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f627998f1d3b3dcc3f5931594eaae8cc"></script> 
+    
 
 </head>
 
@@ -94,6 +96,9 @@
                 <span id="pPost"><h1>찾아오시는 길</h1></span>
                 <span id="pNav"><a href="../Daycare.html">HOME</a>&nbsp;>&nbsp;<a href="centerintro.html">센터소개</a>&nbsp;>&nbsp;찾아오시는 길</span>     
             </div>
+            <div class="pArticleBody">
+                <div id="map"></div>
+            </div>
         </article>
     </div>
     
@@ -123,6 +128,13 @@
                 $('.dept02').slideUp(200);
             }
         });
+        var section = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.657609, 127.045947),
+			level: 3
+		};
+		var map = new kakao.maps.Map(section, options);
+
     </script>
 
 </body>
