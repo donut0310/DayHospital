@@ -342,6 +342,50 @@ aside li ul li{
 }
 /* ------------------------------------------------------------------------------------ */
 
+/*centerintro pages content css*/
+.center_container article{ /*자리부족으로 인한 생성 for centerintro.html*/
+    float : left;
+    width : 65%;
+    height : 1400px;
+}
+.cArticleBody{
+    width : 80%;
+    height : 1200px;
+    margin : 0 auto;
+    border : 1px solid black;
+}
+.cArticleBody h3{
+    width : 100px;
+    height: 1.5em;
+    background-color: #F7A12A;
+    color : white;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 1em;
+}
+#cenAside{
+    float : left;
+    width : 15%;
+    height : 1500px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+#introduceself{ /*centerintro.html*/
+    
+}
+
+#centerintroself{ /*centerintro.html*/
+
+}
+
+#intro_logo{
+    width : 500px;
+    height : 120px;
+    float : right;
+}
+
 /* Pmpc pages content css */
 
 .pArticleHead{
@@ -447,7 +491,15 @@ aside li ul li{
 
 /***********************************************/
 
-/*Custom - question, consulting*/
+/******************Custom Pages***************/
+/*centerintro - mapin*/
+#map{
+    width : 30vw;
+    height : 30vw;
+    float : left;
+    border : 1px solid black;
+}
+/*consulting, question*/
 .buttons{
     float : right;
     margin-right : 6vw;
@@ -548,7 +600,7 @@ aside li ul li{
 
   /* photo.html */
   
-  .photo_list{
+.photo_list{
     clear:both;
     line-height: 20px;
 }
