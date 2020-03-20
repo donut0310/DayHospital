@@ -1,0 +1,713 @@
+/*All pages used*/
+*{
+    box-sizing: border-box;
+    font-family: Georgia, 'Nanum Gothic',serif;
+}
+
+a:link{
+    text-decoration: none;
+    color : black;
+}
+a:visited{
+    text-decoration: none;
+    color : black;
+}
+
+/*******Index page ( Daycare.html )*******/
+
+/****HEADER, Commonly used****/
+.wrapper{
+    width : 65vw;
+    margin : 0 auto;
+}
+
+header{
+    width : 100%;
+    height : 100px;
+    margin : 0 auto;
+    background-color: #F7A12A;
+}
+
+#logo{
+    width : 100px;
+    height : 100px;
+    float : left;
+}
+
+.topMenu{
+    padding : 0;
+    margin : 0;
+    float : right;
+    line-height: 100px;
+    width:830px;
+}
+
+.topMenu li{
+    text-align: center;
+}
+
+.dept01>li{
+    list-style-type: none;
+    float : left;
+}
+
+.topMenu ul li ul{
+    display: none;
+    padding : 0;
+    margin : 0;
+    position :absolute;
+    line-height: 40px;
+    border-bottom: 2px solid #F7A12A;
+    text-align: left;
+    font-size:16px;
+    width:100%;
+}
+
+.topMenu ul li ul li{
+    line-height:40px;
+    text-align: center;
+}
+
+#border1{
+    border-left: 2px solid #F7A12A;
+    background-color:white;
+    width:124px;
+    padding-bottom : 80px;
+}
+
+#border2{
+    background-color : white;
+    width:225.63px;
+}
+
+#border3{
+    padding-bottom: 160px;
+    background-color : white;
+    width:124px;
+}
+
+#border4{
+    padding-bottom: 200px;
+    background-color : white;
+    width:193.63px;
+}
+
+#border5{
+    padding-bottom: 200px;
+    background-color : white;
+    width:151.25px;
+    border-right: 2px solid #F7A12A;
+}
+
+.dept01{
+    width:100%;
+}
+
+.dept01 ul li {
+    width:100%;
+}
+
+/* Pages introduce header */
+#pPost{
+    float : left;
+    margin-top :0.83em;
+    margin-left : 10%;
+}
+
+#pNav{
+    float : right;
+    margin-top : 2.83em;
+    margin-right : 10%;
+    color:#F7A12A
+}
+
+#asideNav{
+    color : #F7A12A;
+}
+
+/***** Index page Article *****/
+article{
+    width : 1300px;
+    margin : 0 auto;
+}
+
+.main_banner{
+    margin : 0 auto;
+    float : left;
+    width : 650px;
+    height: 700px;
+}
+
+.content{
+    margin : 0 auto;
+}
+
+.post{
+    float : left;
+    width : 25%;
+    height : 350px;
+    border-right : 1px solid black;
+}
+
+#iPost{
+    margin : -5px 15px;
+    float : left;
+}
+
+#iPost_more{
+    margin : 15px 15px;
+    float : right;
+}
+
+article div a:visited{
+    color : #aaaaaa;
+    font-weight: bold;
+}
+
+.photo{
+    float : left;
+    width : 50%;
+    height: 350px;
+    border-top : 1px solid black;
+}
+
+.meal{
+    float : left;
+    width : 25%;
+    height: 350px;
+}
+
+.post, .photo, .meal{
+    background-color: #eeeeee;
+}
+
+.postlist, .meallist{
+    margin : 60px 10px 10px 30px;
+    list-style-type: circle;
+}
+
+.postlist li,
+.meallist li{
+    margin : 7px 0;
+}
+
+.photozone{
+    width : 100%;
+    height : 300px;
+    margin-top : 50px;
+}
+
+.photo1, .photo4{
+    margin-left : 15px;
+}
+
+.photo1, .photo2, .photo3{
+    margin-bottom : 10px;
+}
+
+.photo1, .photo2,
+.photo3, .photo4,
+.photo5, .photo6{
+    width : 30%;
+    height : 120px;
+    margin-right : 15px;
+    margin-top : 15px;
+    border : 1px solid black;
+    float : left;
+}
+
+/*Footer*/
+footer{
+    float:left;
+    width : 65vw;
+    margin : 0 auto;
+    background-color: #cecece;
+}
+
+.left_footer{ /* custom page footer */
+    float : left;
+    width : 100%;
+    height : 170px;
+    position: relative;
+    line-height: 2em;
+}
+
+.index_footer{ /*index page footer*/
+    width : 80%;
+    float: left;
+    margin-left : 150px;
+    margin-top : 30px;
+    background-color: #cecece;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+#first_line_footer{
+    font-size : 1.2em;
+}
+
+.footer_information{
+    font-size : 0.75em;
+}
+
+.information_box{
+    padding-top : 20px;
+}
+
+#footer_logo{
+    width : 170px;
+    height : 170px;
+    float : left;
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+/* Custompages - css*/
+
+/* container ~ article */
+.container{
+    margin : 0 auto;
+}
+
+.container article{ /*Commonly used container article(main banner)*/
+    float : left;
+    width : 65%;
+    height : 800px;
+}
+
+.pmpc_container article{ /* pmpc pages container article sized */
+    float : left;
+    width : 65%;
+    height : 500px;
+}
+
+.introbanner{
+    width : 65%;
+    height : 100px;
+    float: left;
+}
+
+/* aside */
+aside{ /*Commonly used aside (nav aside)*/
+    float : left;
+    width : 15%;
+    height : 900px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+.pmpc_aside{
+    float : left;
+    width : 15%;
+    height : 600px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+aside li{
+    padding : 10px 0;
+    margin : 10px 0 10px 0;
+    font-size: 1em;
+    border : 1px solid #F7A12A;
+}
+
+aside li ul li{
+    padding: 0px 0;
+    background-color: white;
+    border-bottom: 1px solid white;
+    height : 50px;
+    line-height: 50px;
+}
+
+.navHead{
+    text-align: center;
+    width : 100%;
+    font-size : 1.5em;
+    background-color: #F7A12A;
+    height : 50px;
+    line-height: 50px;
+    color : white;
+    position: fixed;
+    width:15%;
+}
+
+.testdiv{
+    position: fixed;
+    width:15%;
+    margin-top:50px;
+}
+/* ------------------------------------------------------------------------------------ */
+
+/*centerintro pages content css*/
+.center_container article{ /*자리부족으로 인한 생성 for centerintro.html*/
+    float : left;
+    width : 65%;
+    height : 1400px;
+}
+.cArticleBody{
+    width : 80%;
+    height : 1200px;
+    margin : 0 auto;
+    border : 1px solid black;
+}
+.cArticleBody h3{
+    width : 100px;
+    height: 1.5em;
+    background-color: #F7A12A;
+    color : white;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 1em;
+}
+#cenAside{
+    float : left;
+    width : 15%;
+    height : 1500px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+#introduceself{ /*centerintro.html*/
+    
+}
+
+#centerintroself{ /*centerintro.html*/
+
+}
+
+#intro_logo{
+    width : 500px;
+    height : 120px;
+    float : right;
+}
+
+/* Pmpc pages content css */
+
+.pArticleHead{
+    height:100px;
+}
+
+.pArticleSearch{
+    height : 30px;
+}
+
+.pArticleBody{
+    width : 70%;
+    height : 600px;
+    margin : 0 auto;
+}
+.pArticleFooter{ /**/
+    width : 100%;
+    margin : 0 auto;
+    float : left;
+}
+
+#page_btns{
+    float : left;
+    margin-right: 20vw;
+}
+
+.pmpc_footer{ /*pmpcpage container searchplacer*/
+    width : 100%;
+    margin : 0px auto;
+}
+
+.pmpc_searchPlace{
+    float : left;
+    margin-left : 26vw;
+    margin-bottom : 5px;
+}
+
+.searchPlace{
+    float : right;
+    margin-right: 6vw;
+}
+
+.pabNum{
+    width : 15%;
+    float : left;
+}
+
+.pabTitle{
+    width : 65%;
+    float : left;
+}
+
+.pabDate{
+    width : 20%;
+    float : left;
+}
+
+.pabNum, .pabTitle, .pabDate{
+    border-top : 2px solid rgb(65, 61, 56);
+    border-bottom : 2px solid #F7A12A;
+    text-align: center;
+    padding : 10px 0;
+}
+
+.pabContent{
+    width : 100%;
+    height : 600px;
+    float : left;;
+}
+
+/*pmpc table*/
+.tb_1{
+    width : 65%;
+    margin-left : 20%;
+    margin-top : 0.83em;
+    float : left;
+}
+.tb_1 th{
+    padding : 1%;
+    text-align: center;
+    background-color: bisque;
+    border-top: 4px solid #F7A12A;
+    border-bottom: 1px solid black;
+}
+.th_num{
+    border-right: 1px solid black;
+    width : 10%;
+}
+.th_title{
+    border-right: 1px solid black;
+    width : 70%;
+}
+.th_regist{
+    width : 20%;
+}
+
+.tb_1 td{
+    text-align: center;
+    padding : 1%;
+    border-bottom:1px solid black;
+    font-size : 0.8em;
+}
+
+/***********************************************/
+
+/******************Custom Pages***************/
+/*centerintro - mapin*/
+#map{
+    width : 30vw;
+    height : 30vw;
+    float : left;
+    border : 1px solid black;
+}
+/*consulting, question*/
+.buttons{
+    float : right;
+    margin-right : 6vw;
+}
+#wri_question{
+    padding : 10px;
+    font-size: 1em;
+    background-color: #F5a01a;
+}
+#modalspan{
+    font-size : 0.8em;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  #mod_cont_question{
+      resize: none;
+      width:100%;
+  }
+
+  #modallogo{
+      width:8%;
+      height:8%;
+      float : left;
+      margin-bottom:1%;
+      margin-right:1%;
+  }
+
+  .modalspan{
+      float : left;
+      margin-top : 2%;
+  }
+
+  /*Personal Information*/
+
+  .personalInfor{
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height : 500px;
+  }
+
+  .persHeader{
+      width : 80%;
+      height : 30px;
+      float : left;
+      margin-left: 2vw;
+      font-size: 1em;
+      font-weight: bold;
+  }
+  .persContent{
+      width : 80%;
+      height : 400px;
+      float : left;
+      margin-left: 2vw;
+      font-size:0.7em;
+      font-weight: lighter;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+  /* photo.html */
+  
+.photo_list{
+    clear:both;
+    line-height: 20px;
+}
+
+.photo_list table{
+    table-layout: fixed;
+    width: 100%;
+    clear:both;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.photo_view{
+
+}
+
+.photo_i img{
+    width:90%;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.photo_content{
+
+}
+
+.photo_title{
+    color:dodgerblue;
+}
+
+.photo_date{
+    color:#F7A12A;
+}
+
+.photo_text{
+
+}
+
+#photo_article{
+    float:left;
+    width:65%;
+}
+
+.main_photo_box{
+    padding:20px;
+    margin:0;
+    border:1px solid #ccc;
+}
+
+.main_photo{
+    float:left;
+}
+
+.main_photo img{
+    display:block;
+    max-width:300px;
+    margin:0 auto;
+}
+
+.main_photo_box h3{
+    font-size:22px;
+    padding:10px 0 20px 20px;
+}
+
+.main_photo_box h3 span{
+    padding-left:45px;
+}
+
+.main_photo_box p{
+    font-size:17px;
+}
+
+.main_photo_box p strong{
+    padding-left:50px;
+    line-height: 30px;
+}
+
+.main_photo_box p strong:after{
+    display:inline-block;
+    padding-right:10px;
+    padding-left:10px;
+    content:":";
+}
+
+.main_photo_box:after{
+    display:block;
+    clear:both;
+    content:"";
+}
+
+.photo_content_box{
+    padding:10px 10px 10px 20px;
+    border:1px solid #ccc;
+    margin-bottom:30px;
+}
+
+.photo_content_text{
+    display:block;
+    line-height:20px;
+    margin:20px 0;
+    padding-left:20px;
+}
+
+.photo_btn{
+}
+
+.btn_con{
+    text-align: center;
+}
+
