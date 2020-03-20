@@ -18,8 +18,9 @@ var adm_pmpcRouter = require('./routes/adm_pmpc');
 // express 연결
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'public/html'));
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
 //app.engine('html', require('jade').renderFile);
 
 // app에서 사용할 options
@@ -54,7 +55,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error.html');
 });
 
 module.exports = app;
