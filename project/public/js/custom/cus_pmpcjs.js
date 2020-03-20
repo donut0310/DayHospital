@@ -92,7 +92,7 @@ function showSearchedInit(item = []){
     for(i=0;i<10;i++){
         if(item[i]==null)break;
         let title_url = document.createElement('a');
-        title_url.href = './cus_pmpc_board.html?'+ item[i].content_order;
+        title_url.href = '/cus_pmpc_board?'+ item[i].content_order;
         title_url.innerText = item[i].title;
 
         let tr = document.createElement('tr');
@@ -170,7 +170,7 @@ function searchedDeleteAndGet(){
 function addList(item = []){
     item.forEach(function(data){
         let title_url = document.createElement('a');
-        title_url.href = './cus_pmpc_board.html?'+ data.content_order;
+        title_url.href = '/cus_pmpc_board?'+ data.content_order;
         title_url.innerText = data.title;
 
         let tr = document.createElement('tr');
