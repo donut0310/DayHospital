@@ -16,7 +16,7 @@ function init(){
 function initShow(item = []){
     item.forEach(function(data){
         let url = document.createElement('a');
-        url.href = '../../html/pmpc/cus_pmpc_board.html?' + data.content_order;
+        url.href = '/cus_pmpc_board?' + data.content_order;
         url.innerText = data.title;
         
         let li = document.createElement('li');
