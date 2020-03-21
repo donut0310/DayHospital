@@ -11,6 +11,7 @@
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f627998f1d3b3dcc3f5931594eaae8cc"></script>
 
 </head>
 
@@ -99,12 +100,18 @@
 
                 </div>
                 <div class="mapExplain">
-                    <h3>○ 주소안내</h3>
+                    <h3>○ 찾아오시는 길</h3>
+                    <p>주소 : 서울특별시 도봉구 창동 181-3(마들로 13길 165) 세영빌딩 5층</p><br>
+                    <p>지하철 : 창동역 1번 출구 → 동아청솔아파트 방향 도보 8분</p><br>
+                    <p>버스 : 도봉 08번, 09번 버스, 노원 15번, 1119번 버스 창동역 동측 정류장 하차 후 자운초등학교 방향 도보 8분</p>
                 </div>
             </div>
         </article>
     </div>
-    
+    <div class="rightAside">
+        <img src="../../assets/images/process.png" style="width : 100%; height : 200px" id="rightUp">
+        <img src="../../assets/images/rightside.jpg" style="width : 100%; height: 500px;" id="rightBelow">
+    </div>
     <footer>
         <div class="left_footer">
             <div class="footer_logo_class"><a href="../Daycare.html"><img src="../../assets/images/logo.jpg" id="footer_logo"></a></div>
@@ -131,6 +138,13 @@
                 $('.dept02').slideUp(200);
             }
         });
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+	    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+	    level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
     </script>
 
 </body>
