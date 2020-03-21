@@ -11,64 +11,99 @@
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script language="javascript">
+            function getCookie(name)
+            {
+            var Found = false
+            var start, end
+            var i = 0
+            while(i <= document.cookie.length)
+            {
+            start = i
+            end = start + name.length
+            if(document.cookie.substring(start, end) == name)
+            {
+            Found = true
+            break
+            }
+            i++
+            }
+            if(Found == true) {
+            start = end + 1
+            end = document.cookie.indexOf(";", start)
+            if(end < start)
+            end = document.cookie.length
+            return document.cookie.substring(start, end)
+            }
 
+            return ""
+            }
+            function openMsgBox()
+            {
+            var eventCookie=getCookie("memo");
+            if (eventCookie != "no")
+            window.open('popup.html','popup file','width=345px,height=722px,top=50,left=150');
+            }
+            openMsgBox();
+            </script>
 
 </head>
 
 <body>
+    
     <header>
         <div class="wrapper">
             <a href="/"><img src="../assets/images/logo.jpg" id="logo"></a>
             <!--항상 위로 fix-->
             <nav>
-              <div class="topMenu" , id="menu1">
-                <ul class="dept01">
-                    <li style="width:124px">
-                        <span><a href="/centerintro">센터소개</a></span>
-                        <ul class="dept02" id="border1">
-                            <li><a href="/centerintro">인사말</a></li>
-                            <li><a href="/cen_target">센터목표</a></li>
-                            <li><a href="/facilityin">시설현황</a></li>
-                            <li><a href="/enterin">입소안내</a></li>
-                            <li><a href="/mapin">찾아오시는 길</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:225.63px">
-                        <span><a href="/programintro">성모사랑 프로그램안내</a></span>
-                        <ul class="dept02" id="border2">
-                            <li><a href="/daycarein">데이케어란?</a></li>
-                            <li><a href="/plani">프로그램운영계획표</a></li>
-                            <li><a href="/lifeproil">생활프로그램</a></li>
-                            <li><a href="/cureservi">전문재활치료서비스</a></li>
-                            <li><a href="/recogproi">인지재활프로그램</a></li>
-                            <li><a href="/careservi">의료보건케어서비스</a></li>
-                            <li><a href="/mentori">멘토링서비스</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:124px">
-                        <span><a href="/cus_pmpc">알림마당</a></span>
-                        <ul class="dept02" id="border3">
-                            <li><a href="/cus_pmpc">공지사항</a></li>
-                            <li><a href="/cus_meal_i">주간식단표</a></li>
-                            <li><a href="/photo">성모사랑 사진</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:193.63px">
-                        <span><a href="/ensurance">노인 장기요양보험</a></span>
-                        <ul class="dept02" id="border4">
-                            <li><a href="/ensurance">노인 장기요양보험이란?</a></li>
-                            <li>노인 장기요양보험신청</li>
-                        </ul>
-                    </li>
-                    <li style="width:151.25px">
-                        <span><a href="/question">문의 및 상담</a></span>
-                        <ul class="dept02" id="border5">
-                            <li><a href="/question">입소문의 및 상담</a></li>
-                            <li><a href="/consulting">컨설팅문의 및 상담</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                <div class="topMenu" , id="menu1">
+                    <ul class="dept01">
+                        <li style="width:124px">
+                            <span><a href="/centerintro">센터소개</a></span>
+                            <ul class="dept02" id="border1">
+                                <li><a href="/centerintro">인사말</a></li>
+                                <li><a href="/cen_target">센터목표</a></li>
+                                <li><a href="/facilityin">시설현황</a></li>
+                                <li><a href="/enterin">입소안내</a></li>
+                                <li><a href="/mapin">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:225.63px">
+                            <span><a href="/programintro">성모사랑 프로그램안내</a></span>
+                            <ul class="dept02" id="border2">
+                                <li><a href="/daycarein">데이케어란?</a></li>
+                                <li><a href="/plani">프로그램운영계획표</a></li>
+                                <li><a href="/lifeproil">생활프로그램</a></li>
+                                <li><a href="/cureservi">전문재활치료서비스</a></li>
+                                <li><a href="/recogproi">인지재활프로그램</a></li>
+                                <li><a href="/careservi">의료보건케어서비스</a></li>
+                                <li><a href="/mentori">멘토링서비스</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:124px">
+                            <span><a href="/cus_pmpc">알림마당</a></span>
+                            <ul class="dept02" id="border3">
+                                <li><a href="/cus_pmpc">공지사항</a></li>
+                                <li><a href="/cus_meal_i">주간식단표</a></li>
+                                <li><a href="/photo">성모사랑 사진</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:193.63px">
+                            <span><a href="/ensurance">노인 장기요양보험</a></span>
+                            <ul class="dept02" id="border4">
+                                <li><a href="/ensurance">노인 장기요양보험이란?</a></li>
+                                <li>노인 장기요양보험신청</li>
+                            </ul>
+                        </li>
+                        <li style="width:151.25px">
+                            <span><a href="/question">문의 및 상담</a></span>
+                            <ul class="dept02" id="border5">
+                                <li><a href="/question">입소문의 및 상담</a></li>
+                                <li><a href="/consulting">컨설팅문의 및 상담</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
@@ -78,24 +113,30 @@
 
         <div class="content">
             <div class="post">
-                <span id="iPost"><h4>공지사항</h4></span>
+                <span id="iPost">
+                    <h4>공지사항</h4>
+                </span>
                 <span id="iPost_more"><a href="/cus_pmpc">more</a></span>
                 <ul class="postlist">
                     <li>이거</li>
- 
+
                 </ul>
             </div>
             <div class="meal">
-                <span id="iPost"><h4>주간식단표</h4></span>
+                <span id="iPost">
+                    <h4>주간식단표</h4>
+                </span>
                 <span id="iPost_more"><a href="/cus_meal_i">more</a></span>
                 <ul class="meallist">
                     <li>이거</li>
 
-                </ul>   
+                </ul>
             </div>
             <div class="photo">
                 <div class="spanzone">
-                    <span id="iPost"><h4>성모사랑사진</h4></span>
+                    <span id="iPost">
+                        <h4>성모사랑사진</h4>
+                    </span>
                     <span id="iPost_more"><a href="/photo">more</a></span>
                 </div>
                 <div class="photozone">
@@ -122,23 +163,24 @@
             </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
-    <script src = "../js/custom/Daycarejs.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/custom/Daycarejs.js"></script>
     <script>
-      
-      $(document).ready(function() {
-        // code ...
-      });
-      $(document).on("mouseover", ".topMenu span", function() {
-        $(".dept02").slideDown(200);
-      });
-      $(document).on("mouseleave", "div", function() {
-        if (!$(this).hasClass("menubar")) {
-          $(".dept02").slideUp(200);
-        }
-      });
+
+        $(document).ready(function () {
+            // code ...
+        });
+        $(document).on("mouseover", ".topMenu span", function () {
+            $(".dept02").slideDown(200);
+        });
+        $(document).on("mouseleave", "div", function () {
+            if (!$(this).hasClass("menubar")) {
+                $(".dept02").slideUp(200);
+            }
+        });
              // Get the modal
     </script>
+
 </body>
 
 </html>
