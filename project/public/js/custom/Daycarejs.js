@@ -37,7 +37,7 @@ function init() {
     function openMsgBox() {
         var eventCookie = getCookie("memo");
         if (eventCookie != "no")
-            window.open('popup.html', 'popup file', 'width=345px,height=722px,top=50,left=150');
+            window.open('/popup', 'popup file', 'width=345px,height=722px,top=50,left=150');
     }
     openMsgBox();
 }
