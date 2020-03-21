@@ -351,6 +351,7 @@ aside li ul li{
     left : 75vw;
     top : 10vw
 }
+
 /*end aside*/
 #endAside{
     width : 100%;
@@ -382,11 +383,13 @@ aside li ul li{
     width : 60%;
     height : 1000px;
 }
+
 .cArticleBody{
     width : 80%;
     height : 1000px;
     margin : 0 auto;
 }
+
 .cArticleBody h3{
     width : 100px;
     height: 1.5em;
@@ -396,6 +399,7 @@ aside li ul li{
     line-height: 1.5em;
     border-radius: 1em;
 }
+
 #cenAside{
     float : left;
     width : 15%;
@@ -554,7 +558,7 @@ aside li ul li{
     background-color: #eee;
 }
 
-/*mapin.html*/
+/* mapin.html */
 .mArticleBody{
     width : 80%;
     height : 600px;
@@ -576,10 +580,74 @@ aside li ul li{
     margin : 1vw 0 1vw 0;
     font-size : 1em;
 }
+
 .mapExplain p{
     font-size : 0.9em;
     margin-left: 1vw;
 }
+
+/* ensurance.html */
+
+.en_container article{
+    float : left;
+    width : 60%;
+    height : 1400px;
+}
+
+.eArticleBody{
+    width : 80%;
+    height : 1300px;
+    margin : 0 auto;
+}
+
+.eArticleBody h3{
+    width : 200px;
+    height: 1.5em;
+    background-color: #F7A12A;
+    color : white;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 1em;
+}
+
+#ePost{
+    float : left;
+    margin-top :0.83em;
+    margin-left : 10%;
+}
+
+#eNav{
+    float : right;
+    margin-top : 2.83em;
+    margin-right : 10%;
+    color:#F7A12A;
+}
+
+#eAside{
+    float : left;
+    width : 15%;
+    height : 1500px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+.enexbox{
+    width : 100%;
+    height : 120px;
+    border: 2px solid #F7A12A;
+    border-radius: 1em;
+    margin-bottom : 4vw;
+}
+
+.enclbox{
+    width : 100%;
+    height : 80px;
+    border: 2px solid #F7A12A;
+    border-radius: 1em;
+    margin-bottom : 4vw;
+}
+
 /* Pmpc pages content css */
 
 .pArticleHead{
