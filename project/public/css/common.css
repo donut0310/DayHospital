@@ -266,7 +266,7 @@ footer a:hover{
 
 /* Custompages - css*/
 
-/* container ~ article */
+/* Almost pages container ~ article size */
 .container{
     margin : 0 auto;
 }
@@ -346,13 +346,12 @@ aside li ul li{
 .center_container article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
     width : 65%;
-    height : 1400px;
+    height : 1000px;
 }
 .cArticleBody{
     width : 80%;
-    height : 1200px;
+    height : 1000px;
     margin : 0 auto;
-    border : 1px solid black;
 }
 .cArticleBody h3{
     width : 100px;
@@ -366,23 +365,174 @@ aside li ul li{
 #cenAside{
     float : left;
     width : 15%;
-    height : 1500px;
+    height : 1100px;
     text-align: center;
     margin-top: 100px;
     margin-right : 50px;
 }
 
 #introduceself{ /*centerintro.html*/
-    
+    margin-bottom: 10vw;
+}
+
+#centerintroself li{
+    margin : 1vw auto;
 }
 
 #centerintroself{ /*centerintro.html*/
-
+    clear : both;
 }
 
 #intro_logo{
     width : 500px;
     height : 120px;
+    float : right;
+}
+
+
+/*enterin.html*/
+.enter_container article{
+    float : left;
+    width : 65%;
+    height : 1400px;
+}
+
+#enterAside{
+    float : left;
+    width : 15%;
+    height : 1500px;
+    text-align: center;
+    margin-top: 100px;
+    margin-right : 50px;
+}
+
+.cArticleBody_enterin{ /*enterin.html body size*/
+    width : 80%;
+    margin : 0 auto;
+}
+
+.cArticleBody_enterin h3{
+    width : 200px;
+    height: 1.5em;
+    background-color: #F7A12A;
+    color : white;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 1em;
+}
+
+.cArticleBody_enterin li{
+    margin : 1vw auto;
+}
+
+.navEnterin{
+    margin-bottom: 3vw;
+}
+
+.navEnterin img{
+    margin-bottom: 2vw;
+}
+
+.navEnterin p{
+    margin-top: 8vw;
+}
+.graph{
+    width : 80%;
+    border: 1px solid black;
+}
+
+#graphimagediv{
+    margin : 0 auto;
+    width : 65%;
+}
+
+#graphimage{
+    width : 100%;
+    height : 100px;
+    float : left;
+    margin-bottom: 1vw;
+}
+
+.tb_2{
+    width : 80%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2vw;
+}
+
+.tb_2 th{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #bbb;
+}
+
+.tb_2 td{
+    padding : 2%;
+}
+
+#tb_2th{
+    border-right: 1.5px solid white;
+}
+
+
+#tb_2tr2,
+#tb_2tr4{
+    background-color: #eee;
+}
+#tb_2tr3{
+    background-color: #bbb;
+}
+
+.tb_3{
+    width : 80%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom:1px solid black;
+    margin-bottom: 2vw;
+}
+
+.tb_3 th{
+    padding-top : 2%;
+    padding-bottom: 2%;
+}
+
+.tb_3 td{
+    padding : 2%;
+}
+
+.tb_3 tr th,
+.tb_3 tr td{
+    border-right: 1px solid white;
+}
+
+#tb_3tr1,
+#tb_3tr3,
+#tb_3tr5{
+    background-color: #bbb;
+}
+
+#tb_3tr2,
+#tb_3tr4,
+#tb_3tr6{
+    background-color: #eee;
+}
+
+/*mapin.html*/
+.mArticleBody{
+    width : 70%;
+    height : 600px;
+    margin : 0 auto;
+    border : 1px solid black;
+    margin-top: 2vw;
+}
+
+.map{
+    width : 100%;
+    height : 70%;
+    border : 1px solid black;
     float : right;
 }
 
