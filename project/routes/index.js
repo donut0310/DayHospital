@@ -5,6 +5,10 @@ router.get('/',function(req, res, next){
     res.render('Daycare.html');
 });
 
+router.get('/popup',function(req, res, next){
+    res.render('popup.html');
+});
+
 // centerintro htmls
 router.get('/centerintro',function(req, res, next){
     res.render('./centerintro/centerintro.html');
