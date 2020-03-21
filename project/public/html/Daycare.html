@@ -11,41 +11,7 @@
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script language="javascript">
-            function getCookie(name)
-            {
-            var Found = false
-            var start, end
-            var i = 0
-            while(i <= document.cookie.length)
-            {
-            start = i
-            end = start + name.length
-            if(document.cookie.substring(start, end) == name)
-            {
-            Found = true
-            break
-            }
-            i++
-            }
-            if(Found == true) {
-            start = end + 1
-            end = document.cookie.indexOf(";", start)
-            if(end < start)
-            end = document.cookie.length
-            return document.cookie.substring(start, end)
-            }
 
-            return ""
-            }
-            function openMsgBox()
-            {
-            var eventCookie=getCookie("memo");
-            if (eventCookie != "no")
-            window.open('popup.html','popup file','width=345px,height=722px,top=50,left=150');
-            }
-            openMsgBox();
-            </script>
 
 </head>
 
