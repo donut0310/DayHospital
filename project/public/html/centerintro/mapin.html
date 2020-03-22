@@ -2,6 +2,17 @@
 <html lang="ko">
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
+    <script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
     <meta charset="UTF-8">
     <meta name="keywords" content="데이케어센터, 데이케어, 성모사랑, 창동 데이케어" id="metaDescription">
     <meta name="viewport" content="width=device-width">
@@ -9,10 +20,6 @@
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/common.css">
     <title>성모사랑 데이케어센터</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f627998f1d3b3dcc3f5931594eaae8cc"></script>
-
 </head>
 
 <body>
@@ -97,7 +104,7 @@
             </div>
             <div class="mArticleBody">
                 <div class="map">
-
+                    <div id="map" style="width:500px;height:400px;"></div>
                 </div>
                 <div class="mapExplain">
                     <h3>○ 찾아오시는 길</h3>
@@ -125,7 +132,6 @@
             </div>
         </div>
     </footer>
-    
     <script>
         $(document).ready(function () {
             // code ...
@@ -138,13 +144,6 @@
                 $('.dept02').slideUp(200);
             }
         });
-        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-        var options = { //지도를 생성할 때 필요한 기본 옵션
-	    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-	    level: 3 //지도의 레벨(확대, 축소 정도)
-        };
-
-        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
     </script>
 
 </body>
