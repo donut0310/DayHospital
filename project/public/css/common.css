@@ -15,7 +15,28 @@ a:visited{
 }
 
 /*******Index page ( Daycare.html )*******/
+.wrap{
+    position: relative;
+}
 
+.carousel-box{
+    z-index: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: scale(0.95);
+    position:  absolute;
+}
+
+.active{
+    opacity: 1;
+    z-index: 1;
+    transform: none;
+}
+
+.contents-image{
+    width:650px;
+    height:700px;
+}
 /****HEADER, Commonly used****/
 .wrapper{
     width : 65vw;
@@ -54,10 +75,6 @@ header{
     float : left;
 }
 
-.topMenu>ul>li>ul{
-    z-index: 1;
-}
-
 .topMenu ul li ul{
     display: none;
     padding : 0;
@@ -68,6 +85,10 @@ header{
     text-align: left;
     font-size:16px;
     width:100%;
+}
+
+.topMenu>ul>li>ul{
+    z-index: 1;
 }
 
 .topMenu ul li ul li{
@@ -143,6 +164,7 @@ article{
     float : left;
     width : 650px;
     height: 700px;
+    display: block;
 }
 
 .content{
@@ -343,6 +365,7 @@ aside li ul li{
 /*end aside*/
 #endAside{
     width : 100%;
+    height : 5vw;
     text-align: left;
     background-color: #ccc;
     border: 1px solid #ccc;
@@ -961,9 +984,6 @@ aside li ul li{
     border-spacing: 0;
 }
 
-.photo_view{
-
-}
 
 .photo_i img{
     width:90%;
@@ -972,7 +992,7 @@ aside li ul li{
 }
 
 .photo_content{
-
+    text-align : center;
 }
 
 .photo_title{
@@ -1058,4 +1078,3 @@ aside li ul li{
 .btn_con{
     text-align: center;
 }
-

@@ -104,36 +104,28 @@
                     </colgroup>
 
                     <tbody>
-                        <tr>
-                            <td>
-                                <a class="photo_view">
-                                    <span class="photo_i">
+                        <tr id = "photoTr">
+                            <td> <!-- 프론트 확인용-->
+                                <span class="photo_i">
                                         <img src="../../assets/images/logo.jpg">
-                                    </span>
-                                    <span class="photo_content">
-                                        <br>
-                                        <strong class="photo_title">엉퓨아잇어</strong>
-                                        <br>
-                                        <span class="photo_date">2020-03-02</span>
-                                        <br>
-                                        <span class="photo_text">푸르르푸르르푸르르</span>
-                                    </span>
-                                </a>
+                                </span>
+                                <span class="photo_content">
+                                    <div class="photo_title">엉퓨아잇어</div>
+                                    <div class="photo_date">2020-03-02</div>
+                                </span>
                             </td>
-                            
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="btn_con">
-                <button class="photo_btn">더보기</button>
-            </div>
+
             <div id="pArticleBtns">
-                <div id="page_btns">
-                
+                <div class="buttons" style = "margin : 1vw 12vw 0 0">
+                    <div id="page_btns">
+                        <button>0</button> <!-- 프론트 확인용-->
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -156,7 +148,8 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../js/custom/photojs.js"></script>
     <script>
         $(document).ready(function () {
             // code ...

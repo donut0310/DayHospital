@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <div class="wrapper">
             <a href="/"><img src="../assets/images/logo.jpg" id="logo"></a>
@@ -75,7 +75,30 @@
     </header>
 
     <article>
-        <div class="main_banner"></div>
+        <div class="main_banner">
+            <div class="wrap">
+                <div class="carousel-box active">
+                    <img class="contents-image" src="../assets/images/1.png">
+                </div>
+
+                <div class="carousel-box">
+                    <img class="contents-image" src="../assets/images/2.png">
+                </div>
+
+                <div class="carousel-box">
+                    <img class="contents-image" src="../assets/images/3.png">
+                </div>
+
+                <div class="carousel-box">
+                    <img class="contents-image" src="../assets/images/4.png">
+                </div>
+
+                <div class="carousel-box">
+                    <img class="contents-image" src="../assets/images/5.png">
+                </div>
+            </div>
+
+        </div>
 
         <div class="content">
             <div class="post">
@@ -144,7 +167,34 @@
                 $(".dept02").slideUp(200);
             }
         });
-             // Get the modal
+        // Get the modal
+
+        var firstslide = document.querySelector(".carousel-box:first-child");
+        var active = "active";
+        function slide() {
+            var currentslide = document.querySelector(".active");
+
+            if (currentslide) {
+                
+                currentslide.classList.remove(active);
+                
+                var nextslide = currentslide.nextElementSibling;
+
+                if (nextslide) {
+                    nextslide.classList.add(active);
+                }
+
+                else {
+                    firstslide.classList.add(active);
+                }
+            }
+            else {
+                firstslide.classList.add(active);
+            }
+
+
+        }
+        setInterval(slide, 2000);
     </script>
 
 </body>

@@ -13,6 +13,7 @@ var cus_consultingRouter = require('./routes/cus_consulting');
 var cus_questionRouter = require('./routes/cus_question');
 var adm_menuRouter = require('./routes/adm_menu');
 var adm_pmpcRouter = require('./routes/adm_pmpc');
+var cus_photoRouter = require('./routes/cus_photo');
 //라우터<<//
 
 // express 연결
@@ -37,9 +38,9 @@ app.use('/Daycare', dayCareRouter);
 app.use('/cus_pmpc', cus_pmpcRouter);
 app.use('/cus_consulting', cus_consultingRouter);
 app.use('/cus_question', cus_questionRouter);
+app.use('/cus_photo',cus_photoRouter);
 //app.use('/adm_menu', adm_menuRouter);
 app.use('/adm_pmpc', adm_pmpcRouter);
-
 
 
 //catch 404 and forward to error handler
