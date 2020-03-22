@@ -636,7 +636,7 @@ aside li ul li{
     width : 200px;
     height: 1.5em;
     background-color: #C2DCDD;
-    color : white;
+    color : black;
     text-align: center;
     line-height: 1.5em;
     border-radius: 1em;
@@ -666,18 +666,19 @@ aside li ul li{
 
 .enexbox{
     width : 100%;
-    height : 120px;
+    line-height: 2;
     border: 2px solid #C2DCDD;
     border-radius: 1em;
     margin-bottom : 4vw;
+    line-height: 1.4em;
 }
 
 .enclbox{
     width : 100%;
-    height : 80px;
     border: 2px solid #C2DCDD;
     border-radius: 1em;
     margin-bottom : 2vw;
+    line-height: 1.4em;
 }
 
 .exclbox{
@@ -685,6 +686,11 @@ aside li ul li{
     height : 800px;
     border : 2px solid #C2DCDD;
     border-radius: 1em;
+    
+}
+
+#text{
+    padding : 1%;
 }
 
 .box1 h4,
@@ -692,7 +698,7 @@ aside li ul li{
 .box5 h4{
     margin : 0 0; 
     background-color: #C2DCDD; 
-    color : white; 
+    color : black; 
     border-radius : 1em; 
     text-align : center;
     padding : 2%; 
@@ -703,12 +709,12 @@ aside li ul li{
 .box4 h4{
     margin : 0 0; 
     background-color: #C2DCDD; 
-    color : white; 
+    color : black; 
     border-radius : 1em; 
     text-align : center;
     padding : 2%; 
     width : 150px;
-    margin-left : 18.5vw;
+    margin-left : 23vw;
 }
 
 .box1,
@@ -720,6 +726,7 @@ aside li ul li{
     width : 100%;
     height : 160px;
     margin : 0 auto;
+    font-size: 0.8em;
 }
 
 .leftimg{
