@@ -315,7 +315,7 @@ aside{ /*Commonly used aside (nav aside)*/
     width : 15%;
     height : 900px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
@@ -356,10 +356,9 @@ aside li ul li{
 /*right aside*/
 .rightAside{
     width : 18%;
-    height : 800px;
     position : fixed;
     left : 77vw;
-    top : 12vw
+    top : 12vw;
 }
 
 /*end aside*/
@@ -414,7 +413,7 @@ aside li ul li{
     width : 15%;
     height : 1100px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
@@ -457,7 +456,7 @@ aside li ul li{
     width : 15%;
     height : 1500px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
@@ -659,7 +658,7 @@ aside li ul li{
     width : 15%;
     height : 1500px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
@@ -682,7 +681,7 @@ aside li ul li{
 
 .exclbox{
     width : 100%;
-    height : 800px;
+    height : 820px;
     border : 2px solid #C2DCDD;
     border-radius: 1em;
     
@@ -693,9 +692,8 @@ aside li ul li{
 }
 
 .box1 h4,
-.box3 h4,
-.box5 h4{
-    margin : 0 0; 
+.box3 h4{
+    margin : 0 0 0 1vw; 
     background-color: #C2DCDD; 
     color : black; 
     border-radius : 1em; 
@@ -706,7 +704,7 @@ aside li ul li{
 
 .box2 h4,
 .box4 h4{
-    margin : 0 0; 
+    margin : 0 1vw 0 0; 
     background-color: #C2DCDD; 
     color : black; 
     border-radius : 1em; 
@@ -714,6 +712,16 @@ aside li ul li{
     padding : 2%; 
     width : 150px;
     float: right;
+}
+
+.box5 h4{
+    margin : 0 0 0 1vw; 
+    background-color: #C2DCDD; 
+    color : black; 
+    border-radius : 1em; 
+    text-align : center;
+    padding : 2%; 
+    width : 180px;
 }
 
 .box1,
@@ -725,7 +733,7 @@ aside li ul li{
     width : 100%;
     height : 160px;
     margin : 0 auto;
-    font-size: 0.8em;
+    font-size: 1.15em;
 }
 
 .leftimg{
@@ -748,7 +756,7 @@ aside li ul li{
     width : 15%;
     height : 650px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
