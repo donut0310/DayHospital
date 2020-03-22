@@ -873,9 +873,6 @@ aside li ul li{
     border-spacing: 0;
 }
 
-.photo_view{
-
-}
 
 .photo_i img{
     width:90%;
@@ -884,7 +881,7 @@ aside li ul li{
 }
 
 .photo_content{
-
+    text-align : center;
 }
 
 .photo_title{
