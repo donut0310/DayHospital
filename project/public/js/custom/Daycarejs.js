@@ -1,8 +1,11 @@
+//daynamic add elements
 const ul = document.querySelector('.postlist');
 
+// btns
 const pmpc_btn = document.querySelector('#iPost_more');
 const meal_btn = document.querySelector('#iPost_more');
 
+//공지사항 리스트, 성모사랑사진 db 호출
 function init() {
     axios.post('/Daycare/initPostlist').then((res) => {
         if (res.status === 200) {
@@ -21,6 +24,7 @@ function init() {
     openMsgBox();
 }
 
+//공지사항 불러오기
 function showPostList(item = []) {
     item.forEach(function (data) {
         let url = document.createElement('a');
@@ -34,6 +38,7 @@ function showPostList(item = []) {
     });
 }
 
+//성모사랑 사진 불러오기
 function showPhoto(item =[]){
     let cnt = 1;
     item.forEach(function(data){
