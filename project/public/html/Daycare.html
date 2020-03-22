@@ -169,32 +169,6 @@
         });
         // Get the modal
 
-        var firstslide = document.querySelector(".carousel-box:first-child");
-        var active = "active";
-        function slide() {
-            var currentslide = document.querySelector(".active");
-
-            if (currentslide) {
-                
-                currentslide.classList.remove(active);
-                
-                var nextslide = currentslide.nextElementSibling;
-
-                if (nextslide) {
-                    nextslide.classList.add(active);
-                }
-
-                else {
-                    firstslide.classList.add(active);
-                }
-            }
-            else {
-                firstslide.classList.add(active);
-            }
-
-
-        }
-        setInterval(slide, 2000);
     </script>
 
 </body>
