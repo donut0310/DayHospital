@@ -20,7 +20,7 @@ a:visited{
 }
 
 .carousel-box{
-    z-index: 0;
+    z-index: 10;
     opacity: 0;
     transition: all .5s ease-in-out;
     transform: scale(0.95);
@@ -88,7 +88,7 @@ header{
 }
 
 .topMenu>ul>li>ul{
-    z-index: 1;
+    z-index: 10;
 }
 
 .topMenu ul li ul li{
@@ -685,6 +685,7 @@ aside li ul li{
     height : 800px;
     border : 2px solid #C2DCDD;
     border-radius: 1em;
+    
 }
 
 #text{
@@ -712,7 +713,7 @@ aside li ul li{
     text-align : center;
     padding : 2%; 
     width : 150px;
-    float : right;
+    float: right;
 }
 
 .box1,
@@ -722,6 +723,7 @@ aside li ul li{
 .box5{
     padding : 2%;
     width : 100%;
+    height : 160px;
     margin : 0 auto;
     font-size: 0.8em;
 }
