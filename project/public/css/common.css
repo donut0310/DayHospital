@@ -8,6 +8,7 @@ a:link{
     text-decoration: none;
     color : black;
 }
+
 a:visited{
     text-decoration: none;
     color : black;
@@ -19,7 +20,7 @@ a:visited{
 }
 
 .carousel-box{
-    z-index: 0;
+    z-index: 10;
     opacity: 0;
     transition: all .5s ease-in-out;
     transform: scale(0.95);
@@ -47,7 +48,7 @@ header{
     height : 110px;
     margin : 0 auto;
     background-color: white;
-    border-bottom: 3px solid #F7A12A;
+    border-bottom: 3px solid #C2DCDD;
 }
 
 #logo{
@@ -80,14 +81,14 @@ header{
     margin : 0;
     position :absolute;
     line-height: 40px;
-    border-bottom: 2px solid #F7A12A;
+    border-bottom: 2px solid #C2DCDD;
     text-align: left;
     font-size:16px;
     width:100%;
 }
 
 .topMenu>ul>li>ul{
-    z-index: 1;
+    z-index: 10;
 }
 
 .topMenu ul li ul li{
@@ -96,7 +97,7 @@ header{
 }
 
 #border1{
-    border-left: 2px solid #F7A12A;
+    border-left: 2px solid #C2DCDD;
     background-color:white;
     width:124px;
     padding-bottom : 80px;
@@ -123,7 +124,7 @@ header{
     padding-bottom: 200px;
     background-color : white;
     width:151.25px;
-    border-right: 2px solid #F7A12A;
+    border-right: 2px solid #C2DCDD;
 }
 
 .dept01{
@@ -145,11 +146,11 @@ header{
     float : right;
     margin-top : 2.83em;
     margin-right : 10%;
-    color:#F7A12A
+    color:#C2DCDD;
 }
 
 #asideNav{
-    color : #F7A12A;
+    color : #C2DCDD;
 }
 
 /***** Index page Article *****/
@@ -290,8 +291,6 @@ footer a:hover{
     float : left;
 }
 
-/* ------------------------------------------------------------------------------------ */
-
 /* Custompages - css*/
 
 /* Almost pages container ~ article size */
@@ -304,13 +303,6 @@ footer a:hover{
     width : 60%;
     height : 800px;
 }
-
-.pmpc_container article{ /* pmpc pages container article sized */
-    float : left;
-    width : 65%;
-    height : 500px;
-}
-
 .introbanner{
     width : 65%;
     height : 100px;
@@ -323,24 +315,16 @@ aside{ /*Commonly used aside (nav aside)*/
     width : 15%;
     height : 900px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
-.pmpc_aside{
-    float : left;
-    width : 15%;
-    height : 600px;
-    text-align: center;
-    margin-top: 100px;
-    margin-right : 50px;
-}
 
 aside li{
     padding : 10px 0;
     margin : 10px 0 10px 0;
     font-size: 1em;
-    border : 1px solid #F7A12A;
+    border : 1px solid #C2DCDD;
 }
 
 aside li ul li{
@@ -355,10 +339,10 @@ aside li ul li{
     text-align: center;
     width : 100%;
     font-size : 1.5em;
-    background-color: #F7A12A;
+    background-color: #c2dcdd;
     height : 50px;
     line-height: 50px;
-    color : white;
+    color : black;
     position: fixed;
     width:15%;
 }
@@ -372,16 +356,14 @@ aside li ul li{
 /*right aside*/
 .rightAside{
     width : 18%;
-    height : 800px;
     position : fixed;
-    left : 75vw;
-    top : 10vw
+    left : 77vw;
+    top : 12vw;
 }
 
 /*end aside*/
 #endAside{
     width : 100%;
-    height : 5vw;
     text-align: left;
     background-color: #ccc;
     border: 1px solid #ccc;
@@ -419,7 +401,7 @@ aside li ul li{
 .cArticleBody h3{
     width : 100px;
     height: 1.5em;
-    background-color: #F7A12A;
+    background-color: #C2DCDD;
     color : white;
     text-align: center;
     line-height: 1.5em;
@@ -431,20 +413,28 @@ aside li ul li{
     width : 15%;
     height : 1100px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
-#introduceself{ /*centerintro.html*/
-    margin-bottom: 10vw;
+#introbox{
+    padding : 0 1vw 9vw 1vw;
+    border : 2px solid #C2DCDD;
+    border-radius: 1em;
 }
 
 #centerintroself li{
     margin : 1vw auto;
 }
 
-#centerintroself{ /*centerintro.html*/
+#centerintroself{ 
     clear : both;
+}
+
+#cenbox{
+    border : 2px solid #C2DCDD;
+    border-radius: 1em;
+    padding : 1% 1% 0 1%;
 }
 
 #intro_logo{
@@ -458,7 +448,7 @@ aside li ul li{
 .enter_container article{
     float : left;
     width : 60%;
-    height : 1400px;
+    height : 1300px;
 }
 
 #enterAside{
@@ -466,7 +456,7 @@ aside li ul li{
     width : 15%;
     height : 1500px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
@@ -478,7 +468,7 @@ aside li ul li{
 .cArticleBody_enterin h3{
     width : 200px;
     height: 1.5em;
-    background-color: #F7A12A;
+    background-color: #C2DCDD;
     color : white;
     text-align: center;
     line-height: 1.5em;
@@ -489,8 +479,16 @@ aside li ul li{
     margin : 1vw auto;
 }
 
+.navEnterin h4,
+.money h4{
+    margin : -1% 0 1% 0;
+}
+
 .navEnterin{
     margin-bottom: 3vw;
+    border : 2px solid #C2DCDD;
+    border-radius: 1em;
+    padding : 1% 1%;
 }
 
 .navEnterin img{
@@ -499,6 +497,12 @@ aside li ul li{
 
 .navEnterin p{
     margin-top: 8vw;
+}
+
+.money{
+    border : 2px solid #C2DCDD;
+    border-radius: 1em;
+    padding : 1% 1%;
 }
 .graph{
     width : 80%;
@@ -629,8 +633,8 @@ aside li ul li{
 .eArticleBody h3{
     width : 200px;
     height: 1.5em;
-    background-color: #F7A12A;
-    color : white;
+    background-color: #C2DCDD;
+    color : black;
     text-align: center;
     line-height: 1.5em;
     border-radius: 1em;
@@ -646,7 +650,7 @@ aside li ul li{
     float : right;
     margin-top : 2.83em;
     margin-right : 10%;
-    color:#F7A12A;
+    color:#C2DCDD;
 }
 
 #eAside{
@@ -654,27 +658,117 @@ aside li ul li{
     width : 15%;
     height : 1500px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 120px;
     margin-right : 50px;
 }
 
 .enexbox{
     width : 100%;
-    height : 120px;
-    border: 2px solid #F7A12A;
+    line-height: 2;
+    border: 2px solid #C2DCDD;
     border-radius: 1em;
     margin-bottom : 4vw;
+    line-height: 1.4em;
 }
 
 .enclbox{
     width : 100%;
-    height : 80px;
-    border: 2px solid #F7A12A;
+    border: 2px solid #C2DCDD;
     border-radius: 1em;
-    margin-bottom : 4vw;
+    margin-bottom : 2vw;
+    line-height: 1.4em;
+}
+
+.exclbox{
+    width : 100%;
+    height : 820px;
+    border : 2px solid #C2DCDD;
+    border-radius: 1em;
+    
+}
+
+#text{
+    padding : 1%;
+}
+
+.box1 h4,
+.box3 h4{
+    margin : 0 0 0 1vw; 
+    background-color: #C2DCDD; 
+    color : black; 
+    border-radius : 1em; 
+    text-align : center;
+    padding : 2%; 
+    width : 150px;
+}
+
+.box2 h4,
+.box4 h4{
+    margin : 0 1vw 0 0; 
+    background-color: #C2DCDD; 
+    color : black; 
+    border-radius : 1em; 
+    text-align : center;
+    padding : 2%; 
+    width : 150px;
+    float: right;
+}
+
+.box5 h4{
+    margin : 0 0 0 1vw; 
+    background-color: #C2DCDD; 
+    color : black; 
+    border-radius : 1em; 
+    text-align : center;
+    padding : 2%; 
+    width : 180px;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5{
+    padding : 2%;
+    width : 100%;
+    height : 160px;
+    margin : 0 auto;
+    font-size: 1.15em;
+}
+
+.leftimg{
+    width : 7vw;
+    height : 7vw;
+    float : left;
+    clear : both;
+}
+
+.rightimg{
+    width : 7vw;
+    height : 7vw;
+    float : right;
+    clear : both;
 }
 
 /* Pmpc pages content css */
+.pmpc_aside{
+    float : left;
+    width : 15%;
+    height : 650px;
+    text-align: center;
+    margin-top: 120px;
+    margin-right : 50px;
+}
+
+.pmpc_container{
+    height : 700px;
+}
+
+.pmpc_container article{ /* pmpc pages container article sized */
+    float : left;
+    width : 60%;
+    height : 500px;
+}
 
 .pArticleHead{
     height:100px;
@@ -694,7 +788,6 @@ aside li ul li{
     margin : 0 auto;
     float : left;
 }
-
 #page_btns{
     float : left;
     margin-right: 20vw;
@@ -702,12 +795,12 @@ aside li ul li{
 
 .pmpc_footer{ /*pmpcpage container searchplacer*/
     width : 100%;
-    margin : 0px auto;
+    border : 1px solid black;
 }
 
 .pmpc_searchPlace{
     float : left;
-    margin-left : 26vw;
+    margin-left : 22vw;
     margin-bottom : 5px;
 }
 
@@ -733,7 +826,7 @@ aside li ul li{
 
 .pabNum, .pabTitle, .pabDate{
     border-top : 2px solid rgb(65, 61, 56);
-    border-bottom : 2px solid #F7A12A;
+    border-bottom : 2px solid #C2DCDD;
     text-align: center;
     padding : 10px 0;
 }
@@ -756,7 +849,7 @@ aside li ul li{
     padding : 1%;
     text-align: center;
     background-color: bisque;
-    border-top: 4px solid #F7A12A;
+    border-top: 4px solid #C2DCDD;
     border-bottom: 1px solid black;
 }
 
@@ -882,7 +975,16 @@ aside li ul li{
 
 
   /* photo.html */
-  
+
+.photocontainer{
+    height : 700px;
+}
+
+.photocontainer article{
+    float : left;
+    width : 60%;
+    height : 500px;
+}
 .photo_list{
     clear:both;
     line-height: 20px;
@@ -912,7 +1014,7 @@ aside li ul li{
 }
 
 .photo_date{
-    color:#F7A12A;
+    color:#C2DCDD;
 }
 
 .photo_text{
