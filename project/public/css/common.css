@@ -358,14 +358,14 @@ aside li ul li{
     width : 18%;
     position : fixed;
     left : 77vw;
-    top : 12vw;
+    margin-top : 9%;
 }
 
 /*end aside*/
 #endAside{
     width : 100%;
     text-align: left;
-    background-color: #ccc;
+    background-color: #C2DCDD;
     border: 1px solid #ccc;
     font-weight: lighter;
 }
@@ -418,9 +418,16 @@ aside li ul li{
 }
 
 #introbox{
-    padding : 0 1vw 9vw 1vw;
+    width : 100%;
+    padding : 1% 1% 19% 1%;
     border : 2px solid #C2DCDD;
     border-radius: 1em;
+}
+
+#spanbox{
+    width : 100%;
+    height : 100%;
+
 }
 
 #centerintroself li{
@@ -438,8 +445,8 @@ aside li ul li{
 }
 
 #intro_logo{
-    width : 400px;
-    height : 120px;
+    width : 50%;
+    height : 50%;
     float : right;
 }
 
