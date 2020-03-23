@@ -149,9 +149,7 @@ header{
     color:#C2DCDD;
 }
 
-#asideNav{
-    color : #C2DCDD;
-}
+
 
 /***** Index page Article *****/
 article{
@@ -248,14 +246,15 @@ article div a:visited{
 /*Footer*/
 footer{
     float:left;
-    width : 55vw;
+    width : 70%;
     margin : 0 auto;
-    background-color: #cecece;
 }
 
 .left_footer{ /* custom page footer */
     float : left;
-    width : 100%;
+    width : 70%;
+    margin-left : 30%;
+    background-color: #ccc;
     height : 170px;
     position: relative;
     line-height: 2em;
@@ -263,12 +262,18 @@ footer{
 
 .index_footer{ /*index page footer*/
     width : 80%;
+    height : 170px;
     float: left;
-    margin-left : 150px;
-    margin-top : 30px;
-    background-color: #cecece;
+    margin-top : 1%;
 }
 
+.index_footer .left_footer{
+    float : left;
+    width : 100%;
+    background-color: #ccc;
+    height : auto;
+    margin-left : 13%;
+}
 footer a:hover{
     text-decoration: underline;
 }
@@ -289,6 +294,7 @@ footer a:hover{
     width : 170px;
     height : 170px;
     float : left;
+    border : 1px solid #ccc;
 }
 
 /* Custompages - css*/
@@ -300,11 +306,12 @@ footer a:hover{
 
 .container article{ /*Commonly used container article(main banner)*/
     float : left;
-    width : 60%;
+    width : 80%;
     height : 800px;
 }
+
 .introbanner{
-    width : 65%;
+    width : 80%;
     height : 100px;
     float: left;
 }
@@ -313,7 +320,7 @@ footer a:hover{
 aside{ /*Commonly used aside (nav aside)*/
     float : left;
     width : 15%;
-    height : 900px;
+    height : auto;
     text-align: center;
     margin-top: 120px;
     margin-right : 50px;
@@ -353,6 +360,10 @@ aside li ul li{
     margin-top:50px;
 }
 
+#asideNav{
+    color : #615CCC;
+}
+
 /*right aside*/
 .rightAside{
     width : 18%;
@@ -386,9 +397,15 @@ aside li ul li{
 /* ------------------------------------------------------------------------------------ */
 
 /*centerintro pages content css*/
+
+.center_container{
+    float : left;
+    width : 70%;
+}
+
 .center_container article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
-    width : 60%;
+    width : 80%;
     height : 1000px;
 }
 
@@ -411,7 +428,7 @@ aside li ul li{
 #cenAside{
     float : left;
     width : 15%;
-    height : 1100px;
+    height : auto;
     text-align: center;
     margin-top: 120px;
     margin-right : 50px;
@@ -452,16 +469,20 @@ aside li ul li{
 
 
 /*enterin.html*/
+.enter_container{
+    float : left;
+    width : 70%;
+}
 .enter_container article{
     float : left;
-    width : 60%;
+    width : 80%;
     height : 1300px;
 }
 
 #enterAside{
     float : left;
     width : 15%;
-    height : 1500px;
+    height : auto;
     text-align: center;
     margin-top: 120px;
     margin-right : 50px;
@@ -497,13 +518,8 @@ aside li ul li{
     border-radius: 1em;
     padding : 1% 1%;
 }
-
-.navEnterin img{
-    margin-bottom: 2vw;
-}
-
 .navEnterin p{
-    margin-top: 8vw;
+    margin-top: 2vw;
 }
 
 .money{
@@ -519,11 +535,12 @@ aside li ul li{
 #graphimagediv{
     margin : 0 auto;
     width : 65%;
+    height : 100px;
 }
 
 #graphimage{
     width : 100%;
-    height : 100px;
+    height : 100%;
     float : left;
     margin-bottom: 1vw;
 }
@@ -596,6 +613,15 @@ aside li ul li{
 }
 
 /* mapin.html */
+.mapcontainer{
+    width : 70%;
+    margin : 0 auto;
+    float : left;
+}
+.mapcontainer article{
+    width : 80%;
+    float : left;
+}
 .mArticleBody{
     width : 80%;
     height : 600px;
@@ -640,7 +666,6 @@ aside li ul li{
 
 .en_container .introbanner{
     width : 80%;
-    height : 100%;
     float : left;
     margin : 0 auto;
 }
@@ -677,7 +702,7 @@ aside li ul li{
 #eAside{
     float : left;
     width : 15%;
-    height : 1500px;
+    height : auto;
     text-align: center;
     margin-top: 120px;
     margin-right : 50px;
@@ -775,19 +800,19 @@ aside li ul li{
 .pmpc_aside{
     float : left;
     width : 15%;
-    height : 650px;
+    height : auto;
     text-align: center;
     margin-top: 120px;
     margin-right : 50px;
 }
 
 .pmpc_container{
-    height : 700px;
+    width : 70%;
 }
 
 .pmpc_container article{ /* pmpc pages container article sized */
     float : left;
-    width : 60%;
+    width : 80%;
     height : 500px;
 }
 
@@ -800,7 +825,7 @@ aside li ul li{
 }
 
 .pArticleBody{
-    width : 70%;
+    width : 80%;
     height : 600px;
     margin : 0 auto;
 }
