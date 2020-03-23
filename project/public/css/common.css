@@ -625,10 +625,24 @@ aside li ul li{
 
 /* ensurance.html */
 
+.en_container{
+    width : 70%;
+    float : left;
+    margin : 0 auto;
+}
+
 .en_container article{
     float : left;
-    width : 60%;
+    width : 80%;
     height : 1400px;
+    margin : 0 auto;
+}
+
+.en_container .introbanner{
+    width : 80%;
+    height : 100%;
+    float : left;
+    margin : 0 auto;
 }
 
 .eArticleBody{
