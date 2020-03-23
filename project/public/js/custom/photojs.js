@@ -3,7 +3,11 @@ const photoTr = document.querySelector('#photoTr');
 
 //btns
 const page_btns = document.querySelector('#page_btns');
+const modal_img_close = document.querySelector('#modal_img_close');
 
+//modal
+const modal_img = document.querySelector('#modal_img');
+const modal_content = document.querySelector('#modal_img_content');
 //params
 let pages;
 
@@ -52,17 +56,27 @@ function resetBtns(){
 //사진 나열
 function addImg(item = []){
     resetTable();
+
     item.forEach(function(data){
             let td = document.createElement('td');
-            let spanImg = document.createElement('span');
-            let spanContent = document.createElement('span');
+            let divImg = document.createElement('div');
+            let divContent = document.createElement('div');
             let img = document.createElement('img');
 
-            spanImg.className += 'photo_i';
-            img.src = data.path + data.file_name;
-            spanImg.appendChild(img);
+            divImg.className += 'photo_i';
 
-            spanContent.className += 'photo_content';
+            
+            img.src = data.path + data.file_name;
+            img.name = data.file_name;
+            img.width = 300;
+            img.height = 280; 
+            divImg.appendChild(img);
+            divContent.className += 'photo_content';
+
+            divImg.addEventListener('mouseover',cursor);
+            divImg.addEventListener('click',showImage);
+            
+
 
             let title = document.createElement('div');
             let photo_date = document.createElement('div');
@@ -73,11 +87,11 @@ function addImg(item = []){
             title.innerText = '사진 제목 관리자 업로드시 db 추가';
             photo_date.innerText = data.date;
             
-            spanContent.appendChild(title);
-            spanContent.appendChild(photo_date);
+            divContent.appendChild(title);
+            divContent.appendChild(photo_date);
             
-            td.appendChild(spanImg);
-            td.appendChild(spanContent);
+            td.appendChild(divImg);
+            td.appendChild(divContent);
             photoTr.appendChild(td);
         });
 }
@@ -104,10 +118,49 @@ function deleteAndGet(){
     axios.post('/cus_photo/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
-                    addList(res.data["data"]);
+                    addImg(res.data["data"]);
             }
         }
     });
 }
 
+//img mouseover시 pointer 효과
+function cursor(){
+    this.style.cursor = 'pointer';
+}
+
+// 사진 모달
+function showImage(){
+    modal_img.style.display = 'block';
+    modal_content.style.height = "70%";
+    let show_img = document.querySelector('#show_img');
+    let clone = this.cloneNode(true);
+
+    clone.className = 'addedImg';
+    show_img.appendChild(clone);
+
+    let img = document.querySelector('.addedImg img'); 
+    img.width = 800;
+    img.height = 500;
+    img.style.cursor = 'default';
+}
+
+// 모달 종료
+window.onclick = function(event) {
+    if (event.target == modal_img) {
+        modal_img.style.display = "none";
+        let parent = document.querySelector('#show_img');
+        let child = document.querySelector('.addedImg');
+        parent.removeChild(child);
+    }
+ }
+
+modal_img_close.onclick = function(){
+    modal_img.style.display = "none";
+    let parent = document.querySelector('#show_img');
+    let child = document.querySelector('.addedImg');
+    parent.removeChild(child);
+}
+
+//시작 함수
 init();
