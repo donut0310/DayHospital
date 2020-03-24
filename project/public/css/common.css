@@ -469,8 +469,9 @@ aside li ul li{
 .enter_container article{
     float : left;
     width : 80%;
-    height : 1300px;
+    height : 1000px;
     margin-left: 7vw;
+    margin-bottom: 150px;
 }
 
 #enterAside{
