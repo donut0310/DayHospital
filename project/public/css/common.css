@@ -297,17 +297,21 @@ footer a:hover{
 /* Almost pages container ~ article size */
 .container{
     margin : 0 auto;
+    float : left;
+    width : 70%;
 }
 
 .container article{ /*Commonly used container article(main banner)*/
     float : left;
-    width : 60%;
+    width : 70%;
     height : 800px;
+    margin-left: 7vw;
 }
 .introbanner{
-    width : 65%;
-    height : 100px;
+    width : 80%;
+    height : 100%;
     float: left;
+    margin-left : 7vw;
 }
 
 /* aside */
@@ -345,12 +349,12 @@ aside li ul li{
     line-height: 50px;
     color : black;
     position: fixed;
-    width:15%;
+    width:20%;
 }
 
 .testdiv{
     position: fixed;
-    width:15%;
+    width:20%;
     margin-top:50px;
 }
 
@@ -781,7 +785,6 @@ aside li ul li{
     height : 650px;
     text-align: center;
     margin-top: 120px;
-    margin-right : 50px;
 }
 
 .pmpc_container{
@@ -1001,13 +1004,21 @@ aside li ul li{
   /* photo.html */
 
 .photocontainer{
-    height : 700px;
+    float : left;
+    width : 70%;
+}
+
+.photocontainer .introbanner{
+    width : 80%;
+    margin-left : 7vw;
+    height : 100%;
+    float : left;
 }
 
 .photocontainer article{
     float : left;
-    width : 60%;
-    height : 500px;
+    width : 80%;
+    height : 700px;
 }
 .photo_list{
     clear:both;
@@ -1047,7 +1058,9 @@ aside li ul li{
 
 #photo_article{
     float:left;
-    width:65%;
+    width:80%;
+    margin-left: 7vw;
+    height: 900px;
 }
 
 .main_photo_box{
