@@ -154,11 +154,6 @@ header{
 }
 
 /***** Index page Article *****/
-article{
-    width : 1300px;
-    margin : 0 auto;
-}
-
 .main_banner{
     margin : 0 auto;
     float : left;
@@ -296,23 +291,17 @@ footer a:hover{
 /* Custompages - css*/
 
 /* Almost pages container ~ article size */
-.container{
+.container{ /*All pages div container*/
     margin : 0 auto;
     float : left;
     width : 70%;
+    margin-left : 7vw;
 }
 
-.container article{ /*Commonly used container article(main banner)*/
-    float : left;
-    width : 80%;
-    height : 800px;
-    margin-left: 7vw;
-}
 .introbanner{
     width : 80%;
     height : 100%;
     float: left;
-    margin-left : 7vw;
 }
 
 /* aside */
@@ -392,15 +381,10 @@ aside li ul li{
 /* ------------------------------------------------------------------------------------ */
 
 /*centerintro pages content css*/
-.center_container{
-    float : left;
-    width : 70%;
-}
-.center_container article{ /*자리부족으로 인한 생성 for centerintro.html*/
+.centerintro_Article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
     width : 80%;
     height : 1000px;
-    margin-left: 7vw;
 }
 
 .cArticleBody{
@@ -462,15 +446,10 @@ aside li ul li{
 
 
 /*enterin.html*/
-.enter_container{
-    float : left;
-    width : 70%;
-}
-.enter_container article{
+.enter_Article{
     float : left;
     width : 80%;
     height : 1000px;
-    margin-left: 7vw;
     margin-bottom: 240px;
 }
 
@@ -610,16 +589,9 @@ aside li ul li{
 }
 
 /* facility.html*/
-.facility_container{
-    width:70%;
-    margin : 0 auto;
-    float : left;
-}
-
-.facility_container article{
+.facility_Article{
     width : 80%;
-    margin : 0 auto;
-    margin-left: 7vw;
+    margin : 0 auto;    
     float : left;
 }
 
@@ -642,15 +614,10 @@ aside li ul li{
 }
 
 /* mapin.html */
-.mapcontainer{
-    width : 70%;
-    float : left;
-}
-.mapcontainer article{
+.map_Article{
     width : 80%;
     float : left;
     height : 1000px;
-    margin-left: 7vw;
 }
 
 .map{
@@ -676,27 +643,11 @@ aside li ul li{
 }
 
 /* ensurance.html */
-
-.en_container{
-    width : 70%;
-    float : left;
-    margin : 0 auto;
-}
-
-.en_container article{
+.en_Article{
     float : left;
     width : 80%;
     height : 1400px;
     margin : 0 auto;
-    margin-left:7vw;
-}
-
-.en_container .introbanner{
-    width : 80%;
-    margin-left:7vw;
-    height : 100%;
-    float : left;
-    /*margin : 0 auto;*/
 }
 
 .eArticleBody{
@@ -846,7 +797,7 @@ aside li ul li{
     height : 700px;
 }
 
-.pArticleHead{
+.ArticleHead{
     height:100px;
 }
 
@@ -948,6 +899,15 @@ aside li ul li{
     padding : 1%;
     border-bottom:1px solid black;
     font-size : 0.8em;
+}
+
+/* programintro - */
+
+/* plani.html */
+.plan_Article{
+    width : 80%;
+    height : 1380px;
+    float : left;
 }
 
 /******************Custom Pages***************/
@@ -1055,11 +1015,11 @@ aside li ul li{
 .photocontainer{
     float : left;
     width : 70%;
+    margin-left : 7vw;
 }
 
 .photocontainer .introbanner{
     width : 80%;
-    margin-left : 7vw;
     height : 100%;
     float : left;
 }
@@ -1108,7 +1068,6 @@ aside li ul li{
 #photo_article{
     float:left;
     width:80%;
-    margin-left: 7vw;
     height: 900px;
 }
 
@@ -1177,4 +1136,13 @@ aside li ul li{
 
 .btn_con{
     text-align: center;
+}
+
+/*question.html ~ consulting.html*/
+
+.question_Article{
+    float : left;
+    width : 80%;
+    margin : 0 auto;
+    height : 800px;
 }
