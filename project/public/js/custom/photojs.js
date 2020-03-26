@@ -73,7 +73,7 @@ function addImg(item = []){
             divImg.appendChild(img);
             divContent.className += 'photo_content';
 
-            divImg.addEventListener('mouseover',cursor);
+            divImg.addEventListener('mouseover',getCursor);
             divImg.addEventListener('click',showImage);
             
 
@@ -125,7 +125,7 @@ function deleteAndGet(){
 }
 
 //img mouseover시 pointer 효과
-function cursor(){
+function getCursor(){
     this.style.cursor = 'pointer';
 }
 

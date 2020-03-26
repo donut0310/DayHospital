@@ -4,6 +4,10 @@ const ul = document.querySelector('.postlist');
 // btns
 const pmpc_btn = document.querySelector('#iPost_more');
 const meal_btn = document.querySelector('#iPost_more');
+const imgCloseBtn = document.querySelector('#imgClose');
+
+//Modal
+const imgModal = document.querySelector('.modal');
 
 //공지사항 리스트, 성모사랑사진 db 호출
 function init() {
@@ -48,6 +52,7 @@ function showPhoto(item =[]){
         cnt += 2;
     });
 }
+
 function resizeImg(data, cnt) {
     let photozone = document.querySelector('.photozone');
     let photos = photozone.childNodes;
@@ -56,8 +61,21 @@ function resizeImg(data, cnt) {
     img.src = data.path + data.file_name;
     img.width = 195;
     img.height = 120;
-
+    img.addEventListener('click',getImgModal);
+    img.addEventListener('mouseover', getCursor);
     photos[cnt].appendChild(img);
+}
+
+function getCursor(){
+    this.style.cursor = 'pointer';
+}
+// Get the modal
+function getImgModal(){
+    imgModal.style.display = 'block';
+    imgCloseBtn.addEventListener('mouseover',getCursor);
+}
+imgCloseBtn.onclick = function(){
+    imgModal.style.display = 'none';
 }
 
 //메인 페이지 팝업창
