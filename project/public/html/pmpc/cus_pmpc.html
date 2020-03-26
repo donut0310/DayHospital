@@ -98,7 +98,6 @@
                 <div class="searchPlace">
                     <select name="searchBy" id="selectBy">
                         <option value="0" selected>제목</option>
-                        <option value="1">작성자</option>
                     </select>
                     <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">
                     <button id = 'searchBtn'>검색</button>
@@ -121,22 +120,6 @@
                 </div>
             </div>    
         </article>
-        
-        <div class="pmpc_footer">
-            <div class="pmpc_searchPlace">
-                <select name="searchBy" id="selectBy">
-                    <option value="0">제목</option>
-                </select>
-                <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id = "searchText">
-                <button id = 'searchBtn2'>검색</button>
-            </div>
-
-            <!-- custom page
-            <div class="buttons">
-                <button id="wri_question">글쓰기</button>
-            </div>
-            -->
-        </div>
     </div>
     <div class="rightAside">
         <img src="../../assets/images/rightside.jpg" style="width : 100%; height: 500px;" id="rightBelow">
@@ -154,6 +137,13 @@
             </div>
         </div>
     </footer>
+    <div id = 'err_modal' class = 'modal'>
+        <div id = 'search_err' class = 'modal-content'>
+            <a></a>
+            <button id = 'ok'>검색 결과가 없습니다!</button>
+            <span id = 'err_close' class="close">&times;</span>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
     <script src = "../../js/custom/cus_pmpcjs.js"></script>
     <script>

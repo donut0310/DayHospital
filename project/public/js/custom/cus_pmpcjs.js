@@ -2,10 +2,20 @@
 const tbody = document.querySelector('tbody');
 //btns
 const page_btns = document.querySelector('#page_btns');
-const searchClicked = document.querySelector('#searchBtn2');
+const searchClicked = document.querySelector('#searchBtn');
 searchClicked.addEventListener("click",search);
+const okBtn = document.querySelector('#ok');
+
 //params
 let pages;
+
+
+// close btn
+const err_close = document.querySelector("#err_close");
+
+// Modal
+// 경고창 모달
+const err_modal = document.querySelector('#err_modal');
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
@@ -87,7 +97,10 @@ function showSearchedInit(item = []){
     
     //이전 데이터 삭제
     resetTable();
-    
+    //검색 결과 없을때
+    if(item.length==0){
+        err_modal.style.display = 'block';
+    }
     //이후 데이터 출력
     for(i=0;i<10;i++){
         if(item[i]==null)break;
@@ -116,7 +129,6 @@ function showSearchedInit(item = []){
         tbody.appendChild(tr);
     }
 }
-
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
     let page_num = this.value;
@@ -244,6 +256,17 @@ function tdStyle(td_num,td_title,td_regist){
     td_title.style.width = '70%';
     td_regist.style.width = '20%';
 }
+// 에러 창 닫기 버튼 클릭시
+err_close.onclick = function(){
+    err_modal.style.display = 'none';
+    init();
+}
+// 에러창 확인 버튼 클릭시
+okBtn.onclick = function(event){
+    err_modal.style.display = 'none';
+    init();
+}
+
 
 // 엔터키 입력
 function pressKey(){
