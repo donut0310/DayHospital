@@ -379,6 +379,19 @@ aside li ul li{
 }
 /* ------------------------------------------------------------------------------------ */
 
+/*programintro pages content css*/
+
+.pArticleBody h3{
+        width : 100px;
+        height: 1.5em;
+        background-color: #C2DCDD;
+        color : white;
+        text-align: center;
+        line-height: 1.5em;
+        border-radius: 1em;
+    
+}
+
 /*centerintro pages content css*/
 .centerintro_Article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
@@ -875,7 +888,7 @@ aside li ul li{
 /* daycarein.html */
 .daycare_Article{
     width : 80%;
-    height : 500px;
+    /*height : 500px;*/
     float : left;
 }
 
