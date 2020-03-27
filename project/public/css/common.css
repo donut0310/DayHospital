@@ -260,8 +260,8 @@ footer{
 .index_footer{ /*index page footer*/
     width : 80%;
     float: left;
-    margin-left : 150px;
     margin-top : 30px;
+    margin-left: 10vw;
     background-color: #cecece;
 }
 
@@ -350,9 +350,8 @@ aside li ul li{
 
 /*right aside*/
 .rightAside{
-    /*width : 18%;*/
     position : fixed;
-    left : 80vw;
+    left : 79vw;
     margin-top : 60px;
 }
 
@@ -389,7 +388,6 @@ aside li ul li{
 
 .cArticleBody{
     width : 80%;
-    height : 1000px;
     margin : 0 auto;
 }
 
@@ -401,14 +399,6 @@ aside li ul li{
     text-align: center;
     line-height: 1.5em;
     border-radius: 1em;
-}
-
-#cenAside{
-    float : left;
-    width : 15%;
-    height : 500px;
-    text-align: center;
-    margin-top: 60px;
 }
 
 #introbox{
@@ -453,20 +443,7 @@ aside li ul li{
     margin-bottom: 240px;
 }
 
-#enterAside{
-    float : left;
-    height : 500px;
-    width : 15%;
-    text-align: center;
-    margin-top: 60px;
-}
-
-.cArticleBody_enterin{ /*enterin.html body size*/
-    width : 80%;
-    margin : 0 auto;
-}
-
-.cArticleBody_enterin h3{
+.enter_Article .cArticleBody h3{
     width : 200px;
     height: 1.5em;
     background-color: #C2DCDD;
@@ -476,7 +453,7 @@ aside li ul li{
     border-radius: 1em;
 }
 
-.cArticleBody_enterin li{
+.enter_Article .cArticleBody li{
     margin : 1vw auto;
 }
 
@@ -490,10 +467,6 @@ aside li ul li{
     border : 2px solid #C2DCDD;
     border-radius: 1em;
     padding : 1% 1%;
-}
-
-.navEnterin img{
-    /*margin-bottom: 2vw;*/
 }
 
 .navEnterin p{
@@ -591,6 +564,7 @@ aside li ul li{
 /* facility.html*/
 .facility_Article{
     width : 80%;
+    height : 1000px;
     margin : 0 auto;    
     float : left;
 }
@@ -622,7 +596,7 @@ aside li ul li{
 
 .map{
     width : 100%;
-    height : 70%;
+    height : 700px;
     border : 1px solid black;
 }
 
@@ -677,15 +651,6 @@ aside li ul li{
     margin-top : 2.83em;
     margin-right : 10%;
     color:#C2DCDD;
-}
-
-#eAside{
-    float : left;
-    width : 15%;
-    height : 500px;
-    text-align: center;
-    margin-top: 60px;
-    /*margin-right : 50px;*/
 }
 
 .enexbox{
@@ -777,21 +742,7 @@ aside li ul li{
 }
 
 /* Pmpc pages content css */
-.pmpc_aside{
-    float : left;
-    width : 15%;
-    height : 400px;
-    text-align: center;
-    margin-top: 60px;
-}
-
-.pmpc_container{
-    width : 70%;
-    float : left;
-    margin-left: 7vw;
-}
-
-.pmpc_container article{ /* pmpc pages container article sized */
+.pmpc_Article{ /* pmpc pages container article sized */
     float : left;
     width : 80%;
     height : 700px;
@@ -901,7 +852,46 @@ aside li ul li{
     font-size : 0.8em;
 }
 
-/* programintro - */
+/* programintro.html - */
+.program_Article{
+    width : 80%;
+    height : 600px;
+    float : left;
+}
+
+/* careservi.html */
+.care_Article{
+    width : 80%;
+    height : 500px;
+    float : left;
+}
+
+/* cureservi.html */
+.cure_Article{
+    width : 80%;
+    height : 500px;
+    float : left;
+}
+/* daycarein.html */
+.daycare_Article{
+    width : 80%;
+    height : 500px;
+    float : left;
+}
+
+/* mentori.html */
+.mentor_Article{
+    width : 80%;
+    height : 500px;
+    float : left;
+}
+
+/* lifeproi.html */
+.life_Article{
+    width : 80%;
+    height : 500px;
+    float : left;
+}
 
 /* plani.html */
 .plan_Article{
@@ -910,109 +900,17 @@ aside li ul li{
     float : left;
 }
 
-/******************Custom Pages***************/
-/*consulting, question*/
-.buttons{
-    float : right;
-    margin-right: 1vw;
-}
-#wri_question{
-    padding : 10px;
-    font-size: 1em;
-    background-color: #F5a01a;
-}
-#modalspan{
-    font-size : 0.8em;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 30; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    /*background-color: rgb(0,0,0); /*Fallback color*/
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-  }
-  
-  #mod_cont_question{
-      resize: none;
-      width:100%;
-  }
-
-  #modallogo{
-      width:8%;
-      height:8%;
-      float : left;
-      margin-bottom:1%;
-      margin-right:1%;
-  }
-
-  .modalspan{
-      float : left;
-      margin-top : 2%;
-  }
-
-  /*Personal Information*/
-
-  .personalInfor{
-    background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+/* recogproi.html */
+.recog_Article{
+    width : 80%;
     height : 500px;
-  }
+    float : left;
+}
+/****************************************/
 
-  .persHeader{
-      width : 80%;
-      height : 30px;
-      float : left;
-      margin-left: 2vw;
-      font-size: 1em;
-      font-weight: bold;
-  }
-  .persContent{
-      width : 80%;
-      height : 400px;
-      float : left;
-      margin-left: 2vw;
-      font-size:0.7em;
-      font-weight: lighter;
-  }
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
+ /* photo.html */
 
-
-
-  /* photo.html */
-
-.photocontainer{
+ .photocontainer{
     float : left;
     width : 70%;
     margin-left : 7vw;
@@ -1138,6 +1036,107 @@ aside li ul li{
     text-align: center;
 }
 
+/******************Custom Pages***************/
+/*consulting, question*/
+.buttons{
+    float : right;
+    margin-right: 1vw;
+}
+#wri_question{
+    padding : 10px;
+    font-size: 1em;
+    background-color: #F5a01a;
+}
+#modalspan{
+    font-size : 0.8em;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 30; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /*background-color: rgb(0,0,0); /*Fallback color*/
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  #mod_cont_question{
+      resize: none;
+      width:100%;
+  }
+
+  #modallogo{
+      width:8%;
+      height:8%;
+      float : left;
+      margin-bottom:1%;
+      margin-right:1%;
+  }
+
+  .modalspan{
+      float : left;
+      margin-top : 2%;
+  }
+
+  /*Personal Information*/
+
+  .personalInfor{
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height : 500px;
+  }
+
+  .persHeader{
+      width : 80%;
+      height : 30px;
+      float : left;
+      margin-left: 2vw;
+      font-size: 1em;
+      font-weight: bold;
+  }
+  .persContent{
+      width : 80%;
+      height : 400px;
+      float : left;
+      margin-left: 2vw;
+      font-size:0.7em;
+      font-weight: lighter;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+ 
 /*question.html ~ consulting.html*/
 
 .question_Article{
