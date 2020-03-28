@@ -396,7 +396,7 @@ aside li ul li{
 .centerintro_Article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
     width : 80%;
-    height : 1000px;
+    height : 1200px;
 }
 
 .cArticleBody{
@@ -419,6 +419,7 @@ aside li ul li{
     padding : 1% 1% 19% 1%;
     border : 2px solid #C2DCDD;
     border-radius: 1em;
+    line-height : 1.4em;
 }
 
 #spanbox{
@@ -439,6 +440,7 @@ aside li ul li{
     border : 2px solid #C2DCDD;
     border-radius: 1em;
     padding : 1% 1% 0 1%;
+    line-height : 1.4em;
 }
 
 #intro_logo{
