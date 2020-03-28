@@ -414,18 +414,11 @@ aside li ul li{
     border-radius: 1em;
 }
 
-#introbox{
-    width : 100%;
-    padding : 1% 1% 19% 1%;
+#spanbox{
     border : 2px solid #C2DCDD;
     border-radius: 1em;
+    padding : 1% 1% 0 1%;
     line-height : 1.4em;
-}
-
-#spanbox{
-    width : 100%;
-    height : 100%;
-
 }
 
 #centerintroself li{
@@ -436,12 +429,6 @@ aside li ul li{
     clear : both;
 }
 
-#cenbox{
-    border : 2px solid #C2DCDD;
-    border-radius: 1em;
-    padding : 1% 1% 0 1%;
-    line-height : 1.4em;
-}
 
 #intro_logo{
     width : 50%;
