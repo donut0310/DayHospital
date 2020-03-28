@@ -27,11 +27,32 @@ router.post('/initPostlist', function(req, res, next){
     });
 });
 
+router.post('/getImg', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+            let sql = "select * from img order by ID desc";
+
+            conn.query(sql, function(err,rows){
+                if(err)throw err;
+                else{
+                    conn.release();
+                    let output = {};
+                    output['result'] = "success";
+                    output['data'] = rows;
+                    res.send(output);
+            }
+        });
+     }
+    });
+});
+
+
 router.post('/initPhoto', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by file_order desc limit 0,10";
+            let sql = "select * from img order by ID desc limit 0,6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
