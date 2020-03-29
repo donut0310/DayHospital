@@ -70,6 +70,9 @@ function addImg(item = []){
         
         let get_photo_date = document.querySelector('#' + set_tdId + ' .photo_date');
         get_photo_date.innerText = item[i].date;
+
+        get_tdImg.addEventListener('click',showImage);
+        get_tdImg.addEventListener('mouseover',getCursor);
     }
 }
 
