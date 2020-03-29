@@ -78,8 +78,8 @@ function resizeImg(data, cnt) {
     img.src = data.path;
     img.setAttribute('imgid', data.ID); 
 
-    img.width = 195;
-    img.height = 120;
+    img.style.width = "100%";
+    img.style.height = "100%";
 
     img.addEventListener('click',getImgModal);
     img.addEventListener('mouseover', getCursor);
