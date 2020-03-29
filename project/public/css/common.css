@@ -767,9 +767,9 @@ aside li ul li{
 }
 
 .pArticleBody{
-    width : 56vw;
+    width : 70%;
     height : 600px;
-    margin-top:15vw;
+    margin : 0 auto;
 }
 .pArticleFooter{ /**/
     width : 100%;
