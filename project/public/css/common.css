@@ -767,9 +767,9 @@ aside li ul li{
 }
 
 .pArticleBody{
-    width : 70%;
+    width : 56vw;
     height : 600px;
-    margin : 0 auto;
+    margin-top:15vw;
 }
 .pArticleFooter{ /**/
     width : 100%;
@@ -984,16 +984,11 @@ aside li ul li{
     margin-left : 7vw;
 }
 
-.photocontainer .introbanner{
-    width : 80%;
-    height : 100%;
-    float : left;
-}
 
 .photocontainer article{
     float : left;
-    width : 80%;
-    height : 700px;
+    width : 70%;
+    margin-left : 7vw;
 }
 .photo_list{
     clear:both;
@@ -1031,6 +1026,10 @@ aside li ul li{
 
 }
 
+#photoTr{
+    text-align: center;
+}
+
 #photo_article{
     float:left;
     width:80%;
@@ -1053,7 +1052,7 @@ aside li ul li{
     margin:0 auto;
 }
 
-.main_photo_box h3{
+.main_photo_box h2{
     font-size:22px;
     padding:10px 0 20px 20px;
 }
@@ -1102,6 +1101,11 @@ aside li ul li{
 
 .btn_con{
     text-align: center;
+}
+
+.td1>img{
+    width:17vw;
+    height:11.33vw;
 }
 
 /******************Custom Pages***************/
