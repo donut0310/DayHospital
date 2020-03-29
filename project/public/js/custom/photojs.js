@@ -58,9 +58,12 @@ function resetBtns(){
 
 //사진 나열
 function addImg(item = []){
-    let dataCnt = item.length;
-    for(i=0;i<dataCnt;i++){
-        
+    for(i=0;i<3;i++){
+        if(item[i]==null){
+            for(j=i;j<3;j++){
+                document.querySelector('#td' + (j + 1) + ' img').src = '';
+            }break;
+        }
         let set_tdId = "td"+(i+1);
         let get_tdImg = document.querySelector('#'+set_tdId + ' img');
         get_tdImg.src = item[i].path;
@@ -78,6 +81,7 @@ function addImg(item = []){
 
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
+
     pages = this.value;
 
     let sendData = {};
