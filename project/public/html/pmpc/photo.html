@@ -109,12 +109,14 @@
                         <tr id = "photoTr">
                             <td> <!-- 프론트 확인용-->
                                 <span class="photo_i">
-                                        <img src="../../assets/images/logo.jpg">
+                                         <img src="../../assets/images/logo.jpg">
                                 </span>
-                                <span class="photo_content">
-                                    <div class="photo_title">엉퓨아잇어</div>
-                                    <div class="photo_date">2020-03-02</div>
-                                </span>
+                                <div>
+                                    <span class="photo_content">
+                                        <div class="photo_title">엉퓨아잇어</div>
+                                        <div class="photo_date">2020-03-02</div>
+                                    </span>                                    
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -149,16 +151,35 @@
             </div>
         </div>
     </footer>
-    <div id = 'modal_img' class = 'modal'>
-        <div id = 'modal_img_content' class = 'modal-content'>
-            <img src="../../assets/images/logo.jpg" id="modallogo">
-            <span id = 'modal_img_close' class="close">&times;</span>
-            <div id = 'show_img' class = 'modalspan'>
-                <!--
-                    동적으로 생성
-                -->
+    <div class="modal" style="width : 100%;
+    height : 100vh;
+    border : 4px solid black;
+    float:left;
+    padding : 1px;">
+    <div style="width:70%; height:70%; padding:20px; margin : 5% auto; background-color: white;">
+            <div style="width : 15%;
+                        height : 100%;
+                        float : left;">
             </div>
-        </div>
+            <div style="width : 70%;
+            height : 100%;
+            float : left;">
+                <div style="width : 100%;
+                height : 15%;
+                border : 2px solid blueviolet;
+                float : left;">
+                    <div style="float:left; margin : 1%; width : 10%;height : 80%;"><img src="/assets/images/logo.jpg"
+                    style="width : 100%; height : 100%;"></div>
+                    <div id = "imgCloseBtn" style="float:right; margin : 1%;">&times;</div>
+                </div>
+                <div style="width : 100%;
+                            height : 85%;
+                            border: 2px solid hotpink;
+                            float : left;">
+                    <div style="margin :5% auto; width : 80%; height : 80%; border : 1px solid black;">
+                        <img  id = "modalImg" src="" style="width : 100%; height : 100%;"></div>
+                </div>
+            </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../../js/custom/photojs.js"></script>

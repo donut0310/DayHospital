@@ -3,11 +3,12 @@ const photoTr = document.querySelector('#photoTr');
 
 //btns
 const page_btns = document.querySelector('#page_btns');
-const modal_img_close = document.querySelector('#modal_img_close');
-
+const imgCloseBtn = document.querySelector('#imgCloseBtn');
+imgCloseBtn.addEventListener('mouseover',getCursor);
 //modal
-const modal_img = document.querySelector('#modal_img');
-const modal_content = document.querySelector('#modal_img_content');
+const modalImg = document.querySelector('#modalImg');
+const imgModal = document.querySelector('.modal');
+
 //params
 let pages;
 
@@ -63,20 +64,18 @@ function addImg(item = []){
             let divContent = document.createElement('div');
             let img = document.createElement('img');
 
-            divImg.className += 'photo_i';
 
-            
-            img.src = data.path + data.file_name;
+
+            img.src = data.path;
             img.name = data.file_name;
-            img.width = 300;
-            img.height = 280; 
             divImg.appendChild(img);
+            img.style.width = "100%";
+            img.style.height = "100%"; 
+
             divContent.className += 'photo_content';
 
             divImg.addEventListener('mouseover',getCursor);
-            divImg.addEventListener('click',showImage);
-            
-
+            img.addEventListener('click',showImage);
 
             let title = document.createElement('div');
             let photo_date = document.createElement('div');
@@ -131,35 +130,26 @@ function getCursor(){
 
 // 사진 모달
 function showImage(){
-    modal_img.style.display = 'block';
-    modal_content.style.height = "70%";
-    let show_img = document.querySelector('#show_img');
-    let clone = this.cloneNode(true);
-
-    clone.className = 'addedImg';
-    show_img.appendChild(clone);
-
-    let img = document.querySelector('.addedImg img'); 
-    img.width = 800;
-    img.height = 500;
-    img.style.cursor = 'default';
+    let modalImg = document.querySelector('#modalImg');
+    modalImg.src = this.getAttribute('src');
+    
+    modalImg.style.width = "100%";
+    modalImg.style.height = "100%";
+    modalImg.style.cursor = 'default';
+    
+    imgModal.style.display = 'block';
+    
 }
 
 // 모달 종료
 window.onclick = function(event) {
-    if (event.target == modal_img) {
-        modal_img.style.display = "none";
-        let parent = document.querySelector('#show_img');
-        let child = document.querySelector('.addedImg');
-        parent.removeChild(child);
+    if (event.target == imgModal) {
+        imgModal.style.display = "none";
     }
  }
 
-modal_img_close.onclick = function(){
-    modal_img.style.display = "none";
-    let parent = document.querySelector('#show_img');
-    let child = document.querySelector('.addedImg');
-    parent.removeChild(child);
+imgCloseBtn.onclick = function(){
+    imgModal.style.display = 'none';
 }
 
 //시작 함수

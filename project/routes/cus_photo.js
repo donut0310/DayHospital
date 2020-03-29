@@ -10,7 +10,7 @@ router.post('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by file_order desc limit 0,3";
+            let sql = "select * from img order by ID desc limit 0,3";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -29,7 +29,7 @@ router.post('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by file_order desc";
+            let sql = "select * from img order by ID desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -50,7 +50,7 @@ router.post('/page_num', function(req, res, next){
         else{
             let page_num = req.body.page_num;
        
-            let sql = "select * from img order by file_order desc limit " + (page_num-1)*3 + ", 3";
+            let sql = "select * from img order by ID desc limit " + (page_num-1)*3 + ", 3";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
