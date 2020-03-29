@@ -179,6 +179,19 @@
             }
         }
         setInterval(banner,2000);
+
+        function banner(){
+            var banner = document.querySelectorAll(".introbanner_img");
+            if (banner[0].style.display=="none"){
+                banner[0].style.display="block";
+                banner[1].style.display="none";
+            }
+            else{
+                banner[1].style.display="block";
+                banner[0].style.display="none";
+            }
+        }
+        setInterval(banner,2000);
     </script>
 
 </body>

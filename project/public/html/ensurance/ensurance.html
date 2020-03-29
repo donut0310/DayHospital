@@ -85,7 +85,8 @@
 
     <div class="container">
         <div class="introbanner">
-            <img src="../../assets/images/introbanner.jpg" style="width : 100%; height: 100%;">
+            <img src="../../assets/images/introbanner.jpg" class="introbanner_img">
+            <img src="../../assets/images/banner.png" style="display: none;" class="introbanner_img">
         </div>
         <article class="en_Article">
             <div class="ArticleHead">
@@ -200,6 +201,19 @@
                 $('.dept02').slideUp(200);
             }
         });
+
+        function banner(){
+            var banner = document.querySelectorAll(".introbanner_img");
+            if (banner[0].style.display=="none"){
+                banner[0].style.display="block";
+                banner[1].style.display="none";
+            }
+            else{
+                banner[1].style.display="block";
+                banner[0].style.display="none";
+            }
+        }
+        setInterval(banner,2000);
     </script>
 
 </body>
