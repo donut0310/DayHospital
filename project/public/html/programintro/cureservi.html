@@ -38,7 +38,7 @@
                             <li><a href="/daycarein">데이케어란?</a></li>
                             <li><a href="/plani">프로그램운영계획표</a></li>
                             <li><a href="/lifeproil">생활프로그램</a></li>
-                            <li><a href="/cureservi">전문재활치료서비스</a></li>
+                            <li><a href="/cureservi">전문재활운동서비스</a></li>
                             <li><a href="/recogproi">인지재활프로그램</a></li>
                             <li><a href="/careservi">의료보건케어서비스</a></li>
                             <li><a href="/mentori">멘토링서비스</a></li>
@@ -80,7 +80,7 @@
             <li><a href="/daycarein">데이케어란?</a></li>
             <li><a href="/plani">프로그램운영계획표</a></li>
             <li><a href="/lifeproi">생활프로그램</a></li>
-            <li><a href="/cureservi"id="asideNav">전문재활치료서비스</a></li>
+            <li><a href="/cureservi"id="asideNav">전문재활운동서비스</a></li>
             <li><a href="/recogproi">인지재활프로그램</a></li>
             <li><a href="/careservi" >의료보건케어서비스</a></li>
             <li><a href="/mentori">멘토링서비스</a></li>
@@ -91,12 +91,44 @@
     
     <div class="container">
         <div class="introbanner">
-            <img src="../../assets/images/introbanner.jpg" style="width : 100%; height: 100%;">
+            <img src="../../assets/images/introbanner.jpg" class="introbanner_img">
+            <img src="../../assets/images/banner.png" style="display: none;" class="introbanner_img">
         </div>
         <article class="cure_Article">
             <div class="ArticleHead">
-                <span id="pPost"><h1>전문재활치료서비스</h1></span>
-                <span id="pNav"><a href="/">HOME</a>&nbsp;>&nbsp;<a href="/programintro">성모사랑프로그램안내</a>&nbsp;>&nbsp;전문재활치료서비스</span>     
+                <span id="pPost"><h1>전문재활운동서비스</h1></span>
+                <span id="pNav"><a href="/">HOME</a>&nbsp;>&nbsp;<a href="/programintro">성모사랑프로그램안내</a>&nbsp;>&nbsp;전문재활운동서비스</span>     
+            </div>
+            <div class="pArticleBody">
+                <h3 style="width : 200px;">전문재활운동서비스</h3>
+                <div id="spanbox" style="margin-bottom : 2vw">
+                    <span>성모사랑데이케어센터에서는 뇌졸중, 파킨슨 등의 상병으로 장기간 재활병원에서 중추신경게발달재활치료를 받으시면서 빈번한 입·퇴원으로
+                        정신적·육체적으로 지친 마비 환자 분들을 대상으로 전문치료사선생님의 지도로 정문재활 서비스를 제공하고 있습니다.
+                    </span>
+                </div>
+                
+                <h3 style="width : 200px;">전문재활운동보유장비</h3>
+                <div id="spanbox" style="height : 250px;">
+                    <div style="width : 290px; float : left; height : 250px;">
+                        <ul>
+                            <li>· 낙상방지 회전기립 보행슬링</li>
+                            <li>· 스탠딩테이블</li>
+                            <li>· 전동상하지운동기</li>
+                            <li>· 손목회전운동기</li>
+                            <li>· 평행보행훈련기</li>
+                            <li>· 코너형계단보행운동기</li>
+                            <li>· 전신맛사지(두타)침대</li>
+                            <li>· 골관절염초음파자극기·핫팩·공기압박치료기</li>
+                            <li>· EMS저주파맛사지기</li>
+                            <li>· 작업치료테이블 및 소도구</li>
+                        </ul>
+                    </div>
+                    <div style="float : left; width : 430px; height : 200px;">
+                        <img src="../../assets/images/rolling.jpg" title="낙상방지 회전기립 보행슬링" style="float : left; width : 40%; height : 100%; margin-right: 1vw;">
+                        <img src="../../assets/images/marchine.jpeg" title="" style="float:right;width:40%;height:100%;">
+                    </div>
+                    
+                </div>
             </div>
         </article>
     </div>
@@ -126,11 +158,24 @@
         $(document).on('mouseover', '.topMenu span', function () {
             $('.dept02').slideDown(200);
         });
-         $(document).on('mouseleave', 'div', function () {
-             if (!$(this).hasClass('menubar')) {
-                 $('.dept02').slideUp(200);
-             }
-         });
+        $(document).on('mouseleave', 'div', function () {
+            if (!$(this).hasClass('menubar')) {
+                $('.dept02').slideUp(200);
+            }
+        });
+
+        function banner(){
+            var banner = document.querySelectorAll(".introbanner_img");
+            if (banner[0].style.display=="none"){
+                banner[0].style.display="block";
+                banner[1].style.display="none";
+            }
+            else{
+                banner[1].style.display="block";
+                banner[0].style.display="none";
+            }
+        }
+        setInterval(banner,2000);
     </script>
 
 </body>

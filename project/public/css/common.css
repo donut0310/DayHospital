@@ -306,9 +306,14 @@ footer a:hover{
 }
 
 .introbanner{
-    width : 80%;
-    height : 100%;
+    width : 56vw;
+    height : 15vw;
     float: left;
+}
+
+.introbanner_img{
+    width: 100%;
+    height: 100%;
 }
 
 /* aside */
@@ -522,18 +527,18 @@ aside li ul li{
     padding : 2%;
 }
 
-#tb_2th{
-    border-right: 1.5px solid white;
-}
-
-
-#tb_2tr2,
-#tb_2tr4{
+.tb_2 tr:nth-child(even){
     background-color: #eee;
 }
-#tb_2tr3{
-    background-color: #bbb;
+
+.tb_2 tr:nth-child(odd){
+    background-color : #bbb;
 }
+
+#tb_2th{
+    border-right : 1.5px solid white;
+}
+
 
 .tb_3{
     width : 80%;
@@ -558,16 +563,12 @@ aside li ul li{
     border-right: 1px solid white;
 }
 
-#tb_3tr1,
-#tb_3tr3,
-#tb_3tr5{
-    background-color: #bbb;
+.tb_3 tr:nth-child(even){
+    background-color: #eee;
 }
 
-#tb_3tr2,
-#tb_3tr4,
-#tb_3tr6{
-    background-color: #eee;
+.tb_3 tr:nth-child(odd){
+    background-color : #bbb;
 }
 
 /* facility.html*/
@@ -878,16 +879,74 @@ aside li ul li{
 /* cureservi.html */
 .cure_Article{
     width : 80%;
-    height : 500px;
+    height : 700px;
     float : left;
 }
 /* daycarein.html */
 .daycare_Article{
     width : 80%;
-    /*height : 500px;*/
+    height : 1200px;
     float : left;
 }
 
+.tb_4{
+    width : 90%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 1vw;
+}
+
+.tb_4 th,
+.tb_4 td{
+    border-right : 1px solid white;
+}
+
+.tb_4 th{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #bbb;
+}
+
+.tb_4 td{
+    padding : 2%;
+}
+
+.tb_4 th:nth-child(2),
+.tb_4 th:nth-child(3),
+.tb_4 th:nth-child(4),
+.tb_4 th:nth-child(5),
+.tb_4 th:nth-child(6){
+    width : 13%;
+}
+
+.tb_4 tbody>tr:nth-child(odd){
+    background-color: #eee;
+}
+
+.tb_4 tbody>tr:nth-child(even){
+    background-color: #bbb;
+}
+
+.tb_4 tfoot{
+    background-color: #bbb;
+}
+.tb_5{
+    border : 1px solid black;
+    width : 90%;
+    margin : 0 auto;
+    text-align: center;
+}
+.tb_5 th,
+.tb_5 td{
+    border : 1px solid black;
+}
+
+.tb_5 th:nth-child(1),
+.tb_5 th:nth-child(2){
+    width : 15%;
+}
 /* mentori.html */
 .mentor_Article{
     width : 80%;
