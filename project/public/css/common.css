@@ -305,9 +305,12 @@ footer a:hover{
     margin-left : 7vw;
 }
 
+article{
+
+}
 .introbanner{
     width : 56vw;
-    height : 15vw;
+    height : 10vw;
     float: left;
 }
 
@@ -322,7 +325,7 @@ aside{ /*Commonly used aside (nav aside)*/
     width : 15%;
     height : 500px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 0px;
     /*margin-right : 50px;*/
 }
 
@@ -363,8 +366,9 @@ aside li ul li{
 /*right aside*/
 .rightAside{
     position : fixed;
-    left : 79vw;
-    margin-top : 60px;
+    left : 78vw;
+    margin-top : 0px;
+    margin-right: 1px;
 }
 
 /*end aside*/
@@ -574,7 +578,7 @@ aside li ul li{
 /* facility.html*/
 .facility_Article{
     width : 80%;
-    height : 1000px;
+    height : 1150px;
     margin : 0 auto;    
     float : left;
 }
@@ -879,7 +883,7 @@ aside li ul li{
 /* cureservi.html */
 .cure_Article{
     width : 80%;
-    height : 700px;
+    height : 800px;
     float : left;
 }
 /* daycarein.html */

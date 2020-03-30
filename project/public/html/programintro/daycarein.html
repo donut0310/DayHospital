@@ -93,6 +93,7 @@
         <div class="introbanner">
             <img src="../../assets/images/introbanner.jpg" class="introbanner_img">
             <img src="../../assets/images/banner.png" style="display: none;" class="introbanner_img">
+            <img src="../../assets/images/longBanner.jpeg" style="display: none;" class="introbanner_img">
         </div>
         <article class="daycare_Article">
             <div class="ArticleHead">
@@ -241,10 +242,17 @@
             if (banner[0].style.display=="none"){
                 banner[0].style.display="block";
                 banner[1].style.display="none";
+                banner[2].style.display="none";
             }
-            else{
+            else if(banner[1].style.display=="none"){
                 banner[1].style.display="block";
                 banner[0].style.display="none";
+                banner[2].style.display="none";
+            }
+            else if(banner[2].style.display=="none"){
+                banner[2].style.display="block";
+                banner[0].style.display="none";
+                banner[1].style.display="none";
             }
         }
         setInterval(banner,2000);
