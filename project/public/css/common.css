@@ -394,20 +394,12 @@ aside li ul li{
     color : black;
 }
 /* ------------------------------------------------------------------------------------ */
-
-/*programintro pages content css*/
-
-.pArticleBody h3{
-        width : 100px;
-        height: 1.5em;
-        background-color: #C2DCDD;
-        color : white;
-        text-align: center;
-        line-height: 1.5em;
-        border-radius: 1em;
-    
+/* target.html page css */
+.target_Article{
+    float : left;
+    width : 80%;
+    height : 1000px;
 }
-
 /*centerintro pages content css*/
 .centerintro_Article{ /*자리부족으로 인한 생성 for centerintro.html*/
     float : left;
@@ -755,7 +747,7 @@ aside li ul li{
     clear : both;
 }
 
-/* Pmpc pages content css */
+/* programintro & pmpc commonly use content css */
 .pmpc_Article{ /* pmpc pages container article sized */
     float : left;
     width : 80%;
@@ -864,6 +856,18 @@ aside li ul li{
     padding : 1%;
     border-bottom:1px solid black;
     font-size : 0.8em;
+}
+
+/*programintro pages content css*/
+.pArticleBody h3{
+    width : 100px;
+    height: 1.5em;
+    background-color: #C2DCDD;
+    color : white;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 1em;
+
 }
 
 /* programintro.html - */
