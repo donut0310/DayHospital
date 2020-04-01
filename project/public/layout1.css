@@ -1,0 +1,327 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* Commonly used*/
+*{
+    box-sizing: border-box;
+    font-family: 'Nanum Gothic';
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+a:link{
+    text-decoration: none;
+    color : black;
+}
+
+a:visited{
+    text-decoration: none;
+    color : black;
+}
+
+/* HEADER */
+header{
+    width : 1400px;
+    height : 50vh;
+    margin : 0 auto;
+}
+
+.wrapper{
+    width : 100%;
+    height : 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+nav{
+    width : 100%;
+    height : 8vh;
+    margin : 0 auto;
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+}
+
+.topMenu{
+    padding : 0;
+    margin : 0 auto;
+    z-index: 1;
+    height : 100%;
+    width : 90%;
+    line-height: 4em;
+}
+
+.dept01{
+    text-align: center;
+    margin : 0 auto;
+    height : 100%;
+    width:1042.48px;
+}
+
+.dept01>li{
+    list-style-type: none;
+    float : left;
+    height : 100%;
+}
+
+#logo{
+    width : 50px;
+    height : 50px;
+    float : left;
+    margin-top: 10px;
+}
+
+/* Header END */
+
+.container{
+    width : 1400px;
+    height : 1500px;
+    margin : 0 auto;
+}
+
+.indexArticle{
+    width : 100%;
+    height : 100%;
+    float : left;
+}
+
+.content{
+    width : 100%;
+    height : 100%;
+    float : left;
+}
+
+.photo{
+    width : 50%;
+    height : 500px;
+    float  : left;
+    background-color: #A0D56E;
+}
+
+.highlightzone{ /* used in Daycare.html > classes*/
+    float : left;
+    width : 100%;
+    height : 20%;
+}
+
+.photo h3,
+.photo h4{
+    text-align: left;
+    margin-left : 140px;
+}
+
+.photozone{
+    width : 100%;
+    height : 60%;
+    float : left;
+}
+
+.miniPhoto{
+    margin : 0 auto;
+    width : 60%;
+    height : 100%;
+    background-color: white;
+}
+
+.btnzone{
+    float : left;
+    width : 100%;
+    height : 20%;
+    margin : 0 auto;
+}
+
+.miniBtn{
+    margin : 0 auto;
+    width : 60%;
+    margin-top : 20px;
+}
+
+#photo_btn1{
+    float : left;
+    padding : 10px 8px;
+}
+
+#photo_btn2{
+    float : right;
+    padding : 10px 8px;
+}
+
+#photo_btn1,
+#photo_btn2{
+    width : 40%;
+}
+
+.post{
+    width : 50%;
+    height : 500px;
+    float : left;
+    background-color: pink;
+}
+
+.post h3,
+.post h4{
+    text-align: left;
+    margin-left : 80px;
+}
+
+.listzone{
+    width : 100%;
+    height : 80%;
+    float : left;
+}
+
+.postlist{
+    width : 60%;
+    height : 100%;
+    margin-left : 80px;
+}
+
+.postlist>ul>li{
+    width : 100%;
+    padding : 13px 10px;
+    margin-bottom: 25px;
+    background-color: white;
+    font-size : 0.8em;
+    font-weight: 600;
+}
+
+.indexEnterin{
+    width : 100%;
+    height : 400px;
+    float : left;
+    margin : 0 auto;
+}
+
+.indexEnterin h1, 
+.indexEnterin h5{
+    text-align: center;
+}
+
+.indexEnterList{
+    width : 100%;
+    height : 80%;
+    float: left;
+    text-align: center;
+}
+
+.indexEnterList>ul{
+    display: inline-block;
+    text-align: center;
+}
+
+.indexEnterList>ul>li{
+    list-style-type: none;
+    float: left;
+    background-color: white;
+    font-size : 1em;
+    font-weight: 600;
+    margin-right : 20px;
+    margin-top : 40px;
+    width : 150px;
+    height : 180px;
+    padding-top:40px;
+    color : white;
+}
+
+.indexEnterList li span{
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+.miniMap{
+    width : 100%;
+    height : 600px;
+    float : left;
+    background-color:rgba(0,0,0,0.6);
+}
+
+.miniMap h1{
+    text-align: center;
+    color : white;
+}
+.spanzone div{
+    margin-bottom: 50px;
+}
+.spanzone h1{
+    margin-bottom: 50px;
+}
+.spanzone h1, 
+.spanzone h4{
+    margin-left: 30px;
+    text-align: left;
+    color : white;
+}
+
+.mapdiv{
+    width : 55%;
+    height : 70%;
+    float : left;
+}
+
+.map{
+    width : 80%;
+    height : 100%;
+    float : right;
+    background-color: white;
+}
+
+.spanzone{
+    height : 70%;
+    width : 45%;
+    float : left;
+}
+
+/* index page footer */
+footer{
+    width : 1400px;
+    height : 250px;
+    margin : 0 auto;
+    background-color: #8AB462;
+}
+
+.empty{
+    height: 20%;
+    width:100%;
+    float : left;
+}
+
+.footerContent{
+    width : 100%;
+    height : 80%;
+    float : left;
+}
+
+.footer_logo{
+    width : 30%;
+    height : 100%;
+    float : left;
+}
+
+.footer_information1{
+    width : 25%;
+    height : 100%;
+    float : left;
+}
+.footer_information1 a:visited{
+    text-decoration: none;
+}
+
+.footer_information1 h1,
+.footer_information1 h2,
+.footer_information1 h5{
+    color : white;
+    text-align: left;
+    margin-left: 20%;
+    margin : 0 0 0 20%;
+    line-height: 2em;
+}
+
+.footer_information2{
+    width:30%;
+    height : 100%;
+    float : left;
+    margin-left : 5%;
+}
+
+.footer_information2 p{
+    margin : 5px 0 5px 0;
+    color : white;
+}

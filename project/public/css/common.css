@@ -389,7 +389,7 @@ aside li ul li{
     padding : 0.5vw 0.5vw;
 }
 #endAside .smallspan{
-    font-size:1.2em;
+    font-size:1.8em;
     font-weight: 700;
     color : black;
 }
@@ -425,7 +425,7 @@ aside li ul li{
 #spanbox{
     border : 2px solid #C2DCDD;
     border-radius: 1em;
-    padding : 1% 1% 0 1%;
+    padding : 2% 2% 0 2%;
     line-height : 1.4em;
 }
 
@@ -887,7 +887,7 @@ aside li ul li{
 /* cureservi.html */
 .cure_Article{
     width : 80%;
-    height : 800px;
+    height : 600px;
     float : left;
 }
 /* daycarein.html */
