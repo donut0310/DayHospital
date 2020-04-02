@@ -46,7 +46,7 @@ nav{
     z-index: 1;
     height : 100%;
     width : 90%;
-    line-height: 4em;
+    line-height: 8vh;
 }
 
 .dept01{
@@ -80,7 +80,7 @@ nav{
     /*margin : 8px;*/
     position :absolute;
     line-height: 40px;
-    border-bottom: 2px solid #C2DCDD;
+    border-bottom: 2px solid #A0D56E;
     text-align: left;
     font-size:16px;
     width:100%;
@@ -96,7 +96,7 @@ nav{
 }
 
 #border1{
-    border-left: 2px solid #C2DCDD;
+    border-left: 2px solid #A0D56E;
     background-color:white;
     width:124px;
     padding-bottom : 80px;
@@ -123,7 +123,7 @@ nav{
     padding-bottom: 200px;
     background-color : white;
     width:151.25px;
-    border-right: 2px solid #C2DCDD;
+    border-right: 2px solid #A0D56E;
 }
 
 /* Header END */
