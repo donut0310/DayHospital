@@ -443,7 +443,8 @@ footer{
   }
   .mbody_spanzone{
       display: inline-block;
-      text-align: left;
+      width: 100%;
+      height: 100%;
   }
   .modal_body_head h2,
   .modal_body_head h5{
@@ -462,14 +463,15 @@ footer{
       height : 100%;
       margin : 0 auto;
       background-image: url('../assets/images/1.png');
+      background-size: 100% 100%;
   }
 
   .modalBtns{
     position: relative;
     width : 14%;
     height : 10%;
-    top : 96%;
-    left : 94%;
+    top : 90%;
+    left : 86%;
   }
 
   #prevBtn,
