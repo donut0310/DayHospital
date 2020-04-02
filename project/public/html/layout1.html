@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/layout1.css">
     <title>Layout1</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -14,13 +16,8 @@
             <nav>
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
-<<<<<<< HEAD:project/public/layout1.html
-                        <li style="width : 100px"><a><img src="twitter.png" id="logo"></a></li>
-                        <li style="width:124px">
-=======
-                        <li style="width : 100px"><a><img src="/assets/images/logo.jpg" id="logo"></a></li>
+                        <li style="width : 100px"><a><img src="../assets/images/logo.jpg" id="logo"></a></li>
                         <li style="width : 124px">
->>>>>>> 526cef6dbfbeae4bf0d5238df4ca797a8e4eff2c:project/public/html/layout1.html
                             <span><a href="/centerintro">센터소개</a></span>
                             <ul class="dept02" id="border1">
                                 <li><a href="/centerintro">인사말</a></li>
@@ -30,11 +27,7 @@
                                 <li><a href="/mapin">찾아오시는 길</a></li>
                             </ul>
                         </li>
-<<<<<<< HEAD:project/public/layout1.html
-                        <li style="width:225.6px">
-=======
                         <li style="width : 225.6px">
->>>>>>> 526cef6dbfbeae4bf0d5238df4ca797a8e4eff2c:project/public/html/layout1.html
                             <span><a href="/programintro">성모사랑 프로그램안내</a></span>
                             <ul class="dept02" id="border2">
                                 <li><a href="/daycarein">데이케어란?</a></li>
@@ -46,13 +39,6 @@
                                 <li><a href="/mentori">멘토링서비스</a></li>
                             </ul>
                         </li>
-<<<<<<< HEAD:project/public/layout1.html
-                        <li style="width:124px">알림마당</li>
-                        <li style="width:193.63px">노인장기요양보험</li>
-                        <li style="width:151.25px">문의 및 상담</li>
-                        <li style="width : 124px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">
-                            02-990-8875</li>
-=======
                         <li style="width:124px">
                             <span><a href="/cus_pmpc">알림마당</a></span>
                             <ul class="dept02" id="border3">
@@ -76,7 +62,6 @@
                             </ul>
                         </li>
                         <li style="width : 124px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">02-990-8875</li>
->>>>>>> 526cef6dbfbeae4bf0d5238df4ca797a8e4eff2c:project/public/html/layout1.html
                     </ul>
                 </div>
             </nav>
@@ -200,10 +185,6 @@
             </div>
         </div>
     </footer>
-<<<<<<< HEAD:project/public/layout1.html
-    <script>
-
-=======
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
     <script src="../js/custom/layoutjs.js"></script>
@@ -217,11 +198,10 @@
             $(".dept02").slideDown(200);
         });
         $(document).on("mouseleave", "div", function () {
-            if (!$(this).hasClass("topMenu")) {
+            if (!$(this).hasClass("dept02")) {
                 $(".dept02").slideUp(200);
             }
         });
->>>>>>> 526cef6dbfbeae4bf0d5238df4ca797a8e4eff2c:project/public/html/layout1.html
     </script>
 </body>
 

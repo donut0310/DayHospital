@@ -62,6 +62,11 @@ nav{
     height : 100%;
 }
 
+.dept01>li>span{
+    line-height: 8vh;
+    display: block;
+}
+
 #logo{
     width : 50px;
     height : 50px;
@@ -72,7 +77,7 @@ nav{
 .topMenu ul li ul{
     display: none;
     padding : 0;
-    margin : 8px;
+    /*margin : 8px;*/
     position :absolute;
     line-height: 40px;
     border-bottom: 2px solid #C2DCDD;
