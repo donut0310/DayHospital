@@ -1,17 +1,27 @@
 const postUl = document.querySelector('#postUl');
+const photoList = document.querySelectorAll(".photoList img");
+
+//사진 개수
+let photoCnt;
 
 function init(){
-
+    showImg();
     //추후에 삭제 예정
     resetList();
-    // axios.post('/layout/init').then((res)=>{
-    //     if(res.status === 200){
-    //         if(res.data["result"] == "success"){ 
-    //             addList(res.data["data"]);
-    //         }
-    //     }
-       
-    // });
+    axios.post('/layout/postListInit').then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                addList(res.data["data"]);
+            }
+        }
+    });
+    axios.post('/layout/photoListInit').then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                showImg(res.data["data"]);
+            }
+        }
+    });
 }   
 
 function addList(item = []){
@@ -21,7 +31,7 @@ function addList(item = []){
         span.style.float = 'right';
         span.innerText = '자세히 보기';
 
-        li.innerText = data.title;
+        li.innerText = data.TITLE;
         li.appendChild(span);
         postUl.appendChild(li);
 
@@ -38,6 +48,20 @@ function resetList(){
     }
 }
 
+// 성모사랑 사진 관련 함수
+function showImg(item = []){
+    photoCnt = item.length;
 
+    for(i=0;i<photoCnt;i++){
+        photoList[i].src = item[i].path + item[i].file_name;
+    }
+    listSlide();
+}
+
+function listSlide(){
+    for(i=0;i<cnt;i++){
+
+    }
+}
 
 init();
