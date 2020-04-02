@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/',function(req, res, next){
-    res.render('Daycare.html');
+    res.render('layout1.html');
 });
 
 router.get('/popup',function(req, res, next){

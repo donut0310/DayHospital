@@ -3,14 +3,13 @@ const photoTr = document.querySelector('#photoTr');
 
 //btns
 const page_btns = document.querySelector('#page_btns');
-const imgCloseBtn = document.querySelector('#imgCloseBtn');
-imgCloseBtn.addEventListener('mouseover',getCursor);
-//modal
-const modalImg = document.querySelector('#modalImg');
-const imgModal = document.querySelector('.modal');
+const modal_img_close = document.querySelector('#modal_img_close');
 
+//modal
+const modal_img = document.querySelector('#modal_img');
+const modal_content = document.querySelector('#modal_img_content');
 //params
-let pages = 1;
+let pages;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
@@ -21,9 +20,7 @@ function init(){
             }
         }
     });
-    let sendData = {};
-    sendData['pageNum'] = pages;
-    axios.post('/cus_photo/getImg',sendData).then((res)=>{
+    axios.post('/cus_photo/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);
@@ -58,34 +55,66 @@ function resetBtns(){
 
 //사진 나열
 function addImg(item = []){
-    for(i=0;i<3;i++){
-        if(item[i]==null){
-            for(j=i;j<3;j++){
-                document.querySelector('#td' + (j + 1) + ' img').src = '';
-            }break;
-        }
-        let set_tdId = "td"+(i+1);
-        let get_tdImg = document.querySelector('#'+set_tdId + ' img');
-        get_tdImg.src = item[i].path;
+    resetTable();
 
-        let get_photo_title = document.querySelector('#' + set_tdId + ' .photo_title');
-        get_photo_title.innerText = item[i].file_name;
-        
-        let get_photo_date = document.querySelector('#' + set_tdId + ' .photo_date');
-        get_photo_date.innerText = item[i].date;
+    item.forEach(function(data){
+            let td = document.createElement('td');
+            let divImg = document.createElement('div');
+            let divContent = document.createElement('div');
+            let img = document.createElement('img');
 
-        get_tdImg.addEventListener('click',showImage);
-        get_tdImg.addEventListener('mouseover',getCursor);
+            divImg.className += 'photo_i';
+
+            
+            img.src = data.path + data.file_name;
+            img.name = data.file_name;
+            img.width = 300;
+            img.height = 280; 
+            divImg.appendChild(img);
+            divContent.className += 'photo_content';
+
+            divImg.addEventListener('mouseover',getCursor);
+            divImg.addEventListener('click',showImage);
+            
+
+
+            let title = document.createElement('div');
+            let photo_date = document.createElement('div');
+
+            title.className += 'photo_title';
+            photo_date.className += 'photo_date';
+
+            title.innerText = '사진 제목 관리자 업로드시 db 추가';
+            photo_date.innerText = data.date;
+            
+            divContent.appendChild(title);
+            divContent.appendChild(photo_date);
+            
+            td.appendChild(divImg);
+            td.appendChild(divContent);
+            photoTr.appendChild(td);
+        });
+}
+
+//table 리셋 함수
+function resetTable(){
+    //이전 데이터 삭제
+    while(photoTr.hasChildNodes()){
+        photoTr.removeChild(photoTr.firstChild);
     }
 }
 
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
-
-    pages = this.value;
-
+    let page_num = this.value;
+    
+    //이전 데이터 삭제
+    resetTable();
+    
+    //이후 데이터 출력 위해 db 호출
     let sendData = {};
-    sendData['pageNum'] = pages;
+    sendData['page_num'] = page_num;
+    
     axios.post('/cus_photo/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
@@ -102,26 +131,35 @@ function getCursor(){
 
 // 사진 모달
 function showImage(){
-    let modalImg = document.querySelector('#modalImg');
-    modalImg.src = this.getAttribute('src');
-    
-    modalImg.style.width = "100%";
-    modalImg.style.height = "100%";
-    modalImg.style.cursor = 'default';
+    modal_img.style.display = 'block';
+    modal_content.style.height = "70%";
+    let show_img = document.querySelector('#show_img');
+    let clone = this.cloneNode(true);
 
-    imgModal.style.display = 'block';
-    
+    clone.className = 'addedImg';
+    show_img.appendChild(clone);
+
+    let img = document.querySelector('.addedImg img'); 
+    img.width = 800;
+    img.height = 500;
+    img.style.cursor = 'default';
 }
 
 // 모달 종료
 window.onclick = function(event) {
-    if (event.target == imgModal) {
-        imgModal.style.display = "none";
+    if (event.target == modal_img) {
+        modal_img.style.display = "none";
+        let parent = document.querySelector('#show_img');
+        let child = document.querySelector('.addedImg');
+        parent.removeChild(child);
     }
  }
 
-imgCloseBtn.onclick = function(){
-    imgModal.style.display = 'none';
+modal_img_close.onclick = function(){
+    modal_img.style.display = "none";
+    let parent = document.querySelector('#show_img');
+    let child = document.querySelector('.addedImg');
+    parent.removeChild(child);
 }
 
 //시작 함수

@@ -7,7 +7,8 @@ var logger = require('morgan');
 
 //>>라우터//
 var indexRouter = require('./routes/index');
-var dayCareRouter = require('./routes/Daycare');
+var layoutRouter = require('./routes/layout')
+//var dayCareRouter = require('./routes/Daycare');
 var cus_pmpcRouter = require('./routes/cus_pmpc');
 var cus_consultingRouter = require('./routes/cus_consulting');
 var cus_questionRouter = require('./routes/cus_question');
@@ -34,7 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* API 요청 URL======================================= */
 app.use('/', indexRouter);
-app.use('/Daycare', dayCareRouter);
+app.use('/layout', layoutRouter);
+//app.use('/Daycare', dayCareRouter);
 app.use('/cus_pmpc', cus_pmpcRouter);
 app.use('/cus_consulting', cus_consultingRouter);
 app.use('/cus_question', cus_questionRouter);
