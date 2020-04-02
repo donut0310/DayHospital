@@ -1,11 +1,14 @@
 const postUl = document.querySelector('#postUl');
-const photoList = document.querySelectorAll(".photoList img");
+const photoList = document.querySelectorAll('.photoList');
+const img = document.querySelector('.photoList img');
 
 //사진 개수
 let photoCnt;
 
+let dbImg;
+let index = 0;
+
 function init(){
-    showImg();
     //추후에 삭제 예정
     resetList();
     axios.post('/layout/postListInit').then((res)=>{
@@ -18,7 +21,11 @@ function init(){
     axios.post('/layout/photoListInit').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
-                showImg(res.data["data"]);
+                dbImg = (res.data["data"]);
+                if(dbImg.length!=0){
+                    img.src = dbImg[0].path + dbImg[0].file_name;
+                    img.fadeIn(10);
+                }
             }
         }
     });
@@ -48,20 +55,14 @@ function resetList(){
     }
 }
 
-// 성모사랑 사진 관련 함수
-function showImg(item = []){
-    photoCnt = item.length;
-
-    for(i=0;i<photoCnt;i++){
-        photoList[i].src = item[i].path + item[i].file_name;
+setInterval(() => {
+    index++;
+    if(index==dbImg.length){
+        index = 0;
     }
-    listSlide();
-}
+    img.src = dbImg[index].path + dbImg[index].file_name;
+}, 2000);
 
-function listSlide(){
-    for(i=0;i<cnt;i++){
 
-    }
-}
 
 init();
