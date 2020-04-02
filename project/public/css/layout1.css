@@ -69,6 +69,58 @@ nav{
     margin-top: 10px;
 }
 
+.topMenu ul li ul{
+    display: none;
+    padding : 0;
+    margin : 8px;
+    position :absolute;
+    line-height: 40px;
+    border-bottom: 2px solid #C2DCDD;
+    text-align: left;
+    font-size:16px;
+    width:100%;
+}
+
+.topMenu>ul>li>ul{
+    z-index: 11;
+}
+
+.topMenu ul li ul li{
+    line-height:40px;
+    text-align: center;
+}
+
+#border1{
+    border-left: 2px solid #C2DCDD;
+    background-color:white;
+    width:124px;
+    padding-bottom : 80px;
+}
+
+#border2{
+    background-color : white;
+    width:225.63px;
+}
+
+#border3{
+    padding-bottom: 160px;
+    background-color : white;
+    width:124px;
+}
+
+#border4{
+    padding-bottom: 200px;
+    background-color : white;
+    width:193.63px;
+}
+
+#border5{
+    padding-bottom: 200px;
+    background-color : white;
+    width:151.25px;
+    border-right: 2px solid #C2DCDD;
+}
+
 /* Header END */
 
 .container{

@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/layout1.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout1.css">
     <title>Layout1</title>
 </head>
 <body>
@@ -13,11 +13,50 @@
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
                         <li style="width : 100px"><a><img src="/assets/images/logo.jpg" id="logo"></a></li>
-                        <li style="width : 124px">센터소개</li>
-                        <li style="width : 225.6px">성모사랑프로그램안내</li>
-                        <li style="width:124px">알림마당</li>
-                        <li style="width:193.63px">노인장기요양보험</li>
-                        <li style="width:151.25px">문의 및 상담</li>
+                        <li style="width : 124px">
+                            <span><a href="/centerintro">센터소개</a></span>
+                            <ul class="dept02" id="border1">
+                                <li><a href="/centerintro">인사말</a></li>
+                                <li><a href="/cen_target">운영규정</a></li>
+                                <li><a href="/facilityin">시설현황</a></li>
+                                <li><a href="/enterin">입소안내</a></li>
+                                <li><a href="/mapin">찾아오시는 길</a></li>
+                            </ul>
+                        </li>
+                        <li style="width : 225.6px">
+                            <span><a href="/programintro">성모사랑 프로그램안내</a></span>
+                            <ul class="dept02" id="border2">
+                                <li><a href="/daycarein">데이케어란?</a></li>
+                                <li><a href="/plani">프로그램운영계획표</a></li>
+                                <li><a href="/lifeproil">생활프로그램</a></li>
+                                <li><a href="/cureservi">전문재활운동서비스</a></li>
+                                <li><a href="/recogproi">인지재활프로그램</a></li>
+                                <li><a href="/careservi">의료보건케어서비스</a></li>
+                                <li><a href="/mentori">멘토링서비스</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:124px">
+                            <span><a href="/cus_pmpc">알림마당</a></span>
+                            <ul class="dept02" id="border3">
+                                <li><a href="/cus_pmpc">공지사항</a></li>
+                                <li><a href="/cus_meal_i">주간식단표</a></li>
+                                <li><a href="/photo">성모사랑 사진</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:193.63px">
+                            <span><a href="/ensurance">노인 장기요양보험</a></span>
+                            <ul class="dept02" id="border4">
+                                <li><a href="/ensurance">노인 장기요양보험이란?</a></li>
+                                <li>노인 장기요양보험신청</li>
+                            </ul>
+                        </li>
+                        <li style="width:151.25px">
+                            <span><a href="/question">문의 및 상담</a></span>
+                            <ul class="dept02" id="border5">
+                                <li><a href="/question">입소문의 및 상담</a></li>
+                                <li><a href="/consulting">컨설팅문의 및 상담</a></li>
+                            </ul>
+                        </li>
                         <li style="width : 124px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">02-990-8875</li>
                     </ul>
                 </div> 
@@ -130,5 +169,19 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
     <script src="../js/custom/layoutjs.js"></script>
     <script src="../js/custom/map.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // code ...
+        });
+        $(document).on("mouseover", ".topMenu span", function () {
+            $(".dept02").slideDown(200);
+        });
+        $(document).on("mouseleave", "div", function () {
+            if (!$(this).hasClass("topMenu")) {
+                $(".dept02").slideUp(200);
+            }
+        });
+    </script>
 </body>
 </html>
