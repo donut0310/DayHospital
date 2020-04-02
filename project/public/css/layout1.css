@@ -46,7 +46,7 @@ nav{
     z-index: 1;
     height : 100%;
     width : 90%;
-    line-height: 4em;
+    line-height: 8vh;
 }
 
 .dept01{
@@ -62,11 +62,68 @@ nav{
     height : 100%;
 }
 
+.dept01>li>span{
+    line-height: 8vh;
+    display: block;
+}
+
 #logo{
     width : 50px;
     height : 50px;
     float : left;
     margin-top: 10px;
+}
+
+.topMenu ul li ul{
+    display: none;
+    padding : 0;
+    /*margin : 8px;*/
+    position :absolute;
+    line-height: 40px;
+    border-bottom: 2px solid #A0D56E;
+    text-align: left;
+    font-size:16px;
+    width:100%;
+}
+
+.topMenu>ul>li>ul{
+    z-index: 11;
+}
+
+.topMenu ul li ul li{
+    line-height:40px;
+    text-align: center;
+}
+
+#border1{
+    border-left: 2px solid #A0D56E;
+    background-color:white;
+    width:124px;
+    padding-bottom : 80px;
+}
+
+#border2{
+    background-color : white;
+    width:225.63px;
+}
+
+#border3{
+    padding-bottom: 160px;
+    background-color : white;
+    width:124px;
+}
+
+#border4{
+    padding-bottom: 200px;
+    background-color : white;
+    width:193.63px;
+}
+
+#border5{
+    padding-bottom: 200px;
+    background-color : white;
+    width:151.25px;
+    border-right: 2px solid #A0D56E;
 }
 
 /* Header END */
