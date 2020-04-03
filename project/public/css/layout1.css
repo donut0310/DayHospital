@@ -251,6 +251,8 @@ nav{
     height : 400px;
     float : left;
     margin : 0 auto;
+    border-left: 1px solid #c7dbdd;
+    border-right: 1px solid #c7dbdd;
 }
 
 .indexEnterin h1, 
@@ -513,4 +515,23 @@ footer{
       margin-top : 10px;
       background-color: #c7dbdd;
       border : none;
+  }
+
+  #modal2 .modal-zone,
+  #modal4 .modal-zone{
+      border : 1px solid #c7dbdd;
+  }
+  
+  #modal2 #modalspan{
+    margin-left : 5px;
+  }
+
+  #modal2 .modalBtns,
+  #modal4 .modalBtns{
+    position: relative;
+    left : 86.1%;
+    top : 82.4%;
+    z-index: 1;
+    width : 14%;
+    height : 10%;
   }
