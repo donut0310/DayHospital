@@ -434,7 +434,7 @@ footer{
 
   .modal_body{
       width : 100%;
-      height : 82%;
+      height : 70%;
       margin : 0 auto;
   }
 
@@ -452,12 +452,12 @@ footer{
 
   .modal_body_head h2,
   .modal_body_head h5{
-      margin : 0 0;
+      margin : 10px 0 0 0 ;
   }
   
   .modal_body_article{  
       width : 100%;
-      height : 75%;
+      height : 90%;
       float : left;
   }
 
@@ -465,22 +465,48 @@ footer{
       width : 90%;
       height : 100%;
       margin : 0 auto;
-      background-image: url('../assets/images/1.png');
-      background-size: 100% 100%;
   }
 
   .modalBtns{
       position: relative;
-      top : 90%;
-      left : 86%;
+      left : 86.1%;
+      top : -10.9%;
+      z-index: 1;
       width : 14%;
       height : 10%;
   }
-
+    
   #prevBtn,
   #nextBtn{
     float:left;
     width : 50%;
     height : 100%;
     font-size: 1.3em;
+  }
+
+  .modal_footer{
+    width : 100%;
+    height : 15%;
+  }
+
+  .mfooter_spanzone{
+    width : 90%;
+    height : 15%;
+    margin : 0 auto;
+  }
+
+  #modalspan{
+    display: inline-block;
+    margin-top : 10px;
+  }
+
+  #moreBtn{
+      width : 20%;
+      height : 50px;
+      float : right;
+      font-size : 1em;
+      line-height: 1em;
+      margin-top : 10px;
+      background-color: #c7dbdd;
+      border : none;
   }
