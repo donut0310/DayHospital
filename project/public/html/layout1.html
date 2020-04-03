@@ -6,8 +6,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/layout1.css">
     <title>Layout1</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
@@ -76,9 +75,13 @@
                         <h4>성모사랑 데이케어 센터에서 업로드합니다.</h4>
                     </div>
                     <div class="photozone">
-                        <div class="miniPhoto">
-                            <ul>
-                                <li class = "photoList" style = "width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                        <div class="miniPhoto" style = "overflow:hidden">
+                            <ul id = "photoSlide" style = "width:2100px;height:100%">
+                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
                             </ul>
                         </div>
                     </div>
@@ -207,6 +210,7 @@
                 </div>
                 <div class="modal_body_article">
                     <div class="modal-zone">
+                        <img id = 'modalImg' src = '' style = "width:100%;height:80%">
                         <div class="modalBtns">
                             <button id="prevBtn"></button>
                             <button id="nextBtn"></button>
@@ -220,8 +224,8 @@
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
     <script src="../js/custom/layoutjs.js"></script>
     <script src="../js/custom/map.js"></script>
-    <script>
 
+    <script>
         $(document).ready(function () {
             // code ...
         });
