@@ -44,5 +44,23 @@ router.post('/photoListInit', function(req, res, next){
      }
     });
 });
+router.post('/getImges', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+            let sql = "select * from img order by date desc";
+            conn.query(sql, function(err,rows){
+                if(err)throw err;
+                else{
+                    conn.release();
+                    let output = {};
+                    output['result'] = "success";
+                    output['data'] = rows;
+                    res.send(output);
+            }
+        });
+     }
+    });
+});
 
 module.exports = router;
