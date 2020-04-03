@@ -12,12 +12,15 @@ nextBtn.addEventListener('click',goToNext);
 const imgCloseBtn = document.querySelector('#imgCloseBtn');
 imgCloseBtn.addEventListener('mouseover',getCursor);
 
-const okBtn = document.querySelector('#ok');
+const moreBtn = document.querySelector('#moreBtn');
+moreBtn.addEventListener('mouseover',getCursor);
+
 
 // modal
 const imgModal = document.querySelector('.modal');
 const err_modal = document.querySelector('#err_modal');
 const err_close = document.querySelector("#err_close");
+err_close.addEventListener('mouseover',getCursor);
 
 // params
 let photoCnt; //메인 페이지에 로드될 사진개수 최대 5개
@@ -146,8 +149,6 @@ function getCursor(){
 err_close.onclick = function(){
     err_modal.style.display = 'none';
 }
-okBtn.onclick = function(){
-    err_modal.style.display = 'none';
-}
+
 
 init();
