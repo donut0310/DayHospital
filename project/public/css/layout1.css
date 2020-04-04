@@ -478,12 +478,15 @@ footer{
       width : 90%;
       height : 100%;
       margin : 0 auto;
+      position: relative;
+      float:left;
+      margin-left:5%;
   }
 
   .modalBtns{
-      position: relative;
-      left : 86.1%;
-      top : -10.9%;
+      position: absolute;
+      left : 86%;
+      bottom:0px;
       z-index: 1;
       width : 14%;
       height : 10%;
@@ -673,5 +676,70 @@ aside li ul li{
 
 #ensurancelist li>ul>li h4{
     padding-top : 5%;
+}
+
+/* 테이블 */
+
+.tb_2{
+    width : 80%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 2vw;
+}
+
+.tb_2 th{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #bbb;
+}
+
+.tb_2 td{
+    padding : 2%;
+}
+
+.tb_2 tr:nth-child(even){
+    background-color: #eee;
+}
+
+.tb_2 tr:nth-child(odd){
+    background-color : #bbb;
+}
+
+#tb_2th{
+    border-right : 1.5px solid white;
+}
+
+
+.tb_3{
+    width : 80%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom:1px solid black;
+    margin-bottom: 2vw;
+}
+
+.tb_3 th{
+    padding-top : 2%;
+    padding-bottom: 2%;
+}
+
+.tb_3 td{
+    padding : 2%;
+}
+
+.tb_3 tr th,
+.tb_3 tr td{
+    border-right: 1px solid white;
+}
+
+.tb_3 tr:nth-child(even){
+    background-color: #eee;
+}
+
+.tb_3 tr:nth-child(odd){
+    background-color : #bbb;
 }
 
