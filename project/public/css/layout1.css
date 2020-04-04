@@ -647,7 +647,39 @@ aside li{
     color : #aaa;
     font-size: 0.9em;
 }
+/* centerintro.html */
+.centerintro{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
 
+.centerintro .articleHead{
+    width : 90%;
+    height : 7%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.centerintro #pageLocation_left{
+    padding-top : 2%;
+}
+
+.centerintro #pageLocation_right{
+    padding-top : 6%;
+}
+
+.centerintro .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+#intro_logo{
+    width : 50%;
+    height : 50%;
+    float : right;
+}
 /* ensurance.html */
 .ensurance{
     width : 80%;
@@ -669,30 +701,31 @@ aside li{
     margin : 0 auto;
 }
 
-#ensurancelist{
+#articleList{
     list-style-type: disc;
     padding-left : 2%;
 }
 
-#ensurancelist>li{
+#articleList>li{
     margin-bottom: 8%;
     color : #2d99a2;
 }
 
-#ensurancelist h4{
+#articleList h4{
     display: block;
     margin : 0 0 3% 0;
     font-size: 1.4em;
 }
 
-#ensurancelist span{
+#articleList span{
     font-size: 1.2em;
     color : black;
 }
 
-#ensurancelist li>ul>li h4{
+#articleList li>ul>li h4{
     padding-top : 5%;
 }
+
 
 /* 테이블 */
 
