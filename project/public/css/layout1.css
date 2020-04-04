@@ -66,8 +66,7 @@ nav{
 .dept01{
     text-align: center;
     height : 100%;
-    width: 1400px;
-    margin-left : 60px;
+    padding-left: 60px;
 }
 
 .dept01>li{
@@ -615,7 +614,7 @@ aside li ul li{
     color : white;
 }
 
-article{
+.centerintro{
     background-color: antiquewhite;
     width : 80%;
     height : 100%;
