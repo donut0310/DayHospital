@@ -595,15 +595,7 @@ aside li{
     letter-spacing: 0.1em;
 }
 
-aside li ul li{
-    padding: 0px 0;
-    background-color: white;
-    border-bottom: 1px solid white;
-    height : 50px;
-    line-height: 50px;
-}
-
-.aside>li:nth-child(even){
+.asideDiv li{
     margin-top:-1px;
 }
 
