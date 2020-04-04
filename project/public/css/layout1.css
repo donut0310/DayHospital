@@ -416,7 +416,7 @@ footer{
     background-color: #fefefe;
     margin: 7% auto; /* 15% from the top and centered */
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
     height : 70%;
   }
 
