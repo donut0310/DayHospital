@@ -405,8 +405,7 @@ footer{
 .footer_information1 h5{
     color :black;
     text-align: left;
-    margin-left: 20%;
-    margin : 0 0 0 20%;
+    margin : 0 0 0 25%;
     line-height: 1.5em;
 }
 
@@ -684,6 +683,47 @@ aside li{
 .centerintro #articleList li ul li{
     margin-bottom : 14px;
 }
+
+/* mapin.html */
+.mapin{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.mapin .articleHead{
+    width : 90%;
+    height : 7%;
+    margin : 0 auto;
+    border-bottom: 2px solid #c7dbdd;
+}
+
+.mapin #pageLocation_left{
+    padding-top : 1%;
+}
+.mapin #pageLocation_right{
+    padding-top : 5%;
+}
+
+.mapin .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top:7%;
+    margin : 0 auto;
+}
+
+.main_map{
+    width : 90%;
+    height : 60%;
+    border : 1px solid black;
+    margin : 0 auto;
+    margin-bottom : 3%;
+}
+
+.mapin #articleList>li {
+    margin-bottom : 4%;
+}
+
 /* ensurance.html */
 .ensurance{
     width : 80%;

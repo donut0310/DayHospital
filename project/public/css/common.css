@@ -423,8 +423,6 @@ aside li ul li{
 }
 
 #spanbox{
-    border : 2px solid #C2DCDD;
-    border-radius: 1em;
     padding : 2% 2% 0 2%;
     line-height : 1.4em;
 }
