@@ -59,7 +59,7 @@ nav{
     margin : 0 auto;
     z-index: 1;
     height : 100%;
-    width : 90%;
+    width : 70%;
     line-height: 8vh;
 }
 
@@ -142,7 +142,7 @@ nav{
 /* Header END */
 
 .container{
-    width : 1400px;
+    width : 90vw;
     height : 1500px;
     margin : 0 auto;
 }
@@ -172,10 +172,20 @@ nav{
     height : 20%;
 }
 
+#plusBtn{
+    position: relative;
+    left :280px;
+    width : 30px;
+    height : 30px;
+    background-color: #535353;
+    color : white;
+    font-size : 1.3em;
+}
+
 .photo h3,
 .photo h4{
     text-align: left;
-    margin-left : 140px;
+    margin-left : 20%
 }
 
 .photozone{
@@ -229,7 +239,7 @@ nav{
 .post h3,
 .post h4{
     text-align: left;
-    margin-left : 80px;
+    margin-left : 20%
 }
 
 .listzone{
@@ -239,9 +249,9 @@ nav{
 }
 
 .postlist{
-    width : 60%;
+    width : 70%;
     height : 100%;
-    margin-left : 80px;
+    margin-left : 20%
 }
 
 .postlist>ul>li{
@@ -374,6 +384,10 @@ footer{
 }
 .footer_information1 a:visited{
     text-decoration: none;
+}
+
+.footer_information1 h1{
+    font-size: 1.3em;
 }
 
 .footer_information1 h1,
