@@ -680,6 +680,10 @@ aside li{
     height : 50%;
     float : right;
 }
+
+.centerintro #articleList li ul li{
+    margin-bottom : 14px;
+}
 /* ensurance.html */
 .ensurance{
     width : 80%;
