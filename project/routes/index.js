@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/',function(req, res, next){
-    res.render('layout1.html');
+    res.render('./index.html');
 });
 
 router.get('/popup',function(req, res, next){
@@ -36,7 +36,7 @@ router.get('/mapin',function(req, res, next){
 
 // ensurance htmls
 router.get('/ensurance',function(req, res, next){
-    res.render('./ensurance/ensurance.html');
+    res.render('./ensurance.html');
 });
 
 // programintro htmls

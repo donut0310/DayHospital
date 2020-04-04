@@ -7,7 +7,7 @@ var logger = require('morgan');
 
 //>>라우터//
 var indexRouter = require('./routes/index');
-var layoutRouter = require('./routes/layout')
+var layoutRouter = require('./routes/layout');
 //var dayCareRouter = require('./routes/Daycare');
 var cus_pmpcRouter = require('./routes/cus_pmpc');
 var cus_consultingRouter = require('./routes/cus_consulting');
@@ -20,7 +20,7 @@ var cus_photoRouter = require('./routes/cus_photo');
 // express 연결
 var app = express();
 
-app.set('views', path.join(__dirname, 'public/html'));
+app.set('views', path.join(__dirname, 'public/planB'));
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 //app.engine('html', require('jade').renderFile);

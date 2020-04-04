@@ -44,7 +44,7 @@ router.post('/photoListInit', function(req, res, next){
      }
     });
 });
-router.post('/getImges', function(req, res, next){
+router.post('/getImages', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{

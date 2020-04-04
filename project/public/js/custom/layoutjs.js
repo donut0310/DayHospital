@@ -54,7 +54,8 @@ function addList(item = []){
         let span = document.createElement('span');
         span.style.float = 'right';
         span.innerText = '자세히 보기';
-
+        span.addEventListener('mouseover',getCursor);
+        
         li.innerText = data.TITLE;
         li.appendChild(span);
         postUl.appendChild(li);
@@ -90,7 +91,7 @@ function getImgModal(){
     currentImgNum = Number(this.getAttribute('imgId'));
     modalImg.setAttribute('imgid',currentImgNum);
 
-    axios.post('/layout/getImges').then((res)=>{
+    axios.post('/layout/getImages').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 dbImg = (res.data["data"]);
