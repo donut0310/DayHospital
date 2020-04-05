@@ -175,12 +175,12 @@
             <img src="../../assets/images/logo.jpg" id="modallogo">
             <span id = 'question_close' class="close">&times;</span>
             <div class="modalspan">
-                <span id="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85"></span>
+                <span id="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85" maxlength="15"></span>
                 <input type="submit" id="submitBut"><br><br>
                 
-                <span id="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10"></span>
-                <span id="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="35"></span>
-                <span id="modalspan">전화번호&nbsp;<input placeholder="OOO-OOOO-OOOO" id='uphone' type="text" title="phone" size="35"></span>
+                <span id="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10" maxlength="10"></span>
+                <span id="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="35" maxlength="10"></span>
+                <span id="modalspan">전화번호&nbsp;<input placeholder="OOO-OOOO-OOOO" id='uphone' type="text" title="phone" size="35" maxlength="11"></span>
                 <br><br>
             </div>
             <textarea name="content_question" id="mod_cont_question" cols="90" rows="30"></textarea>

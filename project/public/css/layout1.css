@@ -172,7 +172,7 @@ nav{
     height : 20%;
 }
 
-#plusBtn{
+.plusBtn{
     float : right;
     width : 30px;
     height : 30px;
@@ -434,7 +434,6 @@ footer{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -795,4 +794,3 @@ aside li{
 .tb_3 tr:nth-child(odd){
     background-color : #bbb;
 }
-
