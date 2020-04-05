@@ -324,7 +324,7 @@ function pressKey(){
 
     if (event.target == modal_question) {
         modal_question.style.display = 'none';
-        let removeEle = document.querySelectorAll('#modalspan input');
+        let removeEle = document.querySelectorAll('.modalspan input');
         removeEle.forEach(function(data){
             data.value = null;
         });
@@ -372,7 +372,7 @@ post_close.onclick = function(){
 question_close.onclick = function(){
     //입력되었던 내용 모두 리셋
     modal_question.style.display = 'none';
-    let removeEle = document.querySelectorAll('#modalspan input');
+    let removeEle = document.querySelectorAll('.modalspan input');
     removeEle.forEach(function(data){
         data.value = null;
     });

@@ -325,7 +325,8 @@ nav{
     background-color:#535353
 }
 
-.miniMap h1{
+.miniMap .highlightzone h1{
+    padding-top : 3%;
     text-align: center;
     color : white;
 }
@@ -448,24 +449,65 @@ footer{
     background-color: #c7dbdd;
   }
 
-  .modal_head_span{
-      float : left;
-      padding-left : 5%;
+  #modal3 .modal_head{
+      padding-left: 6%;
   }
 
-  .modal_head_span h2,
-  .modal_head_span h5{
-      text-align: left;
-      margin : 0 0 0 0;
-      margin-top : 10px;
+  #modal1 .modal_head{
+      padding-left : 6%;
   }
 
   #imgCloseBtn{
-      width : 20px;
-      height : 20px;
-      float : right;
-      margin : 15px 15px;
+    width : 10%;
+    height : 100%;
+    float : right;
+    padding : 2% 6% 0 0;
+    }
+    
+    #question_closeBtn{
+        float : right;
+        width : 10%;
+        height : 100%;
+        padding : 2% 6% 0 0;
+    }
+
+  .modal_head_span{
+      float : left;
+      width : 90%;
+      height : 100%;
   }
+
+  .modal_title{
+      width : 100%;
+      float : left;
+      height : 50%;
+  }
+
+
+  .modal_name{
+      width : 20%;
+      float : left;
+      height : 50%;
+  }
+
+  .modal_pwd{
+    width : 35%;
+    float : left;
+    height : 50%;
+  }
+
+  .modal_num{
+      width : 35%;
+      float : left;
+      height : 50%;
+  }
+
+  #modal2 .modal_head_span h2,
+  #modal2 .modal_head_span h5{
+      text-align: left;
+      margin : 2% 0 0 6%;
+  }
+
 
   .modal_body{
       width : 100%;
@@ -487,7 +529,7 @@ footer{
 
   .modal_body_head h2,
   .modal_body_head h5{
-      margin : 10px 0 0 0 ;
+      margin : 1% 0 0 0;
   }
   
   .modal_body_article{  
@@ -500,18 +542,12 @@ footer{
       width : 90%;
       height : 100%;
       margin : 0 auto;
-      position: relative;
       float:left;
       margin-left:5%;
   }
 
-  .modalBtns{
-      position: absolute;
-      left : 86%;
-      bottom:0px;
-      z-index: 1;
-      width : 14%;
-      height : 10%;
+  .modalspan{
+      display: inline-block;
   }
     
   #prevBtn,
@@ -533,11 +569,6 @@ footer{
     margin : 0 auto;
   }
 
-  #modalspan{
-    display: inline-block;
-    margin-top : 10px;
-  }
-
   #moreBtn{
       width : 20%;
       height : 50px;
@@ -549,24 +580,88 @@ footer{
       border : none;
   }
 
-  #modal2 .modal-zone,
-  #modal4 .modal-zone{
-      border : 1px solid #c7dbdd;
-  }
-  
-  #modal2 #modalspan{
-    margin-left : 5px;
-  }
+  #beforeBtn{ /* consulting, question.html */
+    width : 20%;
+    height : 50px;
+    float : right;
+    font-size : 1em;
+    line-height: 1em;
+    background-color: #c7dbdd;
+    border : none;
+}
 
-  #modal2 .modalBtns,
-  #modal4 .modalBtns{
+  #modal1 .modalBtns{ /* index photo */
     position: relative;
     left : 86.1%;
-    top : 82.4%;
     z-index: 1;
     width : 14%;
     height : 10%;
   }
+
+  #modal1 .modalspan{
+      margin-top: 1%;
+  }
+  #modal2 .modal-zone{
+      border : 1px solid #c7dbdd;
+  }
+  
+  #modal2 .modalspan{
+    margin : 1% 1%;
+    font-size: 1em;
+  }
+
+  #modal3 .modalspan{
+      margin-top : 2%;
+      font-size: 1em;
+  }
+
+  #modal2 .modalBtns{
+    position: relative;
+    left : 86%;
+    top : 81%;
+    z-index: 1;
+    width : 14%;
+    height : 10%;
+  }
+
+#mod_cont_question{
+    resize: none;
+    width:100%;
+}
+
+#modallogo{
+    width:12%;
+    height:12%;
+    float : left;
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#mod_cont_question{
+    width : 100%;
+    height : 45vh;
+    font-size : 1em;
+}
+
+.modal_question_article{
+    width : 90%;
+    height : 90%;
+    margin : 0 auto;
+    margin-top : 2%;
+}
+
+.answer-textarea{
+    width : 100%;
+    height : 100%;
+    border : 1px solid #7fc9cf;
+}
+
+#submitBut{
+    width : 50px;
+    padding : 2% 2%;
+    font-size: 1em;
+}
+
 
   /******************** Sub Pages Css ********************/
 
@@ -608,7 +703,7 @@ aside li{
 #endAside{
     text-align: left;
     background-color: #C2DCDD;
-    font-weight: lighter;
+    font-weight: 600;
 }
 
 #endAside h5{
@@ -619,7 +714,7 @@ aside li{
 
 #endAside .bigspan{
     display: inline-block;
-    padding : 0.5vw 0.5vw;
+    padding : 1vw 2vw;
     font-weight: 500;
 }
 
@@ -684,17 +779,17 @@ aside li{
 
 .centerintro .articleHead{
     width : 90%;
-    height : 7%;
+    height : 8%;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .centerintro #pageLocation_left{
-    padding-top : 2%;
+    padding-top : 3%;
 }
 
 .centerintro #pageLocation_right{
-    padding-top : 6%;
+    padding-top : 7%;
 }
 
 .centerintro .articleBody{
@@ -722,16 +817,16 @@ aside li{
 
 .mapin .articleHead{
     width : 90%;
-    height : 7%;
+    height : 8%;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
 
 .mapin #pageLocation_left{
-    padding-top : 1%;
+    padding-top : 2%;
 }
 .mapin #pageLocation_right{
-    padding-top : 5%;
+    padding-top : 6%;
 }
 
 .mapin .articleBody{
@@ -762,7 +857,7 @@ aside li{
 
 .facility .articleHead{
     width : 90%;
-    height : 7%;
+    height : 8%;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -775,11 +870,11 @@ aside li{
 }
 
 .facility #pageLocation_left{
-    padding-top : 2%;
+    padding-top : 3%;
 }
 
 .facility #pageLocation_right{
-    padding-top : 6%;
+    padding-top : 7%;
 }
 
 .facility ul li{
@@ -801,7 +896,7 @@ aside li{
 
 .rule .articleHead{
     width : 90%;
-    height : 7%;
+    height : 8%;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -814,11 +909,11 @@ aside li{
 }
 
 .rule #pageLocation_left{
-    padding-top : 2%;
+    padding-top : 3%;
 }
 
 .rule #pageLocation_right{
-    padding-top : 6%;
+    padding-top : 7%;
 }
 
 /* enterin.html */
@@ -829,7 +924,7 @@ aside li{
 }
 .enterin .articleHead{
     width : 90%;
-    height : 7%;
+    height : 8%;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -840,6 +935,7 @@ aside li{
     padding-top:7%;
     margin : 0 auto;
 }
+
 /* ensurance.html */
 .ensurance{
     width : 80%;
@@ -849,7 +945,7 @@ aside li{
 
 .ensurance .articleHead{
     width : 90%;
-    height : 7%;
+    height : 5%;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -857,10 +953,184 @@ aside li{
 .ensurance .articleBody{
     width : 90%;
     height : 86%;
+    padding-top:5%;
+    margin : 0 auto;
+}
+
+.ensurance #pageLocation_left{
+    padding-top: 3%;
+}
+
+.ensurance #pageLocation_right{
+    padding-top: 7%;
+}
+
+#ensurancelist{
+    list-style-type: disc;
+    padding-left : 2%;
+}
+
+#ensurancelist>li{
+    margin-bottom: 8%;
+    color : #2d99a2;
+}
+
+#ensurancelist h4{
+    display: block;
+    margin : 0 0 3% 0;
+    font-size: 1.4em;
+}
+
+#ensurancelist span{
+    font-size: 1.2em;
+    color : black;
+}
+
+#ensurancelist li>ul>li h4{
+    padding-top : 5%;
+}
+
+
+/* consulting.html */
+.consulting{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.consulting .articleHead{
+    width : 90%;
+    height : 8%;
+    margin : 0 auto;
+    border-bottom: 2px solid #c7dbdd;
+}
+
+.consulting .articleBody{
+    width : 90%;
+    height : 86%;
     padding-top:7%;
     margin : 0 auto;
 }
 
+.consulting #pageLocation_left{
+    padding-top : 2%;
+}
+
+.consulting #pageLocation_right{
+    padding-top : 6%;
+}
+
+.searchPlace{
+    float : right;
+    width : 45%;
+}
+
+.for_float_right{
+    float : right;
+}
+
+.questionHead{
+    width : 100%;
+    height : 80%;
+    float : left;
+    margin : 3% 0 5% 0%;
+    padding : 1% 1%;
+}
+
+.questionHead div{
+    text-align: center;
+}
+
+.questionTb{
+    width : 100%;
+    font-size: 1em;
+}
+
+.questionTb th{
+    border-top : 1px solid black;
+    border-bottom: 1px solid #7fc9cf;
+    padding : 1% 1%;
+}
+
+.askNum{
+    width : 10%;
+    float : left;
+}
+
+.askTitle{
+    width : 80%;
+    float : left;
+}
+
+.askDate{
+    width : 10%;
+    float : left;
+}
+
+.questionTb tbody{
+    width : 100%;
+    height : 100%;
+}
+.questionTb td{
+    padding : 1% 0;
+    float : left;
+    text-align: center;
+    border-bottom: 1px solid #Bbb;
+}
+
+.questionTb td:nth-child(odd){
+    width : 10%;
+}
+
+.questionTb td:nth-child(even){
+    width : 80%;
+}
+
+.questionFoot{
+    width : 100%;
+    height : 10%;
+    float : left;
+    padding : 1% 1%;
+}
+
+.pageBtns{
+    width : 70%;
+    float : left;
+}
+.pageBtns #nextBtn{
+    margin-right: 10vw;
+}
+
+.pageBtns #prevBtn,
+.pageBtns #nextBtn,
+.pageBtns #pageButton{
+    float:right;
+    width : 5%;
+    height : 5%;
+    font-size : 1em;
+    background-color: #ffffff;
+    margin-top : 2%
+}
+
+.current{
+    color : #2d99a2;
+    font-weight: bold;
+}
+
+.queBtns{
+    width : 30%;
+    float : right;
+}
+
+#wri_question{
+    float : right;
+    padding : 5% 5%;
+    font-weight: 500;
+    font-size: 1.2em;
+    background-color: #2d99a2;
+    color : white;
+    border : none;
+}
 
 /* 테이블 */
 

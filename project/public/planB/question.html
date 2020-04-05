@@ -69,51 +69,64 @@
             </nav>
         </div>
     </header>
-    <div class="subContainer" style="height:1000px;">
+    <div class="subContainer" style="height:900px;">
         <aside>
             <ul class="asideDiv">
-                    <li id="location" style="margin-top : 0px;"><a href="/centerintro.html" style="color : white">인사말</a></li>
-                    <li><a href="/">운영규정</a></li>
-                    <li><a href="/facility.html">시설현황</a></li>
-                    <li><a href="/">입소안내</a></li>
-                    <li><a href="/">찾아오시는 길</a></li>
-                    <div id="endAside"><span class="bigspan"><h5>문의전화</h5><span class="smallspan">02 - 990 - 8875</span><br>( 24시간 연중무휴 )</span></div>
+                    <li id="location" style="margin-top : 0px;"><a href="/question.html" style="color : white">입소문의</a></li>
+                    <li><a href="/consulting.html">컨설팅문의</a></li>
+                    <div id="endAside"><span class="bigspan"><h5>문의전화</h5><span class="smallspan">02-990-8875</span><br>( 24시간 연중무휴 )</span></div>
             </ul>
         </aside>
-        <article class="centerintro">
+        <article class="consulting">
             <div class="articleHead">
-                <span id="pageLocation_left"><h4>인사말</h4></span>
-                <span id="pageLocation_right">홈 > 센터소개 > 인사말</span>
+                <span id="pageLocation_left"><h4>입소문의</h4></span>
+                <span id="pageLocation_right">홈 > 문의 및 상담 > 입소문의</span>
             </div>
             <div class="articleBody">
-                <ul id="articleList">
-                    <li style="margin-bottom : 17%"><h4>인사말씀</h4><span><h2>성모사랑데이케어센터를 방문해 주셔서 감사합니다.</h2> 우리나라도 이제 초고령화 시대를 맞이하면서 핵가족 또는 소가족화로 효의 가치관도 변하고 있습니다. 지병과 노화로 불편하신 부모님을 홀로 두거나 가정내에서 24시간
-                        부양하는 것에 대한 가족간 갈등과 이에 따른 피로누적 등으로 장기요양시설에 대한 사회적 인식과 요구도 달라지고 있습니다.<br><br>이렇듯 사회적 실버화 시대에 뇌신경질환까지 동반되어 장기간의 입원생활로 가족의
-                        삶은 정신적, 육체적, 경제적인 면에서 심각한 직면에 부딪히게 됩니다.<br><br>성모사랑데이케어센터는 이렇듯 부양에 부담되어버린 어르신을 낮 시간 주간보호서비스를 제공하며, 어르신의 건강 및 재활케어와 정서적교감
-                        을 형성하여 함께하는 동행의 메시지를 전달하여 고단했던 삶의 여정을 행복한 시간을 만들어 드리는 데 최선을 다하겠습니다.<br><br>늘 평화가 여러분 모두와 함께하길 기원합니다.</span>
-                        <div id="intro_logo"><img src="../assets/images/cutoff.jpg" style="width:100%;height: 100%;"></div>           
-                    </li>
-                    <li><h4>센터소개</h4>
-                            <span>성모사랑데이케어센터의 운영진은 오랫동안 병원의 간호실무적, 행정 실무 경험진과
-                                물리치료사 등 전문인력을 바탕으로 뇌졸중이나 파킨슨 등으로 인한 상하지 또는 편마비 어르신과
-                                정형외과적 만성 근골격계질환으로 일정부분 장애 및 노인성 치매와 고령의 만성 질환으로 단독 생활의
-                                어려움을 겪고 계신 어르신의 장기요양 서비스(1~5등급)를 받으신 분을 대상으로 낮 시간 중 어르신의
-                                생활안정과 심신기능의 유지 및 향상에 도움을 드리고자 하고 있습니다.<br><br>
-                                <ul>
-                                    <li style="color:hotpink">○ 보호 어르신의 상태에 맞춘 서비스 플랜 수립</li>
-                                    <li style="color:hotpink">○ 일일건강관리(혈압, 당뇨, 기본신장계측 및 투약)
-                                        <br><span style="color:black; font-size: 0.8em;">- 의료기관연계서비스 : 건강상태의 변화에 따라 신속한 진료지원</span>
-                                    </li>
-                                    <li style="color:hotpink">○ 식사 및 간식제공(개인별 영양식/당뇨식 제공)</li>
-                                    <li style="color:hotpink">○ 입체적 프로그램(정서/인지/취미/산책/시청각)</li>
-                                    <li style="color:hotpink">○ 특화된 뇌신경계 재활 / 근골격계 물리치료
-                                        <br><span style="color:black; font-size: 0.8em;">- 뇌졸중, 파킨슨병 등 뇌병변으로 인한 상,하지 편마비 어르신에 대한
-                                        운동 및 작업치료, 인지치료 시행</span>
-                                    </li>
-                                </ul>
-                            </span>
-                    </li>
-                </ul>
+                <div class="searchPlace">
+                    <div class="for_float_right">
+                    <select name="searchBy" id="selectBy">
+                        <option value="0" selected>제목</option>
+                        <option value="1">작성자</option>
+                    </select>
+                    <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">
+                    <button id = 'searchBtn'>검색</button>
+                    </div>
+                </div>
+                <div class="questionHead">
+                    <table class="questionTb">
+                        <thead>
+                            <tr>
+                                <th class="askNum">번호</th>
+                                <th class="askTitle">제목</th>
+                                <th class="askDate">날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="questionFoot">
+                    <div class="pageBtns">
+                        <button id="nextBtn">→</button> <!-- next button -->
+                        <button id="pageButton" class="notCurrent">2</button>
+                        <button id="pageButton" class="current">1</button>
+                        <button id="prevBtn">←</button> <!-- prev button -->
+                    </div>
+                    <div class="queBtns">
+                        <button id="wri_question">상담 신청하기</button>
+                    </div>
+                </div>
             </div>
         </article>
     </div>
@@ -137,10 +150,64 @@
                 <p><br>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
             </div>
         </div>
-    </footer> 
+    </footer>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <div class="modal_head">
+                <div class="modal_head_span">
+                    <div class="modal_title"><span class="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85" maxlength="16"></span>
+                    <input type="submit" id="submitBut"></div>
+                    
+                    <div class="modal_name"><span class="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10" maxlength="4"></span></div>
+                    <div class="modal_pwd"><span class="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="25" maxlength="14"></span></div>
+                    <div class="modal_num"><span class="modalspan">전화번호&nbsp;<input placeholder="OOO-OOOO-OOOO" id='uphone' type="text" title="phone" size="25" maxlength="11"></span></div>
+                </div>
+                <div id = "question_closeBtn"><img src="../assets/images/modal_close.png" style="float : right; width: 20px; height : 20px"></div>
+            </div>
+            <div class="modal_body">
+                <div class="modal_question_article">
+                    <div class="question-textarea">
+                        <textarea name="content_question" id="mod_cont_question"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="mfooter_spanzone">
+                    <button id="beforeBtn"><a href="">목록으로</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <div class="modal_head">
+                <div class="modal_head_span">
+                    <div class="modal_title"><span class="modalspan">제목</span></div>
+                    <div class="modal_name"><span class="modalspan">이름</span></div>
+                    <div class="modal_num"><span class="modalspan">전화번호</span></div>
+                </div>
+                <div id = "question_closeBtn"><img src="../assets/images/modal_close.png" style="width: 20px; height : 20%; float : right;"></div>
+            </div>
+            <div class="modal_body">
+                <div class="modal_question_article">
+                    <div class="answer-textarea">
+                        <span class="modalspan"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <div class="mfooter_spanzone">
+                    <button id="beforeBtn"><a href="">목록으로</a></button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
+    <!--<script src="../js/custom/layoutjs.js"></script>-->
     <script src="../js/custom/map.js"></script>
 
     <script>
