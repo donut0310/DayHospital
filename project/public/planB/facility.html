@@ -17,7 +17,7 @@
             <nav>
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
-                        <li style="width : 200px"><a href="/layout1.html"><img src="../assets/images/logo.jpg" id="logo"><h3>성모사랑</h3><h5>데이케어센터</h5></a>
+                        <li style="width : 200px"><a href="/"><img src="../assets/images/logo.jpg" id="logo"><h3>성모사랑</h3><h5>데이케어센터</h5></a>
                         </li>
                         <li style="width : 124px">
                             <span><a href="/centerintro">센터소개</a></span>
@@ -87,12 +87,12 @@
             </div>
             <div class="articleBody">
                 <ul id="articleList">
-                    <li class="facility_photo" id="fa_photo1"></li>
-                    <li class="facility_photo" id="fa_photo2"></li>
-                    <li class="facility_photo" id="fa_photo3"></li>
-                    <li class="facility_photo" id="fa_photo4"></li>
-                    <li class="facility_photo" id="fa_photo5"></li>
-                    <li class="facility_photo" id="fa_photo6"></li>
+                    <li class="facility_photo" id="fa_photo1"><img imgid = 1 src = "/assets/images/facility1.png" style = width:100%;height:100%;></li>
+                    <li class="facility_photo" id="fa_photo2"><img imgid = 2 src = "/assets/images/facility2.png" style = width:100%;height:100%;></li>
+                    <li class="facility_photo" id="fa_photo3"><img imgid = 3 src = "/assets/images/facility3.png" style = width:100%;height:100%;></li>
+                    <li class="facility_photo" id="fa_photo4"><img imgid = 4 src = "/assets/images/facility4.png" style = width:100%;height:100%;></li>
+                    <li class="facility_photo" id="fa_photo5"><img imgid = 5 src = "/assets/images/facility5.png" style = width:100%;height:100%;></li>
+                    <li class="facility_photo" id="fa_photo6"><img imgid = 6 src = "/assets/images/facility6.png" style = width:100%;height:100%;></li>
                 </ul>
             </div>
         </article>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="modal_body_article">
                     <div class="modal-zone">
-                        <img id = 'modalImg' src = '../assets/images/1.png' style = "width:100%;height:100%;">
+                        <img id = 'modalImg' src = '' style = "width:100%;height:100%;">
                         <div class="modalBtns">
                             <button id="prevBtn">←</button>
                             <button id="nextBtn">→</button>
@@ -152,10 +152,14 @@
             </div>
         </div>
     </div> 
+    <div id = 'err_modal' class = 'modal'>
+        <div id = 'load_err' class = 'modal-content'>
+            <div>사진이 존재하지 않습니다!</div>
+            <span id = 'err_close' class="close" style = "float:right">&times;</span>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
-    <script src="../js/custom/map.js"></script>
+    <script src="../js/custom/facilityjs.js"></script>
 
     <script>
         $(document).ready(function () {
