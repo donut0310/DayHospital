@@ -75,17 +75,17 @@
             <div class="content">
                 <div class="photo">
                     <div class="highlightzone">
-                        <h3>성모사랑 사진<a href="photo.html"><button id="plusBtn">+</button></a></h3>
+                        <h3>성모사랑 사진<a href="/photo"><button class="plusBtn">+</button></a></h3>
                         <h4>성모사랑 데이케어 센터에서 업로드합니다.</h4>
                     </div>
                     <div class="photozone">
                         <div class="miniPhoto" style = "overflow:hidden">
-                            <ul id = "photoSlide" style = "width:2100px;height:100%">
-                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:420px;height:300px;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                            <ul id = "photoSlide" style = "width:500%;height:100%">
+                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
                             </ul>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                 <div class="post">
                     <div class="highlightzone">
                         <!--same width photo highlight-->
-                        <h3>공지사항<a href="pmpc.html"><button id="plusBtn" style="left : 390px">+</button></a></h3>
+                        <h3>공지사항<a href="pmpc.html"><button class="plusBtn" style="left : 390px">+</button></a></h3>
                         <h4>성모사랑 데이케어 센터에서 알려드립니다.</h4>
                     </div>
                     <div class="listzone">
@@ -196,7 +196,8 @@
             </div>
         </div>
     </footer>
-
+    
+    <!--사진들어간 모달-->
     <div class="modal" id="modal1">
         <div class="modal-content">
             <div class="modal_head">
@@ -212,10 +213,11 @@
                         <h2 style="float: left;">사진제목</h2>
                         <h5 style="float:right; line-height: 3em;">관리자 2020.04.02</h5>
                     </span>
+            
                 </div>
                 <div class="modal_body_article">
                     <div class="modal-zone">
-                        <img id = 'modalImg' src = '../assets/images/1.png' style = "width:100%;height:100%;z-index: -1;">
+                        <img id = 'modalImg' src = '../assets/images/1.png' style = "width:100%;height:100%;">
                         <div class="modalBtns">
                             <button id="prevBtn">←</button>
                             <button id="nextBtn">→</button>
@@ -231,8 +233,9 @@
                 </div>
             </div>
         </div>
-    </div>사진들어간 모달
-
+    </div>
+    
+    <!--텍스트들어간 모달 -->
     <div  class="modal" id="modal2">
         <div class="modal-content">
             <div class="modal_head">
@@ -266,7 +269,9 @@
                 </div>
             </div>
         </div>
-    </div>  텍스트들어간 모달 -->
+    </div> 
+
+    <!--사진 + 텍스트들어간 공지사항 모달 -->
     <div class="modal" id="modal3">
         <div class="modal-content">
             <div class="modal_head">
@@ -301,8 +306,9 @@
                 </div>
             </div>
         </div>
-    </div>  사진 + 텍스트들어간 공지사항 모달 -->
+    </div>  
     
+    <!-- 센터입소안내 들어갈 모달 -->
     <div class="modal" id="modal4">
         <div class="modal-content">
             <div class="modal_head">
@@ -336,7 +342,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- 센터입소안내 들어갈 모달 -->
+    </div> 
 
     <div id = 'err_modal' class = 'modal'>
         <div id = 'load_err' class = 'modal-content'>
@@ -347,7 +353,7 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <!--<script src="../js/custom/layoutjs.js"></script>-->
+    <script src="../js/custom/layoutjs.js"></script>
     <script src="../js/custom/map.js"></script>
 
     <script>

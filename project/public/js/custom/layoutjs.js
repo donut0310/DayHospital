@@ -15,12 +15,17 @@ imgCloseBtn.addEventListener('mouseover',getCursor);
 const moreBtn = document.querySelector('#moreBtn');
 moreBtn.addEventListener('mouseover',getCursor);
 
+const plusBtn = document.querySelectorAll('.plusBtn');
+plusBtn[0].addEventListener('mouseover',getCursor);
+plusBtn[1].addEventListener('mouseover',getCursor);
 
 // modal
-const imgModal = document.querySelector('.modal');
+const imgModal = document.querySelector('#modal1');
+//const centerGuideModal = document.querySelector('#modal4');
 const err_modal = document.querySelector('#err_modal');
 const err_close = document.querySelector("#err_close");
 err_close.addEventListener('mouseover',getCursor);
+
 
 // params
 let photoCnt; //메인 페이지에 로드될 사진개수 최대 5개
@@ -99,6 +104,7 @@ function getImgModal(){
             }
         }
     });
+
     imgModal.style.display = 'block';
 }
 
@@ -131,7 +137,7 @@ function goToNext(){
 // 사진 슬라이드
 setInterval(() => {
     photoSlide.style.transition = 0.8 + "s";
-    photoSlide.style.transform = "translate3d(-" + (420 * (index + 1)) + "px, 0px, 0px)";
+    photoSlide.style.transform = "translate3d(-" + (460.97 * (index + 1)) + "px, 0px, 0px)";
     index++;
     if(index==photoCnt-1){
         index = -1;

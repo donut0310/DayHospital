@@ -136,6 +136,7 @@ function insertContent(){
     if(day<10){
         day = '0'+day;
     }
+    
     if(uname==''||upw==''||utitle==''||uphone==''||ucon==''){
         submit_err_modal.style.display = 'block';
         submit_err_modal.style.zIndex = 2;
