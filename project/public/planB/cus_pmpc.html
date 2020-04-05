@@ -96,30 +96,48 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 공지사항</span>
             </div>
             <div class="articleBody">
-                <div class="pArticleSearch">
-                    <div class="searchPlace">
+                <div class="question_searchPlace">
+                    <div class="for_float_right">
                         <select name="searchBy" id="selectBy">
                             <option value="0" selected>제목</option>
+                            <option value="1">작성자</option>
                         </select>
-                        <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;"
-                            id="searchText">
-                        <button id='searchBtn'>검색</button>
+                        <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">
+                        <button id = 'searchBtn'>검색</button>
                     </div>
                 </div>
-                <table cellspacing="0" cellpadding="0" class="tb_1">
-                    <tbody id="tbody">
-                        <tr>
-                            <th class="th_num">&nbsp;번&nbsp;호&nbsp;</th>
-                            <th class="th_title">&nbsp;제&nbsp;목&nbsp;</th>
-                            <th class="th_regist">&nbsp;등&nbsp;록&nbsp;일&nbsp;</th>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="pArticleFooter">
-                    <div class="buttons" style="margin : 1vw 7.5vw 0 0">
-                        <div id="page_btns">
-                            <button>0</button><!-- 프론트 확인용-->
-                        </div>
+                <div class="questionHead">
+                    <table class="questionTb">
+                        <thead>
+                            <tr>
+                                <th class="askNum">번호</th>
+                                <th class="askTitle">제목</th>
+                                <th class="askDate">날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="questionFoot">
+                    <div class="pageBtns">
+                        <button id="nextBtn">→</button> <!-- next button -->
+                        <button id="pageButton" class="notCurrent">2</button>
+                        <button id="pageButton" class="current">1</button>
+                        <button id="prevBtn">←</button> <!-- prev button -->
+                    </div>
+                    <div class="queBtns">
+                        <button id="wri_question">상담 신청하기</button>
                     </div>
                 </div>
             </div>
