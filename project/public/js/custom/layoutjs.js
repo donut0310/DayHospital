@@ -93,7 +93,7 @@ function getImgModal(){
     //console.log(this);
     let modalImg = document.querySelector('#modalImg');
     modalImg.src = this.getAttribute('src');
-    currentImgNum = Number(this.getAttribute('imgId'));
+    currentImgNum = Number(this.getAttribute('imgid'));
     modalImg.setAttribute('imgid',currentImgNum);
 
     axios.post('/layout/getImages').then((res)=>{
@@ -144,18 +144,29 @@ setInterval(() => {
     }
 }, 4000);
 
+function getCursor(){
+    this.style.cursor = 'pointer';
+}
+
 // modal 종료 함수
 imgCloseBtn.onclick = function(){
     imgModal.style.display = 'none';
-}
-
-function getCursor(){
-    this.style.cursor = 'pointer';
 }
 
 err_close.onclick = function(){
     err_modal.style.display = 'none';
 }
 
+window.onclick = function(event){
+    if(event.target == imgModal){
+        imgModal.style.display = 'none';
+    }
+}
+
+window.onkeydown = function(){
+    if(event.keyCode == 27){
+        imgModal.style.display = 'none';
+    }
+}
 
 init();

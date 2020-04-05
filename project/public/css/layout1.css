@@ -508,6 +508,19 @@ footer{
       margin : 2% 0 0 6%;
   }
 
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
   .modal_body{
       width : 100%;
@@ -1231,4 +1244,174 @@ aside li{
 
 .photo_date{
     color:#C2DCDD;
+}
+
+/* pmpc */
+
+#search_err{
+    background-color: #fefefe;
+    margin:5% auto;
+    padding:20px;
+    border:1px solid #888;
+    width:50%;
+}
+
+.pArticleSearch{
+    height : 30px;
+}
+
+.pArticleBody{
+    width : 70%;
+    height : 600px;
+    margin : 0 auto;
+}
+.pArticleFooter{ /**/
+    width : 100%;
+    margin : 0 auto;
+    float : left;
+}
+#page_btns{
+    float : left;
+    margin-right: 20vw;
+}
+
+.pmpc_footer{ /*pmpcpage container searchplacer*/
+    width : 100%;
+    border : 1px solid black;
+}
+
+.pmpc_searchPlace{
+    float : left;
+    margin-left : 22vw;
+    margin-bottom : 5px;
+}
+
+.searchPlace{
+    float : right;
+    margin-right: 10%;
+}
+
+.pabNum{
+    width : 15%;
+    float : left;
+}
+
+.pabTitle{
+    width : 65%;
+    float : left;
+}
+
+.pabDate{
+    width : 20%;
+    float : left;
+}
+
+.pabNum, .pabTitle, .pabDate{
+    border-top : 2px solid rgb(65, 61, 56);
+    border-bottom : 2px solid #C2DCDD;
+    text-align: center;
+    padding : 10px 0;
+}
+
+.pabContent{
+    width : 100%;
+    height : 600px;
+    float : left;;
+}
+
+/*pmpc table*/
+.tb_1{
+    width : 80%;
+    margin-left : 10%;
+    margin-top : 0.83em;
+    float : left;
+}
+
+.tb_1 th{
+    padding : 1%;
+    text-align: center;
+    background-color: bisque;
+    border-top: 4px solid #C2DCDD;
+    border-bottom: 1px solid black;
+}
+
+.th_num{
+    border-right: 1px solid black;
+    width : 10%;
+}
+
+.th_title{
+    border-right: 1px solid black;
+    width : 70%;
+}
+
+.th_regist{
+    width : 20%;
+}
+
+.tb_1 td{
+    text-align: center;
+    padding : 1%;
+    border-bottom:1px solid black;
+    font-size : 0.8em;
+}
+/* 포토보드 */
+.main_photo_box{
+    padding:20px;
+    margin:0;
+    border:1px solid #ccc;
+}
+
+.main_photo{
+    float:left;
+}
+
+.main_photo img{
+    display:block;
+    max-width:300px;
+    margin:0 auto;
+}
+
+.main_photo_box h2{
+    font-size:22px;
+    padding:10px 0 20px 20px;
+}
+
+.main_photo_box h3 span{
+    padding-left:45px;
+}
+
+.main_photo_box p{
+    font-size:17px;
+}
+
+.main_photo_box p strong{
+    padding-left:50px;
+    line-height: 30px;
+}
+
+.main_photo_box p strong:after{
+    display:inline-block;
+    padding-right:10px;
+    padding-left:10px;
+    content:":";
+}
+
+.main_photo_box:after{
+    display:block;
+    clear:both;
+    content:"";
+}
+
+.photo_content_box{
+    padding:10px 10px 10px 20px;
+    border:1px solid #ccc;
+    margin-bottom:30px;
+}
+
+.photo_content_text{
+    display:block;
+    line-height:20px;
+    margin:20px 0;
+    padding-left:20px;
 }

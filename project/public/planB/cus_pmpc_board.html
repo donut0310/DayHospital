@@ -79,10 +79,10 @@
     <div class="subContainer">
         <aside>
             <ul class="asideDiv">
-                <li style="margin-top : 0px;"><a href="/ensurance.html">공지사항</a>
+                <li id="location" style="margin-top : 0px;"><a href="/ensurance.html" style="color : white">공지사항</a>
                 </li>
                 <li><a href="/">주간식단표</a></li>
-                <li id="location" ><a href="/" style="color : white">성모사랑 사진</a></li>
+                <li><a href="/">성모사랑 사진</a></li>
                 <div id="endAside"><span class="bigspan">
                         <h5>문의전화</h5><span class="smallspan">02 - 990 - 8875</span><br>( 24시간 연중무휴 )
                     </span></div>
@@ -96,16 +96,12 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 공지사항</span>
             </div>
             <div class="articleBody">
-                <div class="main_photo_box">
-                    <div class="main_photo"> <img src="../assets/images/logo.jpg"> </div>
-                    <h3> <span>이이이이이이잉 이얏호응</span> </h3>
-                    <p> <strong> 촬영일자 </strong> <span>2020-03-03</span> <br> <strong> 촬영장소 </strong> <span>도봉산
-                            약수터</span> <br> </p>
-                </div>
-                <div class="photo_content_box">
-                    <pre class="photo_content_text">도봉산 약수터에서 배드민턴을 치는 사람들</pre>
-                </div> 
-                <button style="text-align: center;display:block;margin:auto;">목록보기</button>
+                    <div class="pArticleBody">
+                            <div class="pabNum"></div> 
+                            <div class="pabTitle"></div>
+                            <div class="pabDate"></div>
+                            <div class="pabContent"></div>
+                        </div>
             </div>
         </article>
     </div>
@@ -136,13 +132,13 @@
         </div>
     </footer>
 
-    <div id='err_modal' class='modal'>
-        <div id='search_err'>
-            <a></a>
-            <button id='ok'>검색 결과가 없습니다!</button>
-            <span id='err_close' class="close">&times;</span>
+    <div id = 'err_modal' class = 'modal'>
+            <div id = 'search_err'>
+                <a></a>
+                <button id = 'ok'>검색 결과가 없습니다!</button>
+                <span id = 'err_close' class="close">&times;</span>
+            </div>
         </div>
-    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
