@@ -22,8 +22,8 @@ router.get('/cen_target',function(req, res, next){
     res.render('./centerintro/cen_target.html');
 });
 
-router.get('/facilityin',function(req, res, next){
-    res.render('./centerintro/facilityin.html');
+router.get('/facility',function(req, res, next){
+    res.render('./facility.html');
 });
 
 router.get('/enterin',function(req, res, next){
