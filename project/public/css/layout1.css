@@ -42,7 +42,7 @@ header h5{
     width : 100%;
     height : 100%;
     margin: 0 auto;
-    background-image: url('../assets/images/1.png');
+    background-image: url('../assets/images/leftDown.jpeg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -434,6 +434,7 @@ footer{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
+
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
@@ -450,18 +451,18 @@ footer{
   }
 
   #modal3 .modal_head{
-      padding-left: 6%;
+      padding-left: 5%;
   }
 
   #modal1 .modal_head{
-      padding-left : 6%;
+      padding-left : 5%;
   }
 
   #imgCloseBtn{
     width : 10%;
     height : 100%;
     float : right;
-    padding : 2% 6% 0 0;
+    padding : 2% 5% 0 0;
     }
     
     #question_closeBtn{
@@ -505,7 +506,7 @@ footer{
   #modal2 .modal_head_span h2,
   #modal2 .modal_head_span h5{
       text-align: left;
-      margin : 2% 0 0 6%;
+      margin : 2% 0 0 5%;
   }
 
   .close {
@@ -679,6 +680,21 @@ footer{
   /******************** Sub Pages Css ********************/
 
   /*Commonly used Header / Container / aside / articleList */
+.sub_wrapper_span{
+    width : 100%;
+    height : 27vh;
+    margin : 0 auto;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+}
+.sub_wrapper_span h2{
+    margin : 0 0 2% 0;
+    padding : 4% 0 0 0;
+}
+.sub_wrapper_span span{
+    color : white;
+}
+
 #subHeader{
     width : 90vw;
     height : 35vh;
@@ -922,13 +938,22 @@ aside li{
 }
 
 .rule #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 0.8%;
 }
 
 .rule #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 4.8%;
 }
 
+.rule ol{
+    list-style-type : decimal;
+    color : black;
+    font-size: 1.2em;
+}
+
+.rule ol li{
+    margin-bottom: 2%;
+}
 /* enterin.html */
 .enterin{
     width : 80%;
@@ -1111,7 +1136,7 @@ aside li{
     float : left;
 }
 .pageBtns #nextBtn{
-    margin-right: 10vw;
+    margin-right: 8vw;
 }
 
 .pageBtns #prevBtn,
