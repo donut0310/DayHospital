@@ -556,8 +556,8 @@ footer{
       word-break: break-all;
   }
     
-  #prevBtn,
-  #nextBtn{
+  .prevBtn,
+  .nextBtn{
     float:left;
     width : 50%;
     height : 100%;
