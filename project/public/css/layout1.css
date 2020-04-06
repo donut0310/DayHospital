@@ -557,11 +557,13 @@ footer{
       height : 100%;
       margin : 0 auto;
       float:left;
+      position: relative;
       margin-left:5%;
   }
 
   .modalspan{
       display: inline-block;
+      word-break: break-all;
   }
     
   #prevBtn,
@@ -605,11 +607,13 @@ footer{
 }
 
   #modal1 .modalBtns{ /* index photo */
-    position: relative;
+    position: absolute;
     left : 86.1%;
     z-index: 1;
     width : 14%;
     height : 10%;
+    bottom:0px;
+    background-color:azure;
   }
 
   #modal1 .modalspan{
@@ -630,9 +634,10 @@ footer{
   }
 
   #modal2 .modalBtns{
-    position: relative;
+    position: absolute;
     left : 86%;
-    top : 81%;
+    background-color: azure;
+    bottom:0px;
     z-index: 1;
     width : 14%;
     height : 10%;
@@ -1503,4 +1508,46 @@ aside li{
 .tb_5 th:nth-child(1),
 .tb_5 th:nth-child(2){
     width : 15%;
+}
+
+.horizonlist{
+    display:flex;
+    justify-content: center;
+}
+.horizonlist>li{
+    float:left;
+    padding : 20px;
+    font-size: 1em;
+    border : 1px solid #bbb;
+    letter-spacing: 0.1em;
+}
+
+#recogproi{
+    width:80%;
+    display: none;
+    margin:0 auto;
+}
+
+#lifeproi{
+    width:80%;
+    display: none;
+    margin:0 auto;
+}
+
+#cureservi{
+    width:80%;
+    display: none;
+    margin:0 auto;
+}
+
+#careservi{
+    width:80%;
+    display: none;
+    margin:0 auto;
+}
+
+#mentori{
+    width:80%;
+    display: none;
+    margin:0 auto;
 }
