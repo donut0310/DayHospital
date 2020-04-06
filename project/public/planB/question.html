@@ -158,7 +158,7 @@
         </div>
     </footer>
 
-    <div class="modal" id="modal-ask">
+    <div class="modal" id="modal-ask"  style="display: none;">
         <div class="modal-content">
             <div class="modal_head">
                 <div class="modal_head_span">
@@ -186,7 +186,7 @@
         </div>
     </div>
 
-    <div class="modal" id="modal-answer">
+    <div class="modal" id="modal-answer" style="display: none;">
         <div class="modal-content">
             <div class="modal_head">
                 <div class="modal_head_span">
@@ -213,10 +213,13 @@
 
     <div id = 'check_pw_modal' class = 'modal'>
         <div id = 'check_pw' class = 'modal-content'>
-            <div class = "imgCloseBtn"><img src="../assets/images/modal_close.png" style="width: 15px; height : 15px; float : right;"></div>
+            <div class="modal_head">
+                <h4>상담글 보기</h4>
+                <div class = "imgCloseBtn"><img src="../assets/images/modal_close.png" style="width: 15px; height : 15px; float : right;"></div>
+            </div>
             <div id="check_pw_box">
-                <p>비밀번호 입력</p>
-                <input id = 'inputPw' type = 'password' style = "width:80% ; height: 20%"/>
+                <span>비밀번호 입력</span>
+                <input id = 'inputPw' type = 'password' style = "width:62% ; height: 20%"/>
                 <input type = 'submit' id = 'submit_pw'>
             </div>
         </div>    

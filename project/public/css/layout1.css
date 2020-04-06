@@ -424,7 +424,7 @@ footer{
 
 /* modal last of css */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 30; /* Sit on top */
     left: 0;
@@ -673,20 +673,28 @@ footer{
 
 /* check_pw_modal */
 #check_pw{
-    background-color: #C2DCDD;
+    background-color: white;
     margin : 15% auto;
     border : none;
-    width : 20%;
-    height : 10%;
+    width : 30%;
+    height : 15%;
+}
+
+#check_pw h4{
+    margin : 1% 0 0 0;
+    display: inline-block;
 }
 
 #check_pw_box{
-    width : 80%;
-    margin: 0 auto;
-    padding-top:7%;
+    width : 100%;
+    float : left;
+    padding:7% 0 0 5%;
 }
 
-
+#check_pw .modal_head{
+    height : 25%;
+    margin : 0 auto;
+}
   /******************** Sub Pages Css ********************/
 
   /*Commonly used Header / Container / aside / articleList */
