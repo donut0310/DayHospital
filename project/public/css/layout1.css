@@ -1450,3 +1450,67 @@ aside li{
     margin:20px 0;
     padding-left:20px;
 }
+
+/*programin.html*/
+#spanbox{
+    padding : 2% 2% 0 2%;
+    line-height : 1.4em;
+}
+.tb_4{
+    width : 90%;
+    text-align: center;
+    margin : 0 auto;
+    border-top : 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 1vw;
+}
+
+.tb_4 th,
+.tb_4 td{
+    border-right : 1px solid white;
+}
+
+.tb_4 th{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: #bbb;
+}
+
+.tb_4 td{
+    padding : 2%;
+}
+
+.tb_4 th:nth-child(2),
+.tb_4 th:nth-child(3),
+.tb_4 th:nth-child(4),
+.tb_4 th:nth-child(5),
+.tb_4 th:nth-child(6){
+    width : 13%;
+}
+
+.tb_4 tbody>tr:nth-child(odd){
+    background-color: #eee;
+}
+
+.tb_4 tbody>tr:nth-child(even){
+    background-color: #bbb;
+}
+
+.tb_4 tfoot{
+    background-color: #bbb;
+}
+.tb_5{
+    border : 1px solid black;
+    width : 90%;
+    margin : 0 auto;
+    text-align: center;
+}
+.tb_5 th,
+.tb_5 td{
+    border : 1px solid black;
+}
+
+.tb_5 th:nth-child(1),
+.tb_5 th:nth-child(2){
+    width : 15%;
+}
