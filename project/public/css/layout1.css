@@ -424,7 +424,7 @@ footer{
 
 /* modal last of css */
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 30; /* Sit on top */
     left: 0;
@@ -448,28 +448,18 @@ footer{
     width : 100%;
     height : 15%;
     background-color: #c7dbdd;
+    padding-left : 5%;
   }
 
-  #modal3 .modal_head{
-      padding-left: 5%;
-  }
-
-  #modal1 .modal_head{
+  #modal-in-photo .modal_head{
       padding-left : 5%;
   }
 
-  #imgCloseBtn{
+  .imgCloseBtn{
     width : 10%;
     height : 100%;
     float : right;
     padding : 2% 5% 0 0;
-    }
-    
-    #question_closeBtn{
-        float : right;
-        width : 10%;
-        height : 100%;
-        padding : 2% 6% 0 0;
     }
 
   .modal_head_span{
@@ -503,10 +493,10 @@ footer{
       height : 50%;
   }
 
-  #modal2 .modal_head_span h2,
-  #modal2 .modal_head_span h5{
+  #modal-in-text .modal_head_span h2,
+  #modal-in-text .modal_head_span h5{
       text-align: left;
-      margin : 2% 0 0 5%;
+      margin : 2% 0 0 0;
   }
 
   .close {
@@ -566,8 +556,8 @@ footer{
       word-break: break-all;
   }
     
-  #prevBtn,
-  #nextBtn{
+  .prevBtn,
+  .nextBtn{
     float:left;
     width : 50%;
     height : 100%;
@@ -585,7 +575,7 @@ footer{
     margin : 0 auto;
   }
 
-  #moreBtn{
+  .moreBtn{
       width : 20%;
       height : 50px;
       float : right;
@@ -596,7 +586,7 @@ footer{
       border : none;
   }
 
-  #beforeBtn{ /* consulting, question.html */
+  .beforeBtn{ /* consulting, question.html */
     width : 20%;
     height : 50px;
     float : right;
@@ -606,7 +596,7 @@ footer{
     border : none;
 }
 
-  #modal1 .modalBtns{ /* index photo */
+  #modal-in-photo .modalBtns{ /* index photo */
     position: absolute;
     left : 86.1%;
     z-index: 1;
@@ -616,24 +606,29 @@ footer{
     background-color:azure;
   }
 
-  #modal1 .modalspan{
+  #modal-in-photo .modalspan{
       margin-top: 1%;
   }
-  #modal2 .modal-zone{
+  #modal-in-text .modal-zone{
       border : 1px solid #c7dbdd;
   }
   
-  #modal2 .modalspan{
+  #modal-in-text .modalspan{
     margin : 1% 1%;
     font-size: 1em;
   }
 
-  #modal3 .modalspan{
+  #modal-ask .modalspan{
       margin-top : 2%;
       font-size: 1em;
   }
 
-  #modal2 .modalBtns{
+  #modal-answer .modalspan{
+      margin-top : 2%;
+      font-size : 1em;
+  }
+
+  #modal-in-text .modalBtns{
     position: absolute;
     left : 86%;
     background-color: azure;
@@ -681,7 +676,30 @@ footer{
     font-size: 1em;
 }
 
+/* check_pw_modal */
+#check_pw{
+    background-color: white;
+    margin : 15% auto;
+    border : none;
+    width : 30%;
+    height : 15%;
+}
 
+#check_pw h4{
+    margin : 1% 0 0 0;
+    display: inline-block;
+}
+
+#check_pw_box{
+    width : 100%;
+    float : left;
+    padding:7% 0 0 5%;
+}
+
+#check_pw .modal_head{
+    height : 25%;
+    margin : 0 auto;
+}
   /******************** Sub Pages Css ********************/
 
   /*Commonly used Header / Container / aside / articleList */
@@ -1140,13 +1158,13 @@ aside li{
     width : 70%;
     float : left;
 }
-.pageBtns #nextBtn{
+.pageBtns .nextBtn{
     margin-right: 8vw;
 }
 
-.pageBtns #prevBtn,
-.pageBtns #nextBtn,
-.pageBtns #pageButton{
+.pageBtns .prevBtn,
+.pageBtns .nextBtn,
+.pageBtns .pageButton{
     float:right;
     width : 5%;
     height : 5%;

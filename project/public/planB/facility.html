@@ -124,13 +124,14 @@
             </div>
         </div>
     </footer>
-    <div class="modal" id="modal1">
+    
+    <div class="modal" id="modal-in-photo">
         <div class="modal-content">
             <div class="modal_head">
                 <div class="modal_head_span">
                     <h2 style="padding-top : 2vh">시설현황</h2>
                 </div>
-                <div id = "imgCloseBtn"><img src="../assets/images/modal_close.png" style="width: 20px; height : 20px; float : right;"></div>
+                <div class = "imgCloseBtn"><img src="../assets/images/modal_close.png" style="width: 20px; height : 20px; float : right;"></div>
             </div>
             <div class="modal_body">
                 <div class="modal_body_head">
@@ -153,17 +154,19 @@
             <div class="modal_footer">
                 <div class="mfooter_spanzone">
                     <span class="modalspan"> 일단 넣었다 영류라..</span>
-                    <button id="moreBtn"><a href="/photo">더보기</a></button>
+                    <button class="moreBtn"><a href="/photo">더보기</a></button>
                 </div>
             </div>
         </div>
     </div> 
+
     <div id = 'err_modal' class = 'modal'>
         <div id = 'load_err' class = 'modal-content'>
             <div>사진이 존재하지 않습니다!</div>
             <span id = 'err_close' class="close" style = "float:right">&times;</span>
         </div>
     </div>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/custom/facilityjs.js"></script>
 
