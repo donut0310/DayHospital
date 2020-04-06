@@ -3,16 +3,16 @@ const img = document.querySelectorAll('.photoList img');
 const photoSlide = document.querySelector('#photoSlide');
 
 //btns
-const prevBtn = document.querySelector('#prevBtn');
+const prevBtn = document.querySelector('.prevBtn');
 prevBtn.addEventListener('click',goToPrev);
 
-const nextBtn = document.querySelector('#nextBtn');
+const nextBtn = document.querySelector('.nextBtn');
 nextBtn.addEventListener('click',goToNext);
 
-const imgCloseBtn = document.querySelector('#imgCloseBtn');
+const imgCloseBtn = document.querySelector('.imgCloseBtn');
 imgCloseBtn.addEventListener('mouseover',getCursor);
 
-const moreBtn = document.querySelector('#moreBtn');
+const moreBtn = document.querySelector('.moreBtn');
 moreBtn.addEventListener('mouseover',getCursor);
 
 const plusBtn = document.querySelectorAll('.plusBtn');
@@ -20,7 +20,7 @@ plusBtn[0].addEventListener('mouseover',getCursor);
 plusBtn[1].addEventListener('mouseover',getCursor);
 
 // modal
-const imgModal = document.querySelector('#modal1');
+const imgModal = document.querySelector('#modal-in-photo');
 //const centerGuideModal = document.querySelector('#modal4');
 const err_modal = document.querySelector('#err_modal');
 const err_close = document.querySelector("#err_close");

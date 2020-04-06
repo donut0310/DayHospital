@@ -76,7 +76,7 @@ router.get('/cus_pmpc_board',function(req, res, next){
     res.render('./pmpc/cus_pmpc_board.html');
 });
 router.get('/cus_pmpc',function(req, res, next){
-    res.render('./pmpc/cus_pmpc.html');
+    res.render('./cus_pmpc.html');
 });
 router.get('/meal_i',function(req, res, next){
     res.render('./pmpc/meal_i.html');
@@ -93,10 +93,10 @@ router.get('/pmpc_board',function(req, res, next){
 
 // question htmls
 router.get('/question',function(req, res, next){
-    res.render('../html/question/question.html');
+    res.render('./question.html');
 });
 router.get('/consulting',function(req, res, next){
-    res.render('../html/question/consulting.html');
+    res.render('./question/consulting.html');
 });
 
 // personal.html
