@@ -492,15 +492,13 @@ function resetList(){
 
  //버튼 리셋 함수
 function resetBtns(){
-    let deleteBtns = document.querySelector('#page_btns');
-    while(deleteBtns.hasChildNodes()){
-        deleteBtns.removeChild(deleteBtns.firstChild);
-    }
-    //프론트 확인용 버튼
-    let decoBtn = document.createElement('button');
-    decoBtn.innerText = 0;
-    let deco = document.querySelector('#page_btns');
-    deco.appendChild(decoBtn);
+    // let deleteBtns = document.querySelector('#page_btns');
+    // while(deleteBtns.hasChildNodes()){
+    //     deleteBtns.removeChild(deleteBtns.firstChild);
+    // }
+    
+    let pageBtns = document.querySelector('.pageBtns');
+    console.log(pageBtns);
 }
 
  //동적으로 추가된 데이터 스타일 함수
