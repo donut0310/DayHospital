@@ -1246,6 +1246,8 @@ aside li{
     padding-bottom: 2%;
     background-color: #C2DCDD;
     border-bottom: 1px solid black;
+    font-weight: bold;
+    font-size : 1.2em;
 }
 
 .tb tr{
@@ -1278,6 +1280,8 @@ aside li{
     background-color: #C2DCDD;
     border : 1px solid black;
     border-left: none;
+    font-weight: bold;
+    font-size : 1.2em;
 }
 
 .tb_big tr{
@@ -1442,6 +1446,20 @@ aside li{
 
 .horizonlist>li>a{
     cursor: default;
+}
+
+.programNav #articleList{
+    margin-top: 3%;
+}
+
+.programNav #articleList span{
+    font-size: 1em;
+    color : black;
+    line-height: 1.3em;
+}
+
+.programNav #articleList li ul li{
+    color : black;
 }
 
 #recogproi{
