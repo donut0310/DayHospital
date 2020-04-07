@@ -113,28 +113,29 @@ nav{
     border-left: 2px solid #A0D56E;
     background-color:white;
     width:124px;
-    padding-bottom : 80px;
+    
 }
 
 #border2{
     background-color : white;
     width:225.63px;
+    padding-bottom:80px;
 }
 
 #border3{
-    padding-bottom: 160px;
+    padding-bottom: 80px;
     background-color : white;
     width:124px;
 }
 
 #border4{
-    padding-bottom: 200px;
+    padding-bottom: 120px;
     background-color : white;
     width:193.63px;
 }
 
 #border5{
-    padding-bottom: 200px;
+    padding-bottom: 120px;
     background-color : white;
     width:151.25px;
     border-right: 2px solid #A0D56E;
@@ -1659,4 +1660,36 @@ aside li{
     height : 10%;
     float : left;
     padding : 1% 1%;
+}
+
+.pmpc_header{
+    width:100%;
+    height: 40px;
+}
+.pabNum{
+    width:10%;
+    display:inline-block;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+.pabTitle{
+    width:74%;
+    display: inline-block;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+.pabDate{
+    width:15%;
+    display: inline-block;
+    text-align:right;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+
+.pabContent{
+    height: 500px;
+    border:1px solid;
 }
