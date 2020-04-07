@@ -1440,6 +1440,10 @@ aside li{
     letter-spacing: 0.1em;
 }
 
+.horizonlist>li>a{
+    cursor: default;
+}
+
 #recogproi{
     width:80%;
     display: none;
