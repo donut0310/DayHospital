@@ -76,7 +76,7 @@
             </nav>
         </div>
     </header>
-    <div class="subContainer">
+    <div class="subContainer" style="height: 1000px;">
         <aside>
             <ul class="asideDiv">
                 <li id="location" style="margin-top : 0px;"><a href="/ensurance.html" style="color : white">공지사항</a>
@@ -88,7 +88,7 @@
                     </span></div>
             </ul>
         </aside>
-        <article class="ensurance">
+        <article class="pmpc">
             <div class="articleHead">
                 <span id="pageLocation_left">
                     <h4>공지사항</h4>
@@ -96,7 +96,7 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 공지사항</span>
             </div>
             <div class="articleBody">
-                <div class="question_searchPlace">
+                <div class="pmpc_searchPlace">
                     <div class="for_float_right">
                         <select name="searchBy" id="selectBy">
                             <option value="0" selected>제목</option>
@@ -106,13 +106,13 @@
                         <button id = 'searchBtn'>검색</button>
                     </div>
                 </div>
-                <div class="questionHead">
-                    <table class="questionTb">
+                <div class="pmpcHead">
+                    <table class="pmpcTb">
                         <thead>
                             <tr>
-                                <th class="askNum">번호</th>
-                                <th class="askTitle">제목</th>
-                                <th class="askDate">날짜</th>
+                                <th class="pmpcNum">번호</th>
+                                <th class="pmpcTitle">제목</th>
+                                <th class="pmpcDate">날짜</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,15 +129,13 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="questionFoot">
-                    <div class="pageBtns">
-                        <button class="nextBtn">→</button> <!-- next button -->
-                        <button id="pageButton" class="notCurrent">2</button>
-                        <button id="pageButton" class="current">1</button>
+                <div class="pmpcFoot">
+                    <div class="pageBtns" style="width:100%">
                         <button class="prevBtn">←</button> <!-- prev button -->
-                    </div>
-                    <div class="queBtns">
-                        <button id="wri_question">상담 신청하기</button>
+                        <button class="pageButton" id="current">1</button>
+                        <button class="pageButton" id="notCurrent">2</button>
+                        
+                        <button class="nextBtn" style="margin-right:0px;">→</button> <!-- next button -->
                     </div>
                 </div>
             </div>
