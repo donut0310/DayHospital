@@ -424,7 +424,7 @@ footer{
 
 /* modal last of css */
 .modal {
-    display: block; /* Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 30; /* Sit on top */
     left: 0;
@@ -697,6 +697,30 @@ footer{
 }
 
 #check_pw .modal_head{
+    height : 25%;
+    margin : 0 auto;
+}
+/* submit_err_modall */
+#submit_err{
+    background-color: white;
+    margin : 15% auto;
+    border : none;
+    width : 30%;
+    height : 15%;
+}
+
+#submit_err h4{
+    margin : 1% 0 0 0;
+    display: inline-block;
+}
+
+#submit_err_box{
+    width : 100%;
+    float : left;
+    padding:7% 0 0 5%;
+}
+
+#submit_err .modal_head{
     height : 25%;
     margin : 0 auto;
 }
