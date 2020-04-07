@@ -9,8 +9,11 @@ prevBtn.addEventListener('click',goToPrev);
 const nextBtn = document.querySelector('.nextBtn');
 nextBtn.addEventListener('click',goToNext);
 
-const imgCloseBtn = document.querySelector('.imgCloseBtn');
-imgCloseBtn.addEventListener('mouseover',getCursor);
+const post_modal_closeBtn = document.querySelector('#post_modal_closeBtn');
+post_modal_closeBtn.addEventListener('mouseover',getCursor);
+
+const img_modal_closeBtn = document.querySelector('#img_modal_closeBtn');
+img_modal_closeBtn.addEventListener('mouseover',getCursor);
 
 const moreBtn = document.querySelector('.moreBtn');
 moreBtn.addEventListener('mouseover',getCursor);
@@ -21,6 +24,7 @@ plusBtn[1].addEventListener('mouseover',getCursor);
 
 // modal
 const imgModal = document.querySelector('#modal-in-photo');
+const postModal = document.querySelector('#modal-in-text');
 //const centerGuideModal = document.querySelector('#modal4');
 const err_modal = document.querySelector('#err_modal');
 const err_close = document.querySelector("#err_close");
@@ -64,8 +68,6 @@ function addList(item = []){
         li.innerText = data.TITLE;
         li.appendChild(span);
         postUl.appendChild(li);
-
-        //모달, 페이지 상의 후에 span 태그에 작업 마무리 하기
 
     });
 }
@@ -149,7 +151,11 @@ function getCursor(){
 }
 
 // modal 종료 함수
-imgCloseBtn.onclick = function(){
+post_modal_closeBtn.onclick = function(){
+    postModal.style.display = 'none';
+}
+
+img_modal_closeBtn.onclick = function(){
     imgModal.style.display = 'none';
 }
 
