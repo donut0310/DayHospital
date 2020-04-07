@@ -1007,6 +1007,7 @@ aside li{
     height : 100%;
     float : left;
 }
+
 .enterin .articleHead{
     width : 90%;
     height : 8%;
@@ -1017,8 +1018,20 @@ aside li{
 .enterin .articleBody{
     width : 90%;
     height : 86%;
-    padding-top:7%;
+    padding-top:5%;
     margin : 0 auto;
+}
+
+.enterin #pageLocation_left{
+    padding-top : 3.8%;
+}
+
+.enterin #pageLocation_right{
+    padding-top: 7.6%;
+}
+
+.enterin p{
+    color : black;
 }
 
 /* ensurance.html */
@@ -1098,11 +1111,11 @@ aside li{
 }
 
 .consulting #pageLocation_left{
-    padding-top : 2%;
+    padding-top : 1%;
 }
 
 .consulting #pageLocation_right{
-    padding-top : 6%;
+    padding-top : 4.8%;
 }
 
 .question_searchPlace{
@@ -1197,7 +1210,7 @@ aside li{
     margin-top : 2%
 }
 
-.current{
+#current{
     color : #2d99a2;
     font-weight: bold;
 }
@@ -1219,67 +1232,63 @@ aside li{
 
 /* 테이블 */
 
-.tb_2{
-    width : 80%;
+.tb{
+    width : 100%;
     text-align: center;
-    margin : 0 auto;
+    float : left;
     border-top : 1px solid black;
     border-bottom: 1px solid black;
     margin-bottom: 2vw;
 }
 
-.tb_2 th{
+.tb th{
     padding-top: 2%;
     padding-bottom: 2%;
-    background-color: #bbb;
+    background-color: #C2DCDD;
+    border-bottom: 1px solid black;
 }
 
-.tb_2 td{
+.tb tr{
+    border-bottom: 1px solid black;
+}
+
+.tb td{
     padding : 2%;
+    background-color: rgba(240,240,240,0.4);
+    color : black;
 }
 
-.tb_2 tr:nth-child(even){
-    background-color: #eee;
+.tb_border{
+    border-right : 1.5px solid black;
 }
 
-.tb_2 tr:nth-child(odd){
-    background-color : #bbb;
-}
-
-#tb_2th{
-    border-right : 1.5px solid white;
-}
-
-
-.tb_3{
-    width : 80%;
+/* daycarein */
+.tb_big{
+    width : 100%;
     text-align: center;
-    margin : 0 auto;
+    float : left;
     border-top : 1px solid black;
-    border-bottom:1px solid black;
+    border-bottom: 1px solid black;
     margin-bottom: 2vw;
 }
 
-.tb_3 th{
+.tb_big th{
     padding-top : 2%;
     padding-bottom: 2%;
+    background-color: #C2DCDD;
+    border : 1px solid black;
+    border-left: none;
 }
 
-.tb_3 td{
+.tb_big tr{
+    border-bottom: 1px solid black;
+}
+
+.tb_big td{
     padding : 2%;
-}
-
-.tb_3 tr th,
-.tb_3 tr td{
-    border-right: 1px solid white;
-}
-
-.tb_3 tr:nth-child(even){
-    background-color: #eee;
-}
-
-.tb_3 tr:nth-child(odd){
-    background-color : #bbb;
+    background-color: rgba(240,240,240,0.4);
+    color : black;
+    border : 1px solid black;
 }
 
 /* 포토.html*/
@@ -1328,105 +1337,6 @@ aside li{
     width:50%;
 }
 
-.pArticleSearch{
-    height : 30px;
-}
-
-.pArticleBody{
-    width : 70%;
-    height : 600px;
-    margin : 0 auto;
-}
-.pArticleFooter{ /**/
-    width : 100%;
-    margin : 0 auto;
-    float : left;
-}
-#page_btns{
-    float : left;
-    margin-right: 20vw;
-}
-
-.pmpc_footer{ /*pmpcpage container searchplacer*/
-    width : 100%;
-    border : 1px solid black;
-}
-
-.pmpc_searchPlace{
-    float : left;
-    margin-left : 22vw;
-    margin-bottom : 5px;
-}
-
-.searchPlace{
-    float : right;
-    margin-right: 10%;
-}
-
-.pabNum{
-    width : 15%;
-    float : left;
-}
-
-.pabTitle{
-    width : 65%;
-    float : left;
-}
-
-.pabDate{
-    width : 20%;
-    float : left;
-}
-
-.pabNum, .pabTitle, .pabDate{
-    border-top : 2px solid rgb(65, 61, 56);
-    border-bottom : 2px solid #C2DCDD;
-    text-align: center;
-    padding : 10px 0;
-}
-
-.pabContent{
-    width : 100%;
-    height : 600px;
-    float : left;;
-}
-
-/*pmpc table*/
-.tb_1{
-    width : 80%;
-    margin-left : 10%;
-    margin-top : 0.83em;
-    float : left;
-}
-
-.tb_1 th{
-    padding : 1%;
-    text-align: center;
-    background-color: bisque;
-    border-top: 4px solid #C2DCDD;
-    border-bottom: 1px solid black;
-}
-
-.th_num{
-    border-right: 1px solid black;
-    width : 10%;
-}
-
-.th_title{
-    border-right: 1px solid black;
-    width : 70%;
-}
-
-.th_regist{
-    width : 20%;
-}
-
-.tb_1 td{
-    text-align: center;
-    padding : 1%;
-    border-bottom:1px solid black;
-    font-size : 0.8em;
-}
 /* 포토보드 */
 .main_photo_box{
     padding:20px;
@@ -1488,70 +1398,36 @@ aside li{
     padding-left:20px;
 }
 
+/* daycarein.html */
+.daycarein{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.daycarein .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.daycarein #pageLocation_left{
+    padding-top : 7%;
+}
+
+.daycarein #pageLocation_right{
+    padding-top : 11%;
+}
+
+.daycarein .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+
 /*programin.html*/
-#spanbox{
-    padding : 2% 2% 0 2%;
-    line-height : 1.4em;
-}
-.tb_4{
-    width : 90%;
-    text-align: center;
-    margin : 0 auto;
-    border-top : 1px solid black;
-    border-bottom: 1px solid black;
-    margin-bottom: 1vw;
-}
-
-.tb_4 th,
-.tb_4 td{
-    border-right : 1px solid white;
-}
-
-.tb_4 th{
-    padding-top: 2%;
-    padding-bottom: 2%;
-    background-color: #bbb;
-}
-
-.tb_4 td{
-    padding : 2%;
-}
-
-.tb_4 th:nth-child(2),
-.tb_4 th:nth-child(3),
-.tb_4 th:nth-child(4),
-.tb_4 th:nth-child(5),
-.tb_4 th:nth-child(6){
-    width : 13%;
-}
-
-.tb_4 tbody>tr:nth-child(odd){
-    background-color: #eee;
-}
-
-.tb_4 tbody>tr:nth-child(even){
-    background-color: #bbb;
-}
-
-.tb_4 tfoot{
-    background-color: #bbb;
-}
-.tb_5{
-    border : 1px solid black;
-    width : 90%;
-    margin : 0 auto;
-    text-align: center;
-}
-.tb_5 th,
-.tb_5 td{
-    border : 1px solid black;
-}
-
-.tb_5 th:nth-child(1),
-.tb_5 th:nth-child(2){
-    width : 15%;
-}
-
 .horizonlist{
     display:flex;
     justify-content: center;

@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="데이케어센터, 데이케어, 성모사랑, 창동 데이케어" id="metaDescription">
-    <meta name="viewport" content="width=device-width">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/common.css">
-    <title>성모사랑 데이케어센터</title>
+    <link rel="stylesheet" href="../../css/layout1.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <title>성모사랑 데이케어 센터</title>
 </head>
-
 <body>
-    <header>
+    <header id = subHeader>
         <div class="wrapper">
-            <a href="/"><img src="../../assets/images/logo.jpg" id="logo"></a>
-            <!--항상 위로 fix-->
             <nav>
-                <div class="topMenu" , id="menu1">
+                <div class="topMenu" id="menu1">
                     <ul class="dept01">
-                        <li style="width:124px">
+                        <li style="width : 200px"><a href="/layout1.html"><img src="../assets/images/logo.jpg" id="logo"><h3>성모사랑</h3><h5>데이케어센터</h5></a>
+                        </li>
+                        <li style="width : 124px">
                             <span><a href="/centerintro">센터소개</a></span>
                             <ul class="dept02" id="border1">
                                 <li><a href="/centerintro">인사말</a></li>
@@ -32,7 +29,7 @@
                                 <li><a href="/mapin">찾아오시는 길</a></li>
                             </ul>
                         </li>
-                        <li style="width:225.63px">
+                        <li style="width : 225.6px">
                             <span><a href="/programintro">성모사랑 프로그램안내</a></span>
                             <ul class="dept02" id="border2">
                                 <li><a href="/daycarein">데이케어란?</a></li>
@@ -66,190 +63,146 @@
                                 <li><a href="/consulting">컨설팅문의 및 상담</a></li>
                             </ul>
                         </li>
+                        <li style="width : 200px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">02-990-8875</li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
-
-    <aside>
-        <div class="navHead">
-            <span>센&nbsp;터&nbsp;소&nbsp;개</span>
-        </div>
-        <ul class="testdiv">
-            <li><a href="/centerintro">인사말</a></li>
-            <li><a href="/cen_target">운영규정</a></li>
-            <li><a href="/facilityin">시설현황</a></li>
-            <li><a href="/enterin" id="asideNav">입소안내</a></li>
-            <li><a href="/mapin">찾아오시는 길</a></li>
-            <div id="endAside"><span class="bigspan">
-                    <h5>문의전화</h5><span class="smallspan">02 - 990 - 8875</span><br>문의가능시간: 월 ~ 금 오전 8시~오후 6시
-                </span></div>
-            <img src="../../assets/images/leftDown.jpeg" style="width : 105%; height : 200px" id="rightUp">
-        </ul>
-    </aside>
-
-    <div class="container">
-        <div class="introbanner">
-            <img src="../../assets/images/introbanner.jpg" class="introbanner_img">
-            <img src="../../assets/images/banner.png" style="display: none;" class="introbanner_img">
-        </div>
-        <article class="enter_Article">
-            <div class="ArticleHead">
-                <span id="pPost">
-                    <h1>입소안내</h1>
-                </span>
-                <span id="pNav"><a href="/">HOME</a>&nbsp;>&nbsp;<a href="/centerintro">센터소개</a>&nbsp;>&nbsp;입소안내</span>
+    <div class="subContainer" style="height:1000px;">
+        <aside>
+            <ul class="asideDiv">
+                    <li><a href="/centerintro.html">인사말</a></li>
+                    <li><a href="/rule.html">운영규정</a></li>
+                    <li><a href="/facility.html">시설현황</a></li>
+                    <li id="location"><a href="/enterin.html" style="color : white">입소안내</a></li>
+                    <li><a href="/mapin.html">찾아오시는 길</a></li>
+                    <div id="endAside"><span class="bigspan"><h5>문의전화</h5><span class="smallspan">02-990-8875</span><br>( 24시간 연중무휴 )</span></div>
+            </ul>
+        </aside>
+        <article class="enterin">
+            <div class="articleHead">
+                <span id="pageLocation_left"><h4>입소안내</h4></span>
+                <span id="pageLocation_right">홈 > 센터소개 > 입소안내</span>
             </div>
-            <div class="cArticleBody">
-                <h3>입소[이용]안내</h3>
-                <div class="navEnterin">
-                    <ul>
-                        <li>
-                            <h4>○ 입소대상</h4>
-                            <span>만 65세 이상의 노인 또는 만 65세 미만의 자로서 노인성 질병을 가진자 중
-                                장기요양등급판정위원회에서 1~5등급, 인지지원등급으로 인정받은 거동가능 어르신
-                                (등급신청 전 이라도 등급 외 입소가능 : 별도 상담)
-                            </span>
-                        </li>
-                        <li>
-                            <h4>○ 입소정원 : 총 48명</h4>
-                        </li>
-                        <li>
-                            <h4>○ 입소방법</h4>
-                            <div id="graphimagediv"><img src="../../assets/images/graph.png" id="graphimage"></div>
-                        </li>
-                    </ul>
-                    <p>* 등급을 아직 받지 못하셨거나 진행중이신 분의 입소는 별도 상담하여 주시기 바랍니다.</p>
-                </div>
-                <h3>이용시간/입소비용</h3>
-                <div class="money">
-                    <ul>
-                        <li>
-                            <h4>○ 이용시간</h4>
-                            <span>
-                                - 주간보호 (월~금) 08:00 ~ 18:00 / 토요일 08:00~17:00<br>
-                                - 야간보호 (월~금) 18:00 ~ 20:00
-                            </span>
-                        </li>
-                        <li>
-                            <h4>○ 입소비용</h4>
-                            <table class="tb_2" cellspacing="20" cellpadding="20">
+            <div class="articleBody">
+                <ul id="articleList">
+                    <li><h4>이용시간</h4>
+                        <p>주간보호(월~금) 08:00 ~ 18:00 / 토요일 08:00 ~ 17:00</p>
+                        <p>야간보호(월~금) 18:00 ~ 20:00</p>
+                    </li>
+                    <li><h4>입소비용</h4>
+                        <table class="tb" cellspacing="20" cellpadding="20">
+                            <thead>
                                 <tr>
-                                    <th id="tb_2th">입소구분</th>
+                                    <th class="tb_border">입소구분</th>
                                     <th>이용료</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
-                                    <td id="tb_2th">일반어르신[건강보험]</td>
+                                    <td class="tb_border">일반어르신[건강보험]</td>
                                     <td>노인장기요양 85% + 본인부담 15% + 비급여</td>
                                 </tr>
                                 <tr>
-                                    <td id="tb_2th">국민기초생활수급권자</td>
+                                    <td class="tb_border">국민기초생활수급권자</td>
                                     <td>노인장기요양 100% [본인부담금 없음]</td>
                                 </tr>
                                 <tr>
-                                    <td id="tb_2th">차상위계층</td>
+                                    <td class="tb_border" style="line-height: 0.5em;"><br>차상위계층</td>
                                     <td>국가보조 91% + 본인부담 9% + 비급여<br>국가보조 94% + 본인부담 6% + 비급여</td>
                                 </tr>
-                            </table>
-                            <table class="tb_3">
-                                <tr>
-                                    <th>요양등급</th>
-                                    <th>이용료</th>
-                                    <th>비급여액</th>
-                                    <th>본인부담금</th>
-                                    <th>비고</th>
-                                </tr>
-                                <tr>
-                                    <td>1등급</td>
-                                    <td>187,000</td>
-                                    <td>88,000</td>
-                                    <td>275,000</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>2등급</td>
-                                    <td>173,000</td>
-                                    <td>88,000</td>
-                                    <td>261,000</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>3등급</td>
-                                    <td>160,000</td>
-                                    <td>88,000</td>
-                                    <td>248,000</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>4등급</td>
-                                    <td>156,000</td>
-                                    <td>88,000</td>
-                                    <td>244,000</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>5등급</td>
-                                    <td>151,000</td>
-                                    <td>88,000</td>
-                                    <td>239,000</td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                            <p>*표기준 월 ~ 금요일 오전 8시 ~ 오후 6시 한달 22일 기준 / 식대(중식 및 간식 2회 제공) 4,000원</p>
-                        </li>
-                    </ul>
-                </div>
+                            </tbody>
+                        </table>
+                        <table class="tb">
+                            <tr>
+                                <th class="tb_border">요양등급</th>
+                                <th class="tb_border">이용료</th>
+                                <th class="tb_border">비급여액</th>
+                                <th class="tb_border">본인부담금</th>
+                                <th>비고</th>
+                            </tr>
+                            <tr>
+                                <td class="tb_border">1등급</td>
+                                <td class="tb_border">187,000</td>
+                                <td class="tb_border">88,000</td>
+                                <td class="tb_border">275,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tb_border">2등급</td>
+                                <td class="tb_border">173,000</td>
+                                <td class="tb_border">88,000</td>
+                                <td class="tb_border">261,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tb_border">3등급</td>
+                                <td class="tb_border">160,000</td>
+                                <td class="tb_border">88,000</td>
+                                <td class="tb_border">248,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tb_border">4등급</td>
+                                <td class="tb_border">156,000</td>
+                                <td class="tb_border">88,000</td>
+                                <td class="tb_border">244,000</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="tb_border">5등급</td>
+                                <td class="tb_border">151,000</td>
+                                <td class="tb_border">88,000</td>
+                                <td class="tb_border">239,000</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <p>*표기준 월 ~ 금요일 오전 8시 ~ 오후 6시 한달 22일 기준 / 식대(중식 및 간식 2회 제공) 4,000원</p>
+                    </li>
+                </ul>
             </div>
         </article>
     </div>
-
-    <div class="rightAside">
-        <img src="../../assets/images/rightside.jpg" style="width : 100%; height: 500px;" id="rightBelow">
-    </div>
-
-    <footer>
-        <div class="left_footer">
-            <div class="footer_logo_class"><a href="/"><img src="../../assets/images/logo.jpg" id="footer_logo"></a>
+   <footer>
+        <div class="empty"></div>
+        <div class="footerContent">
+            <div class="footer_logo">
+                <div style="width :35%; height : 55%;float: right;"><img src="../assets/images/big_logo.png" style="width : 100%; height: 100%;"></div>
             </div>
-            <div class="information_box">
-                <span id="first_line_footer"><a href="/personal">개인정보처리방침</a>&nbsp;| 서비스 급여 종류 : 가정방문급여</span><br>
-                <div class="footer_information">
-                    <span>전화 : 02-990-8875 / 팩스 : 02-990-8879 / 대표자 : 신우진</span><br>
-                    <span>주소 : (우-----) 서울 도봉구 창동 181-3(마들로13길 165) 세영빌딩 5층 / 사업자등록번호 : </span><br>
-                    <span>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</span>
-                </div>
+            <div class="footer_information1">
+                <span><h1 style="display: inline-block;">성모사랑</h1>&nbsp;데이케어센터</span>
+                <h2>문의전화</h2>
+                <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
+                <h5><span><a id="personalInformation" href="personal.html">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</span></h5>
+            </div>
+            <div class="footer_information2">
+                <p>대표자 : 신우진</p>
+                <p>사업자 등록번호 : 000-000000-000</p>
+                <p>전화:02-990-8875 / Fax:02-990-8879</p>
+                <p>서비스 급여종류 : 가정방문 급여</p><br>
+                <p><br>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
             </div>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
+    <script src="../js/custom/layoutjs.js"></script>
+    <script src="../js/custom/map.js"></script>
 
     <script>
         $(document).ready(function () {
             // code ...
         });
-        $(document).on('mouseover', '.topMenu span', function () {
-            $('.dept02').slideDown(200);
+        $(document).on("mouseover", ".topMenu span", function () {
+            $(".dept02").slideDown(200);
         });
-        $(document).on('mouseleave', 'div', function () {
-            if (!$(this).hasClass('menubar')) {
-                $('.dept02').slideUp(200);
+        $(document).on("mouseleave", "div", function () {
+            if (!$(this).hasClass("dept02")) {
+                $(".dept02").slideUp(200);
             }
         });
-
-        function banner() {
-            var banner = document.querySelectorAll(".introbanner_img");
-            if (banner[0].style.display == "none") {
-                banner[0].style.display = "block";
-                banner[1].style.display = "none";
-            }
-            else {
-                banner[1].style.display = "block";
-                banner[0].style.display = "none";
-            }
-        }
-        setInterval(banner, 2000);
     </script>
-
 </body>
-
 </html>
