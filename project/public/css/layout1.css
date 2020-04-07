@@ -1432,6 +1432,7 @@ aside li{
 }
 
 /*programin.html*/
+
 .horizonlist{
     display:flex;
     justify-content: center;
@@ -1490,4 +1491,68 @@ aside li{
     width:80%;
     display: none;
     margin:0 auto;
+}
+
+.programintro #articleList li ul li{
+    margin-bottom : 14px;
+}
+
+.programintro{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.programintro .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.programintro #pageLocation_left{
+    padding-top : 3%;
+}
+
+.programintro #pageLocation_right{
+    padding-top : 7%;
+}
+
+.programintro .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+
+.plani #articleList li ul li{
+    margin-bottom : 14px;
+}
+
+.plani{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.plani .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.plani #pageLocation_left{
+    padding-top : 3%;
+}
+
+.plani #pageLocation_right{
+    padding-top : 7%;
+}
+
+.plani .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
 }
