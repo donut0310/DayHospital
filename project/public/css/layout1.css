@@ -1192,11 +1192,11 @@ aside li{
 }
 
 .pageBtns{
-    width : 70%;
+    width : 100%;
     float : left;
 }
 .pageBtns .nextBtn{
-    margin-right: 8vw;
+    /*margin-right: 8vw;*/
 }
 
 .pageBtns .prevBtn,
@@ -1207,7 +1207,8 @@ aside li{
     height : 5%;
     font-size : 1em;
     background-color: #ffffff;
-    margin-top : 2%
+    margin-top : 2%;
+    padding:5px;
 }
 
 #current{
@@ -1216,6 +1217,8 @@ aside li{
 }
 
 .queBtns{
+    position: absolute;
+    left:70%;
     width : 30%;
     float : right;
 }
