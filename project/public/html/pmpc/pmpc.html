@@ -19,7 +19,7 @@
             <nav>
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
-                        <li style="width : 200px"><a href="/layout1.html"><img src="../assets/images/logo.jpg"
+                        <li style="width : 200px"><a href="/"><img src="../assets/images/logo.jpg"
                                     id="logo">
                                 <h3>성모사랑</h3>
                                 <h5>데이케어센터</h5>
@@ -40,11 +40,7 @@
                             <ul class="dept02" id="border2">
                                 <li><a href="/daycarein">데이케어란?</a></li>
                                 <li><a href="/plani">프로그램운영계획표</a></li>
-                                <li><a href="/lifeproil">생활프로그램</a></li>
-                                <li><a href="/cureservi">전문재활운동서비스</a></li>
-                                <li><a href="/recogproi">인지재활프로그램</a></li>
-                                <li><a href="/careservi">의료보건케어서비스</a></li>
-                                <li><a href="/mentori">멘토링서비스</a></li>
+                                <li><a href="/prorgramintro">프로그램안내</a></li>
                             </ul>
                         </li>
                         <li style="width:124px">
@@ -76,7 +72,7 @@
             </nav>
         </div>
     </header>
-    <div class="subContainer">
+    <div class="subContainer" style="height: 1000px;">
         <aside>
             <ul class="asideDiv">
                 <li id="location" style="margin-top : 0px;"><a href="/ensurance.html" style="color : white">공지사항</a>
@@ -88,7 +84,7 @@
                     </span></div>
             </ul>
         </aside>
-        <article class="ensurance">
+        <article class="pmpc">
             <div class="articleHead">
                 <span id="pageLocation_left">
                     <h4>공지사항</h4>
@@ -96,11 +92,48 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 공지사항</span>
             </div>
             <div class="articleBody">
-                            <div class="pabNum"></div> 
-                            <div class="pabTitle"></div>
-                            <div class="pabDate"></div>
-                            <div class="pabContent"></div>
-
+                <div class="pmpc_searchPlace">
+                    <div class="for_float_right">
+                        <select name="searchBy" id="selectBy">
+                            <option value="0" selected>제목</option>
+                            <option value="1">작성자</option>
+                        </select>
+                        <input type="text" onkeyup="pressKey();" placeholder="내용을 입력해주세요." style="width:200px;" id="searchText">
+                        <button id = 'searchBtn'>검색</button>
+                    </div>
+                </div>
+                <div class="pmpcHead">
+                    <table class="pmpcTb">
+                        <thead>
+                            <tr>
+                                <th class="pmpcNum">번호</th>
+                                <th class="pmpcTitle">제목</th>
+                                <th class="pmpcDate">날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pmpcFoot">
+                    <div class="pageBtns" style="width:100%;display: flex;justify-content: center;">
+                        <button class="prevBtn">←</button> <!-- prev button -->
+                        <button class="pageButton" id="current">1</button>
+                        <button class="pageButton" id="notCurrent">2</button>
+                        
+                        <button class="nextBtn" style="margin-right:0px;">→</button> <!-- next button -->
+                    </div>
+                </div>
             </div>
         </article>
     </div>
@@ -108,13 +141,18 @@
         <div class="empty"></div>
         <div class="footerContent">
             <div class="footer_logo">
-                <div style="width :35%; height : 55%;float: right;"><img src="../assets/images/big_logo.png" style="width : 100%; height: 100%;"></div>
+                <div class="empty" style="height: 6%;"></div>
+                <div style="width :35%; height : 55%;float: right;"><img src="../../assets/images/big_logo.png"
+                        style="width : 100%; height: 100%;"></div>
             </div>
             <div class="footer_information1">
-                <span><h1 style="display: inline-block;">성모사랑</h1>&nbsp;데이케어센터</span>
+                <span>
+                    <h1 style="display: inline-block;">성모사랑</h1>&nbsp;데이케어센터
+                </span>
                 <h2>문의전화</h2>
                 <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
-                <h5><span><a id="personalInformation" href="personal.html">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</span></h5>
+                <h5><span><a id="personalInformation"
+                            href="personal.html">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</span></h5>
             </div>
             <div class="footer_information2">
                 <p>대표자 : 신우진</p>
@@ -135,10 +173,7 @@
         </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
-    <script src="../js/custom/map.js"></script>
-
+    <script src="../js/custom/cus_pmpcjs.js"></script>
     <script>
         $(document).ready(function () {
             // code ...

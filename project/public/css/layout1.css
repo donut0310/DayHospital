@@ -113,28 +113,29 @@ nav{
     border-left: 2px solid #A0D56E;
     background-color:white;
     width:124px;
-    padding-bottom : 80px;
+    
 }
 
 #border2{
     background-color : white;
     width:225.63px;
+    padding-bottom:80px;
 }
 
 #border3{
-    padding-bottom: 160px;
+    padding-bottom: 80px;
     background-color : white;
     width:124px;
 }
 
 #border4{
-    padding-bottom: 200px;
+    padding-bottom: 120px;
     background-color : white;
     width:193.63px;
 }
 
 #border5{
-    padding-bottom: 200px;
+    padding-bottom: 120px;
     background-color : white;
     width:151.25px;
     border-right: 2px solid #A0D56E;
@@ -1192,11 +1193,11 @@ aside li{
 }
 
 .pageBtns{
-    width : 70%;
+    width : 100%;
     float : left;
 }
 .pageBtns .nextBtn{
-    margin-right: 8vw;
+    /*margin-right: 8vw;*/
 }
 
 .pageBtns .prevBtn,
@@ -1207,15 +1208,18 @@ aside li{
     height : 5%;
     font-size : 1em;
     background-color: #ffffff;
-    margin-top : 2%
+    margin-top : 2%;
+    padding:5px;
 }
 
-#current{
+.current{
     color : #2d99a2;
     font-weight: bold;
 }
 
 .queBtns{
+    position: absolute;
+    left:70%;
     width : 30%;
     float : right;
 }
@@ -1432,6 +1436,7 @@ aside li{
 }
 
 /*programin.html*/
+
 .horizonlist{
     display:flex;
     justify-content: center;
@@ -1490,4 +1495,201 @@ aside li{
     width:80%;
     display: none;
     margin:0 auto;
+}
+
+.programintro #articleList li ul li{
+    margin-bottom : 14px;
+}
+
+.programintro{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.programintro .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.programintro #pageLocation_left{
+    padding-top : 3%;
+}
+
+.programintro #pageLocation_right{
+    padding-top : 7%;
+}
+
+.programintro .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+
+.plani #articleList li ul li{
+    margin-bottom : 14px;
+}
+
+.plani{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.plani .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.plani #pageLocation_left{
+    padding-top : 3%;
+}
+
+.plani #pageLocation_right{
+    padding-top : 7%;
+}
+
+.plani .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+
+.pmpc #articleList li ul li{
+    margin-bottom : 14px;
+}
+
+.pmpc{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.pmpc .articleHead{
+    width : 90%;
+    height : 8%;
+    margin: 0 auto;
+    border-bottom : 2px solid #c7dbdd
+}
+
+.pmpc #pageLocation_left{
+    padding-top : 3%;
+}
+
+.pmpc #pageLocation_right{
+    padding-top : 7%;
+}
+
+.pmpc .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top : 7%;
+    margin : 0 auto;
+}
+
+.pmpc_searchPlace{
+    float : right;
+    width : 45%;
+}
+
+.pmpcHead{
+    width : 100%;
+    /*height : 800px;*/
+    float : left;
+    margin : 3% 0 5% 0%;
+    padding : 1% 1%;
+}
+
+.pmpcHead div{
+    text-align: center;
+}
+
+.pmpcTb{
+    width : 100%;
+    font-size: 1em;
+}
+
+.pmpcTb th{
+    border-top : 1px solid black;
+    border-bottom: 1px solid #7fc9cf;
+    padding : 1% 1%;
+}
+
+.pmpcTb tbody{
+    width : 100%;
+    height : 100%;
+}
+.pmpcTb td{
+    padding : 1% 0;
+    float : left;
+    text-align: center;
+    border-bottom: 1px solid #Bbb;
+}
+
+.pmpcTb td:nth-child(odd){
+    width : 10%;
+}
+
+.pmpcTb td:nth-child(even){
+    width : 80%;
+}
+
+.pmpcNum{
+    width : 10%;
+    float : left;
+}
+
+.pmpcTitle{
+    width : 80%;
+    float : left;
+}
+
+.pmpcDate{
+    width : 10%;
+    float : left;
+}
+
+.pmpcFoot{
+    width : 100%;
+    height : 10%;
+    float : left;
+    padding : 1% 1%;
+}
+
+.pmpc_header{
+    width:100%;
+    height: 40px;
+}
+.pabNum{
+    width:10%;
+    display:inline-block;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+.pabTitle{
+    width:74%;
+    display: inline-block;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+.pabDate{
+    width:15%;
+    display: inline-block;
+    text-align:right;
+    font-size: 1.2em;
+    height:100%;
+    border:1px solid #535353
+}
+
+.pabContent{
+    height: 500px;
+    border:1px solid;
 }
