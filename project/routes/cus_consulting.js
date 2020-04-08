@@ -12,7 +12,7 @@ router.post('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from consulting order by CONTENT_ORDER desc limit 0,10";
+            let sql = "select * from consulting order by ID desc limit 0,5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -52,7 +52,7 @@ router.post('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from consulting order by CONTENT_ORDER desc";
+            let sql = "select * from consulting order by ID desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -74,7 +74,7 @@ router.post('/page_num', function(req, res, next){
         else{
             let page_num = req.body.page_num;
        
-            let sql = "select * from consulting order by CONTENT_ORDER desc limit " + (page_num-1)*10 + ", 10";
+            let sql = "select * from consulting order by ID desc limit " + (page_num-1)*5 + ", 5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -93,7 +93,6 @@ router.post('/insertData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let content_order = req.body.content_order;
             let uname = req.body.uname;
             let upw = req.body.upw;
             let utitle = req.body.utitle;
@@ -103,8 +102,8 @@ router.post('/insertData', function(req, res, next){
 
             
             //쿼리문 작성 및 실행 할 query함수 선언
-            let sql = "insert into consulting (CONTENT_ORDER, USER_NAME, USER_PASSWORD, TITLE, CONTENT, USER_PHONE, DATE) values (?,?,?,?,?,?,?)";
-            var params = [content_order, uname, upw, utitle, ucon, uphone, date];
+            let sql = "insert into consulting (USER_NAME, USER_PASSWORD, TITLE, CONTENT, USER_PHONE, DATE) values (?,?,?,?,?,?)";
+            var params = [uname, upw, utitle, ucon, uphone, date];
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
@@ -125,7 +124,7 @@ router.post('/selectData', function(req, res, next){
             let text;
             let sql;
             if(req.body.text == ''){
-                sql = 'select * from consulting order by CONTENT_ORDER desc';
+                sql = 'select * from consulting order by ID desc';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -182,7 +181,7 @@ router.post('/selectData_page_num', function(req, res, next){
             let text;
             let sql;
             if(req.body.text == ''){
-                sql = 'select * from consulting order by CONTENT_ORDER desc';
+                sql = 'select * from consulting order by ID desc';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -198,7 +197,7 @@ router.post('/selectData_page_num', function(req, res, next){
             }
             else if(otn == 0){
                 text = req.body.text + '%';
-                sql = 'select * from consulting where TITLE like ? limit ' + (page_num-1)*10 + ', 10';
+                sql = 'select * from consulting where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
                 var params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -213,7 +212,7 @@ router.post('/selectData_page_num', function(req, res, next){
             }
             else{
                 text = req.body.text + '%';
-                sql = 'select * from consulting where USER_NAME like ? limit ' + (page_num-1)*10 + ', 10';
+                sql = 'select * from consulting where USER_NAME like ? limit ' + (page_num-1)*5 + ', 5';
                 var params = text;
 
                 conn.query(sql, params, function(err,rows){
@@ -235,14 +234,40 @@ router.post('/getPw', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let content_order = req.body.content_order;
+            let id = req.body.id;
+            let pw = req.body.pw;
 
-            var params = [content_order];
-            let sql = 'select USER_PASSWORD,CONTENT from consulting where CONTENT_ORDER = ?';
+            var params = [id];
+            let sql = 'select USER_PASSWORD from consulting where ID = ?';
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
-                        conn.release();
+                    conn.release();
+                                 
+                        let output = {};
+                        output['result'] = "success";
+                        if(rows[0].USER_PASSWORD == pw)output['data'] = 'correct'
+                        else output['data'] = 'incorrect'
+                        res.send(output);
+                }        
+            });
+        }
+    });
+});
+
+router.post('/getData', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+            let id = req.body.id;
+
+            var params = id;
+            let sql = 'select USER_NAME, TITLE, CONTENT, USER_PHONE from consulting where ID = ?';
+            conn.query(sql, params, function(err,rows){
+                if(err) throw err;
+                else{
+                    conn.release();
+                                 
                         let output = {};
                         output['result'] = "success";
                         output['data'] = rows;
@@ -252,7 +277,6 @@ router.post('/getPw', function(req, res, next){
         }
     });
 });
-
 module.exports = router;
 
 

@@ -83,6 +83,7 @@ function resetList(){
 //li에 초기 사진 저장
 function showImg(item = []){
     photoCnt = item.length;
+    console.log(photoCnt);
     for(i=0;i<photoCnt;i++){
         img[i].src = item[i].path + item[i].file_name;
         img[i].addEventListener('mouseover',getCursor);

@@ -36,14 +36,14 @@ const submit_err_modal = document.querySelector('#submit_err_modal');
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-    axios.post('/cus_question/createBtns').then((res)=>{
+    axios.post('/cus_consulting/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.post('/cus_question/init').then((res)=>{
+    axios.post('/cus_consulting/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 addList(res.data['data']);
@@ -147,7 +147,7 @@ function goToPrev(){
         page_num = currentPage.value;
         sendData['page_num'] = page_num;
         
-        axios.post('/cus_question/page_num', sendData).then((res)=>{
+        axios.post('/cus_consulting/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -172,7 +172,7 @@ function goToNext(){
         page_num = currentPage.value;
         sendData['page_num'] = page_num;
         
-        axios.post('/cus_question/page_num', sendData).then((res)=>{
+        axios.post('/cus_consulting/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -198,7 +198,7 @@ function deleteAndGet(){
     let sendData = {};
     sendData['page_num'] = page_num;
     
-    axios.post('/cus_question/page_num', sendData).then((res)=>{
+    axios.post('/cus_consulting/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -230,7 +230,7 @@ function searchedDeleteAndGet(){
     sendData['page_num'] = page_num;
     sendData['value'] = otn;
     sendData['text'] = searchText;
-    axios.post('/cus_question/selectData_page_num', sendData).then((res)=>{
+    axios.post('/cus_consulting/selectData_page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
@@ -254,7 +254,7 @@ function search(){
     sendData['value'] = otn;
     sendData['text'] = searchText;
     
-    axios.post('/cus_question/selectData', sendData).then((res)=>{
+    axios.post('/cus_consulting/selectData', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -357,7 +357,7 @@ function insertContent(){
         sendData['uphone'] = uphone;
         sendData['date'] = year+'-'+month+'-'+day;
 
-        axios.post('/cus_question/insertData', sendData).then((res)=>{
+        axios.post('/cus_consulting/insertData', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data == "success"){
                     window.location.reload();
@@ -410,7 +410,7 @@ function checkPw(check){
 
         let sendData = {};
         sendData['id'] = postId;
-        axios.post('/cus_question/getData', sendData).then((res)=>{
+        axios.post('/cus_consulting/getData', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     showContent(res.data['data']);
@@ -445,7 +445,7 @@ submit_pw.onclick = function(event){
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/cus_question/getPw', sendData).then((res)=>{
+        axios.post('/cus_consulting/getPw', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])
@@ -533,7 +533,7 @@ function pressKey2(){
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/cus_question/getPw', sendData).then((res)=>{
+        axios.post('/cus_consulting/getPw', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])

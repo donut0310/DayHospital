@@ -1212,7 +1212,7 @@ aside li{
     padding:5px;
 }
 
-#current{
+.current{
     color : #2d99a2;
     font-weight: bold;
 }
