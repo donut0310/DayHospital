@@ -1236,8 +1236,8 @@ aside li{
     width : 100%;
     text-align: center;
     float : left;
-    border-top : 1px solid black;
-    border-bottom: 1px solid black;
+    border-top : 1px solid #999999;
+    border-bottom: 1px solid #999999;
     margin-bottom: 2vw;
 }
 
@@ -1245,13 +1245,13 @@ aside li{
     padding-top: 2%;
     padding-bottom: 2%;
     background-color: #C2DCDD;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #999999;
     font-weight: bold;
     font-size : 1.2em;
 }
 
 .tb tr{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #999999;
 }
 
 .tb td{
@@ -1261,7 +1261,7 @@ aside li{
 }
 
 .tb_border{
-    border-right : 1.5px solid black;
+    border-right : 1.5px solid #999999;
 }
 
 /* daycarein */
@@ -1269,8 +1269,8 @@ aside li{
     width : 100%;
     text-align: center;
     float : left;
-    border-top : 1px solid black;
-    border-bottom: 1px solid black;
+    border-top : 1px solid #999999;
+    border-bottom: 1px solid #999999;
     margin-bottom: 2vw;
 }
 
@@ -1278,21 +1278,21 @@ aside li{
     padding-top : 2%;
     padding-bottom: 2%;
     background-color: #C2DCDD;
-    border : 1px solid black;
+    border : 1px solid #999999;
     border-left: none;
     font-weight: bold;
     font-size : 1.2em;
 }
 
 .tb_big tr{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #999999;
 }
 
 .tb_big td{
     padding : 2%;
     background-color: rgba(240,240,240,0.4);
     color : black;
-    border : 1px solid black;
+    border : 1px solid #999999;
 }
 
 /* 포토.html*/
