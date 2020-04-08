@@ -1,5 +1,7 @@
 //dynamic add elements
-const tbody = document.querySelector('tbody');
+const tbody = document.querySelector('.pmpcTb tbody');
+const pageBtns = document.querySelector('.pageBtns');
+
 //btns
 const page_btns = document.querySelector('#page_btns');
 const searchClicked = document.querySelector('#searchBtn');
@@ -8,7 +10,7 @@ const okBtn = document.querySelector('#ok');
 
 //params
 let pages;
-
+let currentPage;
 
 // close btn
 const err_close = document.querySelector("#err_close");
@@ -19,6 +21,8 @@ const err_modal = document.querySelector('#err_modal');
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
+    resetList();
+
     axios.post('/cus_pmpc/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
@@ -39,31 +43,131 @@ function init(){
 function createBtns(item = []){
     resetBtns();
 
-    pages = item.length/10;
-    for(i=0;i<pages;i++){
-        let btn = document.createElement('button');
-        btn.className += 'page_btn';
-        btn.style.float = 'left';
-        btn.innerText = i+1;
-        btn.value = i+1;
-        btn.addEventListener('click',deleteAndGet);
-        page_btns.appendChild(btn);
-        //buttons.appendChild(page_btns);
+    if(item.length%5==0){
+        pages = parseInt(item.length/5);
     }
+    else pages = parseInt(item.length/5 + 1);
+    let prevBtn = document.createElement('button');
+    let nextBtn = document.createElement('button');
+    
+    prevBtn.className += 'prevBtn';
+    prevBtn.innerText = '←';
+    prevBtn.addEventListener('click',goToPrev);
+    pageBtns.appendChild(prevBtn);
+    
+    for(i=1;i<=pages;i++){
+        let pageButton = document.createElement('button');
+        pageButton.className += 'pageButton';
+        if(i==1){
+            pageButton.className += ' current';
+            currentPage = pageButton;
+        }
+        else pageButton.className += ' notCurrent';
+        
+        pageButton.innerText = i;
+        pageButton.value = i;
+        pageButton.addEventListener('click',deleteAndGet);
+        pageBtns.appendChild(pageButton);
+    }
+    
+    nextBtn.className += 'nextBtn';
+    nextBtn.innerText = '→';
+    nextBtn.addEventListener('click',goToNext);
+    pageBtns.appendChild(nextBtn);
+    
 }
+
 function createSearchedBtns(item = []){
     resetBtns();
+    
+    if(item.length%5==0){
+        pages = parseInt(item.length/5);
+    }
+    else pages = parseInt(item.length/5 + 1);
+    let nextBtn = document.createElement('button');
+    let prevBtn = document.createElement('button');
+    
+    prevBtn.className += 'prevBtn';
+    prevBtn.innerText = '←';
+    prevBtn.addEventListener('click',goToPrev);
+    pageBtns.appendChild(prevBtn);
 
-    pages = item.length/10;
-    for(i=0;i<pages;i++){
-        let btn = document.createElement('button');
-        btn.className += 'page_btn';
-        btn.style.float = 'left';
-        btn.innerText = i+1;
-        btn.value = i+1;
-        btn.addEventListener('click',searchedDeleteAndGet);
-        page_btns.appendChild(btn);
-        //buttons.appendChild(page_btns);
+    for(i=1;i<=pages;i++){
+        let pageButton = document.createElement('button');
+        pageButton.className += 'pageButton';
+        if(i==1){
+            pageButton.className += ' current';
+            currentPage = pageButton;
+        }
+        else pageButton.className += ' notCurrent';
+        
+        pageButton.innerText = i;
+        pageButton.value = i;
+        pageButton.addEventListener('click',searchedDeleteAndGet);
+        pageBtns.appendChild(pageButton);
+    }
+    
+    nextBtn.className += 'nextBtn';
+    nextBtn.innerText = '→';
+    nextBtn.addEventListener('click',goToNext);
+    pageBtns.appendChild(nextBtn);
+}
+
+function resetBtns(){
+    let pageBtns = document.querySelector('.pageBtns');
+    while(pageBtns.hasChildNodes()){
+        pageBtns.removeChild(pageBtns.firstChild);
+    }
+}
+
+function goToPrev(){
+    if(currentPage.value != 1){
+        resetList();
+        currentPage.classList.remove('current');
+        currentPage.classList.add('notCurrent');
+        
+        currentPage = currentPage.previousSibling;
+        
+        currentPage.classList.remove('notCurrent');
+        currentPage.classList.add('current');
+
+        let sendData = {};
+        page_num = currentPage.value;
+        sendData['page_num'] = page_num;
+        
+        axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                addList(res.data["data"]);
+            }
+        }
+    });
+    }
+    
+}
+function goToNext(){
+    if(currentPage.value != pages){
+        resetList();
+        currentPage.classList.remove('current');
+        currentPage.classList.add('notCurrent');
+        
+        currentPage = currentPage.nextSibling;
+        
+        currentPage.classList.remove('notCurrent');
+        currentPage.classList.add('current');
+
+        let sendData = {};
+        page_num = currentPage.value;
+        sendData['page_num'] = page_num;
+        console.log(currentPage);
+        console.log(page_num);
+        axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                addList(res.data["data"]);
+            }
+        }
+    });
     }
 }
 
@@ -94,47 +198,41 @@ function search(){
 // 검색된 고객정보 출력
 function showSearchedInit(item = []){
     createSearchedBtns(item);
-    
     //이전 데이터 삭제
-    resetTable();
-    //검색 결과 없을때
-    if(item.length==0){
-        err_modal.style.display = 'block';
-    }
+    resetList();
     //이후 데이터 출력
     for(i=0;i<10;i++){
         if(item[i]==null)break;
-        let title_url = document.createElement('a');
-        title_url.href = '/cus_pmpc_board?'+ item[i].content_order;
-        title_url.innerText = item[i].title;
-
         let tr = document.createElement('tr');
-        let td_num = document.createElement('td');
-        let td_title = document.createElement('td');
-        let td_regist = document.createElement('td');
+        let tdId = document.createElement('td');
+        let tdTitle = document.createElement('td');
+        let tdDate = document.createElement('td');
 
-        tdStyle(td_num,td_title,td_regist);
-
-        tr.className += 'addTr';
-        td_num.className +='add_td_num';
-        td_title.className +='add_td_title';
-        td_regist.className +='add_td_regist';
-        td_num.innerText = item[i].content_order;
-        td_title.appendChild(title_url);
-        td_regist.innerText = item[i].date;
+        tdId.innerText = item[i].ID;
+        tdTitle.innerText = item[i].TITLE;
+        tdTitle.value = item[i].ID;
+        tdDate.innerText = item[i].DATE
+        tr.appendChild(tdId);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDate);
         
-        tr.appendChild(td_num);
-        tr.appendChild(td_title);
-        tr.appendChild(td_regist);
+        tdTitle.addEventListener('mouseover', getCursor);
+
         tbody.appendChild(tr);
     }
 }
+
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
+    currentPage.classList.remove('current');
+    currentPage.classList.add('notCurrent');
+
     let page_num = this.value;
-    
+    this.classList.remove('notCurrent');
+    this.classList.add('current');
+    currentPage = this;
     //이전 데이터 삭제
-    resetTable();
+    resetList();
     
     //이후 데이터 출력 위해 db 호출
     let sendData = {};
@@ -143,7 +241,7 @@ function deleteAndGet(){
     axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
-                    addList(res.data["data"]);
+                addList(res.data["data"]);
             }
         }
     });
@@ -151,14 +249,21 @@ function deleteAndGet(){
 
 //해당 페이지에 로드할 검색된 리스트들(게시글)
 function searchedDeleteAndGet(){
+    currentPage.classList.remove('current');
+    currentPage.classList.add('notCurrent');
+
     let page_num = this.value;
+    this.classList.remove('notCurrent');
+    this.classList.add('current');
+    currentPage = this;
+
     let target = document.querySelector('#selectBy');
     let searchText = document.querySelector('#searchText').value;
     
     let otn = target.options[target.selectedIndex].value;
     
     //이전 데이터 삭제
-    resetTable();
+    resetList();
     
     //이후 데이터 출력 위해 db 호출
     let sendData = {};
@@ -169,7 +274,7 @@ function searchedDeleteAndGet(){
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
-                        resetTable();
+                        resetList();
                         init();
                     }
                     else {addList(res.data['data']);}
@@ -180,82 +285,50 @@ function searchedDeleteAndGet(){
 
 //table에 추가할 공지사항 list 함수
 function addList(item = []){
+    
     item.forEach(function(data){
-        let title_url = document.createElement('a');
-        title_url.href = '/cus_pmpc_board?'+ data.content_order;
-        title_url.innerText = data.title;
-
         let tr = document.createElement('tr');
-        let td_num = document.createElement('td');
-        let td_title = document.createElement('td');
-        let td_regist = document.createElement('td');
-
-        tdStyle(td_num,td_title,td_regist);
-
-        tr.className += 'addTr';
-        td_num.className +='add_td_num';
-        td_title.className +='add_td_title';
-        td_regist.className +='add_td_regist';
-
-        td_num.innerText = data.content_order;
-        td_title.appendChild(title_url);
-        td_regist.innerText = data.date;
+        let tdId = document.createElement('td');
+        let tdTitle = document.createElement('td');
+        let tdDate = document.createElement('td');
         
-        tr.appendChild(td_num);
-        tr.appendChild(td_title);
-        tr.appendChild(td_regist);
+        let url = document.createElement('a');
+        url.innerText = data.TITLE;        
+
+        tdId.innerText = data.ID;
+        tdDate.innerText = data.DATE
+
+        url.href = 'pmpc_board?' + data.ID;
+        tdTitle.appendChild(url);
+        tr.appendChild(tdId);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDate);
+        
+        tdTitle.addEventListener('mouseover', getCursor);
 
         tbody.appendChild(tr);
     });
 }
 
 //table 리셋 함수
-function resetTable(){
-    //이전 데이터 삭제
+function resetList(){
     while(tbody.hasChildNodes()){
         tbody.removeChild(tbody.firstChild);
     }
-    //tr, th 생성
-    let tr = document.createElement('tr');
-    let th_num = document.createElement('th');
-    let th_title = document.createElement('th');
-    let th_regist = document.createElement('th');
-
-    th_num.innerText = '번 호';
-    th_title.innerText = '제 목';
-    th_regist.innerText = '등 록 일';
-
-    th_num.className = 'th_num';
-    th_title.className = 'th_title';
-    th_regist.className = 'th_regist';
-
-    tr.appendChild(th_num);
-    tr.appendChild(th_title);
-    tr.appendChild(th_regist);
-    tbody.appendChild(tr);
 }
 
 //버튼 리셋 함수
 function resetBtns(){
-    let deleteBtns = document.querySelector('#page_btns');
-    while(deleteBtns.hasChildNodes()){
-        deleteBtns.removeChild(deleteBtns.firstChild);
+    let pageBtns = document.querySelector('.pageBtns');
+    while(pageBtns.hasChildNodes()){
+        pageBtns.removeChild(pageBtns.firstChild);
     }
-    //프론트 확인용 버튼
-    let decoBtn = document.createElement('button');
-    decoBtn.innerText = 0;
-    let deco = document.querySelector('#page_btns');
-    deco.appendChild(decoBtn);
 }
 
-//table 스타일 함수
-function tdStyle(td_num,td_title,td_regist){
-    td_num.style.borderRight = '1px solid black';
-    td_num.style.width = '10%';
-    td_title.style.borderRight = '1px solid black';
-    td_title.style.width = '70%';
-    td_regist.style.width = '20%';
-}
+function getCursor(){
+    this.style.cursor = 'pointer';
+ }
+
 // 에러 창 닫기 버튼 클릭시
 err_close.onclick = function(){
     err_modal.style.display = 'none';
