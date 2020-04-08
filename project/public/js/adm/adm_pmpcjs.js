@@ -32,7 +32,7 @@ function initShow(item = []){
     item.forEach(function(data){
   
         let topic_link = document.createElement('a');
-        topic_link.href = './board.html?'+data.content_order;
+        topic_link.href = './board?'+data.content_order;
         topic_link.innerText = data.title;
 
         let tr = document.createElement('tr');
