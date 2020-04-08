@@ -76,7 +76,7 @@ router.get('/cus_pmpc_board',function(req, res, next){
     res.render('./pmpc/cus_pmpc_board.html');
 });
 router.get('/cus_pmpc',function(req, res, next){
-    res.render('./cus_pmpc.html');
+    res.render('./pmpc/cus_pmpc.html');
 });
 router.get('/meal_i',function(req, res, next){
     res.render('./pmpc/meal_i.html');
