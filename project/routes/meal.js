@@ -10,7 +10,7 @@ router.post('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from postlist order by ID desc limit 0,5";
+            let sql = "select * from meal order by ID desc limit 0,5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -29,7 +29,7 @@ router.post('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from postlist order by ID desc";
+            let sql = "select * from meal order by ID desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -49,7 +49,7 @@ router.post('/page_num', function(req, res, next){
         if(err) throw err;
         else{
             let page_num = req.body.page_num;
-            let sql = "select * from postlist order by ID desc limit " + (page_num-1)*5 + ", 5";
+            let sql = "select * from meal order by ID desc limit " + (page_num-1)*5 + ", 5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -72,7 +72,7 @@ router.post('/selectData', function(req, res, next){
             let text;
             let sql;
             if(req.body.text == ''){
-                sql = 'select * from postlist order by ID desc';
+                sql = 'select * from meal order by ID desc';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -88,7 +88,7 @@ router.post('/selectData', function(req, res, next){
             }
             else if(otn == 0){
                 text = req.body.text + '%';
-                sql = 'select * from postlist where TITLE like ?';
+                sql = 'select * from meal where TITLE like ?';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -115,7 +115,7 @@ router.post('/selectData_page_num', function(req, res, next){
             let text;
             let sql;
             if(req.body.text == ''){
-                sql = 'select * from postlist order by ID desc';
+                sql = 'select * from meal order by ID desc';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -131,7 +131,7 @@ router.post('/selectData_page_num', function(req, res, next){
             }
             else if(otn == 0){
                 text = req.body.text + '%';
-                sql = 'select * from postlist where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
+                sql = 'select * from meal where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
                 var params = text;
  
                 conn.query(sql, params, function(err,rows){
@@ -155,7 +155,7 @@ router.post('/select_content_order', function(req, res, next){
         else{
             let id = req.body.id;
             let sql;
-            sql = 'select * from postlist where ID = ?';
+            sql = 'select * from meal where ID = ? between '  + ' and ' + id + 1 ;
             var params = id;
  
             conn.query(sql, params, function(err,rows){

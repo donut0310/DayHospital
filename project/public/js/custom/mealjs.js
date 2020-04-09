@@ -23,14 +23,14 @@ const err_modal = document.querySelector('#err_modal');
 function init(){
     resetList();
 
-    axios.post('/cus_pmpc/createBtns').then((res)=>{
+    axios.post('/meal/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.post('/cus_pmpc/init').then((res)=>{
+    axios.post('/meal/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -135,7 +135,7 @@ function goToPrev(){
         page_num = currentPage.value;
         sendData['page_num'] = page_num;
         
-        axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+        axios.post('/meal/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -159,9 +159,7 @@ function goToNext(){
         let sendData = {};
         page_num = currentPage.value;
         sendData['page_num'] = page_num;
-        console.log(currentPage);
-        console.log(page_num);
-        axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+        axios.post('/meal/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -182,7 +180,7 @@ function search(){
     sendData['value'] = otn;
     sendData['text'] = searchText;
     
-    axios.post('/cus_pmpc/selectData', sendData).then((res)=>{
+    axios.post('/meal/selectData', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -238,7 +236,7 @@ function deleteAndGet(){
     let sendData = {};
     sendData['page_num'] = page_num;
     
-    axios.post('/cus_pmpc/page_num', sendData).then((res)=>{
+    axios.post('/meal/page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -270,7 +268,7 @@ function searchedDeleteAndGet(){
     sendData['page_num'] = page_num;
     sendData['value'] = otn;
     sendData['text'] = searchText;
-    axios.post('/cus_pmpc/selectData_page_num', sendData).then((res)=>{
+    axios.post('/meal/selectData_page_num', sendData).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
@@ -298,7 +296,7 @@ function addList(item = []){
         tdId.innerText = data.ID;
         tdDate.innerText = data.DATE
 
-        url.href = 'pmpc_board?' + data.ID;
+        url.href = 'meal_board?' + data.ID;
         tdTitle.appendChild(url);
         tr.appendChild(tdId);
         tr.appendChild(tdTitle);

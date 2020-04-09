@@ -2,106 +2,104 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/',function(req, res, next){
-    res.render('./index');
+    res.render('./index.html');
 });
 
 router.get('/popup',function(req, res, next){
-    res.render('popup');
+    res.render('popup.html');
 });
 
 // centerintro htmls
 router.get('/centerintro',function(req, res, next){
-    res.render('./centerintro/centerintro');
+    res.render('./centerintro/centerintro.html');
 });
 
 router.get('/cen_target',function(req, res, next){
-    res.render('./centerintro/cen_target');
+    res.render('./centerintro/cen_target.html');
 });
 
 router.get('/cen_target',function(req, res, next){
-    res.render('./centerintro/cen_target');
+    res.render('./centerintro/cen_target.html');
 });
 
 router.get('/facility',function(req, res, next){
-    res.render('./facility');
+    res.render('./centerintro/facility.html');
 });
 
 router.get('/enterin',function(req, res, next){
-    res.render('./centerintro/enterin');
+    res.render('./centerintro/enterin.html');
 });
 
 router.get('/mapin',function(req, res, next){
-    res.render('./centerintro/mapin');
+    res.render('./centerintro/mapin.html');
 });
 
 // ensurance htmls
 router.get('/ensurance',function(req, res, next){
-    res.render('./ensurance');
+    res.render('./ensurance/ensurance.html');
 });
 
 // programintro htmls
 router.get('/programintro',function(req, res, next){
-    res.render('./programintro/programintro');
+    res.render('./programintro/programintro.html');
 });
 router.get('/daycarein',function(req, res, next){
-    res.render('./programintro/daycarein');
+    res.render('./programintro/daycarein.html');
 });
 router.get('/plani',function(req, res, next){
-    res.render('./programintro/plani');
+    res.render('./programintro/plani.html');
 });
 router.get('/lifeproi',function(req, res, next){
-    res.render('./programintro/lifeproi');
+    res.render('./programintro/lifeproi.html');
 });
 router.get('/cureservi',function(req, res, next){
-    res.render('./programintro/cureservi');
+    res.render('./programintro/cureservi.html');
 });
 router.get('/recogproi',function(req, res, next){
-    res.render('./programintro/recogproi');
+    res.render('./programintro/recogproi.html');
 });
 router.get('/careservi',function(req, res, next){
-    res.render('./programintro/careservi');
+    res.render('./programintro/careservi.html');
 });
 router.get('/mentori',function(req, res, next){
-    res.render('./programintro/mentori');
+    res.render('./programintro/mentori.html');
 });
 
 // pmpc htmls
-router.get('/cus_meal_board',function(req, res, next){
-    res.render('./pmpc/cus_meal_board');
+router.get('/meal_board',function(req, res, next){
+    res.render('./pmpc/meal_board.html');
 });
-router.get('/cus_meal_i',function(req, res, next){
-    res.render('./pmpc/cus_meal_i');
-});
-router.get('/cus_pmpc_board',function(req, res, next){
-    res.render('./pmpc/cus_pmpc_board');
-});
-router.get('/pmpc',function(req, res, next){
-    res.render('./pmpc/pmpc');
-});
-router.get('/meal_i',function(req, res, next){
-    res.render('./pmpc/meal_i');
-});
-router.get('/photo_board',function(req, res, next){
-    res.render('./pmpc/photo_board');
-});
-router.get('/photo',function(req, res, next){
-    res.render('./pmpc/photo');
+router.get('/meal',function(req, res, next){
+    res.render('./pmpc/meal.html');
 });
 router.get('/pmpc_board',function(req, res, next){
-    res.render('./pmpc/pmpc_board');
+    res.render('./pmpc/pmpc_board.html');
+});
+router.get('/pmpc',function(req, res, next){
+    res.render('./pmpc/pmpc.html');
+});
+router.get('/photo_board',function(req, res, next){
+    
+    res.render('./pmpc/photo_board.html');
+});
+router.get('/photo',function(req, res, next){
+    res.render('./pmpc/photo.html');
+});
+router.get('/pmpc_board',function(req, res, next){
+    res.render('./pmpc/pmpc_board.html');
 });
 
 // question htmls
 router.get('/question',function(req, res, next){
-    res.render('./question/question');
+    res.render('./question/question.html');
 });
 router.get('/consulting',function(req, res, next){
-    res.render('./question/consulting');
+    res.render('./question/consulting.html');
 });
 
 // personal
 router.get('/personal',function(req, res, next){
-    res.render('./personal');
+    res.render('./personal.html');
 });
 
 module.exports = router;

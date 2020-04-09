@@ -61,10 +61,16 @@ function addList(item = []){
     item.forEach(function (data) {
         let li = document.createElement('li');
         let span = document.createElement('span');
+        let a = document.createElement('a');
+
         span.style.float = 'right';
-        span.innerText = '자세히 보기';
         span.addEventListener('mouseover',getCursor);
         
+        a.innerText = '자세히 보기';
+        
+        a.href = 'pmpc_board?' + data.ID;
+
+        span.appendChild(a);
         li.innerText = data.TITLE;
         li.appendChild(span);
         postUl.appendChild(li);
@@ -83,7 +89,6 @@ function resetList(){
 //li에 초기 사진 저장
 function showImg(item = []){
     photoCnt = item.length;
-    console.log(photoCnt);
     for(i=0;i<photoCnt;i++){
         img[i].src = item[i].path + item[i].file_name;
         img[i].addEventListener('mouseover',getCursor);
