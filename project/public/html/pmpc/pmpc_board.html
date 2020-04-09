@@ -19,7 +19,7 @@
             <nav>
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
-                        <li style="width : 200px"><a href="/layout1.html"><img src="../../assets/images/logo.jpg"
+                        <li style="width : 200px"><a href="/"><img src="../../assets/images/logo.jpg"
                                     id="logo">
                                 <h3>성모사랑</h3>
                                 <h5>데이케어센터</h5>
@@ -39,8 +39,8 @@
                             <span><a href="/programintro">성모사랑 프로그램안내</a></span>
                             <ul class="dept02" id="border2">
                                 <li><a href="/daycarein">데이케어란?</a></li>
+                                <li><a href="/programintro">프로그램안내</a></li>
                                 <li><a href="/plani">프로그램운영계획표</a></li>
-                                <li><a href="/prorgramintro">프로그램안내</a></li>
                             </ul>
                         </li>
                         <li style="width:124px">
@@ -70,15 +70,21 @@
                     </ul>
                 </div>
             </nav>
+            <div class="sub_wrapper_span">
+                <span>
+                <h2>공지사항</h2>
+                성모사랑 데이케어센터에서 알려드립니다.
+                </span>
+            </div>
         </div>
     </header>
-    <div class="subContainer">
+    <div class="subContainer" style="height : 700px;">
         <aside>
             <ul class="asideDiv">
-                <li id="location" style="margin-top : 0px;"><a href="/ensurance.html" style="color : white">공지사항</a>
+                <li id="location" style="margin-top : 0px;"><a href="/pmpc" style="color : white">공지사항</a>
                 </li>
-                <li><a href="/">주간식단표</a></li>
-                <li><a href="/">성모사랑 사진</a></li>
+                <li><a href="/meal">주간식단표</a></li>
+                <li><a href="/photo">성모사랑 사진</a></li>
                 <div id="endAside"><span class="bigspan">
                         <h5>문의전화</h5><span class="smallspan">02-990-8875</span><br>( 24시간 연중무휴 )
                     </span></div>
@@ -92,14 +98,21 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 공지사항</span>
             </div>
             <div class="articleBody">
+                <button style="text-align: center;float : right; margin: 20px auto; padding : 5px; border-radius: 1em;"><a href="/pmpc">목록보기</a></button>
                 <div class="pmpc_header">
                     <div class="pabNum">1</div>
                     <div class="pabTitle"><a>제목</a></div>
                     <div class="pabDate"><a>2020-02-29</a></div>
                 </div>
                 <div class="pabContent"></div>
-                <button style="text-align: center;display:block;margin:auto;margin-top:30px;">목록보기</button>
-                
+                <div class="pabMovePost">
+                    <div class="pabBefore">
+                        <span>이전글 > 글의 제목 없으면 없다고 표시</span>
+                    </div>
+                    <div class="pabNext">
+                        <span>다음글 > 글의 제목 없으면 없다고 표시</span>
+                    </div>
+                </div>
             </div>
         </article>
     </div>
@@ -117,7 +130,7 @@
                 <h2>문의전화</h2>
                 <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
                 <h5><span><a id="personalInformation"
-                            href="personal.html">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</span></h5>
+                            href="personal">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</span></h5>
             </div>
             <div class="footer_information2">
                 <p>대표자 : 신우진</p>
@@ -138,9 +151,7 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
-    <script src="../js/custom/map.js"></script>
+    <script src="../js/custom/pmpc_boardjs.js"></script>
 
     <script>
         $(document).ready(function () {

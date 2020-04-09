@@ -168,7 +168,7 @@ nav{
     background-color: #c7dbdd;
 }
 
-.highlightzone{ /* used in Daycare.html > classes*/
+.highlightzone{ /* used in Daycare > classes*/
     width : 100%;
     height : 20%;
 }
@@ -587,7 +587,7 @@ footer{
       border : none;
   }
 
-  .beforeBtn{ /* consulting, question.html */
+  .beforeBtn{ /* consulting, question */
     width : 20%;
     height : 50px;
     float : right;
@@ -847,7 +847,7 @@ aside li{
     font-size: 0.9em;
 }
 
-/* centerintro.html */
+/* centerintro */
 .centerintro{
     width : 80%;
     height : 100%;
@@ -856,23 +856,23 @@ aside li{
 
 .centerintro .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .centerintro #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 20px
 }
 
 .centerintro #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 54px;
 }
 
 .centerintro .articleBody{
     width : 90%;
     height : 86%;
-    padding-top : 7%;
+    padding-top : 4%;
     margin : 0 auto;
 }
 #intro_logo{
@@ -885,7 +885,7 @@ aside li{
     margin-bottom : 14px;
 }
 
-/* mapin.html */
+/* mapin */
 .mapin{
     width : 80%;
     height : 100%;
@@ -894,16 +894,16 @@ aside li{
 
 .mapin .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
 
 .mapin #pageLocation_left{
-    padding-top : 2%;
+    padding-top : 20px;
 }
 .mapin #pageLocation_right{
-    padding-top : 6%;
+    padding-top : 54px;
 }
 
 .mapin .articleBody{
@@ -934,7 +934,7 @@ aside li{
 
 .facility .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -947,11 +947,11 @@ aside li{
 }
 
 .facility #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 20px;
 }
 
 .facility #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 54px;
 }
 
 .facility ul li{
@@ -964,7 +964,7 @@ aside li{
     list-style: none;
 }
 
-/* rule.html */
+/* rule */
 .rule{
     width : 80%;
     height : 100%;
@@ -973,7 +973,7 @@ aside li{
 
 .rule .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -981,16 +981,16 @@ aside li{
 .rule .articleBody{
     width : 90%;
     height : 86%;
-    padding-top:7%;
+    padding-top:4%;
     margin : 0 auto;
 }
 
 .rule #pageLocation_left{
-    padding-top : 0.8%;
+    padding-top : 20px;
 }
 
 .rule #pageLocation_right{
-    padding-top : 4.8%;
+    padding-top : 54px;
 }
 
 .rule ol{
@@ -1002,7 +1002,7 @@ aside li{
 .rule ol li{
     margin-bottom: 2%;
 }
-/* enterin.html */
+/* enterin */
 .enterin{
     width : 80%;
     height : 100%;
@@ -1011,7 +1011,7 @@ aside li{
 
 .enterin .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -1019,23 +1019,23 @@ aside li{
 .enterin .articleBody{
     width : 90%;
     height : 86%;
-    padding-top:5%;
+    padding-top:4%;
     margin : 0 auto;
 }
 
 .enterin #pageLocation_left{
-    padding-top : 3.8%;
+    padding-top : 20px;
 }
 
 .enterin #pageLocation_right{
-    padding-top: 7.6%;
+    padding-top: 54px;
 }
 
 .enterin p{
     color : black;
 }
 
-/* ensurance.html */
+/* ensurance */
 .ensurance{
     width : 80%;
     height : 100%;
@@ -1044,7 +1044,7 @@ aside li{
 
 .ensurance .articleHead{
     width : 90%;
-    height : 5%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -1057,11 +1057,11 @@ aside li{
 }
 
 .ensurance #pageLocation_left{
-    padding-top: 3%;
+    padding-top: 20px;
 }
 
 .ensurance #pageLocation_right{
-    padding-top: 7%;
+    padding-top: 54px;
 }
 
 #ensurancelist{
@@ -1090,7 +1090,7 @@ aside li{
 }
 
 
-/* consulting.html */
+/* consulting */
 .consulting{
     width : 80%;
     height : 100%;
@@ -1099,7 +1099,7 @@ aside li{
 
 .consulting .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
@@ -1107,16 +1107,17 @@ aside li{
 .consulting .articleBody{
     width : 90%;
     height : 86%;
-    padding-top:7%;
+    padding-top:2%;
+    padding-bottom: 20px;
     margin : 0 auto;
 }
 
 .consulting #pageLocation_left{
-    padding-top : 1%;
+    padding-top : 20px;
 }
 
 .consulting #pageLocation_right{
-    padding-top : 4.8%;
+    padding-top : 54px;
 }
 
 .question_searchPlace{
@@ -1195,9 +1196,6 @@ aside li{
 .pageBtns{
     width : 100%;
     float : left;
-}
-.pageBtns .nextBtn{
-    /*margin-right: 8vw;*/
 }
 
 .pageBtns .prevBtn,
@@ -1299,7 +1297,34 @@ aside li{
     border : 1px solid #999999;
 }
 
-/* 포토.html*/
+/* 포토*/
+.photoPage{
+    width : 80%;
+    height : 100%;
+    float : left;
+}
+
+.photoPage .articleHead{
+    width : 90%;
+    height : 70px;
+    margin : 0 auto;
+    border-bottom: 2px solid #c7dbdd;
+}
+
+.photoPage .articleBody{
+    width : 90%;
+    height : 86%;
+    padding-top:2%;
+    margin : 0 auto;
+}
+
+.photoPage #pageLocation_left{
+    padding-top : 20px;
+}
+
+.photoPage #pageLocation_right{
+    padding-top : 54px
+}
 
 .photo_list{
     clear:both;
@@ -1347,9 +1372,21 @@ aside li{
 
 /* 포토보드 */
 .main_photo_box{
+    width : 100%;
+    height : 70%;
     padding:20px;
-    margin:0;
-    border:1px solid #ccc;
+    float : left;
+    border-top : 2px solid #2d99a2;
+}
+
+.photo_content_box{
+    width : 100%;
+    height : 10%;
+    border-top : 2px solid #999999;
+    border-bottom : 2px solid #999999;
+    margin-bottom:30px;
+    margin-top: -1px;
+    float : left;
 }
 
 .main_photo{
@@ -1358,7 +1395,7 @@ aside li{
 
 .main_photo img{
     display:block;
-    max-width:300px;
+    max-width:400px;
     margin:0 auto;
 }
 
@@ -1393,20 +1430,12 @@ aside li{
     content:"";
 }
 
-.photo_content_box{
-    padding:10px 10px 10px 20px;
-    border:1px solid #ccc;
-    margin-bottom:30px;
-}
-
 .photo_content_text{
     display:block;
-    line-height:20px;
-    margin:20px 0;
-    padding-left:20px;
+    margin : 10px 0;
 }
 
-/* daycarein.html */
+/* daycarein */
 .daycarein{
     width : 80%;
     height : 100%;
@@ -1415,17 +1444,17 @@ aside li{
 
 .daycarein .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .daycarein #pageLocation_left{
-    padding-top : 7%;
+    padding-top : 20px;
 }
 
 .daycarein #pageLocation_right{
-    padding-top : 11%;
+    padding-top : 54px;
 }
 
 .daycarein .articleBody{
@@ -1435,7 +1464,7 @@ aside li{
     margin : 0 auto;
 }
 
-/*programin.html*/
+/*programin*/
 
 .horizonlist{
     display:flex;
@@ -1509,17 +1538,17 @@ aside li{
 
 .programintro .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .programintro #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 20px;
 }
 
 .programintro #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 54px;
 }
 
 .programintro .articleBody{
@@ -1541,26 +1570,27 @@ aside li{
 
 .plani .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .plani #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 20px;
 }
 
 .plani #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 54px;
 }
 
 .plani .articleBody{
     width : 90%;
     height : 86%;
-    padding-top : 7%;
+    padding-top : 2%;
     margin : 0 auto;
 }
 
+/* pmpc */
 .pmpc #articleList li ul li{
     margin-bottom : 14px;
 }
@@ -1573,23 +1603,24 @@ aside li{
 
 .pmpc .articleHead{
     width : 90%;
-    height : 8%;
+    height : 70px;
     margin: 0 auto;
     border-bottom : 2px solid #c7dbdd
 }
 
 .pmpc #pageLocation_left{
-    padding-top : 3%;
+    padding-top : 20px;
 }
 
 .pmpc #pageLocation_right{
-    padding-top : 7%;
+    padding-top : 54px
 }
 
 .pmpc .articleBody{
     width : 90%;
     height : 86%;
-    padding-top : 7%;
+    padding-top : 2%;
+    padding-bottom: 20px;
     margin : 0 auto;
 }
 
@@ -1600,7 +1631,7 @@ aside li{
 
 .pmpcHead{
     width : 100%;
-    /*height : 800px;*/
+    height : 80%;
     float : left;
     margin : 3% 0 5% 0%;
     padding : 1% 1%;
@@ -1665,31 +1696,59 @@ aside li{
 .pmpc_header{
     width:100%;
     height: 40px;
+    float : left;
+    border-top : 2px solid #2d99a2;
+    border-bottom: 2px solid #999999;
+    line-height: 2.4em;
 }
+
 .pabNum{
     width:10%;
-    display:inline-block;
+    float: left;
     font-size: 1.2em;
+    text-align:center;
     height:100%;
-    border:1px solid #535353
 }
 .pabTitle{
-    width:74%;
-    display: inline-block;
+    width:75%;
+    float: left;
     font-size: 1.2em;
+    text-align:center;
     height:100%;
-    border:1px solid #535353
 }
 .pabDate{
     width:15%;
-    display: inline-block;
-    text-align:right;
+    float: left;
+    text-align:center;
     font-size: 1.2em;
     height:100%;
-    border:1px solid #535353
 }
 
 .pabContent{
+    width : 100%;
     height: 500px;
-    border:1px solid;
+    border-bottom: 2px solid #999999;
+    margin-top: -1px;
+    margin-bottom: 2%;
+    float : left;
+}
+
+.pabMovePost{
+    width : 100%;
+    float : left;
+    height : 40px;
+}
+
+.pabBefore{
+    width : 100%;
+    height : 20px;
+    border-bottom: 1px solid #999999;
+    text-align: left;
+}
+
+.pabNext{
+    width : 100%;
+    height : 20px;
+    text-align: left;
+    padding-top: 4px;
 }

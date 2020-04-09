@@ -67,13 +67,13 @@ router.get('/mentori',function(req, res, next){
 
 // pmpc htmls
 router.get('/cus_meal_board',function(req, res, next){
-    res.render('./pmpc/cus_meal_board.html');
+    res.render('./pmpc/meal_board.html');
 });
 router.get('/cus_meal_i',function(req, res, next){
-    res.render('./pmpc/cus_meal_i.html');
+    res.render('./pmpc/meal_i.html');
 });
-router.get('/cus_pmpc_board',function(req, res, next){
-    res.render('./pmpc/cus_pmpc_board.html');
+router.get('/pmpc_board',function(req, res, next){
+    res.render('./pmpc/pmpc_board.html');
 });
 router.get('/pmpc',function(req, res, next){
     res.render('./pmpc/pmpc.html');
@@ -82,6 +82,7 @@ router.get('/meal_i',function(req, res, next){
     res.render('./pmpc/meal_i.html');
 });
 router.get('/photo_board',function(req, res, next){
+    
     res.render('./pmpc/photo_board.html');
 });
 router.get('/photo',function(req, res, next){
@@ -99,7 +100,7 @@ router.get('/consulting',function(req, res, next){
     res.render('./question/consulting.html');
 });
 
-// personal.html
+// personal
 router.get('/personal',function(req, res, next){
     res.render('./personal.html');
 });

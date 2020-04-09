@@ -138,7 +138,7 @@ function goToPrev(){
         currentPage.classList.remove('current');
         currentPage.classList.add('notCurrent');
         
-        currentPage = currentPage.nextSibling;
+        currentPage = currentPage.previousSibling;
 
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
@@ -163,8 +163,8 @@ function goToNext(){
         currentPage.classList.remove('current');
         currentPage.classList.add('notCurrent');
      
-        currentPage = currentPage.previousSibling;
-        
+        currentPage = currentPage.nextSibling;
+
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
