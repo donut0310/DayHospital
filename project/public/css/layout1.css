@@ -1204,8 +1204,8 @@ aside li{
 .pageBtns .nextBtn,
 .pageBtns .pageButton{
     float:right;
-    width : 5%;
-    height : 5%;
+    width : 42px;
+    height : 40px;
     font-size : 1em;
     background-color: #ffffff;
     margin-top : 2%;
