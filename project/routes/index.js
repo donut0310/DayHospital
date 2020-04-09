@@ -85,9 +85,7 @@ router.get('/photo_board',function(req, res, next){
 router.get('/photo',function(req, res, next){
     res.render('./pmpc/photo.html');
 });
-router.get('/pmpc_board',function(req, res, next){
-    res.render('./pmpc/pmpc_board.html');
-});
+
 
 // question htmls
 router.get('/question',function(req, res, next){

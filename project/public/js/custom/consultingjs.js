@@ -32,7 +32,6 @@ let currentPage;
 const modal_ask = document.querySelector('#modal-ask');
 const check_pw_modal = document.querySelector('#check_pw_modal');
 const modal_answer = document.querySelector('#modal-answer');
-const submit_err_modal = document.querySelector('#submit_err_modal');
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
@@ -324,29 +323,26 @@ function insertContent(){
         day = '0'+day;
     }
     if(uname==''||upw==''||utitle==''||uphone==''||ucon==''){
-        let submit_err_okBtn = document.querySelector('#submit_err_box button');
-        submit_err_modal.style.display = 'block';
+        alert('제출 오류');
         
-        submit_err_okBtn.onclick = function(){
-            submit_err_modal.style.display = 'none';
-            let input;
-            if(utitle==''){
-                input = document.querySelector('#utitle');
-                input.focus();
-            }else if(uname==''){
-                input = document.querySelector('#uname');
-                input.focus();
-            }else if(upw==''){
-                input = document.querySelector('#upw');
-                input.focus();
-            }else if(uphone==''){
-                input = document.querySelector('#uphone');
-                input.focus();
-            }else if(ucon==''){                
-                input = document.querySelector('#mod_cont_question');
-                input.focus();
-            }
-        }   
+        let input;
+        if(utitle==''){
+            input = document.querySelector('#utitle');
+            input.focus();
+        }else if(uname==''){
+            input = document.querySelector('#uname');
+            input.focus();
+        }else if(upw==''){
+            input = document.querySelector('#upw');
+            input.focus();
+        }else if(uphone==''){
+            input = document.querySelector('#uphone');
+            input.focus();
+        }else if(ucon==''){                
+            input = document.querySelector('#mod_cont_question');
+            input.focus();
+        }
+     
     }
     else{
         let sendData = {};

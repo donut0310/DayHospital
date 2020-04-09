@@ -155,12 +155,13 @@ router.post('/select_content_order', function(req, res, next){
         else{
             let id = req.body.id;
             let sql;
-            sql = 'select * from meal where ID = ? between '  + ' and ' + id + 1 ;
-            var params = id;
- 
-            conn.query(sql, params, function(err,rows){
-                if(err) throw err;
-                else{
+            if(parseInt(id) == 1){
+                sql = 'select * from meal where ID between 1 and 2';
+                var params = id;
+                
+                conn.query(sql, params, function(err,rows){
+                    if(err) throw err;
+                    else{
                         conn.release();
                         let output = {};
                         output['result'] = "success";
@@ -168,6 +169,23 @@ router.post('/select_content_order', function(req, res, next){
                         res.send(output);
                     }        
                 });
+            }
+            else{
+                sql = 'select * from meal where ID between ' + (parseInt(id) - 1) + ' and ' + (parseInt(id) + 1);
+                var params = id;
+                
+                conn.query(sql, params, function(err,rows){
+                    if(err) throw err;
+                    else{
+                        conn.release();
+                        let output = {};
+                        output['result'] = "success";
+                        output['data'] = rows;
+                        res.send(output);
+                    }        
+                });
+            }
+        
         }
     });
 });

@@ -184,7 +184,7 @@ function search(){
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
-                    resetTable();
+                    resetList();
                     init();
                 }
                 else showSearchedInit(res.data['data']);                
