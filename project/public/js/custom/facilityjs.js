@@ -1,18 +1,18 @@
 // modal
-const imgModal = document.querySelector('#modal1');
+const imgModal = document.querySelector('#modal-in-photo');
 const err_modal = document.querySelector('#err_modal');
 const err_close = document.querySelector("#err_close");
 err_close.addEventListener('mouseover',getCursor);
 
 //btns
-const imgCloseBtn = document.querySelector('#imgCloseBtn');
+const imgCloseBtn = document.querySelector('.imgCloseBtn');
 imgCloseBtn.addEventListener('mouseover',getCursor);
 
-const prevBtn = document.querySelector('#prevBtn');
+const prevBtn = document.querySelector('.prevBtn');
 prevBtn.addEventListener('click',goToPrev);
 prevBtn.addEventListener('mouseover',getCursor);
 
-const nextBtn = document.querySelector('#nextBtn');
+const nextBtn = document.querySelector('.nextBtn');
 nextBtn.addEventListener('click',goToNext);
 nextBtn.addEventListener('mouseover',getCursor);
 

@@ -23,7 +23,7 @@ router.get('/cen_target',function(req, res, next){
 });
 
 router.get('/facility',function(req, res, next){
-    res.render('./facility.html');
+    res.render('./centerintro/facility.html');
 });
 
 router.get('/enterin',function(req, res, next){
@@ -36,7 +36,7 @@ router.get('/mapin',function(req, res, next){
 
 // ensurance htmls
 router.get('/ensurance',function(req, res, next){
-    res.render('./ensurance.html');
+    res.render('./ensurance/ensurance.html');
 });
 
 // programintro htmls
@@ -66,20 +66,17 @@ router.get('/mentori',function(req, res, next){
 });
 
 // pmpc htmls
-router.get('/cus_meal_board',function(req, res, next){
+router.get('/meal_board',function(req, res, next){
     res.render('./pmpc/meal_board.html');
 });
-router.get('/cus_meal_i',function(req, res, next){
-    res.render('./pmpc/meal_i.html');
+router.get('/meal',function(req, res, next){
+    res.render('./pmpc/meal.html');
 });
 router.get('/pmpc_board',function(req, res, next){
     res.render('./pmpc/pmpc_board.html');
 });
 router.get('/pmpc',function(req, res, next){
     res.render('./pmpc/pmpc.html');
-});
-router.get('/meal_i',function(req, res, next){
-    res.render('./pmpc/meal_i.html');
 });
 router.get('/photo_board',function(req, res, next){
     
