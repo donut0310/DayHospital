@@ -130,8 +130,10 @@ function addImg(item = []){
         let a = document.querySelector('#td' + (i + 1) + ' a');
         let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
         let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
-        
-        a.href = 'photo_board?'+(i + 1)
+    
+        img.style.cursor = "pointer";
+
+        a.href = 'photo_board?'+(i + 1)    
         img.src = item[i].PATH + item[i].FILE_NAME;
         title.innerText = item[i].TITLE;
         date.innerText = item[i].DATE;
@@ -173,10 +175,6 @@ function deleteAndGet(){
     });
 }
 
-//img mouseover시 pointer 효과
-function getCursor(){
-    this.style.cursor = 'pointer';
-}
 
 //시작 함수
 init();

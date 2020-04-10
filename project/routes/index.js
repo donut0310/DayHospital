@@ -14,12 +14,8 @@ router.get('/centerintro',function(req, res, next){
     res.render('./centerintro/centerintro.html');
 });
 
-router.get('/cen_target',function(req, res, next){
-    res.render('./centerintro/cen_target.html');
-});
-
-router.get('/cen_target',function(req, res, next){
-    res.render('./centerintro/cen_target.html');
+router.get('/rule',function(req, res, next){
+    res.render('./centerintro/rule.html');
 });
 
 router.get('/facility',function(req, res, next){

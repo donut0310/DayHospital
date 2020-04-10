@@ -17,7 +17,6 @@ function init(){
 }
 
 function loadImage(){
-    console.log(photos[currentValue]);
     photoDiv[currentValue].classList.remove('fa_current');
     
     currentValue = this.getAttribute('imgid');
