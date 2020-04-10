@@ -73,7 +73,6 @@ function resetBtns(){
 
 function goToPrev(){
     if(currentPage.value != 1){
-        resetList();
         currentPage.classList.remove('current');
         currentPage.classList.add('notCurrent');
         
@@ -100,7 +99,6 @@ function goToPrev(){
 
 function goToNext(){
     if(currentPage.value != pages){
-        resetList();
         currentPage.classList.remove('current');
         currentPage.classList.add('notCurrent');
      
@@ -134,9 +132,9 @@ function addImg(item = []){
         let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
         
         a.href = 'photo_board?'+(i + 1)
-        img.src = item[i].path + item[i].file_name;
-        title.innerText = item[i].title;
-        date.innerText = item[i].date;
+        img.src = item[i].PATH + item[i].FILE_NAME;
+        title.innerText = item[i].TITLE;
+        date.innerText = item[i].DATE;
     }
     //사진 없는 경우
     for(i=len;i<6;i++){
@@ -145,7 +143,8 @@ function addImg(item = []){
         let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
         let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
         
-        a.href = "";
+        img.style.cursor = "default";
+        a.removeAttribute('href');
         img.src = "";
         title.innerText = "";
         date.innerText = "";
@@ -154,7 +153,14 @@ function addImg(item = []){
 
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
+    currentPage.classList.remove('current');
+    currentPage.classList.add('notCurrent');
+
     let page_num = this.value;
+    this.classList.remove('notCurrent');
+    this.classList.add('current');
+    currentPage = this;
+
     //이후 데이터 출력 위해 db 호출    
     axios.get('/photo/page_num', {params:{
         page_num:page_num

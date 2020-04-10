@@ -19,7 +19,7 @@
             <nav>
                 <div class="topMenu" id="menu1">
                     <ul class="dept01">
-                        <li style="width : 200px"><a href="/layout1"><img src="../../assets/images/logo.jpg"
+                        <li style="width : 200px"><a href="/"><img src="../../assets/images/logo.jpg"
                                     id="logo">
                                 <h3>성모사랑</h3>
                                 <h5>데이케어센터</h5>
@@ -84,7 +84,7 @@
                 <li style="margin-top : 0px;"><a href="/pmpc">공지사항</a>
                 </li>
                 <li><a href="/meal">주간식단표</a></li>
-                <li id="location" ><a href="/" style="color : white">성모사랑 사진</a></li>
+                <li id="location" ><a href="/photo" style="color : white">성모사랑 사진</a></li>
                 <div id="endAside"><span class="bigspan">
                         <h5>문의전화</h5><span class="smallspan">02-990-8875</span><br>( 24시간 연중무휴 )
                     </span></div>
@@ -98,22 +98,23 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 성모사랑 사진</span>
             </div>
             <div class="articleBody">
-                <button style="text-align: center;float : right; margin: 20px auto; padding : 5px; border-radius: 1em;"><a href="/pmpc">목록보기</a></button>
+                <button style="text-align: center;float : right; margin: 20px auto; padding : 5px; border-radius: 1em;"><a href="/photo">목록보기</a></button>
                 <div class="main_photo_box">
-                    <div class="main_photo"> <img src="../../assets/images/logo.jpg"> </div>
+                    <div class="main_photo"> <img src=""> </div>
                     <h3> <span>이이이이이이잉 이얏호응</span> </h3>
-                    <p> <strong> 촬영일자 </strong> <span>2020-03-03</span> <br> <strong> 촬영장소 </strong> <span>도봉산
-                            약수터</span> <br> </p>
+                    <p> <strong> 촬영일자 </strong> <span>2020-03-03</span><br> 
+                        <strong> 촬영장소 </strong> <span>도봉산 약수터</span><br>
+                    </p>
                 </div>
                 <div class="photo_content_box">
                     <pre class="photo_content_text">도봉산 약수터에서 배드민턴을 치는 사람들</pre>
                 </div> 
                 <div class="pabMovePost">
                     <div class="pabBefore">
-                        <span>이전글 > 글의 제목 없으면 없다고 표시</span>
+                        <span><a>이전글</a></span>
                     </div>
                     <div class="pabNext">
-                        <span>다음글 > 글의 제목 없으면 없다고 표시</span>
+                        <span><a>다음글</a></span>
                     </div>
                 </div>
             </div>
@@ -141,18 +142,8 @@
         </div>
     </footer>
 
-    <div id='err_modal' class='modal'>
-        <div id='search_err'>
-            <a></a>
-            <button id='ok'>검색 결과가 없습니다!</button>
-            <span id='err_close' class="close">&times;</span>
-        </div>
-    </div>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
-    <script src="../js/custom/map.js"></script>
+    <script src="../js/custom/photo_boardjs.js"></script>
 
     <script>
         $(document).ready(function () {
