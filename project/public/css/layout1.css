@@ -1800,3 +1800,11 @@ aside li{
     margin-bottom: 2%;
     float : left;
 }
+#border1:hover,#border2:hover,#border3:hover,
+#border4:hover,#border5:hover{
+    background-color: rgb(238,245,248);
+}
+
+.dept02>li>a:hover{
+    color:cornflowerblue
+}
