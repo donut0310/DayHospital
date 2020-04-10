@@ -1443,6 +1443,7 @@ aside li{
 .main_photo img{
     display:block;
     max-width:400px;
+    max-height: 350px;
     margin:0 auto;
 }
 
