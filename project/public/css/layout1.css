@@ -10,6 +10,11 @@
     font-family: 'Nanum Gothic';
 }
 
+.img100{
+    width : 100%;
+    height : 100%;
+}
+
 footer a:hover{
     text-decoration: underline;
 }
@@ -959,6 +964,11 @@ aside li{
     height : 60%;
     border : 1px solid;
     margin : 0 auto;
+}
+
+#fa_photo_big{
+    width : 100%;
+    height : 100%;
 }
 
 .fa_current{
