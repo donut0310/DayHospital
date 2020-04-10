@@ -35,14 +35,14 @@ const modal_answer = document.querySelector('#modal-answer');
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-    axios.post('/cus_consulting/createBtns').then((res)=>{
+    axios.get('/consulting/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.post('/cus_consulting/init').then((res)=>{
+    axios.get('/consulting/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 addList(res.data['data']);
@@ -142,11 +142,13 @@ function goToPrev(){
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
-        let sendData = {};
+
         page_num = currentPage.value;
-        sendData['page_num'] = page_num;
         
-        axios.post('/cus_consulting/page_num', sendData).then((res)=>{
+        axios.get('/consulting/page_num', {params :{
+            page_num : page_num
+        }
+    }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -167,11 +169,12 @@ function goToNext(){
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
-        let sendData = {};
         page_num = currentPage.value;
-        sendData['page_num'] = page_num;
         
-        axios.post('/cus_consulting/page_num', sendData).then((res)=>{
+        axios.get('/consulting/page_num', {params :{
+            page_num : page_num
+        }
+    }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -194,10 +197,11 @@ function deleteAndGet(){
     resetList();
     
     //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
     
-    axios.post('/cus_consulting/page_num', sendData).then((res)=>{
+    axios.get('/consulting/page_num',  {params :{
+        page_num : page_num
+    }
+    }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -225,11 +229,11 @@ function searchedDeleteAndGet(){
     resetList();
     
     //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
-    sendData['value'] = otn;
-    sendData['text'] = searchText;
-    axios.post('/cus_consulting/selectData_page_num', sendData).then((res)=>{
+    axios.get('/consulting/selectData_page_num',  {params :{
+        page_num : page_num,
+        value : otn,
+        text: searchText
+    }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
@@ -250,10 +254,12 @@ function search(){
     let otn = target.options[target.selectedIndex].value;
     
     let sendData = {};
-    sendData['value'] = otn;
-    sendData['text'] = searchText;
     
-    axios.post('/cus_consulting/selectData', sendData).then((res)=>{
+    axios.get('/consulting/selectData',  {params :{
+        value : otn,
+        text: searchText
+    }
+    }).then((res)=>{
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -353,7 +359,7 @@ function insertContent(){
         sendData['uphone'] = uphone;
         sendData['date'] = year+'-'+month+'-'+day;
 
-        axios.post('/cus_consulting/insertData', sendData).then((res)=>{
+        axios.post('/consulting/insertData', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data == "success"){
                     window.location.reload();
@@ -406,7 +412,7 @@ function checkPw(check){
 
         let sendData = {};
         sendData['id'] = postId;
-        axios.post('/cus_consulting/getData', sendData).then((res)=>{
+        axios.post('/consulting/getData', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     showContent(res.data['data']);
@@ -417,7 +423,7 @@ function checkPw(check){
     }
     else{
         reset_pw.value = null;
-        let changeText = document.querySelector('#check_pw_box span');
+        let changeText = document.querySelector('#check_pw_box p');
         changeText.innerText = "비밀번호 오류";
 
         let inputPw = document.querySelector('#inputPw');
@@ -426,7 +432,7 @@ function checkPw(check){
 }
 
 function pwModal(){
-    let changeText = document.querySelector('#check_pw_box span');
+    let changeText = document.querySelector('#check_pw_box p');
     changeText.innerText = '비밀번호 입력';
     check_pw_modal.style.display = 'block';
 
@@ -441,7 +447,7 @@ submit_pw.onclick = function(event){
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/cus_consulting/getPw', sendData).then((res)=>{
+        axios.post('/consulting/getPw', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])
@@ -529,7 +535,7 @@ function pressKey2(){
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/cus_consulting/getPw', sendData).then((res)=>{
+        axios.post('/consulting/getPw', sendData).then((res)=>{
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])

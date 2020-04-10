@@ -41,14 +41,14 @@ let dbCnt; //db에저장된 이미지 개수
 function init(){
     //추후에 삭제 예정
     resetList();
-    axios.post('/layout/postListInit').then((res)=>{
+    axios.get('/layout/postListInit').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
             }
         }
     });
-    axios.post('/layout/photoListInit').then((res)=>{
+    axios.get('/layout/photoListInit').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 showImg(res.data["data"]);
@@ -104,7 +104,7 @@ function getImgModal(){
     currentImgNum = Number(this.getAttribute('imgid'));
     modalImg.setAttribute('imgid',currentImgNum);
 
-    axios.post('/layout/getImages').then((res)=>{
+    axios.get('/layout/getImages').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 dbImg = (res.data["data"]);

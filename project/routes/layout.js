@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var dbconfig = require('./config/dbconfig.js');
 var pool = mysql.createPool(dbconfig);
 
-router.post('/postListInit', function(req, res, next){
+router.get('/postListInit', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -26,7 +26,7 @@ router.post('/postListInit', function(req, res, next){
     });
 });
 
-router.post('/photoListInit', function(req, res, next){
+router.get('/photoListInit', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -44,7 +44,7 @@ router.post('/photoListInit', function(req, res, next){
      }
     });
 });
-router.post('/getImages', function(req, res, next){
+router.get('/getImages', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{

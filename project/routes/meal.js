@@ -1,12 +1,12 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
 //DB 연결
-var mysql = require('mysql');
-var dbconfig = require('./config/dbconfig.js');
-var pool = mysql.createPool(dbconfig);
+let mysql = require('mysql');
+let dbconfig = require('./config/dbconfig.js');
+let pool = mysql.createPool(dbconfig);
 
-router.post('/init', function(req, res, next){
+router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -25,7 +25,7 @@ router.post('/init', function(req, res, next){
     });
 });
 
-router.post('/createBtns', function(req, res, next){
+router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -44,11 +44,11 @@ router.post('/createBtns', function(req, res, next){
     });
 });
 
-router.post('/page_num', function(req, res, next){
+router.get('/page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.body.page_num;
+            let page_num = req.query.page_num;
             let sql = "select * from meal order by ID desc limit " + (page_num-1)*5 + ", 5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
@@ -64,16 +64,16 @@ router.post('/page_num', function(req, res, next){
     });
 });
 
-router.post('/selectData', function(req, res, next){
+router.get('/selectData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let otn = req.body.value;
+            let otn = req.query.value;
             let text;
             let sql;
-            if(req.body.text == ''){
+            if(req.query.text == ''){
                 sql = 'select * from meal order by ID desc';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -87,9 +87,9 @@ router.post('/selectData', function(req, res, next){
                 });
             }
             else if(otn == 0){
-                text = req.body.text + '%';
+                text = req.query.text + '%';
                 sql = 'select * from meal where TITLE like ?';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -106,17 +106,17 @@ router.post('/selectData', function(req, res, next){
     });
 });
 
-router.post('/selectData_page_num', function(req, res, next){
+router.get('/selectData_page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.body.page_num;
-            let otn = req.body.value;
+            let page_num = req.query.page_num;
+            let value = req.query.value;
             let text;
             let sql;
-            if(req.body.text == ''){
+            if(req.query.text == ''){
                 sql = 'select * from meal order by ID desc';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -129,10 +129,10 @@ router.post('/selectData_page_num', function(req, res, next){
                     }        
                 });
             }
-            else if(otn == 0){
-                text = req.body.text + '%';
+            else if(value == 0){
+                text = req.query.text + '%';
                 sql = 'select * from meal where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -149,15 +149,17 @@ router.post('/selectData_page_num', function(req, res, next){
     });
 });
 
-router.post('/select_content_order', function(req, res, next){
+router.get('/select_content_order', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let id = req.body.id;
+
+            let id = req.query.id;
+
             let sql;
             if(parseInt(id) == 1){
                 sql = 'select * from meal where ID between 1 and 2';
-                var params = id;
+                let params = id;
                 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -172,7 +174,7 @@ router.post('/select_content_order', function(req, res, next){
             }
             else{
                 sql = 'select * from meal where ID between ' + (parseInt(id) - 1) + ' and ' + (parseInt(id) + 1);
-                var params = id;
+                let params = id;
                 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;

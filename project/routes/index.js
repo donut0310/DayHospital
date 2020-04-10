@@ -79,7 +79,6 @@ router.get('/pmpc',function(req, res, next){
     res.render('./pmpc/pmpc.html');
 });
 router.get('/photo_board',function(req, res, next){
-    
     res.render('./pmpc/photo_board.html');
 });
 router.get('/photo',function(req, res, next){

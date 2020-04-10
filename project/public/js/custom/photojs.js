@@ -1,26 +1,22 @@
 //dynamic add elements
-const photoTr = document.querySelector('#photoTr');
 
 //btns
-const page_btns = document.querySelector('#page_btns');
-const modal_img_close = document.querySelector('#modal_img_close');
+const pageBtns = document.querySelector('.pageBtns');
 
-//modal
-const modal_img = document.querySelector('#modal_img');
-const modal_content = document.querySelector('#modal_img_content');
 //params
 let pages;
+let currentPage;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
-    axios.post('/cus_photo/createBtns').then((res)=>{
+    axios.get('/photo/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.post('/cus_photo/init').then((res)=>{
+    axios.get('/photo/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);
@@ -33,89 +29,136 @@ function init(){
 function createBtns(item = []){
     resetBtns();
 
-    pages = item.length/3;
-    for(i=0;i<pages;i++){
-        let btn = document.createElement('button');
-        btn.className += 'page_btn';
-        btn.style.float = 'left';
-        btn.innerText = i+1;
-        btn.value = i+1;
-        btn.addEventListener('click',deleteAndGet);
-        page_btns.appendChild(btn);
+    if(item.length%6==0){
+        pages = parseInt(item.length/6);
     }
+    else pages = parseInt(item.length/6 + 1);
+    let prevBtn = document.createElement('button');
+    let nextBtn = document.createElement('button');
+    
+    prevBtn.className += 'prevBtn';
+    prevBtn.innerText = '←';
+    prevBtn.addEventListener('click',goToPrev);
+    pageBtns.appendChild(prevBtn);
+    
+    for(i=1;i<=pages;i++){
+        let pageButton = document.createElement('button');
+        pageButton.className += 'pageButton';
+        if(i==1){
+            pageButton.className += ' current';
+            currentPage = pageButton;
+        }
+        else pageButton.className += ' notCurrent';
+        
+        pageButton.innerText = i;
+        pageButton.value = i;
+        pageButton.addEventListener('click',deleteAndGet);
+        pageBtns.appendChild(pageButton);
+    }
+    
+    nextBtn.className += 'nextBtn';
+    nextBtn.innerText = '→';
+    nextBtn.addEventListener('click',goToNext);
+    pageBtns.appendChild(nextBtn);
+    
 }
 
 //버튼 리셋 함수
 function resetBtns(){
-    let deleteBtns = document.querySelector('#page_btns');
-    while(deleteBtns.hasChildNodes()){
-        deleteBtns.removeChild(deleteBtns.firstChild);
+    let pageBtns = document.querySelector('.pageBtns');
+    while(pageBtns.hasChildNodes()){
+        pageBtns.removeChild(pageBtns.firstChild);
+    }
+}
+
+function goToPrev(){
+    if(currentPage.value != 1){
+        resetList();
+        currentPage.classList.remove('current');
+        currentPage.classList.add('notCurrent');
+        
+        currentPage = currentPage.previousSibling;
+
+        currentPage.classList.remove('notCurrent');
+        currentPage.classList.add('current');
+
+
+        page_num = currentPage.value;
+        
+        axios.get('/photo/page_num', {params :{
+            page_num : page_num
+        }
+    }).then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                addImg(res.data["data"]);
+            }
+        }
+    });
+    }
+}
+
+function goToNext(){
+    if(currentPage.value != pages){
+        resetList();
+        currentPage.classList.remove('current');
+        currentPage.classList.add('notCurrent');
+     
+        currentPage = currentPage.nextSibling;
+
+        currentPage.classList.remove('notCurrent');
+        currentPage.classList.add('current');
+
+        page_num = currentPage.value;
+        
+        axios.get('/photo/page_num', {params :{
+            page_num : page_num
+        }
+    }).then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                addImg(res.data["data"]);
+            }
+        }
+    });
     }
 }
 
 //사진 나열
 function addImg(item = []){
-    resetTable();
-
-    item.forEach(function(data){
-            let td = document.createElement('td');
-            let divImg = document.createElement('div');
-            let divContent = document.createElement('div');
-            let img = document.createElement('img');
-
-            divImg.className += 'photo_i';
-
-            
-            img.src = data.path + data.file_name;
-            img.name = data.file_name;
-            img.width = 300;
-            img.height = 280; 
-            divImg.appendChild(img);
-            divContent.className += 'photo_content';
-
-            divImg.addEventListener('mouseover',getCursor);
-            divImg.addEventListener('click',showImage);
-            
-
-
-            let title = document.createElement('div');
-            let photo_date = document.createElement('div');
-
-            title.className += 'photo_title';
-            photo_date.className += 'photo_date';
-
-            title.innerText = '사진 제목 관리자 업로드시 db 추가';
-            photo_date.innerText = data.date;
-            
-            divContent.appendChild(title);
-            divContent.appendChild(photo_date);
-            
-            td.appendChild(divImg);
-            td.appendChild(divContent);
-            photoTr.appendChild(td);
-        });
-}
-
-//table 리셋 함수
-function resetTable(){
-    //이전 데이터 삭제
-    while(photoTr.hasChildNodes()){
-        photoTr.removeChild(photoTr.firstChild);
+    let len = item.length;
+    for(i=0;i<len;i++){
+        let img = document.querySelector('#td' + (i + 1) + ' img');
+        let a = document.querySelector('#td' + (i + 1) + ' a');
+        let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
+        let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
+        
+        a.href = 'photo_board?'+(i + 1)
+        img.src = item[i].path + item[i].file_name;
+        title.innerText = item[i].title;
+        date.innerText = item[i].date;
+    }
+    //사진 없는 경우
+    for(i=len;i<6;i++){
+        let img = document.querySelector('#td' + (i + 1) + ' img');
+        let a = document.querySelector('#td' + (i + 1) + ' a');
+        let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
+        let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
+        
+        a.href = "";
+        img.src = "";
+        title.innerText = "";
+        date.innerText = "";
     }
 }
 
 //해당 페이지에 로드할 리스트들(게시글)
 function deleteAndGet(){
     let page_num = this.value;
-    
-    //이전 데이터 삭제
-    resetTable();
-    
-    //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
-    
-    axios.post('/cus_photo/page_num', sendData).then((res)=>{
+    //이후 데이터 출력 위해 db 호출    
+    axios.get('/photo/page_num', {params:{
+        page_num:page_num
+    }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);
@@ -127,39 +170,6 @@ function deleteAndGet(){
 //img mouseover시 pointer 효과
 function getCursor(){
     this.style.cursor = 'pointer';
-}
-
-// 사진 모달
-function showImage(){
-    modal_img.style.display = 'block';
-    modal_content.style.height = "70%";
-    let show_img = document.querySelector('#show_img');
-    let clone = this.cloneNode(true);
-
-    clone.className = 'addedImg';
-    show_img.appendChild(clone);
-
-    let img = document.querySelector('.addedImg img'); 
-    img.width = 800;
-    img.height = 500;
-    img.style.cursor = 'default';
-}
-
-// 모달 종료
-window.onclick = function(event) {
-    if (event.target == modal_img) {
-        modal_img.style.display = "none";
-        let parent = document.querySelector('#show_img');
-        let child = document.querySelector('.addedImg');
-        parent.removeChild(child);
-    }
- }
-
-modal_img_close.onclick = function(){
-    modal_img.style.display = "none";
-    let parent = document.querySelector('#show_img');
-    let child = document.querySelector('.addedImg');
-    parent.removeChild(child);
 }
 
 //시작 함수

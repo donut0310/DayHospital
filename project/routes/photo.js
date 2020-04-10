@@ -6,11 +6,11 @@ var mysql = require('mysql');
 var dbconfig = require('./config/dbconfig.js');
 var pool = mysql.createPool(dbconfig);
 
-router.post('/init', function(req, res, next){
+router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by file_order desc limit 0,3";
+            let sql = "select * from img order by date desc limit 0,6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -25,11 +25,11 @@ router.post('/init', function(req, res, next){
     });
 });
 
-router.post('/createBtns', function(req, res, next){
+router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by file_order desc";
+            let sql = "select * from img order by date desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -44,13 +44,13 @@ router.post('/createBtns', function(req, res, next){
     });
 });
 
-router.post('/page_num', function(req, res, next){
+router.get('/page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.body.page_num;
+            let page_num = req.query.page_num;
        
-            let sql = "select * from img order by file_order desc limit " + (page_num-1)*3 + ", 3";
+            let sql = "select * from img order by date desc limit " + (page_num-1)*6 + ", 6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{

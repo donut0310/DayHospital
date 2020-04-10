@@ -1,19 +1,15 @@
 //para에 게시글 id값 저장
 const para = window.location.href.split('?');
 
-//이전글 다음글 링크
-const pabBefore = document.querySelector('.pabBefore span');
-
-const pabNext = document.querySelector('.pabNext span');
-
 //parmas
 let currentID;
 let list;
 
 function init(){
-    let sendData = {};
-    sendData['id'] = para[1];
-    axios.post('/meal/select_content_order', sendData).then((res)=>{
+    axios.get('/meal/select_content_order', {params :{
+        id : para[1]
+    }
+    }).then((res)=>{
         if(res.status === 200){
             if(res.data['result'] == "success"){ 
                 initShow(res.data['data']);
@@ -34,7 +30,6 @@ function initShow(item = []){
     let pabContent = document.querySelector('.pabContent_content');
     
     let download = document.querySelector('.download a');
-    console.log(download);
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
         a1.innerText = '이전 글이 없습니다.';

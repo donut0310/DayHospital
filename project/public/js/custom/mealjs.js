@@ -4,8 +4,8 @@ const pageBtns = document.querySelector('.pageBtns');
 
 //btns
 const page_btns = document.querySelector('#page_btns');
-const searchClicked = document.querySelector('#searchBtn');
-searchClicked.addEventListener("click",search);
+const searchBtn = document.querySelector('#searchBtn');
+searchBtn.addEventListener("click",search);
 const okBtn = document.querySelector('#ok');
 
 //params
@@ -23,14 +23,14 @@ const err_modal = document.querySelector('#err_modal');
 function init(){
     resetList();
 
-    axios.post('/meal/createBtns').then((res)=>{
+    axios.get('/meal/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.post('/meal/init').then((res)=>{
+    axios.get('/meal/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -131,11 +131,13 @@ function goToPrev(){
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
-        let sendData = {};
         page_num = currentPage.value;
-        sendData['page_num'] = page_num;
+
         
-        axios.post('/meal/page_num', sendData).then((res)=>{
+        axios.get('/meal/page_num', {params: {
+            page_num: page_num
+            }
+          }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -156,10 +158,10 @@ function goToNext(){
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
-        let sendData = {};
-        page_num = currentPage.value;
-        sendData['page_num'] = page_num;
-        axios.post('/meal/page_num', sendData).then((res)=>{
+        axios.get('/meal/page_num', {params: {
+            page_num: page_num
+            }
+          }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -176,11 +178,12 @@ function search(){
     
     let otn = target.options[target.selectedIndex].value;
     
-    let sendData = {};
-    sendData['value'] = otn;
-    sendData['text'] = searchText;
-    
-    axios.post('/meal/selectData', sendData).then((res)=>{
+    axios.get('/meal/selectData', {params: {
+        page_num: page_num,
+        value : otn,
+        text : searchText
+        }
+      }).then((res)=>{
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -233,10 +236,10 @@ function deleteAndGet(){
     resetList();
     
     //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
-    
-    axios.post('/meal/page_num', sendData).then((res)=>{
+    axios.get('/meal/page_num', {params: {
+        page_num: page_num
+        }
+      }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -264,11 +267,13 @@ function searchedDeleteAndGet(){
     resetList();
     
     //이후 데이터 출력 위해 db 호출
-    let sendData = {};
-    sendData['page_num'] = page_num;
-    sendData['value'] = otn;
-    sendData['text'] = searchText;
-    axios.post('/meal/selectData_page_num', sendData).then((res)=>{
+
+    axios.get('/meal/selectData_page_num', {params: {
+        page_num: page_num,
+        value : otn,
+        text : searchText
+        }
+      }).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){

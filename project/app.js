@@ -8,13 +8,15 @@ var logger = require('morgan');
 //>>라우터//
 var indexRouter = require('./routes/index');
 var layoutRouter = require('./routes/layout');
-var cus_pmpcRouter = require('./routes/cus_pmpc');
-var cus_consultingRouter = require('./routes/cus_consulting');
-var cus_questionRouter = require('./routes/cus_question');
-var adm_menuRouter = require('./routes/adm_menu');
-var adm_pmpcRouter = require('./routes/adm_pmpc');
-var cus_photoRouter = require('./routes/cus_photo');
-var mealRouter = require('./routes/meal.js');
+
+var pmpcRouter = require('./routes/pmpc');
+var photoRouter = require('./routes/photo');
+
+var consultingRouter = require('./routes/consulting');
+var questionRouter = require('./routes/question');
+
+var mealRouter = require('./routes/meal');
+
 //라우터<<//
 
 // express 연결
@@ -36,13 +38,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* API 요청 URL======================================= */
 app.use('/', indexRouter);
 app.use('/layout', layoutRouter);
-app.use('/cus_pmpc', cus_pmpcRouter);
-app.use('/cus_consulting', cus_consultingRouter);
-app.use('/cus_question', cus_questionRouter);
-app.use('/cus_photo',cus_photoRouter);
+app.use('/pmpc', pmpcRouter);
+app.use('/consulting', consultingRouter);
+app.use('/question', questionRouter);
+app.use('/photo',photoRouter);
 app.use('/meal',mealRouter);
-//app.use('/adm_menu', adm_menuRouter);
-app.use('/adm_pmpc', adm_pmpcRouter);
 
 
 //catch 404 and forward to error handler

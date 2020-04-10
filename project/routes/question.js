@@ -1,14 +1,14 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 router.use(express.json());
 
 //DB 연결
-var mysql = require('mysql');
-var dbconfig = require('./config/dbconfig.js');
-var pool = mysql.createPool(dbconfig);
+let mysql = require('mysql');
+let dbconfig = require('./config/dbconfig.js');
+let pool = mysql.createPool(dbconfig);
 
 // 상담신청 고객정보
-router.post('/init', function(req, res, next){
+router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -27,28 +27,8 @@ router.post('/init', function(req, res, next){
     });
 });
 
-// DB내 게시글 총 개수 반환
-router.post('/get_dbCnts', function(req, res, next){
-    pool.getConnection(function(err,conn){
-        if(err) throw err;
-        else{
-            let sql = "select count(*) as cnt from customer";
-            conn.query(sql, function(err,rows){
-                if(err)throw err;
-                else{
-                    conn.release();
-                    let output = {};
-                    output['result'] = "success";
-                    output['data'] = rows;
-                    res.send(output);
-            }
-        });
-     }
-    });
-});
-
 //버튼 생성
-router.post('/createBtns', function(req, res, next){
+router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
@@ -68,11 +48,11 @@ router.post('/createBtns', function(req, res, next){
 });
 
 //페이지 개수 
-router.post('/page_num', function(req, res, next){
+router.get('/page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.body.page_num;
+            let page_num = req.query.page_num;
        
             let sql = "select * from customer order by ID desc limit " + (page_num-1)*5 + ", 5";
             conn.query(sql, function(err,rows){
@@ -103,7 +83,7 @@ router.post('/insertData', function(req, res, next){
             
             //쿼리문 작성 및 실행 할 query함수 선언
             let sql = "insert into customer (USER_NAME, USER_PASSWORD, TITLE, CONTENT, USER_PHONE, DATE) values (?,?,?,?,?,?)";
-            var params = [ uname, upw, utitle, ucon, uphone, date];
+            let params = [uname, upw, utitle, ucon, uphone, date];
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
@@ -116,16 +96,16 @@ router.post('/insertData', function(req, res, next){
 });
 
 //검색 데이터 반환
-router.post('/selectData', function(req, res, next){
+router.get('/selectData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let otn = req.body.value;
+            let otn = req.query.value;
             let text;
             let sql;
-            if(req.body.text == ''){
+            if(req.query.text == ''){
                 sql = 'select * from customer order by ID desc';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -139,9 +119,9 @@ router.post('/selectData', function(req, res, next){
                 });
             }
             else if(otn == 0){
-                text = req.body.text + '%';
+                text = req.query.text + '%';
                 sql = 'select * from customer where TITLE like ?';
-                var params = text;
+                let params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
@@ -153,9 +133,9 @@ router.post('/selectData', function(req, res, next){
                     }        
                 });
             }else{
-                text = req.body.text + '%';
+                text = req.query.text + '%';
                 sql = 'select * from customer where USER_NAME like ?';
-                var params = text;
+                let params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
@@ -172,17 +152,17 @@ router.post('/selectData', function(req, res, next){
 });
 
 //페이지 번호에 따른 검색 데이터 반환
-router.post('/selectData_page_num', function(req, res, next){
+router.get('/selectData_page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.body.page_num;
-            let otn = req.body.value;
+            let page_num = req.query.page_num;
+            let otn = req.query.value;
             let text;
             let sql;
-            if(req.body.text == ''){
+            if(req.query.text == ''){
                 sql = 'select * from customer order by ID desc';
-                var params = text;
+                let params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -196,9 +176,9 @@ router.post('/selectData_page_num', function(req, res, next){
                 });
             }
             else if(otn == 0){
-                text = req.body.text + '%';
+                text = req.query.text + '%';
                 sql = 'select * from customer where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
-                var params = text;
+                let params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
@@ -211,9 +191,9 @@ router.post('/selectData_page_num', function(req, res, next){
                 });
             }
             else{
-                text = req.body.text + '%';
+                text = req.query.text + '%';
                 sql = 'select * from customer where USER_NAME like ? limit ' + (page_num-1)*5 + ', 5';
-                var params = text;
+                let params = text;
 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
@@ -237,7 +217,7 @@ router.post('/getPw', function(req, res, next){
             let id = req.body.id;
             let pw = req.body.pw;
 
-            var params = [id];
+            let params = [id];
             let sql = 'select USER_PASSWORD from customer where ID = ?';
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
@@ -261,7 +241,7 @@ router.post('/getData', function(req, res, next){
         else{
             let id = req.body.id;
 
-            var params = id;
+            let params = id;
             let sql = 'select USER_NAME, TITLE, CONTENT, USER_PHONE from customer where ID = ?';
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
@@ -277,7 +257,6 @@ router.post('/getData', function(req, res, next){
         }
     });
 });
-
 module.exports = router;
 
 
