@@ -101,8 +101,8 @@ nav{
     line-height: 40px;
     border-bottom: 2px solid #A0D56E;
     text-align: left;
-    font-size:16px;
     width:100%;
+    font-size: 0.9em;
 }
 
 .topMenu>ul>li>ul{
@@ -697,9 +697,9 @@ footer{
 }
 
 #check_pw_box{
-    width : 100%;
-    float : left;
-    padding:7% 0 0 5%;
+    width : 90%;
+    margin : 0 auto;
+    padding-top: 40px;
 }
 
 #check_pw .modal_head{
