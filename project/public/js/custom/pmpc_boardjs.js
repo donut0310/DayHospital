@@ -27,12 +27,14 @@ function initShow(item = []){
     let pabNum = document.querySelector('.pabNum');
     let pabTitle = document.querySelector('.pabTitle');
     let pabDate = document.querySelector('.pabDate');
-    let pabContent = document.querySelector('.pabContent');
-
-    pabNum.innerText = item[0].ID;
-    pabTitle.innerText = item[0].TITLE;
-    pabDate.innerText = item[0].DATE;
-    pabContent.innerText = item[0].CONTENT;
+    
+    let pabText = document.querySelector('.pabText');
+    let download = document.querySelector('.download a');
+    
+    // pabNum.innerText = item[0].ID;
+    // pabTitle.innerText = item[0].TITLE;
+    // pabDate.innerText = item[0].DATE;
+    // pabContent.innerText = item[0].CONTENT;
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -43,7 +45,10 @@ function initShow(item = []){
         pabNum.innerText = item[0].ID;
         pabTitle.innerText = item[0].TITLE;
         pabDate.innerText = item[0].DATE;
-        pabContent.innerText = item[0].CONTENT;
+        pabText.innerText = item[0].CONTENT;
+
+        download.innerText = item[0].TITLE;
+        download.href = item[0].PATH;
     }
     else if(list == 2){
         //이전 글이 없고 다음글만 있을때
@@ -52,7 +57,10 @@ function initShow(item = []){
             pabNum.innerText = item[0].ID;
             pabTitle.innerText = item[0].TITLE;
             pabDate.innerText = item[0].DATE;
-            pabContent.innerText = item[0].CONTENT;
+            pabText.innerText = item[0].CONTENT;
+
+            download.innerText = item[0].TITLE;
+            download.href = item[0].PATH;
 
             a1.innerText = '이전 글이 없습니다.';
 
@@ -66,8 +74,11 @@ function initShow(item = []){
             pabNum.innerText = item[1].ID;
             pabTitle.innerText = item[1].TITLE;
             pabDate.innerText = item[1].DATE;
-            pabContent.innerText = item[1].CONTENT;
+            pabText.innerText = item[1].CONTENT;
             
+            download.innerText = item[1].TITLE;
+            download.href = item[1].PATH;
+
             a1.innerText = item[1].TITLE;
 
             a1.href = 'pmpc_board?' + (parseInt(para[1]) - 1);
@@ -82,8 +93,11 @@ function initShow(item = []){
         pabNum.innerText = item[1].ID;
         pabTitle.innerText = item[1].TITLE;
         pabDate.innerText = item[1].DATE;
-        pabContent.innerText = item[1].CONTENT;
+        pabText.innerText = item[1].CONTENT;
 
+        download.innerText = item[1].TITLE;
+        download.href = item[1].PATH;
+        
         a1.innerText = item[0].TITLE;
         a1.href = 'pmpc_board?' + (parseInt(para[1]) - 1);
         a1.addEventListener('mouseover',getCursor);

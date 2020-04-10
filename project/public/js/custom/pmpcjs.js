@@ -6,18 +6,10 @@ const pageBtns = document.querySelector('.pageBtns');
 const page_btns = document.querySelector('#page_btns');
 const searchClicked = document.querySelector('#searchBtn');
 searchClicked.addEventListener("click",search);
-const okBtn = document.querySelector('#ok');
 
 //params
 let pages;
 let currentPage;
-
-// close btn
-const err_close = document.querySelector("#err_close");
-
-// Modal
-// 경고창 모달
-const err_modal = document.querySelector('#err_modal');
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
@@ -326,17 +318,6 @@ function resetBtns(){
 function getCursor(){
     this.style.cursor = 'pointer';
  }
-
-// 에러 창 닫기 버튼 클릭시
-err_close.onclick = function(){
-    err_modal.style.display = 'none';
-    init();
-}
-// 에러창 확인 버튼 클릭시
-okBtn.onclick = function(event){
-    err_modal.style.display = 'none';
-    init();
-}
 
 
 // 엔터키 입력
