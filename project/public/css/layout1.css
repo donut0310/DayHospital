@@ -941,7 +941,7 @@ aside li{
 
 .facility .articleBody{
     width : 90%;
-    height : 86%;
+    height : 90%;
     padding-top:7%;
     margin : 0 auto;
 }
@@ -954,15 +954,52 @@ aside li{
     padding-top : 54px;
 }
 
-.facility ul li{
-    width : 17vw;
-    height : 20vh;
-    float : left;
-    margin-right : 3vw;
-    margin-left : 2vw;
-    border : 1px solid black;
-    list-style: none;
+.facility_big_photo{
+    width : 80%;
+    height : 60%;
+    border : 1px solid;
+    margin : 0 auto;
 }
+
+.fa_current{
+    border : 4px solid skyblue;
+}
+
+.facility_photo{
+    width : 90%;
+    height : 30%;
+    margin : 0 auto;
+    margin-top : 20px;
+}
+
+#fa_photo1,
+#fa_photo4{
+    margin-left: 20px;
+}
+
+#fa_photo1,
+#fa_photo2,
+#fa_photo4,
+#fa_photo5{
+    float : left;
+    width : 30%;
+    height : 130px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    background-color: yellow;
+    border-radius: 1em;
+}
+
+#fa_photo3,
+#fa_photo6{
+    float : left;
+    width : 30%;
+    height : 130px;
+    margin-bottom: 20px;
+    background-color: yellow;
+    border-radius: 1em;
+}
+
 
 /* rule */
 .rule{

@@ -61,7 +61,7 @@
                             <span><a href="/question">문의 및 상담</a></span>
                             <ul class="dept02" id="border5">
                                 <li><a href="/question">입소문의 및 상담</a></li>
-                                <li><a href="/consulting">컨설팅문의 및 상담</a></li>
+                                <li><a href="/consulting">데이케어 컨설팅 문의</a></li>
                             </ul>
                         </li>
                         <li style="width : 200px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">
@@ -82,7 +82,7 @@
             <ul class="asideDiv">
                 <li id="location" style="margin-top : 0px;"><a href="/question" style="color : white">입소문의 및 상담</a>
                 </li>
-                <li><a href="/consulting">컨설팅문의 및 상담</a></li>
+                <li><a href="/consulting">데이케어 컨설팅 문의</a></li>
                 <div id="endAside"><span class="bigspan">
                         <h5>문의전화</h5><span class="smallspan">02-990-8875</span><br>( 24시간 연중무휴 )
                     </span></div>
@@ -204,7 +204,7 @@
         </div>
     </div>
 
-    <div class="modal" id="modal-answer">
+    <div class="modal" id="modal-answer" style="display: none;">
         <div class="modal-content">
             <div class="modal_head">
                 <div class="modal_head_span">
@@ -230,14 +230,14 @@
         </div>
     </div>
 
-    <div id='check_pw_modal' class='modal'>
+    <div id='check_pw_modal' class='modal'  style="display: none;">
         <div id='check_pw' class='modal-content'>
             <div class="modal_head">
                 <h4>상담글 보기</h4>
                 <div class="imgCloseBtn" id="pw_modal_closeBtn"><img src="../../assets/images/modal_close.png"
                         style="width: 15px; height : 15px; float : right;"></div>
             </div>
-            <div id="check_pw_box">
+            <div id="check_pw_box"  style="display: none;">
                 <span>비밀번호 입력</span>
                 <input id='inputPw' onkeyup="pressKey2();" type='password' style="width:62% ; height: 20%" />
                 <input type='submit' id='submit_pw'>
