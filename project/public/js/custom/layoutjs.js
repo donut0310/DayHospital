@@ -90,7 +90,7 @@ function resetList(){
 function showImg(item = []){
     photoCnt = item.length;
     for(i=0;i<photoCnt;i++){
-        img[i].src = item[i].path + item[i].file_name;
+        img[i].src = item[i].PATH + item[i].FILE_NAME;
         img[i].addEventListener('mouseover',getCursor);
         img[i].addEventListener('click',getImgModal);
         img[i].setAttribute('imgId',i);
@@ -124,7 +124,7 @@ function goToPrev(){
         err_modal.style.display = 'block';
     }
     else{
-        modalImg.src = dbImg[currentImgNum - 1].path + dbImg[currentImgNum - 1].file_name;
+        modalImg.src = dbImg[currentImgNum - 1].PATH + dbImg[currentImgNum - 1].FILE_NAME;
         modalImg.setAttribute('imgid',currentImgNum - 1);
     }
 }
@@ -137,7 +137,7 @@ function goToNext(){
         err_modal.style.display = 'block';
     }
     else{
-        modalImg.src = dbImg[currentImgNum + 1].path + dbImg[currentImgNum + 1].file_name;
+        modalImg.src = dbImg[currentImgNum + 1].PATH + dbImg[currentImgNum + 1].FILE_NAME;
         modalImg.setAttribute('imgid',currentImgNum + 1);
     }
 }

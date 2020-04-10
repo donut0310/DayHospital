@@ -64,4 +64,47 @@ router.get('/page_num', function(req, res, next){
      }
     });
 });
+
+router.get('/select_content_order', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+
+            let id = req.query.id;
+
+            let sql;
+            if(parseInt(id) == 1){
+                sql = 'select * from img where ID between 1 and 2';
+                let params = id;
+                
+                conn.query(sql, params, function(err,rows){
+                    if(err) throw err;
+                    else{
+                        conn.release();
+                        let output = {};
+                        output['result'] = "success";
+                        output['data'] = rows;
+                        res.send(output);
+                    }        
+                });
+            }
+            else{
+                sql = 'select * from img where ID between ' + (parseInt(id) - 1) + ' and ' + (parseInt(id) + 1);
+                let params = id;
+                
+                conn.query(sql, params, function(err,rows){
+                    if(err) throw err;
+                    else{
+                        conn.release();
+                        let output = {};
+                        output['result'] = "success";
+                        output['data'] = rows;
+                        res.send(output);
+                    }        
+                });
+            }
+        
+        }
+    });
+});
 module.exports = router;
