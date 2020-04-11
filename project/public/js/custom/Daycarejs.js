@@ -61,7 +61,7 @@ function showPostList(item = []) {
     });
 }
 
-//성모사랑 사진 불러오기
+//갤러리 불러오기
 function showPhoto(item =[]){
     let cnt = 1;
     item.forEach(function (data) {
