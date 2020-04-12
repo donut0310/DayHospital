@@ -423,7 +423,7 @@ function checkPw(check){
     }
     else{
         reset_pw.value = null;
-        let changeText = document.querySelector('#check_pw_box p');
+        let changeText = document.querySelector('#check_pw_box span');
         changeText.innerText = "비밀번호 오류";
 
         let inputPw = document.querySelector('#inputPw');
@@ -432,7 +432,7 @@ function checkPw(check){
 }
 
 function pwModal(){
-    let changeText = document.querySelector('#check_pw_box p');
+    let changeText = document.querySelector('#check_pw_box span');
     changeText.innerText = '비밀번호 입력';
     check_pw_modal.style.display = 'block';
 
