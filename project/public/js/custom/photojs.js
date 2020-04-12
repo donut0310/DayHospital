@@ -133,10 +133,10 @@ function addImg(item = []){
     
         img.style.cursor = "pointer";
 
-        a.href = 'photo_board?'+(i + 1)    
         img.src = item[i].PATH + item[i].FILE_NAME;
         title.innerText = item[i].TITLE;
-        date.innerText = item[i].DATE;
+        date.innerText = date_format(item[i].DATE);
+        a.href = 'photo_board?' + (item[i].ID);    
     }
     //사진 없는 경우
     for(i=len;i<6;i++){
@@ -151,6 +151,12 @@ function addImg(item = []){
         title.innerText = "";
         date.innerText = "";
     }
+}
+
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
 }
 
 //해당 페이지에 로드할 리스트들(게시글)

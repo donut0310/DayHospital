@@ -21,12 +21,14 @@ function init(){
 function initShow(item = []){
     list = item.length;
     
+    console.log(item[0],item[1]);
     let a1 = document.querySelector('.pabBefore a');
     let a2 = document.querySelector('.pabNext a');    
 
     let img = document.querySelector('.main_photo img');
     let title = document.querySelector('.main_photo_box h3 span');
     let p = document.querySelectorAll('.main_photo_box p span');
+    let content = document.querySelector('.photo_content_text');
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -35,7 +37,8 @@ function initShow(item = []){
 
         img.src = item[0].PATH + item[0].FILE_NAME;
         title.innerText = item[0].TITLE;
-        p[0].innerText = item[0].DATE;
+        content.innerText = item[0].CONTENT;
+        p[0].innerText = date_format(item[0].DATE);
         p[1].innerText = item[0].PLACE;
     }
     else if(list == 2){
@@ -43,9 +46,10 @@ function initShow(item = []){
         if(item[0].ID == parseInt(para[1])){
             img.src = item[0].PATH + item[0].FILE_NAME;
             title.innerText = item[0].TITLE;
-            p[0].innerText = item[0].DATE;
-            p[1].innerText = item[0].PLACE;
+            content.innerText = item[0].CONTENT;
 
+            p[0].innerText = date_format(item[0].DATE);
+            p[1].innerText = item[0].PLACE;
             a1.innerText = '이전 글이 없습니다.';
 
             a2.innerText = item[1].TITLE;
@@ -56,7 +60,9 @@ function initShow(item = []){
         else{
             img.src = item[1].PATH + item[1].FILE_NAME;
             title.innerText = item[1].TITLE;
-            p[0].innerText = item[1].DATE;
+            content.innerText = item[1].CONTENT;
+
+            p[0].innerText = date_format(item[1].DATE);
             p[1].innerText = item[1].PLACE;
 
             a1.innerText = item[0].TITLE;
@@ -71,7 +77,9 @@ function initShow(item = []){
         //이전 글, 다음 글 모두 있을때
         img.src = item[1].PATH + item[1].FILE_NAME;
         title.innerText = item[1].TITLE;
-        p[0].innerText = item[1].DATE;
+        content.innerText = item[1].CONTENT;
+
+        p[0].innerText = date_format(item[1].DATE);
         p[1].innerText = item[1].PLACE;
 
         a1.innerText = item[0].TITLE;
@@ -87,6 +95,13 @@ function initShow(item = []){
 function getCursor(){
     this.style.cursor = 'pointer';
 }
+
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
+}
+
 init();
 
 

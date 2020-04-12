@@ -71,10 +71,10 @@ router.get('/select_content_order', function(req, res, next){
         else{
 
             let id = req.query.id;
-
+            
             let sql;
             if(parseInt(id) == 1){
-                sql = 'select * from img where ID between 1 and 2';
+                sql = 'select * from img where id between ' + parseInt(id) + ' and ' + (parseInt(id)+1);
                 let params = id;
                 
                 conn.query(sql, params, function(err,rows){

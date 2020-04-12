@@ -286,7 +286,7 @@ function addList(item = []){
         url.innerText = data.TITLE;        
 
         tdId.innerText = data.ID;
-        tdDate.innerText = data.DATE
+        tdDate.innerText = date_format(data.DATE);
 
         url.href = 'pmpc_board?' + data.ID;
         tdTitle.appendChild(url);
@@ -298,6 +298,12 @@ function addList(item = []){
 
         tbody.appendChild(tr);
     });
+}
+
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
 }
 
 //table 리셋 함수
