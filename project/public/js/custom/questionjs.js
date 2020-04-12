@@ -419,7 +419,15 @@ function checkPw(check){
     else{
         reset_pw.value = null;
         let changeText = document.querySelector('#check_pw_box span');
+        let changeHeader = document.querySelector('#check_pw_modal .modal_head');
+        let head = document.querySelector('#check_pw_modal h4');
+        
+        head.style.color = 'white';
+        changeHeader.style.backgroundColor = 'black';
+
+
         changeText.innerText = "비밀번호 오류";
+
 
         let inputPw = document.querySelector('#inputPw');
         inputPw.focus();
