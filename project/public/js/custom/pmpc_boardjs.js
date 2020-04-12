@@ -30,11 +30,6 @@ function initShow(item = []){
     
     let pabText = document.querySelector('.pabText');
     let download = document.querySelector('.download a');
-    
-    // pabNum.innerText = item[0].ID;
-    // pabTitle.innerText = item[0].TITLE;
-    // pabDate.innerText = item[0].DATE;
-    // pabContent.innerText = item[0].CONTENT;
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -97,7 +92,7 @@ function initShow(item = []){
 
         download.innerText = item[1].TITLE;
         download.href = item[1].PATH;
-        
+
         a1.innerText = item[0].TITLE;
         a1.href = 'pmpc_board?' + (parseInt(para[1]) - 1);
         a1.addEventListener('mouseover',getCursor);
