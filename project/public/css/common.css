@@ -1079,6 +1079,13 @@ aside li{
     color : black;
 }
 
+#tb_temp td{
+    padding : 2%;
+    background-color: rgba(240,240,240,0.4);
+    color : black;
+    border: 1px solid #999999;
+}
+
 /* ensurance */
 .ensurance{
     width : 80%;
