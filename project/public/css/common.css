@@ -1,8 +1,13 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* mediaquery */
-@media(max-width : 1440px){
-   
+@media(max-width:1239px){
+    .pc_page{
+        display: none;
+    }
+    #mobile_page_id{
+        display: block;
+    }
 }
 /* Commonly used*/
 *{
@@ -13,7 +18,6 @@
 .pc_page{
     width : 100%;
     height : auto;
-    display: block;
 }
 
 .img100{
@@ -1917,7 +1921,7 @@ aside li{
 .mobile_page{
     width : 1024px;
     margin : 0 auto;
-    display: block;
+    display: none;
 }
 
 .mobile_page #header,
@@ -1954,6 +1958,10 @@ aside li{
 
 .mobile_page #banner{
     height : 400px;
+}
+
+#mobile_menu_btn:hover{
+    cursor: pointer;
 }
 
 /* mobile article css */
