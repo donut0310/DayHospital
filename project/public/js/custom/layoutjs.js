@@ -94,7 +94,17 @@ function showImg(item = []){
         img[i].addEventListener('mouseover',getCursor);
         img[i].addEventListener('click',getImgModal);
         img[i].setAttribute('imgId',i);
+        img[i].setAttribute('title',item[i].TITLE);
+        img[i].setAttribute('content',item[i].CONTENT);
+        let date = date_format(item[i].DATE);
+        img[i].setAttribute('date',date);
     }
+}
+
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
 }
 
 function getImgModal(){
@@ -104,6 +114,15 @@ function getImgModal(){
     currentImgNum = Number(this.getAttribute('imgid'));
     modalImg.setAttribute('imgid',currentImgNum);
 
+    let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+    photo_title.innerText = this.getAttribute('title');
+    
+    let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+    photo_date.innerText = this.getAttribute('date');
+    
+    let photo_content = document.querySelector('#modal-in-photo .modalspan');
+    photo_content.innerText = this.getAttribute('content');
+    
     axios.get('/layout/getImages').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){
@@ -120,11 +139,23 @@ function goToPrev(){
     let modalImg = document.querySelector('#modalImg');
     currentImgNum = Number(modalImg.getAttribute('imgid'));
 
+
+    
     if(currentImgNum == 0){
         err_modal.style.display = 'block';
     }
     else{
+        let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+        photo_title.innerText = dbImg[currentImgNum - 1].TITLE;
+        
+        let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+        photo_date.innerText = date_format(dbImg[currentImgNum - 1].DATE);
+        
+        let photo_content = document.querySelector('#modal-in-photo .modalspan');
+        photo_content.innerText = dbImg[currentImgNum - 1].CONTENT;
+        
         modalImg.src = dbImg[currentImgNum - 1].PATH + dbImg[currentImgNum - 1].FILE_NAME;
+
         modalImg.setAttribute('imgid',currentImgNum - 1);
     }
 }
@@ -137,6 +168,15 @@ function goToNext(){
         err_modal.style.display = 'block';
     }
     else{
+        let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+        photo_title.innerText = dbImg[currentImgNum + 1].TITLE;
+        
+        let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+        photo_date.innerText = date_format(dbImg[currentImgNum + 1].DATE);
+        
+        let photo_content = document.querySelector('#modal-in-photo .modalspan');
+        photo_content.innerText = dbImg[currentImgNum + 1].CONTENT;
+
         modalImg.src = dbImg[currentImgNum + 1].PATH + dbImg[currentImgNum + 1].FILE_NAME;
         modalImg.setAttribute('imgid',currentImgNum + 1);
     }
@@ -145,7 +185,10 @@ function goToNext(){
 // 사진 슬라이드
 setInterval(() => {
     photoSlide.style.transition = 0.8 + "s";
-    photoSlide.style.transform = "translate3d(-" + (460.97 * (index + 1)) + "px, 0px, 0px)";
+    
+    let miniPhoto = document.querySelector('.miniPhoto');
+   
+    photoSlide.style.transform = "translateX(-" + (miniPhoto.clientWidth * (index + 1)) + "px)";
     index++;
     if(index==photoCnt-1){
         index = -1;
