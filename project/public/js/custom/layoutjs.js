@@ -185,7 +185,10 @@ function goToNext(){
 // 사진 슬라이드
 setInterval(() => {
     photoSlide.style.transition = 0.8 + "s";
-    photoSlide.style.transform = "translate3d(-" + (328.85 * (index + 1)) + "px, 0px, 0px)";
+    
+    let miniPhoto = document.querySelector('.miniPhoto');
+   
+    photoSlide.style.transform = "translateX(-" + (miniPhoto.clientWidth * (index + 1)) + "px)";
     index++;
     if(index==photoCnt-1){
         index = -1;
