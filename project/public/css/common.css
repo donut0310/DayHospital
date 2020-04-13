@@ -831,12 +831,13 @@ aside li{
 }
 
 #articleList span{
-    font-size: 1.2em;
+    font-size: 1.1em;
+    line-height: 1.8em;
     color : black;
 }
 
 #articleList li>ul>li h4{
-    padding-top : 5%;
+    padding-top : 2%;
 }
 
 #articleList p{
@@ -976,7 +977,7 @@ aside li{
 }
 
 .fa_current{
-    border : 4px solid #C2DCDD;
+    border : 4px solid #2d99a2;
 }
 
 .facility_photo{
@@ -1215,12 +1216,12 @@ aside li{
 }
 
 .askTitle{
-    width : 80%;
+    width : 70%;
     float : left;
 }
 
 .askDate{
-    width : 10%;
+    width : 20%;
     float : left;
 }
 
@@ -1235,12 +1236,22 @@ aside li{
     border-bottom: 1px solid #Bbb;
 }
 
-.questionTb td:nth-child(odd){
+.questionTb td:nth-child(1){
     width : 10%;
 }
 
-.questionTb td:nth-child(even){
-    width : 80%;
+.questionTb td:nth-child(2){
+    width : 70%;
+}
+
+.questionTb td:nth-child(3){
+    width : 20%;
+}
+
+
+.questionTb tbody tr:hover{
+    color : #2d99a2;
+    font-weight: bold;
 }
 
 .questionFoot{
@@ -1415,6 +1426,10 @@ aside li{
 
 .photo_date{
     color:#C2DCDD;
+}
+
+.photoTb tbody img:hover{
+    border : 4px solid #2d99a2;
 }
 
 /* pmpc */
@@ -1741,12 +1756,21 @@ aside li{
     border-bottom: 1px solid #Bbb;
 }
 
-.pmpcTb td:nth-child(odd){
+.pmpcTb td:nth-child(1){
     width : 10%;
 }
 
-.pmpcTb td:nth-child(even){
-    width : 80%;
+.pmpcTb td:nth-child(2){
+    width : 70%;
+}
+
+.pmpcTb td:nth-child(3){
+    width : 20%;
+}
+
+.pmpcTb tbody tr:hover{
+    color : #2d99a2;
+    font-weight: bold;
 }
 
 .pmpcNum{
@@ -1755,12 +1779,12 @@ aside li{
 }
 
 .pmpcTitle{
-    width : 80%;
+    width : 70%;
     float : left;
 }
 
 .pmpcDate{
-    width : 10%;
+    width : 20%;
     float : left;
 }
 
@@ -1834,6 +1858,7 @@ aside li{
 .pabText{
     width : 100%;
     height : 650px;
+    line-height: 1.3em;
 }
 
 /* meal_board */
