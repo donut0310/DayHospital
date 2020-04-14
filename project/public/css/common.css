@@ -1,13 +1,23 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* mediaquery */
-@media(max-width : 1440px){
-   
+@media(max-width:1239px){
+    .pc_page{
+        display: none;
+    }
+    #mobile_page_id{
+        display: block;
+    }
 }
 /* Commonly used*/
 *{
     box-sizing: border-box;
     font-family: 'Nanum Gothic';
+}
+
+.pc_page{
+    width : 100%;
+    height : auto;
 }
 
 .img100{
@@ -284,8 +294,6 @@ nav{
     height : 400px;
     float : left;
     margin : 0 auto;
-    border-left: 1px solid #c7dbdd;
-    border-right: 1px solid #c7dbdd;
 }
 
 .indexEnterin h1, 
@@ -1907,3 +1915,137 @@ aside li{
 .dept02>li>a:hover{
     color:cornflowerblue
 }
+
+
+/* MOBILE PAGE CSS */
+.mobile_page{
+    width : 1024px;
+    margin : 0 auto;
+    display: none;
+}
+
+.mobile_page #header,
+.mobile_page #banner
+.mobile_page article,
+.mobile_page footer{
+    width : 100%;
+}
+
+/* mobile header css */
+
+.mobile_page #header{
+    height : 480px;
+    background-image: url('../assets/images/1.png');
+    background-size: 100%;
+}
+
+.mobile_page .mobile_page_logo{
+    float : left;
+    height : 80px;
+    width : 100%;
+    padding-left: 5%;
+    background-color: rgba(255,255,255,0.8);
+}
+
+.mobile_page #header h4{
+    margin : 0 0;
+}
+
+.mobile_page #header #span{
+    margin-top: 12px;
+    display: inline-block;
+}
+
+.mobile_page #banner{
+    height : 400px;
+}
+
+#mobile_menu_btn:hover{
+    cursor: pointer;
+}
+
+/* mobile article css */
+
+.mobile_page article{
+    height :  500px;
+}
+
+/* map */
+.mobile_page .mobile_map{
+    float : left;
+    height : 500px;
+    width : 50%;
+    background-color: #C2DCDD;
+}
+
+.mobile_page .mobile_map h1,
+.mobile_page .mobile_map h4,
+.mobile_page .mobile_map span{
+    padding-left: 10%;
+}
+
+.mobile_page .mobile_map_photo{
+    width : 80%;
+    height : 280px;
+    margin: 0 auto;
+    background-image: url('../assets/images/mobile/mobile_map2.png');
+    background-size: 100%;
+}
+
+/* consult */
+
+.mobile_page .mobile_consultant{
+    float : right;
+    height : 250px;
+    width : 50%;
+    background-color: #b3e9ee;
+}
+
+.mobile_page .mobile_consultant div{
+    padding-left: 7%;
+}
+
+.mobile_page .mobile_consultant img{
+    padding-left : 27%;
+}
+
+.mobile_page .mobile_consultant:hover{
+    font-weight: bold;   
+    color : #2d99a2;
+    cursor: pointer;
+}
+
+/* post */
+.mobile_page .mobile_post{
+    height : 250px;
+    width : 50%;
+    float : right;
+    background-color: #39c3cf;
+}
+
+.mobile_post div{
+    padding-left : 7%;
+}
+
+#mobile_post_list{
+    list-style-type: none;
+}
+
+#mobile_post_list li{
+    width : 90%;
+    background-color: white;
+    margin : 0 0 15px 0;
+    padding : 2px 3px;
+    font-size: 1.1em;
+}
+
+#mobile_post_list li:hover{
+    cursor: pointer;
+}
+
+/* mobile footer css */
+.mobile_page footer{
+    height : 120px;
+    background-color: #535353;
+}
+
