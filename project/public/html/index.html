@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/layout1.css">
+    <link rel="stylesheet" href="../css/common.css">
     <title>성모사랑 데이케어센터</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,185 +15,187 @@
 </head>
 
 <body>
-    <header>
-       <div class="wrapper">
-        <nav>
-            <div class="topMenu" id="menu1">
-                <ul class="dept01">
-                    <li style="width : 200px"><a href="/"><img src="../assets/images/logo.jpg" id="logo"><h3>성모사랑</h3><h5>데이케어센터</h5></a>
-                    </li>
-                    <li style="width : 124px">
-                        <span><a href="/centerintro">센터소개</a></span>
-                        <ul class="dept02" id="border1">
-                            <li><a href="/centerintro">인사말</a></li>
-                            <li><a href="/rule">운영규정</a></li>
-                            <li><a href="/facility">시설현황</a></li>
-                            <li><a href="/enterin">입소안내</a></li>
-                            <li><a href="/mapin">찾아오시는 길</a></li>
-                        </ul>
-                    </li>
-                    <li style="width : 225.6px">
-                        <span><a href="/programintro">성모사랑 프로그램안내</a></span>
-                        <ul class="dept02" id="border2">
-                            <li><a href="/daycarein">데이케어란?</a></li>
-                            <li><a href="/programintro">프로그램안내</a></li>
-                            <li><a href="/plani">프로그램운영계획표</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:124px">
-                        <span><a href="/pmpc">알림마당</a></span>
-                        <ul class="dept02" id="border3">
-                            <li><a href="/pmpc">공지사항</a></li>
-                            <li><a href="/meal">주간식단표</a></li>
-                            <li><a href="/photo">갤러리</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:193.63px">
-                        <span><a href="/ensurance">노인 장기요양보험</a></span>
-                        <ul class="dept02" id="border4">
-                            <li><a href="/ensurance">노인 장기요양보험이란?</a></li>
-                            <li><a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050683" target="blank">노인 장기요양보험신청</a></li>
-                        </ul>
-                    </li>
-                    <li style="width:151.25px">
-                        <span><a href="/question">문의 및 상담</a></span>
-                        <ul class="dept02" id="border5">
-                            <li><a href="/question">입소문의 및 상담</a></li>
-                            <li><a href="/consulting">데이케어 컨설팅 문의</a></li>
-                        </ul>
-                    </li>
-                    <li style="width : 200px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">02-990-8875</li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    </header>
-    <div class="container">
-        <article class="indexArticle">
-            <div class="content">
-                <div class="photo">
-                    <div class="highlightzone">
-                        <h3>갤러리<a href="/photo"><button class="plusBtn">+</button></a></h3>
-                        <h4>성모사랑 데이케어 센터에서 업로드합니다.</h4>
-                    </div>
-                    <div class="photozone">
-                        <div class="miniPhoto" style = "overflow:hidden">
-                            <ul id = "photoSlide" style = "width:500%;height:100%">
-                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
-                                <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+    <div class="pc_page">
+        <header>
+        <div class="wrapper">
+            <nav>
+                <div class="topMenu" id="menu1">
+                    <ul class="dept01">
+                        <li style="width : 200px"><a href="/"><img src="../assets/images/logo.jpg" id="logo"><h3>성모사랑</h3><h5>데이케어센터</h5></a>
+                        </li>
+                        <li style="width : 124px">
+                            <span><a href="/centerintro">센터소개</a></span>
+                            <ul class="dept02" id="border1">
+                                <li><a href="/centerintro">인사말</a></li>
+                                <li><a href="/rule">운영규정</a></li>
+                                <li><a href="/facility">시설현황</a></li>
+                                <li><a href="/enterin">입소안내</a></li>
+                                <li><a href="/mapin">찾아오시는 길</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="btnzone">
-                        <div class="miniBtn">
-                            <button id="photo_btn1"><span style="float: left;">프로그램일정표</span><span
-                                    style="float: right;">></span></button>
-                            <button id="photo_btn2"><span style="float : left;">주간식단표</span><span
-                                    style="float : right;">></span></button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="post">
-                    <div class="highlightzone">
-                        <!--same width photo highlight-->
-                        <h3>공지사항<a href="/pmpc"><button class="plusBtn" style="left : 390px">+</button></a></h3>
-                        <h4>성모사랑 데이케어 센터에서 알려드립니다.</h4>
-                    </div>
-                    <div class="listzone">
-                        <div class="postlist">
-                            <ul id = "postUl">
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
-                                <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                        </li>
+                        <li style="width : 225.6px">
+                            <span><a href="/programintro">성모사랑 프로그램안내</a></span>
+                            <ul class="dept02" id="border2">
+                                <li><a href="/daycarein">데이케어란?</a></li>
+                                <li><a href="/programintro">프로그램안내</a></li>
+                                <li><a href="/plani">프로그램운영계획표</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                        <li style="width:124px">
+                            <span><a href="/pmpc">알림마당</a></span>
+                            <ul class="dept02" id="border3">
+                                <li><a href="/pmpc">공지사항</a></li>
+                                <li><a href="/meal">주간식단표</a></li>
+                                <li><a href="/photo">갤러리</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:193.63px">
+                            <span><a href="/ensurance">노인 장기요양보험</a></span>
+                            <ul class="dept02" id="border4">
+                                <li><a href="/ensurance">노인 장기요양보험이란?</a></li>
+                                <li><a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050683" target="blank">노인 장기요양보험신청</a></li>
+                            </ul>
+                        </li>
+                        <li style="width:151.25px">
+                            <span><a href="/question">문의 및 상담</a></span>
+                            <ul class="dept02" id="border5">
+                                <li><a href="/question">입소문의 및 상담</a></li>
+                                <li><a href="/consulting">데이케어 컨설팅 문의</a></li>
+                            </ul>
+                        </li>
+                        <li style="width : 200px; color : yellowgreen; font-size: 1.2em; font-weight: bolder;">02-990-8875</li>
+                    </ul>
                 </div>
-                <div class="indexEnterin">
-                    <div class="highlightzone" style="margin-top: 30px;">
-                        <h1>센터 입소 안내</h1>
-                        <h5>장기요양등급 결정을 받은 후 전화 상담을 통하여 입소 대기 접수가 가능합니다.</h5>
-                    </div>
-                    <div class="indexEnterList">
-                        <ul>
-                            <li style="background-color: #c7dbdd;"><span>1단계</span>
-                                <h4>장기요양등급판정</h4>
-                            </li>
-                            <li style="background-color: #b3e9ee;"><span>2단계</span>
-                                <h4>이용상담(전화, 방문)</h4>
-                            </li>
-                            <li style="background-color: #91edf5;"><span>3단계</span>
-                                <h4>이용신청(서류제출)</h4>
-                            </li>
-                            <li style="background-color:#39c3cf;"><span>4단계</span>
-                                <h4>사정회의</h4>
-                            </li>
-                            <li style="background-color:#2d99a2;"><span>5단계</span>
-                                <h4>서비스 계획 및<br> 계약체결</h4>
-                            </li>
-                            <li style="background-color:#257e86;"><span>6단계</span>
-                                <h4>서비스 제공</h4>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="miniMap">
-                    <div class="highlightzone" style="margin-top:20px">
-                        <h1>찾아오시는 길</h1>
-                    </div>
-                    <div class="mapdiv">
-                        <div class="map">
-
-                        </div>
-                    </div>
-                    <div class="spanzone">
-                        <div>
-                            <h1>주소</h1>
-                            <h4>서울특별시 도봉구 창동 181-3, 세영빌딩(마들로13길 165) 세영빌딩 5층</h4>
-                        </div>
-                        <div>
-                            <h1 style="text-decoration: underline;">버스를 이용해서 오시는 경우</h1>
-                            <h4>도봉 08번, 09번 버스, 노원 15번, 1119번 버스 <br>창동역 동측 정류장 하차 후 자운초등학교 방향 도보 8분</h4>
-                        </div>
-                        <div>
-                            <h1 style="text-decoration: underline;">지하철을 이용해서 오시는 경우</h1>
-                            <h4>창동역 1번 출구 → 동아청솔아파트 방향 도보 8분</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </div>
-    <footer>
-        <div class="empty"></div>
-        <div class="footerContent">
-            <div class="footer_logo">
-                
-                <div style="width :35%; height : 55%;float: right;"><img src="../assets/images/big_logo.png" style="width : 100%; height: 100%;"></div>
-            </div>
-            <div class="footer_information1">
-                <span><h1 style="display: inline-block;">성모사랑</h1>&nbsp;데이케어센터</span>
-                <h2>문의전화</h2>
-                <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
-                <h5><span><a id="personalInformation" href="personal">이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</a></span></h5>
-            </div>
-            <div class="footer_information2">
-                <p>대표자 : 신우진</p>
-                <p>사업자 등록번호 : 000-000000-000</p>
-                <p>전화:02-990-8875 / Fax:02-990-8879</p>
-                <p>서비스 급여종류 : 가정방문 급여</p><br>
-                <p><br>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
-            </div>
+            </nav>
         </div>
-    </footer>
+        </header>
+        <div class="container">
+            <article class="indexArticle">
+                <div class="content">
+                    <div class="photo">
+                        <div class="highlightzone">
+                            <h3>갤러리<a href="/photo"><button class="plusBtn">+</button></a></h3>
+                            <h4>성모사랑 데이케어 센터에서 업로드합니다.</h4>
+                        </div>
+                        <div class="photozone">
+                            <div class="miniPhoto" style = "overflow:hidden">
+                                <ul id = "photoSlide" style = "width:500%;height:100%">
+                                    <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                    <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                    <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                    <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                    <li class = "photoList" style = "display:block; width:20%;height:100%;list-style:none;float:left"><img src ="" style = "width:100%;height:100%"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btnzone">
+                            <div class="miniBtn">
+                                <button id="photo_btn1"><span style="float: left;">프로그램일정표</span><span
+                                        style="float: right;">></span></button>
+                                <button id="photo_btn2"><span style="float : left;">주간식단표</span><span
+                                        style="float : right;">></span></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="post">
+                        <div class="highlightzone">
+                            <!--same width photo highlight-->
+                            <h3>공지사항<a href="/pmpc"><button class="plusBtn" style="left : 390px">+</button></a></h3>
+                            <h4>성모사랑 데이케어 센터에서 알려드립니다.</h4>
+                        </div>
+                        <div class="listzone">
+                            <div class="postlist">
+                                <ul id = "postUl">
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                    <li>성모사랑 데이케어 센터에서 알려드립니다.<span style="float : right">자세히보기</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indexEnterin">
+                        <div class="highlightzone" style="margin-top: 30px;">
+                            <h1>센터 입소 안내</h1>
+                            <h5>장기요양등급 결정을 받은 후 전화 상담을 통하여 입소 대기 접수가 가능합니다.</h5>
+                        </div>
+                        <div class="indexEnterList">
+                            <ul>
+                                <li style="background-color: #c7dbdd;"><span>1단계</span>
+                                    <h4>장기요양등급판정</h4>
+                                </li>
+                                <li style="background-color: #b3e9ee;"><span>2단계</span>
+                                    <h4>이용상담(전화, 방문)</h4>
+                                </li>
+                                <li style="background-color: #91edf5;"><span>3단계</span>
+                                    <h4>이용신청(서류제출)</h4>
+                                </li>
+                                <li style="background-color:#39c3cf;"><span>4단계</span>
+                                    <h4>사정회의</h4>
+                                </li>
+                                <li style="background-color:#2d99a2;"><span>5단계</span>
+                                    <h4>서비스 계획 및<br> 계약체결</h4>
+                                </li>
+                                <li style="background-color:#257e86;"><span>6단계</span>
+                                    <h4>서비스 제공</h4>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="miniMap">
+                        <div class="highlightzone" style="margin-top:20px">
+                            <h1>찾아오시는 길</h1>
+                        </div>
+                        <div class="mapdiv">
+                            <div class="map">
+
+                            </div>
+                        </div>
+                        <div class="spanzone">
+                            <div>
+                                <h1>주소</h1>
+                                <h4>서울특별시 도봉구 창동 181-3, 세영빌딩(마들로13길 165) 세영빌딩 5층</h4>
+                            </div>
+                            <div>
+                                <h1 style="text-decoration: underline;">버스를 이용해서 오시는 경우</h1>
+                                <h4>도봉 08번, 09번 버스, 노원 15번, 1119번 버스 <br>창동역 동측 정류장 하차 후 자운초등학교 방향 도보 8분</h4>
+                            </div>
+                            <div>
+                                <h1 style="text-decoration: underline;">지하철을 이용해서 오시는 경우</h1>
+                                <h4>창동역 1번 출구 → 동아청솔아파트 방향 도보 8분</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <footer>
+            <div class="empty"></div>
+            <div class="footerContent">
+                <div class="footer_logo">
+                    
+                    <div style="width :35%; height : 55%;float: right;"><img src="../assets/images/big_logo.png" style="width : 100%; height: 100%;"></div>
+                </div>
+                <div class="footer_information1">
+                    <span><h1 style="display: inline-block;">성모사랑</h1>&nbsp;데이케어센터</span>
+                    <h2>문의전화</h2>
+                    <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
+                    <h5><span><a id="personalInformation" href="personal">이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</a></span></h5>
+                </div>
+                <div class="footer_information2">
+                    <p>대표자 : 신우진</p>
+                    <p>사업자 등록번호 : 000-000000-000</p>
+                    <p>전화:02-990-8875 / Fax:02-990-8879</p>
+                    <p>서비스 급여종류 : 가정방문 급여</p><br>
+                    <p><br>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
     
     <!--사진들어간 모달-->
     <div class="modal" id="modal-in-photo" >
@@ -206,8 +210,8 @@
             <div class="modal_body">
                 <div class="modal_body_head">
                     <span class="mbody_spanzone">
-                        <h2 style="float: left;">사진제목</h2>
-                        <h5 style="float:right; line-height: 3em;">관리자 2020.04.02</h5>
+                        <h2 style="float: left;"><!--사진제목--></h2>
+                        <h5 style="float:right; line-height: 3em;"><!--관리자 2020.04.02--></h5>
                     </span>
             
                 </div>
@@ -223,7 +227,7 @@
             </div>
             <div class="modal_footer">
                 <div class="mfooter_spanzone">
-                    <span class="modalspan"> 일단 넣었다 영류라..</span>
+                    <span class="modalspan"><!--사진 텍스트--></span>
                     <button class="moreBtn"><a href="/photo">더보기</a></button>
                 </div>
             </div>
@@ -270,6 +274,51 @@
             <div>사진이 존재하지 않습니다!</div>
             <span id = 'err_close' class="close" style = "float:right">&times;</span>
         </div>
+    </div>
+
+    <!--Mobile Page html-->
+    <div class="mobile_page" id="mobile_page_id">
+        <div id="header">
+            <div class="mobile_page_logo">
+                <div style="width : 7%; float : left; padding-top : 10px;"><a href="/"><img src="../assets/images/small_logo.png"></a></div>
+                <div style="width : 10%; float : left; padding-top : 10px;"><a id ="span" href="/"><h4>성모사랑</h4> 데이케어센터</a></div>
+                <div id="mobile_menu_btn" style="float : right; width : 12%"><img src="../assets/images/mobile/hamburger.png"></div>
+            </div>
+            
+            <div id="banner">
+
+            </div>
+        </div>
+        <article>
+            <div class="mobile_map">
+                <h1>찾아오시는 길</h1>
+                <div class="mobile_map_photo"></div>
+                <h4 style="padding-top : 25px;">주소</h4>
+                <span>서울특별시 도봉구 창동 181-3, 세영빌딩(마들로13길 165) 5층</span>
+            </div>
+            <div class="mobile_consultant" onclick="">
+                <div>
+                    <h1>상담신청</h1>
+                    <p>어르신들에게 행복을, 가족분들에게 믿음을 드리는 성모사랑데이케어<br>센터입니다.</p>
+                    <img src="../assets/images/mobile/icons8-meeting-room-200.png">
+                </div>
+            </div>
+            <div class="mobile_post">
+                <div>
+                    <h1>공지사항</h1>
+                    <ul id="mobile_post_list">
+                        <li>공지사항입니다.</li>
+                        <li>공지사항입니다.</li>
+                        <li>공지사항입니다.</li>
+                        <li>공지사항입니다.</li>
+                        <li>공지사항입니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        <footer>
+
+        </footer>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

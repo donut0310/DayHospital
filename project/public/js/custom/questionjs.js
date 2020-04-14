@@ -285,7 +285,7 @@ function showSearchedInit(item = []){
         tdId.innerText = item[i].ID;
         tdTitle.innerText = item[i].TITLE;
         tdTitle.value = item[i].ID;
-        tdDate.innerText = item[i].DATE
+        tdDate.innerText = date_format(item[i].DATE);
         tr.appendChild(tdId);
         tr.appendChild(tdTitle);
         tr.appendChild(tdDate);
@@ -373,7 +373,8 @@ function addList(item = []){
         tdId.innerText = data.ID;
         tdTitle.innerText = data.TITLE;
         tdTitle.value = data.ID;
-        tdDate.innerText = data.DATE
+        tdDate.innerText = date_format(data.DATE);
+
         tr.appendChild(tdId);
         tr.appendChild(tdTitle);
         tr.appendChild(tdDate);
@@ -383,6 +384,12 @@ function addList(item = []){
 
         tbody.appendChild(tr);
     });
+}
+
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
 }
 
 function showContent(item = []){
@@ -419,7 +426,15 @@ function checkPw(check){
     else{
         reset_pw.value = null;
         let changeText = document.querySelector('#check_pw_box span');
+        let changeHeader = document.querySelector('#check_pw_modal .modal_head');
+        let head = document.querySelector('#check_pw_modal h4');
+        
+        head.style.color = 'white';
+        changeHeader.style.backgroundColor = 'black';
+
+
         changeText.innerText = "비밀번호 오류";
+
 
         let inputPw = document.querySelector('#inputPw');
         inputPw.focus();
