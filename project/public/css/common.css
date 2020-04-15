@@ -1,14 +1,31 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* mediaquery */
+@media(max-width:1240px){
+    .pc_page{
+        display: block;
+    }
+
+    .mobile_page{
+        display: none;
+    }
+}
 @media(max-width:1239px){
     .pc_page{
         display: none;
     }
+
     #mobile_page_id{
         display: block;
     }
 }
+
+@media(max-width:1024px){
+    #mobile_page_id{
+        width : 100%;
+    }
+}
+
 /* Commonly used*/
 *{
     box-sizing: border-box;
@@ -1922,7 +1939,7 @@ aside li{
 .mobile_page{
     width : 1024px;
     margin : 0 auto;
-    display: BLOCK;
+    display: block;
 }
 
 .mobile_page #header,
@@ -2120,10 +2137,15 @@ aside li{
     height : 120px;
     padding-left: 5%;
 }
+
+.mobile_footer_rule h4{
+    margin : 10px 0 ;
+}
+
 .mobile_footer_information{
     float : left;
     height: 120px;
-    width : 40%;
+    width : 41%;
     padding-left: 3%;
 }
 .mobile_footer_information img{
@@ -2145,7 +2167,7 @@ aside li{
     display:none;
     width:60%;
     float: right;
-    left:40%;
+    left:40.1%;
     background-color:white;
     top:79.4px;
     position: absolute;
@@ -2154,8 +2176,9 @@ aside li{
 #mobile_menu>ul>li{
     line-height: 100px;
     font-size:30px;
-    text-align: right;
-    border-bottom:1px solid #7fc9cf;
+    text-align: left;
+    border-bottom:1px solid #2d99a2;
+    cursor: pointer;
 }
 
 #mobile_menu a{
