@@ -1,14 +1,31 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 /* mediaquery */
+@media(max-width:1240px){
+    .pc_page{
+        display: block;
+    }
+
+    .mobile_page{
+        display: none;
+    }
+}
 @media(max-width:1239px){
     .pc_page{
         display: none;
     }
+
     #mobile_page_id{
         display: block;
     }
 }
+
+@media(max-width:1024px){
+    #mobile_page_id{
+        width : 100%;
+    }
+}
+
 /* Commonly used*/
 *{
     box-sizing: border-box;
@@ -18,6 +35,7 @@
 .pc_page{
     width : 100%;
     height : auto;
+    display: none;
 }
 
 .img100{
@@ -57,7 +75,7 @@ header h5{
     width : 100%;
     height : 100%;
     margin: 0 auto;
-    background-image: url('../assets/images/leftDown.jpeg');
+    background-image: url('../assets/images/Banner.jpeg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -1921,7 +1939,7 @@ aside li{
 .mobile_page{
     width : 1024px;
     margin : 0 auto;
-    display: none;
+    display: block;
 }
 
 .mobile_page #header,
@@ -1935,7 +1953,7 @@ aside li{
 
 .mobile_page #header{
     height : 480px;
-    background-image: url('../assets/images/1.png');
+    background-image: url('../assets/images/Banner.jpeg');
     background-size: 100%;
 }
 
@@ -1943,8 +1961,8 @@ aside li{
     float : left;
     height : 80px;
     width : 100%;
-    padding-left: 5%;
     background-color: rgba(255,255,255,0.8);
+    position: relative;
 }
 
 .mobile_page #header h4{
@@ -1960,6 +1978,11 @@ aside li{
     height : 400px;
 }
 
+#mobile_menu_btn{
+    float:right;
+    padding-right: 15px;
+}
+
 #mobile_menu_btn:hover{
     cursor: pointer;
 }
@@ -1967,7 +1990,7 @@ aside li{
 /* mobile article css */
 
 .mobile_page article{
-    height :  500px;
+    height :  800px;
 }
 
 /* map */
@@ -1975,7 +1998,7 @@ aside li{
     float : left;
     height : 500px;
     width : 50%;
-    background-color: #C2DCDD;
+    background-color: #eee;
 }
 
 .mobile_page .mobile_map h1,
@@ -1998,7 +2021,7 @@ aside li{
     float : right;
     height : 250px;
     width : 50%;
-    background-color: #b3e9ee;
+    background-color: #C2DCDD;
 }
 
 .mobile_page .mobile_consultant div{
@@ -2010,8 +2033,8 @@ aside li{
 }
 
 .mobile_page .mobile_consultant:hover{
-    font-weight: bold;   
-    color : #2d99a2;
+    font-weight: bold;
+    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -2020,7 +2043,7 @@ aside li{
     height : 250px;
     width : 50%;
     float : right;
-    background-color: #39c3cf;
+    background-color: #7fc9cf;
 }
 
 .mobile_post div{
@@ -2034,8 +2057,8 @@ aside li{
 #mobile_post_list li{
     width : 90%;
     background-color: white;
-    margin : 0 0 15px 0;
-    padding : 2px 3px;
+    margin : 0 0 20px 0;
+    padding : 4px 3px;
     font-size: 1.1em;
 }
 
@@ -2043,9 +2066,161 @@ aside li{
     cursor: pointer;
 }
 
-/* mobile footer css */
-.mobile_page footer{
-    height : 120px;
-    background-color: #535353;
+/* mobile_enterin */
+
+.mobile_index_enterin{
+    float : left;
+    width : 100%;
+    height : 300px;
 }
 
+.mobile_index_enterin h1{
+    text-align: center;
+    margin : 15px 0 10px 0 ;
+}
+
+.mobile_index_enterin p{
+    text-align: center;
+}
+
+#mobile_enterin_list{
+    width : 90%;
+    margin : 0 auto;
+    height : 300px;
+}
+
+#mobile_enterin_list > ul{
+    display: inline-block;
+    text-align: center;
+}
+
+#mobile_enterin_list>ul>li{
+    list-style-type: none;
+    float: left;
+    background-color: white;
+    font-size : 1em;
+    font-weight: 600;
+    margin-right : 20px;
+    margin-top : 20px;
+    width : 130px;
+    height : 180px;
+    padding-top:40px;
+    color:white;
+}
+#mobile_enterin_list>ul>li:nth-child(1){
+    margin-left: 20px;
+}
+
+/* mobile footer css */
+
+.mobile_page footer{
+    height : 120px;
+    background-color: #C2DCDD;
+}
+
+.mobile_footer_logo{
+    float : left;
+    width : 20%;
+    height : 120px;
+}
+
+.mobile_footer_logo img{
+    float : right;
+    width : 40%;
+    height : 80px;
+    margin-top: 10px;
+}
+
+.mobile_footer_rule{
+    width : 30%;
+    float : left;
+    height : 120px;
+    padding-left: 5%;
+}
+
+.mobile_footer_rule h4{
+    margin : 10px 0 ;
+}
+
+.mobile_footer_information{
+    float : left;
+    height: 120px;
+    width : 41%;
+    padding-left: 3%;
+}
+.mobile_footer_information img{
+    margin-top : 8px;
+}
+
+.mobile_footer_information h2{
+    margin : 15px 0 5px 0;
+
+    display: inline-block;
+}
+
+.mobile_footer_information h4{
+    margin : 10px 0 0 0;
+}
+
+.mobile_footer_information h5{
+    margin : 5px 0 0 0;
+}
+
+
+/* mobile menu css */
+#mobile_menu{
+    display:none;
+    width:40%;
+    float: right;
+    left:60.1%;
+    background-color:white;
+    top:79.4px;
+    position: absolute;
+}
+
+#mobile_menu>ul>li{
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: left;
+    border-bottom:1px solid #2d99a2;
+    cursor: pointer;
+}
+
+#mobile_menu>ul>li>div>a:hover{
+    color : #7fc9cf;
+}
+
+#mobile_menu>ul>li>div>a{
+    padding-left: 20px;
+}
+
+
+#mobile_menu a{
+    padding-right: 70px;
+}
+
+#close_btn{
+    line-height: normal;
+    font-size:75px;
+    float: right;
+    width:80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.click_menu{
+    display: none;
+    background-color: #eee;
+}
+
+.click_menu>li{
+    border-top:1px solid #999999;
+}
+
+.click_menu>li>a{
+    padding-left: 20px;
+}
+
+.click_menu>li:hover{
+    color : #7fc9cf;
+}
