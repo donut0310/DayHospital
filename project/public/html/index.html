@@ -473,26 +473,27 @@
                 close_btn.style.display = "none";
                 document.getElementById("mobile_menu_btn").style.display = "block";
             }
+            init_menu();
         }
 
         function hidden_click(hid) {
             var menu_array = document.querySelectorAll("#mobile_menu ul li div");
-            if (menu_array[0].style.color == "blue" && hid.innerText == "센터소개") {
+            if (menu_array[0].style.color != "black" && hid.innerText == "센터소개") {
                 document.getElementById("hidden1").style.display = "none";
                 menu_array[0].style.color = "black";
                 return;
             }
-            else if (menu_array[1].style.color == "blue" && hid.innerText == "성모사랑 프로그램안내") {
+            if (menu_array[1].style.color != "black" && hid.innerText == "성모사랑 프로그램안내") {
                 document.getElementById("hidden2").style.display = "none";
                 menu_array[1].style.color = "black";
                 return;
             }
-            if (menu_array[2].style.color == "blue" && hid.innerText == "알림마당") {
+            if (menu_array[2].style.color != "black" && hid.innerText == "알림마당") {
                 document.getElementById("hidden3").style.display = "none";
                 menu_array[2].style.color = "black";
                 return;
             }
-            if (menu_array[3].style.color == "blue" && hid.innerText == "노인 장기요양보험") {
+            if (menu_array[3].style.color != "black" && hid.innerText == "노인 장기요양보험") {
                 document.getElementById("hidden4").style.display = "none";
                 menu_array[3].style.color = "black";
                 return;
@@ -501,7 +502,7 @@
             menu_array[1].style.color = "black";
             menu_array[2].style.color = "black";
             menu_array[3].style.color = "black";
-            hid.style.color = "#7fc9cf";
+            hid.style.color = 'rgb(' + 127 + ',' + 201 + ',' + 207 + ')';
             document.getElementById("hidden1").style.display = "none";
             document.getElementById("hidden2").style.display = "none";
             document.getElementById("hidden3").style.display = "none";
@@ -518,6 +519,19 @@
             else if (hid.innerText == "노인 장기요양보험") {
                 document.getElementById("hidden4").style.display = "block";
             }
+        }
+
+        function init_menu(){
+            var menu_array = document.querySelectorAll("#mobile_menu ul li div");
+
+            menu_array[0].style.color = "black";
+            menu_array[1].style.color = "black";
+            menu_array[2].style.color = "black";
+            menu_array[3].style.color = "black";
+            document.getElementById("hidden1").style.display = "none";
+            document.getElementById("hidden2").style.display = "none";
+            document.getElementById("hidden3").style.display = "none";
+            document.getElementById("hidden4").style.display = "none";
         }
     </script>
 </body>
