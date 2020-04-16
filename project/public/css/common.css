@@ -5,8 +5,7 @@
     .pc_page{
         display: block;
     }
-
-    .mobile_page{
+    #mobile_page_id{
         display: none;
     }
 }
@@ -1958,7 +1957,6 @@ aside li{
 }
 
 .mobile_page .mobile_page_logo{
-    float : left;
     height : 80px;
     width : 100%;
     background-color: rgba(255,255,255,0.8);
@@ -1970,17 +1968,15 @@ aside li{
 }
 
 .mobile_page #header #span{
-    margin-top: 12px;
+    margin-top: 14px;
     display: inline-block;
-}
-
-.mobile_page #banner{
-    height : 400px;
 }
 
 #mobile_menu_btn{
     float:right;
-    padding-right: 15px;
+    height: 80px;
+    padding-right: 20px;
+    padding-top: 5px;
 }
 
 #mobile_menu_btn:hover{
@@ -1989,7 +1985,7 @@ aside li{
 
 /* mobile article css */
 
-.mobile_page article{
+.mobile_index_article{
     height :  800px;
 }
 
@@ -2187,13 +2183,12 @@ aside li{
 }
 
 #mobile_menu>ul>li>div>a:hover{
-    color : #7fc9cf;
+    color:#2d99a2;
 }
 
 #mobile_menu>ul>li>div>a{
     padding-left: 20px;
 }
-
 
 #mobile_menu a{
     padding-right: 70px;
@@ -2201,7 +2196,8 @@ aside li{
 
 #close_btn{
     line-height: normal;
-    font-size:75px;
+    padding-right: 30px;
+    padding-top: 5px;
     float: right;
     width:80px;
     text-align: center;
@@ -2221,6 +2217,58 @@ aside li{
     padding-left: 20px;
 }
 
-.click_menu>li:hover{
-    color : #7fc9cf;
+.click_menu>li>a:hover{
+    color:#2d99a2;
+}
+
+/* mobile sub page */
+
+/* sub_header*/
+.mobile_page #sub_header{
+    height: 80px;
+    margin : 0 auto;
+    background-color: rgba(1,1,1,0.4);
+}
+
+.mobile_page #sub_header h4{
+    margin : 0 0;
+}
+
+.mobile_page #sub_header #span{
+    margin-top: 14px;
+    display: inline-block;
+}
+
+
+.mobile_explain_header h2{
+    margin : 50px 0;
+}
+
+
+
+
+/* sub_article */
+
+.mobile_sub_article{
+    height: 700px;
+}
+
+.sub_article_head{
+    width : 100%;
+    height : 150px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999999;
+    text-align: center;
+}
+
+.sub_article_head p{
+    margin-bottom: 20px;
+}
+
+.sub_article_head a:hover{
+    font-weight: bold;
+}
+
+.sub_article_body{
+    
 }
