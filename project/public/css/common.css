@@ -2172,6 +2172,8 @@ aside li{
     font-size: 1.6em;
     text-align: left;
     border-bottom:1px solid #2d99a2;
+    border-left:1px solid #2d99a2;
+    border-right:1px solid #2d99a2;
     cursor: pointer;
 }
 
