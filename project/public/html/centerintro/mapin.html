@@ -13,6 +13,7 @@
     <title>성모사랑 데이케어 센터</title>
 </head>
 <body>
+    <div class="pc_page">
     <header id = subHeader>
         <div class="wrapper">
             <nav>
@@ -126,10 +127,123 @@
                 <p><br>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
             </div>
         </div>
-    </footer> 
+    </footer>
+</div>
+
+<div class="mobile_page" id="mobile_page_id">
+    <div id="sub_header">
+        <div class="mobile_page_logo">
+            <div style="width : 7%; float : left; padding-top : 10px;margin-left:5%;"><a href="/"><img
+                        src="../../assets/images/small_logo.png"></a></div>
+            <div style="width : 10%; float : left; padding-top : 10px;"><a id="span" href="/">
+                    <h4>성모사랑</h4> 데이케어센터
+                </a></div>
+            <div id="close_btn" style="display: none;" onclick="menu_click()"><img src="../../assets/images/mobile/icons8-close-window-64.png"></div>
+
+            <div id="mobile_menu_btn" onclick="menu_click()"><img src="../../assets/images/mobile/hamburger.png" style="width : 64px; height : 64px;"></div>
+
+            <div id="mobile_menu" style="display: none;">
+                <ul>
+                    <li>
+                        <div onclick="hidden_click(this)">
+                            <a> 센터소개 </a>
+                        </div>
+                        <ul class="click_menu" id="hidden1" style="display: none;">
+                            <li><a>인사말</a></li>
+                            <li><a>운영규정</a></li>
+                            <li><a>시설현황</a></li>
+                            <li><a>입소안내</a></li>
+                            <li><a>찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div onclick="hidden_click(this)">
+                            <a>성모사랑 프로그램안내</a>
+                        </div>
+                        <ul class="click_menu" id="hidden2" style="display: none;">
+                            <li><a>데이케어란?</a></li>
+                            <li><a>프로그램안내</a></li>
+                            <li><a>프로그램운영계획표</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div onclick="hidden_click(this)">
+                            <a>알림마당</a>
+                        </div>
+                        <ul class="click_menu" id="hidden3" style="display: none;">
+                            <li><a>공지사항</a></li>
+                            <li><a>주간식단표</a></li>
+                            <li><a>갤러리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div onclick="hidden_click(this)">
+                            <a>노인 장기요양보험</a>
+                        </div>
+                        <ul class="click_menu" id="hidden4" style="display: none;">
+                            <li><a>노인 장기요양보험이란?</a></li>
+                            <li><a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050683" target="blank">노인 장기요양보험신청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>
+                            <a>문의 및 상담</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile_banner"></div>
+    </div>
+    <article class="mobile_sub_article" style="height: 950px;">
+        <div class="sub_article_head">
+                    <h2>센터소개</h2>
+                    <p>성모사랑 데이케어센터를 방문해주셔서 감사합니다.</p>
+                    <ul id="mobile_headList">
+                        <a href="/centerintro"><li >인사말</li></a>
+                        <a href="/rule"><li>운영규정</li></a>
+                        <a href="/facility"><li>시설현황</li></a>
+                        <a href="/enterin"><li>입소안내</li></a>
+                        <a href="/mapin"><li id="headList_current">찾아오시는 길</li></a>
+                    </ul>
+        </div>
+        <div class="sub_article_body">
+            <div class="mobile_main_map">
+                    
+            </div>
+            <ul id="mobile_articleList">
+                <li><h4>주소</h4>
+                    <span>서울특별시 도봉구 창동 181-3(마들로 13길 165) 세영빌딩 5층</span>
+                </li>
+                <li><h4>지하철을 타고 오시는 경우</h4>
+                    <span>창동역 1번 출구 → 동아청솔아파트 방향 도보 8분 </span>
+                </li>
+                <li><h4>버스를 타고 오시는 경우</h4>
+                    <span>도봉 08번/09번 버스, 노원 15번/1119번 버스 창동역 동측 정류장 하차 후 자운초등학교 방향 도보 8분</span>
+                </li>
+            </ul>
+        </div>
+    </article>
+        <footer>
+            <div class="mobile_footer_logo">
+                <a href="/"><img src="../../assets/images/big_logo.png" alt=""></a>
+            </div>
+            <div class="mobile_footer_information">
+                <h4 style="text-align: left;"><a href="personal">개인정보처리방침</a></h4>
+                <h2>대표전화 02-990-8875</h2>
+                <h5>주소 : 서울특별시 도봉구 창동 181-3 세영빌딩(마들로13길 165)5층</h5>
+            </div>
+            <div class="mobile_footer_rule">
+                <p style="margin-top:10px;">단체명 : 성모사랑 데이케어센터</p>
+                <p>서비스급여종류 : 가정방문급여</p>
+                <p>대표자 : 신우진</p>
+                <p>사업자등록번호 : 000-000000-000</p>
+                <p>Copyright ⓒ 성모사랑 데이케어센터 All right reserved</p>
+            </div>            
+        </footer>        
+</div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!--<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>-->
-    <script src="../js/custom/layoutjs.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c73000e3bb0ccd487e32c39f75ae8bd5"></script>
     <script src="../js/custom/map.js"></script>
 
     <script>
@@ -144,6 +258,87 @@
                 $(".dept02").slideUp(200);
             }
         });
+    
+        function menu_click() {
+            var menu = document.getElementById("mobile_menu");
+            var close_btn = document.getElementById("close_btn");
+            if (menu.style.display == "none") {
+                menu.style.display = "block";
+                close_btn.style.display = "block";
+                document.getElementById("mobile_menu_btn").style.display = "none";
+            }
+            else {
+                menu.style.display = "none";
+                close_btn.style.display = "none";
+                document.getElementById("mobile_menu_btn").style.display = "block";
+            }
+            init_menu();
+        }
+    
+        function hidden_click(hid) {
+            var menu_array = document.querySelectorAll("#mobile_menu ul li div");
+            if (menu_array[0].style.color != "black" && hid.innerText == "센터소개") {
+                document.getElementById("hidden1").style.display = "none";
+                menu_array[0].style.color = "black";
+                return;
+            }
+            if (menu_array[1].style.color != "black" && hid.innerText == "성모사랑 프로그램안내") {
+                document.getElementById("hidden2").style.display = "none";
+                menu_array[1].style.color = "black";
+                return;
+            }
+            if (menu_array[2].style.color != "black" && hid.innerText == "알림마당") {
+                document.getElementById("hidden3").style.display = "none";
+                menu_array[2].style.color = "black";
+                return;
+            }
+            if (menu_array[3].style.color != "black" && hid.innerText == "노인 장기요양보험") {
+                document.getElementById("hidden4").style.display = "none";
+                menu_array[3].style.color = "black";
+                return;
+            }
+            menu_array[0].style.color = "black";
+            menu_array[1].style.color = "black";
+            menu_array[2].style.color = "black";
+            menu_array[3].style.color = "black";
+            hid.style.color = 'rgb(' + 45 + ',' + 153 + ',' + 162 + ')';
+            document.getElementById("hidden1").style.display = "none";
+            document.getElementById("hidden2").style.display = "none";
+            document.getElementById("hidden3").style.display = "none";
+            document.getElementById("hidden4").style.display = "none";
+            if (hid.innerText == "센터소개") {
+                document.getElementById("hidden1").style.display = "block";
+            }
+            else if (hid.innerText == "성모사랑 프로그램안내") {
+                document.getElementById("hidden2").style.display = "block";
+            }
+            else if (hid.innerText == "알림마당") {
+                document.getElementById("hidden3").style.display = "block";
+            }
+            else if (hid.innerText == "노인 장기요양보험") {
+                document.getElementById("hidden4").style.display = "block";
+            }
+        }
+    
+        function init_menu(){
+            var menu_array = document.querySelectorAll("#mobile_menu ul li div");
+    
+            menu_array[0].style.color = "black";
+            menu_array[1].style.color = "black";
+            menu_array[2].style.color = "black";
+            menu_array[3].style.color = "black";
+            document.getElementById("hidden1").style.display = "none";
+            document.getElementById("hidden2").style.display = "none";
+            document.getElementById("hidden3").style.display = "none";
+            document.getElementById("hidden4").style.display = "none";
+        }
+
+        var headList_cur = document.getElementById("headList_current");
+        headList_cur.style.borderBottomColor = "#2d99a2";
+        headList_cur.style.borderBottomWidth = "2px";
+        headList_cur.style.color = "#2d99a2";
     </script>
-</body>
-</html>
+    
+    </body>
+    
+    </html>
