@@ -34,7 +34,6 @@
 .pc_page{
     width : 100%;
     height : auto;
-    display: none;
 }
 
 .img100{
@@ -1853,7 +1852,7 @@ aside li{
 
 .pabContent{
     width : 100%;
-    height: 600px;
+    height : 600px;
     border-bottom: 2px solid #999999;
     margin-top: -1px;
     margin-bottom: 2%;
@@ -1933,12 +1932,13 @@ aside li{
     color:cornflowerblue
 }
 
+/*****************************************************/
 
 /* MOBILE PAGE CSS */
 .mobile_page{
     width : 1024px;
     margin : 0 auto;
-    display: block;
+    display: none;
 }
 
 .mobile_page #header,
@@ -2173,10 +2173,12 @@ aside li{
     text-align: left;
     border-bottom:1px solid #2d99a2;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
 #mobile_menu>ul>li>div>a{
     padding-left: 20px;
+    letter-spacing: 2px;
 }
 
 #mobile_menu a{
@@ -2246,9 +2248,9 @@ aside li{
 
 .sub_article_head{
     width : 100%;
-    height : 150px;
-    border-top: 1px solid #999;
-    border-bottom: 2px solid #2d99a2;
+    height : 170px;
+    border-top: 1px solid #ddd;
+    
     text-align: center;
 }
 
@@ -2258,6 +2260,17 @@ aside li{
 
 .sub_article_head p{
     margin-bottom: 20px;
+}
+
+#mobile_headList li{ /* sub_article_head list */
+    display: inline-block;
+    text-align: center;
+    padding : 10px 5px;
+    margin-right : 20px;
+    font-size: 1.2em;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+    letter-spacing: 1px;
 }
 
 .sub_article_body{
@@ -2297,7 +2310,7 @@ aside li{
 }
 
 /* mobile common used list css*/
-#mobile_articleList{
+#mobile_articleList{ /* used in article_body*/
     list-style-type: disc;
     padding-left : 2%;
     margin-top: 20px;
@@ -2371,7 +2384,7 @@ aside li{
 }
 
 
-/* pmpc part board page css */
+/* mobile_pmpc part board page css */
 
 .mobile_pmpc_header{
     width:100%;
@@ -2441,7 +2454,7 @@ aside li{
     line-height: 1.3em;
 }
 
-.mobile_download{  /*plani , meal_board*/
+.mobile_download{  /*plani , meal_board */
     float :right;
     width : 100%;
     height : 40px;
@@ -2455,3 +2468,14 @@ aside li{
     float : right;
 }
 
+/* pmpc tables */
+
+#tp1 thead th{
+    font-size: 1.2em;
+    border-bottom: 2px solid #2d99a2;
+}
+
+#tp2 thead th{
+    font-size: 1.2em;
+    border-bottom: 2px solid #2d99a2;
+}

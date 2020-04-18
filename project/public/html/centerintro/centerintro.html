@@ -165,7 +165,7 @@
                             <li><a>운영규정</a></li>
                             <li><a>시설현황</a></li>
                             <li><a>입소안내</a></li>
-                            <li><a>찾아오시는길</a></li>
+                            <li><a>찾아오시는 길</a></li>
                         </ul>
                     </li>
                     <li>
@@ -211,11 +211,13 @@
         <div class="sub_article_head">
                     <h2>센터소개</h2>
                     <p>성모사랑 데이케어센터를 방문해주셔서 감사합니다.</p>
-                    <a href="/centerintro" style="color: #2d99a2; font-weight: bold;">인사말</a> |
-                    <a href="/rule">운영규정</a> |
-                    <a href="/facility">시설현황</a> |
-                    <a href="/enterin">입소안내</a> |
-                    <a href="/mapin">찾아오시는 길</a>
+                    <ul id="mobile_headList">
+                        <a href="/centerintro"><li id="headList_current">인사말</li></a>
+                        <a href="/rule"><li>운영규정</li></a>
+                        <a href="/facility"><li>시설현황</li></a>
+                        <a href="/enterin"><li>입소안내</li></a>
+                        <a href="/mapin"><li>찾아오시는 길</li></a>
+                    </ul>
         </div>
         <div class="sub_article_body">
             <ul id="mobile_articleList">
@@ -278,8 +280,6 @@
             $(".dept02").slideUp(200);
         }
     });
-    var popupWidth = (window.screen.width / 2) - (345 / 2);
-    window.open("/popup", "pop", 'width=345px,height=715px,left=' + popupWidth + ',top:100px');
 
     function menu_click() {
         var menu = document.getElementById("mobile_menu");
@@ -354,6 +354,11 @@
         document.getElementById("hidden3").style.display = "none";
         document.getElementById("hidden4").style.display = "none";
     }
+
+    var headList_cur = document.getElementById("headList_current");
+        headList_cur.style.borderBottomColor = "#2d99a2";
+        headList_cur.style.borderBottomWidth = "2px";
+        headList_cur.style.color = "#2d99a2";
 </script>
 
 </body>
