@@ -1580,6 +1580,22 @@ aside li{
     cursor: default;
 }
 
+.m_horizonlist{
+    display:flex;
+    justify-content: center;
+}
+.m_horizonlist>li{
+    float:left;
+    padding : 20px;
+    font-size: 1em;
+    border : 1px solid #bbb;
+    letter-spacing: 0.1em;
+}
+
+.m_horizonlist>li>a{
+    cursor: default;
+}
+
 .programNav #articleList{
     margin-top: 3%;
 }
@@ -1600,9 +1616,21 @@ aside li{
     margin:0 auto;
 }
 
+#m_recogproi{
+    width:100%;
+    display:none;
+    margin:0 auto;
+}
+
 #lifeproi{
     width:80%;
     display: none;
+    margin:0 auto;
+}
+
+#m_lifeproi{
+    width:100%;
+    display:none;
     margin:0 auto;
 }
 
@@ -1612,15 +1640,33 @@ aside li{
     margin:0 auto;
 }
 
+#m_cureservi{
+    width:100%;
+    display:none;
+    margin:0 auto;
+}
+
 #careservi{
     width:80%;
     display: none;
     margin:0 auto;
 }
 
+#m_careservi{
+    width:100%;
+    display:none;
+    margin:0 auto;
+}
+
 #mentori{
     width:80%;
     display: none;
+    margin:0 auto;
+}
+
+#m_mentori{
+    width:100%;
+    display:none;
     margin:0 auto;
 }
 
