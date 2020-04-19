@@ -214,10 +214,12 @@
         <article class="mobile_sub_article" style="height: 1450px;">
             <div class="sub_article_head">
                 <h2>성모사랑 프로그램안내</h2>
-                <p>성모사랑 데이케어센터를 방문해주셔서 감사합니다.</p>
-                <a href="/centerintro">데이케어란?</a> |
-                <a href="/facility">프로그램안내</a>
-                | <a href="/enterin" style="color: #2d99a2; font-weight: bold;">프로그램운영계획표</a>
+                <p>성모사랑 데이케어센터는 다양한 프로그램을 준비했습니다.</p>
+                <ul id="mobile_headList">
+                    <a href="/daycarein"><li>데이케어란?</li></a>
+                    <a href="/programintro"><li>프로그램안내</li></a>
+                    <a href="/plani"><li id="headList_current">프로그램운영계획표</li></a>
+                </ul>
             </div>
             <div class="sub_article_body">
 
@@ -340,6 +342,11 @@
             document.getElementById("hidden3").style.display = "none";
             document.getElementById("hidden4").style.display = "none";
         }
+
+        var headList_cur = document.getElementById("headList_current");
+        headList_cur.style.borderBottomColor = "#2d99a2";
+        headList_cur.style.borderBottomWidth = "2px";
+        headList_cur.style.color = "#2d99a2";
     </script>
 </body>
 

@@ -3,17 +3,8 @@
 /* mediaquery */
 @media(max-width:1240px){
     .pc_page{
-        display: block;
-    }
-    #mobile_page_id{
         display: none;
     }
-}
-@media(max-width:1239px){
-    .pc_page{
-        display: none;
-    }
-
     #mobile_page_id{
         display: block;
     }
@@ -22,6 +13,24 @@
 @media(max-width:1024px){
     #mobile_page_id{
         width : 100%;
+    }
+}
+
+@media(max-width : 960px){
+    .mobile_page footer .mobile_footer_logo{
+        width : 16%;
+    }
+    .mobile_page footer .mobile_footer_information{
+        width : 44%;
+    }
+
+    .mobile_page footer .mobile_footer_rule{
+        width : 33%;
+    }
+
+    .mobile_page #mobile_enterin_list>ul>li{
+        margin-right: 20px;
+        width : 120px;
     }
 }
 
