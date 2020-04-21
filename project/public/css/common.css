@@ -17,21 +17,27 @@
 }
 
 @media(max-width : 960px){
-    .mobile_page footer .mobile_footer_logo{
-        width : 16%;
-    }
-    .mobile_page footer .mobile_footer_information{
-        width : 44%;
-    }
+    .mobile_page footer .mobile_footer_logo{width : 16%;}
+    .mobile_page footer .mobile_footer_information{width : 44%;}
+    .mobile_page footer .mobile_footer_rule{width : 33%;}
+    .mobile_page #mobile_enterin_list>ul>li{margin-right: 20px;width : 120px;}
+}
 
-    .mobile_page footer .mobile_footer_rule{
-        width : 33%;
-    }
+@media (max-width : 768px){
+    #mobile_page_id {font-size: 0.9em;}
+    .mobile_page_logo #span {margin-left: 20px; width : 100px;}
+    .mobile_page #mobile_enterin_list>ul>li:nth-child(1){margin-left: 3%;}
+    .mobile_page #mobile_enterin_list>ul>li{margin-right: 10px;width : 14.5%}
+    .mobile_index_article .mobile_consultant p{display: inline-block; width : 80%}
+    .mobile_page footer .mobile_footer_logo img{width : 50%}
+    .mobile_page footer .mobile_footer_rule{width : 35%}
+    .mobile_page footer .mobile_footer_rule p {margin-bottom: 7px;}
+    footer .mobile_footer_rule p:nth-child(4){word-break: break-all;}
+    footer .mobile_footer_rule p:nth-child(5){display: none;}
 
-    .mobile_page #mobile_enterin_list>ul>li{
-        margin-right: 20px;
-        width : 120px;
-    }
+    .mobile_page .mobile_sub_article{width : 95%; margin : 0 auto; word-break: break-all;}
+
+    
 }
 
 /* Commonly used*/
@@ -2129,6 +2135,7 @@ aside li{
 }
 
 #mobile_enterin_list > ul{
+    width : 100%;
     display: inline-block;
     text-align: center;
 }
