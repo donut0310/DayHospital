@@ -39,21 +39,32 @@
     
     .mobile_page .mobile_index_enterin #mobile_enterin_list {display: none;}
     .mobile_index_article .mobile_consultant p{display: none;}
-    #mobile_page_id .mobile_index_article{height: 400px;}
-    #mobile_page_id .mobile_index_article .mobile_map{height : 200px;}
-    #mobile_page_id .mobile_index_article .mobile_consultant{height : 200px;}
-    #mobile_page_id .mobile_index_article .mobile_post{height:200px; float : left}
+    #mobile_page_id .mobile_index_article{height: 600px;}
+    #mobile_page_id .mobile_index_article .mobile_map{height : 200px; background-color: #fff;}
+    #mobile_page_id .mobile_index_article .mobile_map h1{padding-left: 7%;}
+    #mobile_page_id .mobile_index_article .mobile_consultant{height : 200px;background-color: #2fb8d4;}
+    #mobile_page_id .mobile_index_article .mobile_post{height:200px; float : left;background-color: #39c3cf;}
     #mobile_page_id .mobile_index_article .mobile_post ul{display: none;}
-    #mobile_page_id .mobile_index_article .mobile_index_enterin{width :50%;height: 200px;float:left;}
-    #mobile_page_id .mobile_index_article .mobile_index_enterin h1{float: left;padding-left: 7%;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin{width :50%;height: 200px;float:left;background-color: #b3e9ee;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin h1{float: left;padding-left: 7%;margin: 15px 100px 10px 0;}
     #mobile_page_id .mobile_index_article .mobile_index_enterin p{display: none;}
+    #mobile_page_id .mobile_index_article .mobile_index_gallery{height:200px;width :50%;float: left; background-color: #91edf5;display: block;}
+    #mobile_page_id .mobile_index_article .mobile_index_gallery h1{padding-left: 7%;}
+    #mobile_page_id .mobile_index_article .mobile_index_insurance h1{padding-left: 7%;}
+    #mobile_page_id .mobile_index_article .mobile_index_insurance{height:200px;width:50%;float: left;background-color: #2d99a2;display: block;}
     .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
     .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     .mobile_page footer .mobile_footer_logo img{width : 80%;}
     .mobile_page footer .mobile_footer_rule{display:none;}
 =======
+=======
+    #mobile_page_id .index_icon{width : 30%; margin: 0 auto; height: 150px; display: block; padding-left: 0%;}
+    #mobile_page_id .index_icon img{width : 120%;height: 120px; display: block; padding-left: 0%;}
+
+>>>>>>> 6687b4d4099890e8bf6606e9073e668002364e7e
     .mobile_page footer .mobile_footer_logo img{width : 50%}
     .mobile_page footer .mobile_footer_rule{width : 35%}
 
@@ -73,6 +84,11 @@
     #mobile_page_id .mobile_sub_article{height:800px;}
     #mobile_page_id .sub_article_body #mobile_articleList h4{font-size: 1.1em;}
     #mobile_page_id .sub_article_body #mobile_articleList span{font-size: 0.9em;}
+
+    #mobile_page_id #plani_img_div {width : 95%; height : 800px; margin : 0 auto;}
+    #mobile_page_id .download{font-size: 1.2em;}
+
+    #mobile_page_id .sub_article_head p{font-size: 0.9em;}
 }
 
 /* Commonly used*/
@@ -875,7 +891,7 @@ aside li{
 }
 
 #endAside .smallspan{
-    font-size:1.5em;
+    font-size:1.3em;
     font-weight: 500;
     color : black;
 }
@@ -1167,57 +1183,57 @@ aside li{
     width : 100%;
     height : 100%;
 }
-/* ensurance */
-.ensurance{
+/* insurance */
+.insurance{
     width : 80%;
     height : 100%;
     float : left;
 }
 
-.ensurance .articleHead{
+.insurance .articleHead{
     width : 90%;
     height : 70px;
     margin : 0 auto;
     border-bottom: 2px solid #c7dbdd;
 }
 
-.ensurance .articleBody{
+.insurance .articleBody{
     width : 90%;
     height : 86%;
     padding-top:5%;
     margin : 0 auto;
 }
 
-.ensurance #pageLocation_left{
+.insurance #pageLocation_left{
     padding-top: 20px;
 }
 
-.ensurance #pageLocation_right{
+.insurance #pageLocation_right{
     padding-top: 54px;
 }
 
-#ensurancelist{
+#insurancelist{
     list-style-type: disc;
     padding-left : 2%;
 }
 
-#ensurancelist>li{
+#insurancelist>li{
     margin-bottom: 8%;
     color : #2d99a2;
 }
 
-#ensurancelist h4{
+#insurancelist h4{
     display: block;
     margin : 0 0 3% 0;
     font-size: 1.4em;
 }
 
-#ensurancelist span{
+#insurancelist span{
     font-size: 1.2em;
     color : black;
 }
 
-#ensurancelist li>ul>li h4{
+#insurancelist li>ul>li h4{
     padding-top : 5%;
 }
 
@@ -2065,6 +2081,19 @@ aside li{
     margin : 0 0;
 }
 
+.mobile_head_logo_div{
+    float: left;
+    width: 7%;
+    padding-top:10px;
+    margin-left: 5%;
+}
+
+.mobile_head_logo_text{
+    width : 13%;
+    float : left;
+    padding-top: 10px;
+}
+
 .mobile_page #header #span{
     margin-top: 14px;
     display: inline-block;
@@ -2114,12 +2143,9 @@ aside li{
     background-color: #C2DCDD;
 }
 
-.mobile_page .mobile_consultant div{
+.mobile_consultant h1,
+.mobile_consultant p{
     padding-left: 7%;
-}
-
-.mobile_page .mobile_consultant img{
-    padding-left : 27%;
 }
 
 /* post */
@@ -2130,8 +2156,9 @@ aside li{
     background-color: #7fc9cf;
 }
 
-.mobile_post div{
-    padding-left : 7%;
+.mobile_post h1,
+.mobile_post ul{
+    padding-left: 7%;
 }
 
 #mobile_post_list{
@@ -2191,6 +2218,16 @@ aside li{
 #mobile_enterin_list>ul>li:nth-child(1){
     margin-left: 20px;
 }
+
+.mobile_index_gallery{
+    display: none;
+}
+
+.mobile_index_insurance{
+    display: none;
+}
+
+.index_icon{display: none;}
 
 /* mobile footer css */
 
@@ -2566,6 +2603,12 @@ aside li{
 
 .mobile_download a{
     float : right;
+}
+
+#plani_img_div{
+    width : 80%; 
+    height : 1180px; 
+    margin : 0 auto;
 }
 
 /* pmpc tables */
