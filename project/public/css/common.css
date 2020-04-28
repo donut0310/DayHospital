@@ -32,9 +32,17 @@
 
     #mobile_page_id {font-size: 0.9em;}
     .mobile_page_logo #span {margin-left: 20px; width : 100px;}
-    .mobile_page #mobile_enterin_list>ul>li:nth-child(1){margin-left: 3%;}
-    .mobile_page #mobile_enterin_list>ul>li{margin-right: 10px;width : 14.5%}
+    
+    .mobile_page .mobile_index_enterin #mobile_enterin_list {display: none;}
     .mobile_index_article .mobile_consultant p{display: inline-block; width : 80%}
+    #mobile_page_id .mobile_index_article .mobile_map{height : 200px;}
+    #mobile_page_id .mobile_index_article .mobile_consultant{height : 200px;}
+    #mobile_page_id .mobile_index_article .mobile_post{height:200px; float : left}
+    #mobile_page_id .mobile_index_article .mobile_post ul{display: none;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin{width :50%;height: 200px;float:left;}
+    .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
+    .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
+
     .mobile_page footer .mobile_footer_logo img{width : 50%}
     .mobile_page footer .mobile_footer_rule{width : 35%}
     .mobile_page footer .mobile_footer_rule p {margin-bottom: 7px;}
@@ -45,7 +53,7 @@
 
     .mobile_page .mobile_index_article .mobile_consultant img{display: none;}
 
-    #mobile_page_id #mobile_menu{width : 60%; left : 40%;}
+    #mobile_page_id #mobile_menu{width : 70%; left : 30%;}
 }
 
 /* Commonly used*/
