@@ -26,6 +26,8 @@
 }
 
 @media (max-width : 768px){
+
+    .mobile_page footer .mobile_footer_information{width : 80%;}
     body #mobile_page_id{font-size: 0.8em;}
 
     #mobile_page_id #header{height : 80px; background-image: none; }
@@ -43,8 +45,8 @@
     .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
     .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
 
-    .mobile_page footer .mobile_footer_logo img{width : 50%}
-    .mobile_page footer .mobile_footer_rule{width : 35%}
+    .mobile_page footer .mobile_footer_logo img{width : 80%;}
+    .mobile_page footer .mobile_footer_rule{display:none;}
     .mobile_page footer .mobile_footer_rule p {margin-bottom: 7px;}
     footer .mobile_footer_rule p:nth-child(4){word-break: break-all;}
     footer .mobile_footer_rule p:nth-child(5){display: none;}
