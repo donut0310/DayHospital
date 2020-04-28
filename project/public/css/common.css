@@ -31,22 +31,33 @@
     body #mobile_page_id{font-size: 0.8em;}
 
     #mobile_page_id #header{height : 80px; background-image: none; }
+    #mobile_page_id #sub_header{height : 80px;}
+    #mobile_page_id .mobile_banner{display: none;}
 
     #mobile_page_id {font-size: 0.9em;}
     .mobile_page_logo #span {margin-left: 20px; width : 100px;}
     
     .mobile_page .mobile_index_enterin #mobile_enterin_list {display: none;}
-    .mobile_index_article .mobile_consultant p{display: inline-block; width : 80%}
+    .mobile_index_article .mobile_consultant p{display: none;}
+    #mobile_page_id .mobile_index_article{height: 400px;}
     #mobile_page_id .mobile_index_article .mobile_map{height : 200px;}
     #mobile_page_id .mobile_index_article .mobile_consultant{height : 200px;}
     #mobile_page_id .mobile_index_article .mobile_post{height:200px; float : left}
     #mobile_page_id .mobile_index_article .mobile_post ul{display: none;}
     #mobile_page_id .mobile_index_article .mobile_index_enterin{width :50%;height: 200px;float:left;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin h1{float: left;padding-left: 7%;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin p{display: none;}
     .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
     .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
 
+<<<<<<< HEAD
     .mobile_page footer .mobile_footer_logo img{width : 80%;}
     .mobile_page footer .mobile_footer_rule{display:none;}
+=======
+    .mobile_page footer .mobile_footer_logo img{width : 50%}
+    .mobile_page footer .mobile_footer_rule{width : 35%}
+
+>>>>>>> ec31490c1de187e50836d0f38a43a8eb01f6cfe3
     .mobile_page footer .mobile_footer_rule p {margin-bottom: 7px;}
     footer .mobile_footer_rule p:nth-child(4){word-break: break-all;}
     footer .mobile_footer_rule p:nth-child(5){display: none;}
@@ -56,6 +67,12 @@
     .mobile_page .mobile_index_article .mobile_consultant img{display: none;}
 
     #mobile_page_id #mobile_menu{width : 70%; left : 30%;}
+
+    #mobile_page_id #mobile_headList li{margin-right : 10px; font-size : 0.8em;}
+
+    #mobile_page_id .mobile_sub_article{height:800px;}
+    #mobile_page_id .sub_article_body #mobile_articleList h4{font-size: 1.1em;}
+    #mobile_page_id .sub_article_body #mobile_articleList span{font-size: 0.9em;}
 }
 
 /* Commonly used*/
@@ -427,7 +444,7 @@ nav{
 
 /* all page footer */
 footer{
-    width : 90vw;
+    width : 1440px;
     height : 250px;
     margin : 0 auto;
     background-color: #c7dbdd;
@@ -806,7 +823,7 @@ footer{
 }
 
 #subHeader{
-    width : 90vw;
+    width : 1440px;
     height : 35vh;
     margin : 0 auto;
 }
@@ -2314,7 +2331,7 @@ aside li{
 }
 
 #sub_header .mobile_banner{
-    height : auto;
+    height : 200px;
     width : 100%;
     margin: 0 auto;
     background-image: url('../assets/images/mobile/mobile_banner.jpeg');
