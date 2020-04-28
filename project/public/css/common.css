@@ -55,20 +55,14 @@
     .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
     .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     .mobile_page footer .mobile_footer_logo img{width : 80%;}
     .mobile_page footer .mobile_footer_rule{display:none;}
-=======
-=======
     #mobile_page_id .index_icon{width : 30%; margin: 0 auto; height: 150px; display: block; padding-left: 0%;}
     #mobile_page_id .index_icon img{width : 120%;height: 120px; display: block; padding-left: 0%;}
 
->>>>>>> 6687b4d4099890e8bf6606e9073e668002364e7e
-    .mobile_page footer .mobile_footer_logo img{width : 50%}
+    .mobile_page footer .mobile_footer_logo img{width : 80%}
     .mobile_page footer .mobile_footer_rule{width : 35%}
 
->>>>>>> ec31490c1de187e50836d0f38a43a8eb01f6cfe3
     .mobile_page footer .mobile_footer_rule p {margin-bottom: 7px;}
     footer .mobile_footer_rule p:nth-child(4){word-break: break-all;}
     footer .mobile_footer_rule p:nth-child(5){display: none;}
