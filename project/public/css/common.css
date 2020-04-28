@@ -74,6 +74,11 @@
     #mobile_page_id .mobile_sub_article{height:800px;}
     #mobile_page_id .sub_article_body #mobile_articleList h4{font-size: 1.1em;}
     #mobile_page_id .sub_article_body #mobile_articleList span{font-size: 0.9em;}
+
+    #mobile_page_id #plani_img_div {width : 95%; height : 800px; margin : 0 auto;}
+    #mobile_page_id .download{font-size: 1.2em;}
+
+    #mobile_page_id .sub_article_head p{font-size: 0.9em;}
 }
 
 /* Commonly used*/
@@ -876,7 +881,7 @@ aside li{
 }
 
 #endAside .smallspan{
-    font-size:1.5em;
+    font-size:1.3em;
     font-weight: 500;
     color : black;
 }
@@ -2066,6 +2071,19 @@ aside li{
     margin : 0 0;
 }
 
+.mobile_head_logo_div{
+    float: left;
+    width: 7%;
+    padding-top:10px;
+    margin-left: 5%;
+}
+
+.mobile_head_logo_text{
+    width : 13%;
+    float : left;
+    padding-top: 10px;
+}
+
 .mobile_page #header #span{
     margin-top: 14px;
     display: inline-block;
@@ -2575,6 +2593,12 @@ aside li{
 
 .mobile_download a{
     float : right;
+}
+
+#plani_img_div{
+    width : 80%; 
+    height : 1180px; 
+    margin : 0 auto;
 }
 
 /* pmpc tables */
