@@ -26,6 +26,7 @@ function init(){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
+                addListMobile(res.data["data"]);
             }
         }
     });
@@ -217,7 +218,7 @@ function deleteAndGet(){
     currentPage.classList.add('notCurrent');
 
     let page_num = this.value;
-    this.classList.remove('notCurrent');
+    this.classList.remove('notCurrent');9
     this.classList.add('current');
     currentPage = this;
     //이전 데이터 삭제
@@ -299,6 +300,8 @@ function addList(item = []){
         tbody.appendChild(tr);
     });
 }
+
+
 
 function date_format(data){
     let date;

@@ -40,7 +40,7 @@ let dbCnt; //db에저장된 이미지 개수
 
 function init(){
     //추후에 삭제 예정
-    resetList();
+    //resetList();
     axios.get('/layout/postListInit').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
@@ -78,13 +78,13 @@ function addList(item = []){
     });
 }
 //프론트용 데이터 삭제 용도 함수
-function resetList(){
-    let resetPostUl = document.querySelector('#postUl');
-     //이전 데이터 삭제
-     while(resetPostUl.hasChildNodes()){
-        resetPostUl.removeChild(resetPostUl.firstChild);
-    }
-}
+// function resetList(){
+//     let resetPostUl = document.querySelector('#postUl');
+//      //이전 데이터 삭제
+//      while(resetPostUl.hasChildNodes()){
+//         resetPostUl.removeChild(resetPostUl.firstChild);
+//     }
+// }
 
 //li에 초기 사진 저장
 function showImg(item = []){
