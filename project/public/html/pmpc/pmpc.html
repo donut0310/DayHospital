@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="pmpcHead">
-                        <table class="pmpcTb">
+                        <table class ="pmpcTb" id = "preListPC">
                             <thead>
                                 <tr>
                                     <th class="pmpcNum">번호</th>
@@ -124,9 +124,14 @@
                             <tbody>
                             </tbody>
                         </table>
+                        <table class="pmpcTb" id = "fixListPC">
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
                     </div>
                     <div class="pmpcFoot">
-                        <div class="pageBtns">
+                        <div class="pageBtns pcPageBtns">
                             <button class="prevBtn">←</button> <!-- prev button -->
                             <button class="pageButton current">1</button>
                             <button class="pageButton">2</button>
@@ -240,7 +245,7 @@
                         </ul>
             </div>
             <div class="sub_article_body">
-                <table id="tp1">
+                <table class = "mobileTb" id="preListMobile">
                     <thead>
                         <tr>
                             <th>번 호</th>
@@ -251,11 +256,16 @@
                     <tbody>
                         
                     </tbody>
+                </table>
+                <table class ="mobileTb" id = "fixListMobile">
+                    <tbody>
+                        
+                    </tbody>
 
                 </table>
             </div>
             <div class="pmpcFoot">
-                <div class="pageBtns" style="width:100%;display: flex;justify-content: center;">
+                <div class="pageBtns mobilePageBtns" style="width:100%;display: flex;justify-content: center;">
                     <button class="prevBtn">←</button> <!-- prev button -->
                     <button class="pageButton current">1</button>
                     <button class="pageButton">2</button>
