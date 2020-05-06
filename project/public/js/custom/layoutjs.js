@@ -1,4 +1,5 @@
 const postUl = document.querySelector('#postUl');
+const mobileUl = document.querySelector('#mobile_post_list');
 const img = document.querySelectorAll('.photoList img');
 const photoSlide = document.querySelector('#photoSlide');
 
@@ -40,11 +41,12 @@ let dbCnt; //db에저장된 이미지 개수
 
 function init(){
     //추후에 삭제 예정
-    //resetList();
+    resetList();
     axios.get('/layout/postListInit').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
+                addListMobile(res.data["data"]);
             }
         }
     });
@@ -58,6 +60,8 @@ function init(){
 }   
 
 function addList(item = []){
+    item = item.slice(0,4);
+    console.log(item);
     item.forEach(function (data) {
         let li = document.createElement('li');
         let span = document.createElement('span');
@@ -77,14 +81,31 @@ function addList(item = []){
 
     });
 }
+
+function addListMobile(item = []){
+    item.forEach(function (data) {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.href = 'pmpc_board?' + data.ID;
+
+        li.innerText = data.TITLE;
+        li.appendChild(a);
+        mobileUl.appendChild(li);
+
+    });
+}
 //프론트용 데이터 삭제 용도 함수
-// function resetList(){
-//     let resetPostUl = document.querySelector('#postUl');
-//      //이전 데이터 삭제
-//      while(resetPostUl.hasChildNodes()){
-//         resetPostUl.removeChild(resetPostUl.firstChild);
-//     }
-// }
+function resetList(){
+    let resetPostUl = document.querySelector('#postUl');
+    let resetMobileUl = document.querySelector('#mobile_post_list');
+     //이전 데이터 삭제
+     while(resetPostUl.hasChildNodes()){
+        resetPostUl.removeChild(resetPostUl.firstChild);
+    }
+    while(resetMobileUl.hasChildNodes()){
+        resetMobileUl.removeChild(resetMobileUl.firstChild);
+    }
+}
 
 //li에 초기 사진 저장
 function showImg(item = []){

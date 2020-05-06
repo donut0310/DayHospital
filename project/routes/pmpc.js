@@ -10,7 +10,7 @@ router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from postlist order by ID desc limit 0,5";
+            let sql = "select * from postlist order by ID desc limit 0,8";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -49,7 +49,7 @@ router.get('/page_num', function(req, res, next){
         if(err) throw err;
         else{
             let page_num = req.query.page_num;
-            let sql = "select * from postlist order by ID desc limit " + (page_num-1)*5 + ", 5";
+            let sql = "select * from postlist order by ID desc limit " + (page_num-1)*8 + ", 8";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -189,6 +189,26 @@ router.get('/select_content_order', function(req, res, next){
             }
         
         }
+    });
+});
+
+router.get('/preList', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+            
+            let sql = "select * from prepostlist order by ID desc limit 0," + "4";
+            conn.query(sql, function(err,rows){
+                if(err)throw err;
+                else{
+                    conn.release();
+                    let output = {};
+                    output['result'] = "success";
+                    output['data'] = rows;
+                    res.send(output);
+            }
+        });
+     }
     });
 });
 module.exports = router;

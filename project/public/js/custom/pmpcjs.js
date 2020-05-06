@@ -1,9 +1,10 @@
 //dynamic add elements
 const tbody = document.querySelector('.pmpcTb tbody');
-const pageBtns = document.querySelector('.pageBtns');
+const tbodyMobile = document.querySelector('#tp1 tbody');
+const pcPageBtns = document.querySelector('.pcPageBtns');
+const mobilePageBtns = document.querySelector('.mobilePageBtns');
 
 //btns
-const page_btns = document.querySelector('#page_btns');
 const searchClicked = document.querySelector('#searchBtn');
 searchClicked.addEventListener("click",search);
 
@@ -14,17 +15,27 @@ let currentPage;
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-
     axios.get('/pmpc/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
+                    mobileCreateBtns(res.data["data"]);
+            }
+        }
+    });
+    axios.get('/pmpc/preList').then((res)=>{
+        if(res.status === 200){
+            if(res.data["result"] == "success"){ 
+                //우선순위 공지사항 리스트
+                addPreList(res.data["data"]);
+                addPreListMobile(res.data["data"]);
             }
         }
     });
     axios.get('/pmpc/init').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
+                //추가 공지사항 리스트
                 addList(res.data["data"]);
                 addListMobile(res.data["data"]);
             }
@@ -32,58 +43,102 @@ function init(){
     });
 }
 
-//페이지 버튼
+// PC page btn
 function createBtns(item = []){
     resetBtns();
-
-    if(item.length%5==0){
-        pages = parseInt(item.length/5);
+    if(item.length%8==0){
+        pages = parseInt(item.length/8);
     }
-    else pages = parseInt(item.length/5 + 1);
+    else pages = parseInt(item.length/8 + 1);
     let prevBtn = document.createElement('button');
     let nextBtn = document.createElement('button');
     
-    prevBtn.className += 'prevBtn';
+    prevBtn.classList.add('prevBtn');
     prevBtn.innerText = '←';
     prevBtn.addEventListener('click',goToPrev);
-    pageBtns.appendChild(prevBtn);
-    
+
+    pcPageBtns.appendChild(prevBtn);
+
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
-        pageButton.className += 'pageButton';
+        pageButton.classList.add('pageButton');
+
         if(i==1){
-            pageButton.className += ' current';
+            pageButton.classList.add('current');
+
             currentPage = pageButton;
         }
-        else pageButton.className += ' notCurrent';
-        
+        else {
+            pageButton.classList.remove('current');
+            pageButton.classList.add('notCurrent');
+        }
         pageButton.innerText = i;
         pageButton.value = i;
         pageButton.addEventListener('click',deleteAndGet);
-        pageBtns.appendChild(pageButton);
+        pcPageBtns.appendChild(pageButton);
     }
-    
-    nextBtn.className += 'nextBtn';
+    nextBtn.classList.add('nextBtn');
+
     nextBtn.innerText = '→';
     nextBtn.addEventListener('click',goToNext);
-    pageBtns.appendChild(nextBtn);
+    pcPageBtns.appendChild(nextBtn);
+}
+
+// Mobile page btn
+function mobileCreateBtns(item = []){
+    mobileResetBtns();
+    if(item.length%8==0){
+        pages = parseInt(item.length/8);
+    }
+    else pages = parseInt(item.length/8 + 1);
+    let prevBtn = document.createElement('button');
+    let nextBtn = document.createElement('button');
     
+    prevBtn.classList.add('prevBtn','mobile');
+
+    prevBtn.innerText = '←';
+    prevBtn.addEventListener('click',goToPrev);
+
+    mobilePageBtns.appendChild(prevBtn);
+
+    for(i=1;i<=pages;i++){
+        let pageButton = document.createElement('button');
+        pageButton.classList.add('pageButton','mobile');
+
+        if(i==1){
+            pageButton.classList.add('current');
+
+            currentPage = pageButton;
+        }
+        else {
+            pageButton.classList.remove('current');
+            pageButton.classList.add('notCurrent');
+        }
+        pageButton.innerText = i;
+        pageButton.value = i;
+        pageButton.addEventListener('click',deleteAndGet);
+        mobilePageBtns.appendChild(pageButton);
+    }
+    nextBtn.classList.add('nextBtn','mobile');
+    nextBtn.innerText = '→';
+    nextBtn.addEventListener('click',goToNext);
+    mobilePageBtns.appendChild(nextBtn);
 }
 
 function createSearchedBtns(item = []){
     resetBtns();
     
-    if(item.length%5==0){
-        pages = parseInt(item.length/5);
+    if(item.length%8==0){
+        pages = parseInt(item.length/8);
     }
-    else pages = parseInt(item.length/5 + 1);
+    else pages = parseInt(item.length/8 + 1);
     let nextBtn = document.createElement('button');
     let prevBtn = document.createElement('button');
     
     prevBtn.className += 'prevBtn';
     prevBtn.innerText = '←';
     prevBtn.addEventListener('click',goToPrev);
-    pageBtns.appendChild(prevBtn);
+    pcPageBtns.appendChild(prevBtn);
 
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
@@ -97,20 +152,13 @@ function createSearchedBtns(item = []){
         pageButton.innerText = i;
         pageButton.value = i;
         pageButton.addEventListener('click',searchedDeleteAndGet);
-        pageBtns.appendChild(pageButton);
+        pcPageBtns.appendChild(pageButton);
     }
     
     nextBtn.className += 'nextBtn';
     nextBtn.innerText = '→';
     nextBtn.addEventListener('click',goToNext);
-    pageBtns.appendChild(nextBtn);
-}
-
-function resetBtns(){
-    let pageBtns = document.querySelector('.pageBtns');
-    while(pageBtns.hasChildNodes()){
-        pageBtns.removeChild(pageBtns.firstChild);
-    }
+    pcPageBtns.appendChild(nextBtn);
 }
 
 function goToPrev(){
@@ -123,15 +171,24 @@ function goToPrev(){
         
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
+        
+        axios.get('/pmpc/preList').then((res)=>{
+            if(res.status === 200){
+                if(res.data["result"] == "success"){ 
+                    addPreList(res.data["data"]);
+                    addPreListMobile(res.data["data"]);
+                }
+            }
+        });
 
         page_num = currentPage.value;
-        
-        axios.get('/pmpc/page_num', {params:{
-            page_num:page_num
+        axios.get('/pmpc/page_num', { params :{
+            page_num : page_num
         }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
+                addListMobile(res.data["data"]);
             }
         }
     });
@@ -149,6 +206,15 @@ function goToNext(){
         currentPage.classList.remove('notCurrent');
         currentPage.classList.add('current');
 
+        axios.get('/pmpc/preList').then((res)=>{
+            if(res.status === 200){
+                if(res.data["result"] == "success"){ 
+                    addPreList(res.data["data"]);
+                    addPreListMobile(res.data["data"]);
+                }
+            }
+        });
+
         page_num = currentPage.value;
         axios.get('/pmpc/page_num', { params :{
             page_num : page_num
@@ -156,6 +222,7 @@ function goToNext(){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
+                addListMobile(res.data["data"]);
             }
         }
     });
@@ -191,7 +258,7 @@ function showSearchedInit(item = []){
     //이전 데이터 삭제
     resetList();
     //이후 데이터 출력
-    for(i=0;i<10;i++){
+    for(i=0;i<12;i++){
         if(item[i]==null)break;
         let tr = document.createElement('tr');
         let tdId = document.createElement('td');
@@ -218,24 +285,33 @@ function deleteAndGet(){
     currentPage.classList.add('notCurrent');
 
     let page_num = this.value;
-    this.classList.remove('notCurrent');9
+    this.classList.remove('notCurrent');
     this.classList.add('current');
     currentPage = this;
     //이전 데이터 삭제
     resetList();
     
-    //이후 데이터 출력 위해 db 호출
-    
-    axios.get('/pmpc/page_num', { params:{
-        page_num: page_num
-    }}).then((res)=>{
+    axios.get('/pmpc/preList').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
-                addList(res.data["data"]);
+                addPreList(res.data["data"]);
+                addPreListMobile(res.data["data"]);
             }
         }
     });
+    //이후 데이터 출력 위해 db 호출
+        axios.get('/pmpc/page_num', { params:{
+            page_num: page_num
+        }}).then((res)=>{
+            if(res.status === 200){
+                if(res.data["result"] == "success"){ 
+                    addList(res.data["data"]);
+                    addListMobile(res.data["data"]);
+                }
+            }
+        });
 }
+
 
 //해당 페이지에 로드할 검색된 리스트들(게시글)
 function searchedDeleteAndGet(){
@@ -275,8 +351,7 @@ function searchedDeleteAndGet(){
 }
 
 //table에 추가할 공지사항 list 함수
-function addList(item = []){
-    
+function addPreList(item = []){
     item.forEach(function(data){
         let tr = document.createElement('tr');
         let tdId = document.createElement('td');
@@ -301,8 +376,82 @@ function addList(item = []){
     });
 }
 
+function addPreListMobile(item = []){
+    item.forEach(function(data){
+        let tr = document.createElement('tr');
+        let tdId = document.createElement('td');
+        let tdTitle = document.createElement('td');
+        let tdDate = document.createElement('td');
+        
+        let url = document.createElement('a');
+        url.innerText = data.TITLE;        
 
+        tdId.innerText = data.ID;
+        tdDate.innerText = date_format(data.DATE);
 
+        url.href = 'pmpc_board?' + data.ID;
+        tdTitle.appendChild(url);
+        tr.appendChild(tdId);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDate);
+        
+        tdTitle.addEventListener('mouseover', getCursor);
+
+        tbodyMobile.appendChild(tr);
+    });
+}
+
+function addList(item = []){
+    item.forEach(function(data){
+        let tr = document.createElement('tr');
+        let tdId = document.createElement('td');
+        let tdTitle = document.createElement('td');
+        let tdDate = document.createElement('td');
+        
+        let url = document.createElement('a');
+        url.innerText = data.TITLE;        
+
+        tdId.innerText = data.ID;
+        tdDate.innerText = date_format(data.DATE);
+
+        url.href = 'pmpc_board?' + data.ID;
+        tdTitle.appendChild(url);
+        tr.appendChild(tdId);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDate);
+        
+        tdTitle.addEventListener('mouseover', getCursor);
+
+        tbody.appendChild(tr);
+    });
+}
+function addListMobile(item = []){
+    
+    item.forEach(function(data){
+        let tr = document.createElement('tr');
+        let tdId = document.createElement('td');
+        let tdTitle = document.createElement('td');
+        let tdDate = document.createElement('td');
+        
+        let url = document.createElement('a');
+        url.innerText = data.TITLE;        
+
+        tdId.innerText = data.ID;
+        tdDate.innerText = date_format(data.DATE);
+
+        url.href = 'pmpc_board?' + data.ID;
+        tdTitle.appendChild(url);
+        tr.appendChild(tdId);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDate);
+        
+        tdTitle.addEventListener('mouseover', getCursor);
+
+        tbodyMobile.appendChild(tr);
+    });
+}
+
+//날짜 폼 변경
 function date_format(data){
     let date;
     date = data.slice(0,10);
@@ -314,11 +463,21 @@ function resetList(){
     while(tbody.hasChildNodes()){
         tbody.removeChild(tbody.firstChild);
     }
-}
+    while(tbodyMobile.hasChildNodes()){
+        tbodyMobile.removeChild(tbodyMobile.firstChild);
+    }}
 
 //버튼 리셋 함수
+//PC 버전만
 function resetBtns(){
-    let pageBtns = document.querySelector('.pageBtns');
+    let pageBtns = document.querySelector('.pcPageBtns');
+    while(pageBtns.hasChildNodes()){
+        pageBtns.removeChild(pageBtns.firstChild);
+    }
+}
+//PC, Mobile버전 둘다
+function mobileResetBtns(){
+    let pageBtns = document.querySelector('.mobilePageBtns');
     while(pageBtns.hasChildNodes()){
         pageBtns.removeChild(pageBtns.firstChild);
     }

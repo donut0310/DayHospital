@@ -39,7 +39,7 @@ function initShow(item = []){
         currentId = item[0].ID;
         pabNum.innerText = item[0].ID;
         pabTitle.innerText = item[0].TITLE;
-        pabDate.innerText = item[0].DATE;
+        pabDate.innerText = date_format(item[0].DATE);
         pabText.innerText = item[0].CONTENT;
 
         download.innerText = item[0].TITLE;
@@ -51,7 +51,7 @@ function initShow(item = []){
             currentId = item[0].ID;
             pabNum.innerText = item[0].ID;
             pabTitle.innerText = item[0].TITLE;
-            pabDate.innerText = item[0].DATE;
+            pabDate.innerText = date_format(item[0].DATE);
             pabText.innerText = item[0].CONTENT;
 
             download.innerText = item[0].TITLE;
@@ -68,7 +68,7 @@ function initShow(item = []){
             currentId = item[1].ID;
             pabNum.innerText = item[1].ID;
             pabTitle.innerText = item[1].TITLE;
-            pabDate.innerText = item[1].DATE;
+            pabDate.innerText = date_format(item[1].DATE);
             pabText.innerText = item[1].CONTENT;
             
             download.innerText = item[1].TITLE;
@@ -87,7 +87,7 @@ function initShow(item = []){
         currentId = item[1].ID;
         pabNum.innerText = item[1].ID;
         pabTitle.innerText = item[1].TITLE;
-        pabDate.innerText = item[1].DATE;
+        pabDate.innerText = date_format(item[1].DATE);
         pabText.innerText = item[1].CONTENT;
 
         download.innerText = item[1].TITLE;
@@ -105,6 +105,13 @@ function initShow(item = []){
 
 function getCursor(){
     this.style.cursor = 'pointer';
+}
+
+//날짜 폼 변경
+function date_format(data){
+    let date;
+    date = data.slice(0,10);
+    return date;
 }
 
 init();
