@@ -15,7 +15,7 @@
         width : 100%;
     }
     body #mobile_page_id{font-size: 0.8em;}
-    #mobile_page_id .mobile_sub_article{width : 95%; margin : 0 auto; word-break: break-all;}
+    #mobile_page_id .mobile_sub_article{width : 90%; margin : 0 auto; word-break: break-all;}
     .mobile_page #mobile_enterin_list>ul>li:nth-child(1){margin-left: 3%;}
     .mobile_page #mobile_enterin_list>ul>li{margin-right: 10px;width : 14.5%}
 }
@@ -35,7 +35,10 @@
     #mobile_page_id .mobile_banner{display: none;}
 
     #mobile_page_id {font-size: 0.9em;}
-    .mobile_page_logo #span {margin-left: 20px; width : 100px;}
+
+    #mobile_page_id table{font-size: 0.9em;}
+    #mobile_page_id table th{font-size: 0.9em;}
+    #mobile_page_id table td{font-size: 0.9em;}
     
     .mobile_page .mobile_index_enterin #mobile_enterin_list {display: none;}
     .mobile_index_article .mobile_consultant p{display: none;}
@@ -46,7 +49,7 @@
     #mobile_page_id .mobile_index_article .mobile_post{height:200px; float : left;background-color: #39c3cf;}
     #mobile_page_id .mobile_index_article .mobile_post ul{display: none;}
     #mobile_page_id .mobile_index_article .mobile_index_enterin{width :50%;height: 200px;float:left;background-color: #b3e9ee;}
-    #mobile_page_id .mobile_index_article .mobile_index_enterin h1{float: left;padding-left: 7%;margin: 15px 100px 10px 0;}
+    #mobile_page_id .mobile_index_article .mobile_index_enterin h1{float: left;padding-left: 7%;margin: 15px 50px 10px 0; width : 150px; text-align: left;}
     #mobile_page_id .mobile_index_article .mobile_index_enterin p{display: none;}
     #mobile_page_id .mobile_index_article .mobile_index_gallery{height:200px;width :50%;float: left; background-color: #91edf5;display: block;}
     #mobile_page_id .mobile_index_article .mobile_index_gallery h1{padding-left: 7%;}
@@ -54,6 +57,8 @@
     #mobile_page_id .mobile_index_article .mobile_index_insurance{height:200px;width:50%;float: left;background-color: #2d99a2;display: block;}
     .mobile_index_article .mobile_map span,.mobile_index_article .mobile_map h4 {display: none;}
     .mobile_index_article .mobile_map .mobile_map_photo {display: none;}
+
+    #mobile_page_id #mobile_articleList h2{font-size: 1.2em;}
 
     .mobile_page footer .mobile_footer_logo img{width : 80%;}
     .mobile_page footer .mobile_footer_rule{display:none;}
@@ -68,6 +73,7 @@
     footer .mobile_footer_rule p:nth-child(5){display: none;}
     .mobile_page #mobile_enterin_list>ul>li:nth-child(1){margin-left: 30px;}
     .mobile_page #mobile_enterin_list>ul>li{margin-right: 10px;width : 13.5%}
+    .mobile_page .howEnter{ width : 95%; margin : 0 auto ;height : 100px; }
 
     .mobile_page .mobile_index_article .mobile_consultant img{display: none;}
 
@@ -81,6 +87,11 @@
 
     #mobile_page_id #plani_img_div {width : 95%; height : 800px; margin : 0 auto;}
     #mobile_page_id .download{font-size: 1.2em;}
+
+    #mobile_page_id .mobile_facility_ph{height: 200px;}
+    #mobile_page_id .mobile_facility_ph img{height : 180px;}
+
+    #mobile_page_id .mobile_main_map{height: 300px; width : 90%;}
 
     #mobile_page_id .sub_article_head p{font-size: 0.9em;}
 }
@@ -1900,6 +1911,10 @@ aside li{
     font-weight: bold;
 }
 
+#preListPC tbody td{
+    color : orange;
+}
+
 .pmpcNum{
     width : 10%;
     float : left;
@@ -2078,21 +2093,27 @@ aside li{
 
 .mobile_head_logo_div{
     float: left;
-    width: 7%;
-    padding-top:10px;
-    margin-left: 5%;
+    width: 80px;
+    height: 80px;
+    margin-left: 15px;
+    margin-right: 10px;
 }
 
-.mobile_head_logo_text{
-    width : 13%;
-    float : left;
+.mobile_head_logo_div img{
+    float : right;
     padding-top: 10px;
 }
 
-.mobile_page #header #span{
-    margin-top: 14px;
+.mobile_head_logo_text{
+    width : 100px;
+    float : left;
+    height: 80px;
+}
+.mobile_head_logo_text #span{
+    margin-top: 25px;
     display: inline-block;
 }
+
 
 #mobile_menu_btn{
     float:right;
@@ -2352,12 +2373,6 @@ aside li{
     margin : 0 0;
 }
 
-.mobile_page #sub_header #span{
-    margin-top: 14px;
-    display: inline-block;
-}
-
-
 .mobile_explain_header h2{
     margin : 50px 0;
 }
@@ -2441,9 +2456,6 @@ aside li{
     font-size: 1.2em;
 }
 
-#tp1 tbody td{
-    padding: 1.5%;
-}
 
 /* mobile common used list css*/
 #mobile_articleList{ /* used in article_body*/
@@ -2610,14 +2622,30 @@ aside li{
     margin : 0 auto;
 }
 
-/* pmpc tables */
+/* pmpc mobile tables */
 
 .mobileTb thead th{
     font-size: 1.2em;
     border-bottom: 2px solid #2d99a2;
 }
 
+.mobileTb tbody td{
+    padding: 1.5%;
+}
 
+.mobileTb tbody td:nth-child(1){
+    width : 20%;
+}
+.mobileTb tbody td:nth-child(2){
+    width : 60%;
+}
+.mobileTb tbody td:nth-child(3){
+    width : 20%;
+}
+
+#preListMobile td{
+    color: orange;
+}
 #tp2 thead th{
     font-size: 1.2em;
     border-bottom: 2px solid #2d99a2;
