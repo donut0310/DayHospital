@@ -2607,10 +2607,11 @@ aside li{
 
 /* pmpc tables */
 
-#tp1 thead th{
+.mobileTb thead th{
     font-size: 1.2em;
     border-bottom: 2px solid #2d99a2;
 }
+
 
 #tp2 thead th{
     font-size: 1.2em;

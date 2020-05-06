@@ -1,6 +1,10 @@
 //dynamic add elements
-const tbody = document.querySelector('.pmpcTb tbody');
-const tbodyMobile = document.querySelector('#tp1 tbody');
+const preTbody_PC = document.querySelector('#preListPC tbody');
+const fixedTbody_PC = document.querySelector('#fixListPC tbody');
+
+const preTbody_Mobile = document.querySelector('#preListMobile tbody');
+const fixedTbody_Mobile = document.querySelector('#fixListMobile tbody');
+
 const pcPageBtns = document.querySelector('.pcPageBtns');
 const mobilePageBtns = document.querySelector('.mobilePageBtns');
 
@@ -18,8 +22,8 @@ function init(){
     axios.get('/pmpc/createBtns').then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
-                    createBtns(res.data["data"]);
-                    mobileCreateBtns(res.data["data"]);
+                createBtns(res.data["data"]);
+                mobileCreateBtns(res.data["data"]);
             }
         }
     });
@@ -275,7 +279,7 @@ function showSearchedInit(item = []){
         
         tdTitle.addEventListener('mouseover', getCursor);
 
-        tbody.appendChild(tr);
+        fixedTbody_PC.appendChild(tr);
     }
 }
 
@@ -372,7 +376,7 @@ function addPreList(item = []){
         
         tdTitle.addEventListener('mouseover', getCursor);
 
-        tbody.appendChild(tr);
+        preTbody_PC.appendChild(tr);
     });
 }
 
@@ -397,7 +401,7 @@ function addPreListMobile(item = []){
         
         tdTitle.addEventListener('mouseover', getCursor);
 
-        tbodyMobile.appendChild(tr);
+        preTbody_Mobile.appendChild(tr);
     });
 }
 
@@ -422,7 +426,7 @@ function addList(item = []){
         
         tdTitle.addEventListener('mouseover', getCursor);
 
-        tbody.appendChild(tr);
+        fixedTbody_PC.appendChild(tr);
     });
 }
 function addListMobile(item = []){
@@ -447,7 +451,7 @@ function addListMobile(item = []){
         
         tdTitle.addEventListener('mouseover', getCursor);
 
-        tbodyMobile.appendChild(tr);
+        fixedTbody_Mobile.appendChild(tr);
     });
 }
 
@@ -460,11 +464,17 @@ function date_format(data){
 
 //table 리셋 함수
 function resetList(){
-    while(tbody.hasChildNodes()){
-        tbody.removeChild(tbody.firstChild);
+    while(preTbody_PC.hasChildNodes()){
+        preTbody_PC.removeChild(preTbody_PC.firstChild);
     }
-    while(tbodyMobile.hasChildNodes()){
-        tbodyMobile.removeChild(tbodyMobile.firstChild);
+    while(fixedTbody_PC.hasChildNodes()){
+        fixedTbody_PC.removeChild(fixedTbody_PC.firstChild);
+    }
+    while(preTbody_Mobile.hasChildNodes()){
+        preTbody_Mobile.removeChild(preTbody_Mobile.firstChild);
+    }
+    while(fixedTbody_Mobile.hasChildNodes()){
+        fixedTbody_Mobile.removeChild(fixedTbody_Mobile.firstChild);
     }}
 
 //버튼 리셋 함수
