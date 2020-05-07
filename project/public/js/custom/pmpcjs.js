@@ -247,7 +247,6 @@ function search(){
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
-                    resetList();
                     init();
                 }
                 else showSearchedInit(res.data['data']);                
@@ -272,7 +271,7 @@ function showSearchedInit(item = []){
         tdId.innerText = item[i].ID;
         tdTitle.innerText = item[i].TITLE;
         tdTitle.value = item[i].ID;
-        tdDate.innerText = item[i].DATE
+        tdDate.innerText = date_format(item[i].DATE);
         tr.appendChild(tdId);
         tr.appendChild(tdTitle);
         tr.appendChild(tdDate);
@@ -337,7 +336,7 @@ function searchedDeleteAndGet(){
     
     //이후 데이터 출력 위해 db 호출
     
-    axios.post('/pmpc/selectData_page_num', {params:{
+    axios.get('/pmpc/selectData_page_num', {params:{
         page_num: page_num,
         value: otn,
         text: searchText
@@ -365,7 +364,7 @@ function addPreList(item = []){
         let url = document.createElement('a');
         url.innerText = data.TITLE;        
 
-        tdId.innerText = data.ID;
+        tdId.innerText = "필독";
         tdDate.innerText = date_format(data.DATE);
 
         url.href = 'pmpc_board?' + data.ID;
@@ -390,7 +389,7 @@ function addPreListMobile(item = []){
         let url = document.createElement('a');
         url.innerText = data.TITLE;        
 
-        tdId.innerText = data.ID;
+        tdId.innerText = "필독";
         tdDate.innerText = date_format(data.DATE);
 
         url.href = 'pmpc_board?' + data.ID;
@@ -411,7 +410,6 @@ function addList(item = []){
         let tdId = document.createElement('td');
         let tdTitle = document.createElement('td');
         let tdDate = document.createElement('td');
-        
         let url = document.createElement('a');
         url.innerText = data.TITLE;        
 
@@ -496,7 +494,6 @@ function mobileResetBtns(){
 function getCursor(){
     this.style.cursor = 'pointer';
  }
-
 
 // 엔터키 입력
 function pressKey(){

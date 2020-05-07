@@ -21,7 +21,6 @@ function init(){
 function initShow(item = []){
     list = item.length;
     
-    console.log(item[0],item[1]);
     let a1 = document.querySelector('.pabBefore a');
     let a2 = document.querySelector('.pabNext a');    
 
