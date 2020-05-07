@@ -61,7 +61,6 @@ function init(){
 
 function addList(item = []){
     item = item.slice(0,4);
-    console.log(item);
     item.forEach(function (data) {
         let li = document.createElement('li');
         let span = document.createElement('span');

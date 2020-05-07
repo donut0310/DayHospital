@@ -11,6 +11,7 @@ var layoutRouter = require('./routes/layout');
 
 var pmpcRouter = require('./routes/pmpc');
 var photoRouter = require('./routes/photo');
+var photoMobileRouter = require('./routes/photoMobile');
 
 var consultingRouter = require('./routes/consulting');
 var questionRouter = require('./routes/question');
@@ -42,6 +43,7 @@ app.use('/pmpc', pmpcRouter);
 app.use('/consulting', consultingRouter);
 app.use('/question', questionRouter);
 app.use('/photo',photoRouter);
+app.use('/photoMobile',photoMobileRouter);
 app.use('/meal',mealRouter);
 
 

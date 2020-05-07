@@ -131,7 +131,7 @@ router.get('/selectData_page_num', function(req, res, next){
             }
             else if(otn == 0){
                 text = req.query.text + '%';
-                sql = 'select * from postlist where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
+                sql = 'select * from postlist where TITLE like ? limit ' + (page_num-1)*8 + ', 8';
                 let params = text;
  
                 conn.query(sql, params, function(err,rows){

@@ -1,7 +1,7 @@
 //dynamic add elements
 
 //btns
-const pageBtns = document.querySelector('.pageBtns');
+const pageBtns = document.querySelector('.pcPageBtns');
 
 //params
 let pages;
@@ -36,14 +36,14 @@ function createBtns(item = []){
     let prevBtn = document.createElement('button');
     let nextBtn = document.createElement('button');
     
-    prevBtn.className += 'prevBtn';
+    prevBtn.classList.add(prevBtn);
     prevBtn.innerText = '←';
     prevBtn.addEventListener('click',goToPrev);
     pageBtns.appendChild(prevBtn);
     
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
-        pageButton.className += 'pageButton';
+        pageButton.classList.add(pageButton);
         if(i==1){
             pageButton.className += ' current';
             currentPage = pageButton;
