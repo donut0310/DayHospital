@@ -23,6 +23,9 @@ const submit_pw = document.querySelector('#submit_pw');
 const searchBtn = document.querySelector('#searchBtn');
 searchBtn.addEventListener("click",search);
 
+const cancleBtn = document.querySelector('#cancleBtn');
+cancleBtn.addEventListener("click",getCursor);
+
 //parmas
 let pages;
 let postId;
@@ -497,6 +500,22 @@ pw_modal_closeBtn.onclick = function(){
     let reset_pw = document.querySelector('#inputPw');
     reset_pw.value = null;
     check_pw_modal.style.display = 'none';
+}
+
+cancleBtn.onclick = function(){
+    modal_ask.style.display = 'none';
+    
+    let utitle = document.querySelector('#utitle');
+    let uname = document.querySelector('#uname');
+    let upw = document.querySelector('#upw');
+    let uphone = document.querySelector('#uphone');
+    utitle.value = null;
+    uname.value = null;
+    upw.value = null;
+    uphone.value = null;
+    
+    let removeContent = document.querySelector('#mod_cont_question');
+    removeContent.value = null;
 }
 
 window.onclick = function(event) {
