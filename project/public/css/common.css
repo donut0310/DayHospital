@@ -1539,6 +1539,7 @@ aside li{
     padding:20px;
     float : left;
     border-top : 2px solid #2d99a2;
+    overflow: auto;
 }
 
 .photo_content_box{
