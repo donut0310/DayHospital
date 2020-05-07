@@ -8,6 +8,25 @@
     #mobile_page_id{
         display: block;
     }
+
+    .m_horizonlist{
+        display:flex;
+        justify-content: center;
+    }
+    .m_horizonlist>li{
+        float:left;
+        padding : 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 1em;
+        border : 1px solid #bbb;
+        letter-spacing: 0.1em;
+    }
+    
+    .m_horizonlist>li>a{
+        cursor: default;
+    }
+    
 }
 
 @media(max-width:1024px){
@@ -18,6 +37,7 @@
     #mobile_page_id .mobile_sub_article{width : 90%; margin : 0 auto; word-break: break-all;}
     .mobile_page #mobile_enterin_list>ul>li:nth-child(1){margin-left: 3%;}
     .mobile_page #mobile_enterin_list>ul>li{margin-right: 10px;width : 14.5%}
+    
 }
 
 @media(max-width : 960px){
@@ -94,6 +114,16 @@
     #mobile_page_id .mobile_main_map{height: 300px; width : 90%;}
 
     #mobile_page_id .sub_article_head p{font-size: 0.9em;}
+
+    .m_horizonlist>li{
+        float:left;
+        padding : 10px;
+        padding-left: 7px;
+        padding-right: 7px;
+        font-size: 1em;
+        border : 1px solid #bbb;
+        letter-spacing: 0em;
+    }
 }
 
 /* Commonly used*/
@@ -1646,24 +1676,6 @@ aside li{
     cursor: default;
 }
 
-.m_horizonlist{
-    display:flex;
-    justify-content: center;
-}
-.m_horizonlist>li{
-    float:left;
-    padding : 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 1em;
-    border : 1px solid #bbb;
-    letter-spacing: 0.1em;
-}
-
-.m_horizonlist>li>a{
-    cursor: default;
-}
-
 .programNav #articleList{
     margin-top: 3%;
 }
@@ -1676,6 +1688,7 @@ aside li{
 
 .programNav #articleList li ul li{
     color : black;
+    line-height: 1.3em;
 }
 
 #recogproi{
