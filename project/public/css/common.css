@@ -800,10 +800,15 @@ footer{
     border : 1px solid #7fc9cf;
 }
 
-#submitBut{
-    width : 60px;
-    padding : 0 2% 0 2%;
-    font-size: 1em;
+#submitBtn{
+    float : right;
+    width : 100px;
+}
+
+#cancleBtn{
+    float : right;
+    margin-left: 10px;
+    width : 100px;
 }
 
 /* check_pw_modal */
@@ -2436,7 +2441,7 @@ aside li{
 
 .sub_article_body{
     width : 100%;
-    height : 550px;
+    height : 630px;
 }
 
 .sub_article_body table{
@@ -2676,7 +2681,10 @@ aside li{
 /* mobile article size fix css */
 .mFacility_article,
 .mEnterin_article,
-.mDaycarein_article{
+.mDaycarein_article,
+.mInsurance_article,
+.mPlani_article,
+.mPhoto_board_article{
     overflow-y: auto;
 }
 #day_th1{

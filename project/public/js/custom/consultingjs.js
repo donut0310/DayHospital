@@ -5,9 +5,9 @@ const wri_btn = document.querySelector("#wri_question");
 wri_btn.addEventListener('mouseover',getCursor);
 wri_btn.addEventListener('click',wri_modal);
 
-const submitBut = document.querySelector('#submitBut');
-submitBut.addEventListener('mouseover',getCursor);
-submitBut.addEventListener('click',insertContent);
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('mouseover',getCursor);
+submitBtn.addEventListener('click',insertContent);
 
 const modal_ask_closeBtn = document.querySelector('#modal_ask_closeBtn');
 modal_ask_closeBtn.addEventListener('mouseover',getCursor);
@@ -22,6 +22,9 @@ const submit_pw = document.querySelector('#submit_pw');
 
 const searchBtn = document.querySelector('#searchBtn');
 searchBtn.addEventListener("click",search);
+
+const cancleBtn = document.querySelector('#cancleBtn');
+cancleBtn.addEventListener("click",getCursor);
 
 //parmas
 let pages;
@@ -497,6 +500,22 @@ pw_modal_closeBtn.onclick = function(){
     let reset_pw = document.querySelector('#inputPw');
     reset_pw.value = null;
     check_pw_modal.style.display = 'none';
+}
+
+cancleBtn.onclick = function(){
+    modal_ask.style.display = 'none';
+    
+    let utitle = document.querySelector('#utitle');
+    let uname = document.querySelector('#uname');
+    let upw = document.querySelector('#upw');
+    let uphone = document.querySelector('#uphone');
+    utitle.value = null;
+    uname.value = null;
+    upw.value = null;
+    uphone.value = null;
+    
+    let removeContent = document.querySelector('#mod_cont_question');
+    removeContent.value = null;
 }
 
 window.onclick = function(event) {

@@ -156,14 +156,18 @@
         <div class="modal-content">
             <div class="modal_head">
                 <div class="modal_head_span">
-                    <div class="modal_title"><span class="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목" size="85" maxlength="16"></span>
-                    <input type="submit" id="submitBut"></div>
-                    
-                    <div class="modal_name"><span class="modalspan">이름&nbsp;<input id='uname' type="text" name = "NAME" title="이름" size="10" maxlength="4"></span></div>
-                    <div class="modal_pwd"><span class="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd" size="25" maxlength="14"></span></div>
-                    <div class="modal_num"><span class="modalspan">전화번호&nbsp;<input placeholder="OOO-OOOO-OOOO" id='uphone' type="text" title="phone" size="25" maxlength="11"></span></div>
+                    <div class="modal_title"><span class="modalspan">제목&nbsp;<input id='utitle' type="text" title="제목"
+                                size="85" maxlength="16"></span>
+                    </div>
+                    <div class="modal_name"><span class="modalspan">이름&nbsp;<input id='uname' type="text" name="NAME"
+                                title="이름" size="10" maxlength="4"></span></div>
+                    <div class="modal_pwd"><span class="modalspan">비밀번호&nbsp;<input id='upw' type="password" title="pwd"
+                                size="25" maxlength="14"></span></div>
+                    <div class="modal_num"><span class="modalspan">전화번호&nbsp;<input placeholder="OOO-OOOO-OOOO"
+                                id='uphone' type="text" title="phone" size="25" maxlength="11"></span></div>
                 </div>
-                <div class="imgCloseBtn" id="modal_ask_closeBtn"><img src="../../assets/images/modal_close.png" style="float : right; width: 20px; height : 20px"></div>
+                <div class="imgCloseBtn" id="modal_ask_closeBtn"><img src="../../assets/images/modal_close.png"
+                        style="float : right; width: 20px; height : 20px"></div>
             </div>
             <div class="modal_body">
                 <div class="modal_question_article">
@@ -174,7 +178,8 @@
             </div>
             <div class="modal_footer">
                 <div class="mfooter_spanzone">
-                    <button class="beforeBtn"><a href="">목록으로</a></button>
+                    <input type="button" id="cancleBtn" value="취소">
+                    <input type="submit" id="submitBtn" value="등록">
                 </div>
             </div>
         </div>
@@ -234,6 +239,22 @@
             if (!$(this).hasClass("dept02")) {
                 $(".dept02").slideUp(200);
             }
+        });
+
+        $("#submitBtn").on("mouseenter", function () {
+            this.style.borderColor = "#7fc9cf";
+        });
+
+        $("#submitBtn").on("mouseleave", function () {
+            this.style.borderColor = "";
+        });
+
+        $("#cancleBtn").on("mouseenter", function () {
+            this.style.borderColor = "orange";
+        });
+
+        $("#cancleBtn").on("mouseleave", function () {
+            this.style.borderColor = "";
         });
     </script>
 </body>
