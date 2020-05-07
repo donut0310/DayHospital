@@ -2483,6 +2483,7 @@ aside li{
     padding-left : 2%;
     z-index: 11;
     overflow-y : auto;
+    height: 100%;
 }
 
 #mobile_articleList>li{
@@ -2685,7 +2686,8 @@ aside li{
 .mDaycarein_article,
 .mInsurance_article,
 .mPlani_article,
-.mPhoto_board_article{
+.mPhoto_board_article,
+.mobile_sub_article{
     overflow-y: auto;
 }
 #day_th1{
