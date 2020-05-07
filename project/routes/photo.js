@@ -49,7 +49,6 @@ router.get('/page_num', function(req, res, next){
         if(err) throw err;
         else{
             let page_num = req.query.page_num;
-       
             let sql = "select * from img order by date desc limit " + (page_num-1)*6 + ", 6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;

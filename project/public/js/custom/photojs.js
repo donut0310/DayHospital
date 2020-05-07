@@ -1,11 +1,11 @@
 //dynamic add elements
 
 //btns
-const pageBtns = document.querySelector('.pcPageBtns');
+const pcPageBtns = document.querySelector('.pcPageBtns');
 
 //params
 let pages;
-let currentPage;
+let pcCurrentPage;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
@@ -36,56 +36,58 @@ function createBtns(item = []){
     let prevBtn = document.createElement('button');
     let nextBtn = document.createElement('button');
     
-    prevBtn.classList.add('prevBtn');
+    prevBtn.classList.add('prevBtn','pc');
     prevBtn.innerText = '←';
-    prevBtn.addEventListener('click',goToPrev);
-    pageBtns.appendChild(prevBtn);
+    prevBtn.addEventListener('click',pcGoToPrev);
+    pcPageBtns.appendChild(prevBtn);
     
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
-        pageButton.classList.add('pageButton');
+        pageButton.classList.add('pageButton','pc');
         if(i==1){
             pageButton.classList.add('current');
-            currentPage = pageButton;
+            pcCurrentPage = pageButton;
         }
-        else pageButton.classList.add('notCurrent');
-        
+        else {
+            pageButton.classList.remove('current');
+            pageButton.classList.add('notCurrent');
+        }
         pageButton.innerText = i;
         pageButton.value = i;
-        pageButton.addEventListener('click',deleteAndGet);
-        pageBtns.appendChild(pageButton);
+        pageButton.addEventListener('click',pcDeleteAndGet);
+        pcPageBtns.appendChild(pageButton);
     }
     
-    nextBtn.classList('nextBtn');
+    nextBtn.classList.add('nextBtn','pc');
     nextBtn.innerText = '→';
-    nextBtn.addEventListener('click',goToNext);
-    pageBtns.appendChild(nextBtn);
+    nextBtn.addEventListener('click',pcGoToNext);
+    pcPageBtns.appendChild(nextBtn);
     
 }
 
 //버튼 리셋 함수
 function resetBtns(){
-    let pageBtns = document.querySelector('.pageBtns');
-    while(pageBtns.hasChildNodes()){
-        pageBtns.removeChild(pageBtns.firstChild);
+    let pcPageBtns = document.querySelector('.pcPageBtns');
+    while(pcPageBtns.hasChildNodes()){
+        pcPageBtns.removeChild(pcPageBtns.firstChild);
     }
 }
 
-function goToPrev(){
-    if(currentPage.value != 1){
-        currentPage.classList.remove('current');
-        currentPage.classList.add('notCurrent');
+function pcGoToPrev(){
+    if(pcCurrentPage.value != 1){
+        pcCurrentPage.classList.remove('current');
+        pcCurrentPage.classList.add('notCurrent');
         
-        currentPage = currentPage.previousSibling;
+        pcCurrentPage = pcCurrentPage.previousSibling;
 
-        currentPage.classList.remove('notCurrent');
-        currentPage.classList.add('current');
+        pcCurrentPage.classList.remove('notCurrent');
+        pcCurrentPage.classList.add('current');
 
 
-        page_num = currentPage.value;
+        let pcPage_num = pcCurrentPage.value;
         
         axios.get('/photo/page_num', {params :{
-            page_num : page_num
+            page_num : pcPage_num
         }
     }).then((res)=>{
         if(res.status === 200){
@@ -97,28 +99,27 @@ function goToPrev(){
     }
 }
 
-function goToNext(){
-    if(currentPage.value != pages){
-        currentPage.classList.remove('current');
-        currentPage.classList.add('notCurrent');
+function pcGoToNext(){
+    if(pcCurrentPage.value != pages){
+        pcCurrentPage.classList.remove('current');
+        pcCurrentPage.classList.add('notCurrent');
      
-        currentPage = currentPage.nextSibling;
+        pcCurrentPage = pcCurrentPage.nextSibling;
 
-        currentPage.classList.remove('notCurrent');
-        currentPage.classList.add('current');
+        pcCurrentPage.classList.remove('notCurrent');
+        pcCurrentPage.classList.add('current');
 
-        page_num = currentPage.value;
+        let pcPage_num = pcCurrentPage.value;
         
         axios.get('/photo/page_num', {params :{
-            page_num : page_num
-        }
-    }).then((res)=>{
-        if(res.status === 200){
-            if(res.data["result"] == "success"){ 
-                addImg(res.data["data"]);
+            page_num : pcPage_num
+        }}).then((res)=>{
+            if(res.status === 200){
+                if(res.data["result"] == "success"){ 
+                    addImg(res.data["data"]);
+                }
             }
-        }
-    });
+        });
     }
 }
 
@@ -160,18 +161,18 @@ function date_format(data){
 }
 
 //해당 페이지에 로드할 리스트들(게시글)
-function deleteAndGet(){
-    currentPage.classList.remove('current');
-    currentPage.classList.add('notCurrent');
-
-    let page_num = this.value;
+function pcDeleteAndGet(){
+    pcCurrentPage.classList.remove('current');
+    pcCurrentPage.classList.add('notCurrent');
+    
+    let pcPage_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
-    currentPage = this;
+    pcCurrentPage = this;
 
     //이후 데이터 출력 위해 db 호출    
     axios.get('/photo/page_num', {params:{
-        page_num:page_num
+        page_num:pcPage_num
     }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
