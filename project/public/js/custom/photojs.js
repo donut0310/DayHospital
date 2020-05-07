@@ -36,19 +36,19 @@ function createBtns(item = []){
     let prevBtn = document.createElement('button');
     let nextBtn = document.createElement('button');
     
-    prevBtn.classList.add(prevBtn);
+    prevBtn.classList.add('prevBtn');
     prevBtn.innerText = '←';
     prevBtn.addEventListener('click',goToPrev);
     pageBtns.appendChild(prevBtn);
     
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
-        pageButton.classList.add(pageButton);
+        pageButton.classList.add('pageButton');
         if(i==1){
-            pageButton.className += ' current';
+            pageButton.classList.add('current');
             currentPage = pageButton;
         }
-        else pageButton.className += ' notCurrent';
+        else pageButton.classList.add('notCurrent');
         
         pageButton.innerText = i;
         pageButton.value = i;
@@ -56,7 +56,7 @@ function createBtns(item = []){
         pageBtns.appendChild(pageButton);
     }
     
-    nextBtn.className += 'nextBtn';
+    nextBtn.classList('nextBtn');
     nextBtn.innerText = '→';
     nextBtn.addEventListener('click',goToNext);
     pageBtns.appendChild(nextBtn);
