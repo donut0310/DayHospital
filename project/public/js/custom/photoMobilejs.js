@@ -38,7 +38,7 @@ function mobileCreateBtns(item = []){
     prevBtn.classList.add('prevBtn','mobile');
 
     prevBtn.innerText = '←';
-    prevBtn.addEventListener('click',goToPrev);
+    prevBtn.addEventListener('click',mobileGoToPrev);
 
     mobilePageBtns.appendChild(prevBtn);
 
@@ -57,16 +57,16 @@ function mobileCreateBtns(item = []){
         }
         pageButton.innerText = i;
         pageButton.value = i;
-        pageButton.addEventListener('click',deleteAndGet);
+        pageButton.addEventListener('click',mobileDeleteAndGet);
         mobilePageBtns.appendChild(pageButton);
     }
     nextBtn.classList.add('nextBtn','mobile');
     nextBtn.innerText = '→';
-    nextBtn.addEventListener('click',goToNext);
+    nextBtn.addEventListener('click',mobileGoToNext);
     mobilePageBtns.appendChild(nextBtn);
 }
 
-function goToPrev(){
+function mobileGoToPrev(){
     if(mobileCurrentPage.value != 1){
         resetList();
         mobileCurrentPage.classList.remove('current');
@@ -77,9 +77,9 @@ function goToPrev(){
         mobileCurrentPage.classList.remove('notCurrent');
         mobileCurrentPage.classList.add('current');
 
-        page_num = mobileCurrentPage.value;
+        let mobilePage_num = mobileCurrentPage.value;
         axios.get('/photoMobile/page_num', { params :{
-            page_num : page_num
+            page_num : mobilePage_num
         }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
@@ -90,7 +90,8 @@ function goToPrev(){
     }
     
 }
-function goToNext(){
+function mobileGoToNext(){
+    
     if(mobileCurrentPage.value != mobilepages){
         resetList();
         mobileCurrentPage.classList.remove('current');
@@ -101,9 +102,9 @@ function goToNext(){
         mobileCurrentPage.classList.remove('notCurrent');
         mobileCurrentPage.classList.add('current');
 
-        page_num = mobileCurrentPage.value;
+        let mobilePage_num = mobileCurrentPage.value;
         axios.get('/photoMobile/page_num', { params :{
-            page_num : page_num
+            page_num : mobilePage_num
         }}).then((res)=>{
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
@@ -115,11 +116,11 @@ function goToNext(){
 }
 
 //해당 페이지에 로드할 리스트들(게시글)
-function deleteAndGet(){
+function mobileDeleteAndGet(){
     mobileCurrentPage.classList.remove('current');
     mobileCurrentPage.classList.add('notCurrent');
 
-    let page_num = this.value;
+    let mobilePage_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     mobileCurrentPage = this;
@@ -127,7 +128,7 @@ function deleteAndGet(){
     resetList();
     //이후 데이터 출력 위해 db 호출
         axios.get('/photoMobile/page_num', { params:{
-            page_num: page_num
+            page_num: mobilePage_num
         }}).then((res)=>{
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 

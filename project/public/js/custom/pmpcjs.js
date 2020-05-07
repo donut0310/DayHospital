@@ -139,27 +139,29 @@ function createSearchedBtns(item = []){
     let nextBtn = document.createElement('button');
     let prevBtn = document.createElement('button');
     
-    prevBtn.className += 'prevBtn';
+    prevBtn.classList.add('prevBtn');
     prevBtn.innerText = '←';
     prevBtn.addEventListener('click',goToPrev);
     pcPageBtns.appendChild(prevBtn);
 
     for(i=1;i<=pages;i++){
         let pageButton = document.createElement('button');
-        pageButton.className += 'pageButton';
+        pageButton.classList.add('pageButton');
         if(i==1){
-            pageButton.className += ' current';
+            pageButton.classList.add('current');
             currentPage = pageButton;
         }
-        else pageButton.className += ' notCurrent';
-        
+        else {
+            pageButton.classList.remove('Current');
+            pageButton.classList.add('notCurrent');
+        }
         pageButton.innerText = i;
         pageButton.value = i;
         pageButton.addEventListener('click',searchedDeleteAndGet);
         pcPageBtns.appendChild(pageButton);
     }
     
-    nextBtn.className += 'nextBtn';
+    nextBtn.classList.add('nextBtn');
     nextBtn.innerText = '→';
     nextBtn.addEventListener('click',goToNext);
     pcPageBtns.appendChild(nextBtn);

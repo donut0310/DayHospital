@@ -56,9 +56,8 @@
 
     #mobile_page_id {font-size: 0.9em;}
 
-    #mobile_page_id table{font-size: 0.9em;}
-    #mobile_page_id table th{font-size: 0.9em;}
-    #mobile_page_id table td{font-size: 0.9em;}
+    #mobile_page_id table th{font-size: 0.8em;}
+    #mobile_page_id table td{font-size: 0.8em;}
     
     .mobile_page .mobile_index_enterin #mobile_enterin_list {display: none;}
     .mobile_index_article .mobile_consultant p{display: none;}
@@ -101,7 +100,7 @@
 
     #mobile_page_id #mobile_headList li{margin-right : 10px; font-size : 0.8em;}
 
-    #mobile_page_id .mobile_sub_article{height:800px;}
+    #mobile_page_id .mCenterintro_article{height : 900px;}
     #mobile_page_id .sub_article_body #mobile_articleList h4{font-size: 1.1em;}
     #mobile_page_id .sub_article_body #mobile_articleList span{font-size: 0.9em;}
 
@@ -883,6 +882,7 @@ footer{
       width : 1200px;
       height : 1500px;
       margin : 0 auto;
+      margin-top: 30px;
 }
 
 aside{ /*Commonly used aside (nav aside)*/
@@ -2404,7 +2404,7 @@ aside li{
 
 .mobile_sub_article{
     width : 100%;
-    height: 800px;
+    height: 100%;
 }
 
 .sub_article_head{
@@ -2475,7 +2475,8 @@ aside li{
 #mobile_articleList{ /* used in article_body*/
     list-style-type: disc;
     padding-left : 2%;
-    margin-top: 20px;
+    z-index: 11;
+    overflow-y : auto;
 }
 
 #mobile_articleList>li{
@@ -2505,7 +2506,7 @@ aside li{
 }
 
 #tc2 th:nth-child(1){
-    width : 10%;
+    width : 15%;
 }
 
 #tc2 th:nth-child(2){
@@ -2523,16 +2524,22 @@ aside li{
 }
 
 /* mobile_facility */
+.mobile_facility_photozone{
+    width : 90%;
+    height : 100%;
+    margin : 0 auto;
+}
+
 .mobile_facility_ph{
     float : left;
-    width : 40%;
-    margin : 3% 5%;
-    height : 300px;
+    width : 45%;
+    margin : 2%;
+    height : 25%;
 }
 
 .mobile_facility_ph img{
     width : 100%;
-    height : 270px;
+    height : 100%;
 }
 
 /* mobile_mapin */
@@ -2543,6 +2550,7 @@ aside li{
     margin : 0 auto;
     border : 1px solid;
     margin-top: 20px;
+    margin-bottom : 20px;
 }
 
 
@@ -2663,4 +2671,11 @@ aside li{
 #tp2 thead th{
     font-size: 1.2em;
     border-bottom: 2px solid #2d99a2;
+}
+
+/* mobile article size fix css */
+.mFacility_article,
+.mEnterin_article,
+.mDaycarein_article{
+    overflow-y: auto;
 }
