@@ -2687,3 +2687,31 @@ aside li{
 .mPhoto_board_article{
     overflow-y: auto;
 }
+#day_th1{
+    width:120px;
+}
+
+#day_th2{
+    width:120px;
+}
+
+#day_th3{
+    width:120px;
+}
+#th_width{
+    width:auto;
+}
+@media (max-width : 768px){
+    #th_width{
+        width: 15%;
+    }
+    #day_th1{
+        width: 15%;
+    }
+    #day_th2{
+        width: 15%;
+    }
+    #day_th3{
+        width: 25%;
+    }
+}
