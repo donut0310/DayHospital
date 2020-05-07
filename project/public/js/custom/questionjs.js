@@ -5,9 +5,9 @@ const wri_btn = document.querySelector("#wri_question");
 wri_btn.addEventListener('mouseover',getCursor);
 wri_btn.addEventListener('click',wri_modal);
 
-const submitBut = document.querySelector('#submitBut');
-submitBut.addEventListener('mouseover',getCursor);
-submitBut.addEventListener('click',insertContent);
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('mouseover',getCursor);
+submitBtn.addEventListener('click',insertContent);
 
 const modal_ask_closeBtn = document.querySelector('#modal_ask_closeBtn');
 modal_ask_closeBtn.addEventListener('mouseover',getCursor);
