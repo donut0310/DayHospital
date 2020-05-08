@@ -127,6 +127,10 @@
     }
 }
 
+@media (max-width:375px){
+    #mobile_page_id #mobile_headList li{font-size: 0.6em;padding : 5px 2px;letter-spacing: 0;}
+}
+
 /* Commonly used*/
 *{
     box-sizing: border-box;
