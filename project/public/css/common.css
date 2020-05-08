@@ -1691,13 +1691,14 @@ aside li{
 .horizonlist>li{
     float:left;
     padding : 20px;
-    font-size: 1em;
+    font-size: 0.9em;
     border : 1px solid #bbb;
     letter-spacing: 0.1em;
 }
 
 .horizonlist>li>a{
     cursor: default;
+    display: inline-block;
 }
 
 .programNav #articleList{
