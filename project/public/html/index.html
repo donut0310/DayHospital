@@ -473,7 +473,9 @@
             }
         });
         var popupWidth = (window.screen.width / 2) - (345 / 2);
-        window.open("/popup", "pop", 'width=345px,height=715px,left=' + popupWidth + ',top:100px');
+        var mypopup=window.open("popup.html", "pop", 'width=345px,height=715px,left=' + popupWidth + ',top:100px',"resizable=yes");
+        mypopup.resizeTo(345,715);
+        mypopup.resizeBy(-10,-10);
 
         function menu_click() {
             var menu = document.getElementById("mobile_menu");
