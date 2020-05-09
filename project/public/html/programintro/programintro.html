@@ -24,7 +24,7 @@
                 <nav>
                     <div class="topMenu" id="menu1">
                         <ul class="dept01">
-                            <li style="width : 200px"><a href="/layout1"><img src="../../assets/images/small_logo.png"
+                            <li style="width : 200px"><a href="/"><img src="../../assets/images/small_logo.png"
                                         id="logo">
                                     <h3>성모사랑</h3>
                                     <h5>데이케어센터</h5>
@@ -169,7 +169,8 @@
                     </span>
                     <h2>문의전화</h2>
                     <h1 style="letter-spacing: 0.2em;">02-990-8875</h1>
-                    <h5><span><a id="personalInformation" href="/personal">이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</a></span></h5>
+                    <h5><span><a id="personalInformation"
+                                href="/personal">이용약관&nbsp;&nbsp;|&nbsp;&nbsp;개인정보처리방침</a></span></h5>
                 </div>
                 <div class="footer_information2">
                     <p>대표자 : 신우진</p>
@@ -186,7 +187,7 @@
         <div id="sub_header">
             <div class="mobile_page_logo">
                 <div class="mobile_head_logo_div"><a href="/">
-                    <img src="../../assets/images/small_logo.png"></a></div>
+                        <img src="../../assets/images/small_logo.png"></a></div>
                 <div class="mobile_head_logo_text"><a id="span" href="/">
                         <h4>성모사랑</h4> 데이케어센터
                     </a></div>
@@ -203,11 +204,11 @@
                                 <a> 센터소개 </a>
                             </div>
                             <ul class="click_menu" id="hidden1" style="display: none;">
-                                <li><a>인사말</a></li>
-                                <li><a>운영규정</a></li>
-                                <li><a>시설현황</a></li>
-                                <li><a>입소안내</a></li>
-                                <li><a>찾아오시는길</a></li>
+                                <li><a href="/centerintro">인사말</a></li>
+                                <li><a href="/rule">운영규정</a></li>
+                                <li><a href="/facility">시설현황</a></li>
+                                <li><a href="/enterin">입소안내</a></li>
+                                <li><a href="/mapin">찾아오시는 길</a></li>
                             </ul>
                         </li>
                         <li>
@@ -215,9 +216,9 @@
                                 <a>성모사랑 프로그램안내</a>
                             </div>
                             <ul class="click_menu" id="hidden2" style="display: none;">
-                                <li><a>데이케어란?</a></li>
-                                <li><a>프로그램안내</a></li>
-                                <li><a>프로그램운영계획표</a></li>
+                                <li><a href="/daycarein">데이케어란?</a></li>
+                                <li><a href="/programintro">프로그램안내</a></li>
+                                <li><a href="/plani">프로그램운영계획표</a></li>
                             </ul>
                         </li>
                         <li>
@@ -225,9 +226,9 @@
                                 <a>알림마당</a>
                             </div>
                             <ul class="click_menu" id="hidden3" style="display: none;">
-                                <li><a>공지사항</a></li>
-                                <li><a>주간식단표</a></li>
-                                <li><a>갤러리</a></li>
+                                <li><a href="/pmpc">공지사항</a></li>
+                                <li><a href="/meal">주간식단표</a></li>
+                                <li><a href="/photo">갤러리</a></li>
                             </ul>
                         </li>
                         <li>
@@ -235,15 +236,9 @@
                                 <a>노인 장기요양보험</a>
                             </div>
                             <ul class="click_menu" id="hidden4" style="display: none;">
-                                <li>
-                                    <a>노인 장기요양보험이란?</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050683"
-                                        target="blank">노인 장기요양보험신청
-                                    </a>
-
-                                </li>
+                                <li><a href="/insurance">노인 장기요양보험이란?</a></li>
+                                <li><a href="https://www.gov.kr/portal/service/serviceInfo/PTR000050683"
+                                        target="blank">노인 장기요양보험신청</a></li>
                             </ul>
                         </li>
                         <li>
@@ -261,9 +256,15 @@
                 <h2>성모사랑 프로그램안내</h2>
                 <p>성모사랑 데이케어센터는 다양한 프로그램을 준비했습니다.</p>
                 <ul id="mobile_headList">
-                    <a href="/daycarein"><li>데이케어란?</li></a>
-                    <a href="/programintro"><li id="headList_current">프로그램안내</li></a>
-                    <a href="/plani"><li>프로그램운영계획표</li></a>
+                    <a href="/daycarein">
+                        <li>데이케어란?</li>
+                    </a>
+                    <a href="/programintro">
+                        <li id="headList_current">프로그램안내</li>
+                    </a>
+                    <a href="/plani">
+                        <li>프로그램운영계획표</li>
+                    </a>
                 </ul>
             </div>
             <div class="sub_article_body">
@@ -450,7 +451,7 @@
             }
             init_menu();
         }
-        
+
         function hidden_click(hid) {
             var menu_array = document.querySelectorAll("#mobile_menu ul li div");
             if (menu_array[0].style.color != "black" && hid.innerText == "센터소개") {
