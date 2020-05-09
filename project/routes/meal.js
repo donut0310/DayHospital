@@ -10,7 +10,7 @@ router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from meal order by ID desc limit 0,5";
+            let sql = "select * from meal order by ID desc limit 0,12";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -49,7 +49,7 @@ router.get('/page_num', function(req, res, next){
         if(err) throw err;
         else{
             let page_num = req.query.page_num;
-            let sql = "select * from meal order by ID desc limit " + (page_num-1)*5 + ", 5";
+            let sql = "select * from meal order by ID desc limit " + (page_num-1)*12 + ", 12";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
@@ -131,7 +131,7 @@ router.get('/selectData_page_num', function(req, res, next){
             }
             else if(value == 0){
                 text = req.query.text + '%';
-                sql = 'select * from meal where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
+                sql = 'select * from meal where TITLE like ? limit ' + (page_num-1)*12 + ', 12';
                 let params = text;
  
                 conn.query(sql, params, function(err,rows){

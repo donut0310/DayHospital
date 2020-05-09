@@ -28,41 +28,41 @@ function init(){
 //페이지 버튼
 function createBtns(item = []){
     resetBtns();
-
-    if(item.length%6==0){
-        pages = parseInt(item.length/6);
-    }
-    else pages = parseInt(item.length/6 + 1);
-    let prevBtn = document.createElement('button');
-    let nextBtn = document.createElement('button');
-    
-    prevBtn.classList.add('prevBtn','pc');
-    prevBtn.innerText = '←';
-    prevBtn.addEventListener('click',pcGoToPrev);
-    pcPageBtns.appendChild(prevBtn);
-    
-    for(i=1;i<=pages;i++){
-        let pageButton = document.createElement('button');
-        pageButton.classList.add('pageButton','pc');
-        if(i==1){
-            pageButton.classList.add('current');
-            pcCurrentPage = pageButton;
+    if(item.length!=0){
+        if(item.length%6==0){
+            pages = parseInt(item.length/6);
         }
-        else {
-            pageButton.classList.remove('current');
-            pageButton.classList.add('notCurrent');
+        else pages = parseInt(item.length/6 + 1);
+        let prevBtn = document.createElement('button');
+        let nextBtn = document.createElement('button');
+        
+        prevBtn.classList.add('prevBtn','pc');
+        prevBtn.innerText = '←';
+        prevBtn.addEventListener('click',pcGoToPrev);
+        pcPageBtns.appendChild(prevBtn);
+        
+        for(i=1;i<=pages;i++){
+            let pageButton = document.createElement('button');
+            pageButton.classList.add('pageButton','pc');
+            if(i==1){
+                pageButton.classList.add('current');
+                pcCurrentPage = pageButton;
+            }
+            else {
+                pageButton.classList.remove('current');
+                pageButton.classList.add('notCurrent');
+            }
+            pageButton.innerText = i;
+            pageButton.value = i;
+            pageButton.addEventListener('click',pcDeleteAndGet);
+            pcPageBtns.appendChild(pageButton);
         }
-        pageButton.innerText = i;
-        pageButton.value = i;
-        pageButton.addEventListener('click',pcDeleteAndGet);
-        pcPageBtns.appendChild(pageButton);
+        
+        nextBtn.classList.add('nextBtn','pc');
+        nextBtn.innerText = '→';
+        nextBtn.addEventListener('click',pcGoToNext);
+        pcPageBtns.appendChild(nextBtn);
     }
-    
-    nextBtn.classList.add('nextBtn','pc');
-    nextBtn.innerText = '→';
-    nextBtn.addEventListener('click',pcGoToNext);
-    pcPageBtns.appendChild(nextBtn);
-    
 }
 
 //버튼 리셋 함수
@@ -142,15 +142,9 @@ function addImg(item = []){
     //사진 없는 경우
     for(i=len;i<6;i++){
         let img = document.querySelector('#td' + (i + 1) + ' img');
-        let a = document.querySelector('#td' + (i + 1) + ' a');
-        let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
-        let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
+        img.src = '/assets/images/SMH/none.png';
         
         img.style.cursor = "default";
-        a.removeAttribute('href');
-        img.src = "";
-        title.innerText = "";
-        date.innerText = "";
     }
 }
 
