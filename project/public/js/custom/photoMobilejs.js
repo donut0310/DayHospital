@@ -28,42 +28,44 @@ function init(){
 // Mobile page btn
 function mobileCreateBtns(item = []){
     mobileResetBtns();
-    if(item.length%8==0){
-        mobilepages = parseInt(item.length/8);
-    }
-    else mobilepages = parseInt(item.length/8 + 1);
-    let prevBtn = document.createElement('button');
-    let nextBtn = document.createElement('button');
+    if(item.length!=0){
+        if(item.length%8==0){
+            mobilepages = parseInt(item.length/8);
+        }
+        else mobilepages = parseInt(item.length/8 + 1);
+        let prevBtn = document.createElement('button');
+        let nextBtn = document.createElement('button');
+        
+        prevBtn.classList.add('prevBtn','mobile');
     
-    prevBtn.classList.add('prevBtn','mobile');
-
-    prevBtn.innerText = '←';
-    prevBtn.addEventListener('click',mobileGoToPrev);
-
-    mobilePageBtns.appendChild(prevBtn);
-
-    for(i=1;i<=mobilepages;i++){
-        let pageButton = document.createElement('button');
-        pageButton.classList.add('pageButton','mobile');
-
-        if(i==1){
-            pageButton.classList.add('current');
-
-            mobileCurrentPage = pageButton;
+        prevBtn.innerText = '←';
+        prevBtn.addEventListener('click',mobileGoToPrev);
+    
+        mobilePageBtns.appendChild(prevBtn);
+    
+        for(i=1;i<=mobilepages;i++){
+            let pageButton = document.createElement('button');
+            pageButton.classList.add('pageButton','mobile');
+    
+            if(i==1){
+                pageButton.classList.add('current');
+    
+                mobileCurrentPage = pageButton;
+            }
+            else {
+                pageButton.classList.remove('current');
+                pageButton.classList.add('notCurrent');
+            }
+            pageButton.innerText = i;
+            pageButton.value = i;
+            pageButton.addEventListener('click',mobileDeleteAndGet);
+            mobilePageBtns.appendChild(pageButton);
         }
-        else {
-            pageButton.classList.remove('current');
-            pageButton.classList.add('notCurrent');
-        }
-        pageButton.innerText = i;
-        pageButton.value = i;
-        pageButton.addEventListener('click',mobileDeleteAndGet);
-        mobilePageBtns.appendChild(pageButton);
+        nextBtn.classList.add('nextBtn','mobile');
+        nextBtn.innerText = '→';
+        nextBtn.addEventListener('click',mobileGoToNext);
+        mobilePageBtns.appendChild(nextBtn);
     }
-    nextBtn.classList.add('nextBtn','mobile');
-    nextBtn.innerText = '→';
-    nextBtn.addEventListener('click',mobileGoToNext);
-    mobilePageBtns.appendChild(nextBtn);
 }
 
 function mobileGoToPrev(){
@@ -189,10 +191,4 @@ function getCursor(){
     this.style.cursor = 'pointer';
  }
 
-// 엔터키 입력
-function pressKey(){
-    if(window.event.keyCode == 13){
-            search();
-    }
-}
 init();

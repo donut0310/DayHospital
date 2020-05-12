@@ -31,8 +31,8 @@ router.get('/mapin',function(req, res, next){
 });
 
 // ensurance htmls //이거 ensurance > insurance로 바꿨는데 이건 못건들였어요..
-router.get('/ensurance',function(req, res, next){
-    res.render('./ensurance/ensurance.html');
+router.get('/insurance',function(req, res, next){
+    res.render('./insurance/insurance.html');
 });
 
 // programintro htmls
