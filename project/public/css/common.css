@@ -26,6 +26,8 @@
     .m_horizonlist>li>a{
         cursor: default;
     }
+
+    #mobile_page_id .graphImg_big{width : 95%; height : 800px; margin : 0 auto;}
     
 }
 
@@ -127,7 +129,9 @@
     }
 
     #mobile_page_id .graphImg{height : 150px;}
-    #mobile_page_id .graphImg_big{height: 500px;}
+    #mobile_page_id #mobile_articleList li ul li{height: 50px; margin-bottom: 20px;}
+    #mobile_page_id #mobile_articleList li ul li h4{text-decoration: underline;}
+    #mobile_page_id #mobile_articleList li ul li img{display: none;}
 }
 
 @media (max-width:375px){
@@ -1448,7 +1452,7 @@ aside li{
 
 .graphImg_big{
     width : 100%;
-    height : 600px;
+    height : 900px;
     margin : 0;
 }
 
@@ -2501,6 +2505,15 @@ aside li{
 #mobile_articleList ol li{
     color : black;
     margin-bottom: 20px;
+}
+
+.insurance_inside_ul li ul li /*insurance ver mobile page list*/
+{
+    list-style-type: none;
+    height : 200px;
+}
+.insurance_inside_ul li ul li img{
+    float : left;
 }
 
 /* mobile_facility */
