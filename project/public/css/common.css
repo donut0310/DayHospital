@@ -127,6 +127,7 @@
     }
 
     #mobile_page_id .graphImg{height : 150px;}
+    #mobile_page_id .graphImg_big{height: 500px;}
 }
 
 @media (max-width:375px){
@@ -1443,6 +1444,18 @@ aside li{
     float: left;
     width : 100%;
     height : 100%;
+}
+
+.graphImg_big{
+    width : 100%;
+    height : 600px;
+    margin : 0;
+}
+
+.graphImg_big img{
+    width : 100%;
+    height : 100%;
+    float : left;
 }
 
 #enterinGraph1{
