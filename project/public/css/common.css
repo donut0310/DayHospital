@@ -2507,13 +2507,18 @@ aside li{
     margin-bottom: 20px;
 }
 
-.insurance_inside_ul li ul li /*insurance ver mobile page list*/
+#insurance_inside_ul li  /*insurance ver mobile page list*/
 {
     list-style-type: none;
     height : 200px;
 }
-.insurance_inside_ul li ul li img{
+
+#insurance_inside_ul li img{
     float : left;
+}
+
+.insurance .graphImg_big{
+    margin-top : -8%;
 }
 
 /* mobile_facility */
