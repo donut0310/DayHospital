@@ -481,7 +481,26 @@
         });
         if (screen.width >= 768) {
             var popupWidth = (window.screen.width / 2) - (345 / 2);
-            var mypopup = window.open("/popup", "pop", 'width=345px,height=715px,left=' + popupWidth + ',top:100px');
+            function getCookie(name) {
+                var cookie = document.cookie;
+                if (document.cookie != "") {
+                    var cookie_array = cookie.split("; ");
+                    for (var index in cookie_array) {
+                        var cookie_name = cookie_array[index].split("=");
+                        if (cookie_name[0] == "popupYN") {
+                            return cookie_name[1];
+                        }
+                    }
+                }
+                return;
+            }
+            function openPopup() {
+                var cookieCheck = getCookie("popupYN");
+                if (cookieCheck != "N") window.open("/popup", "pop", 'width=345px,height=715px,left=' + popupWidth + ',top:100px');
+            }
+
+            openPopup();
+
         }
 
         function menu_click() {
