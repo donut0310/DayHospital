@@ -2549,7 +2549,9 @@ aside li{
     border : 1px solid;
     margin-top: 20px;
     margin-bottom : 20px;
+    z-index: -1;
 }
+
 
 
 /* mobile_pmpc part board page css */
