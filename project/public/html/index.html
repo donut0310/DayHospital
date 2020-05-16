@@ -474,12 +474,12 @@
         });
         $(document).on("mouseover", ".topMenu span", function () {
             $(".dept02").slideDown(200);
-            alert('hi!!');
+            
         });
         $(document).on("mouseleave", "div", function () {
             if (!$(this).hasClass("dept02")) {
                 $(".dept02").slideUp(200);
-                alert('Bye!!');
+                
             }
         });
         if (screen.width >= 768) {
