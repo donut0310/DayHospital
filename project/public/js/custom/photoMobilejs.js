@@ -1,21 +1,21 @@
-const tp2 = document.querySelector('#tp2 tbody');
-const mobilePageBtns = document.querySelector('.mobilePageBtns');
+var tp2 = document.querySelector('#tp2 tbody');
+var mobilePageBtns = document.querySelector('.mobilePageBtns');
 
 //params
-let mobilepages;
-let mobileCurrentPage;
+var mobilepages;
+var mobileCurrentPage;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-    axios.get('/photoMobile/createBtns').then((res)=>{
+    axios.get('/photoMobile/createBtns').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 mobileCreateBtns(res.data["data"]);
             }
         }
     });
-    axios.get('/photoMobile/init').then((res)=>{
+    axios.get('/photoMobile/init').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 //추가 공지사항 리스트
@@ -33,8 +33,8 @@ function mobileCreateBtns(item = []){
             mobilepages = parseInt(item.length/8);
         }
         else mobilepages = parseInt(item.length/8 + 1);
-        let prevBtn = document.createElement('button');
-        let nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','mobile');
     
@@ -44,7 +44,7 @@ function mobileCreateBtns(item = []){
         mobilePageBtns.appendChild(prevBtn);
     
         for(i=1;i<=mobilepages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','mobile');
     
             if(i==1){
@@ -79,10 +79,10 @@ function mobileGoToPrev(){
         mobileCurrentPage.classList.remove('notCurrent');
         mobileCurrentPage.classList.add('current');
 
-        let mobilePage_num = mobileCurrentPage.value;
+        var mobilePage_num = mobileCurrentPage.value;
         axios.get('/photoMobile/page_num', { params :{
             page_num : mobilePage_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addListMobile(res.data["data"]);
@@ -104,10 +104,10 @@ function mobileGoToNext(){
         mobileCurrentPage.classList.remove('notCurrent');
         mobileCurrentPage.classList.add('current');
 
-        let mobilePage_num = mobileCurrentPage.value;
+        var mobilePage_num = mobileCurrentPage.value;
         axios.get('/photoMobile/page_num', { params :{
             page_num : mobilePage_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addListMobile(res.data["data"]);
@@ -122,7 +122,7 @@ function mobileDeleteAndGet(){
     mobileCurrentPage.classList.remove('current');
     mobileCurrentPage.classList.add('notCurrent');
 
-    let mobilePage_num = this.value;
+    var mobilePage_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     mobileCurrentPage = this;
@@ -131,7 +131,7 @@ function mobileDeleteAndGet(){
     //이후 데이터 출력 위해 db 호출
         axios.get('/photoMobile/page_num', { params:{
             page_num: mobilePage_num
-        }}).then((res)=>{
+        }}).then(function (res){
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 
                     addListMobile(res.data["data"]);
@@ -142,12 +142,12 @@ function mobileDeleteAndGet(){
 
 function addListMobile(item = []){
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
         
-        let url = document.createElement('a');
+        var url = document.createElement('a');
         url.innerText = data.TITLE;        
 
         tdId.innerText = data.ID;
@@ -167,7 +167,7 @@ function addListMobile(item = []){
 
 //날짜 폼 변경
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }
@@ -181,7 +181,7 @@ function resetList(){
 
 //버튼 리셋 함수
 function mobileResetBtns(){
-    let pageBtns = document.querySelector('.mobilePageBtns');
+    var pageBtns = document.querySelector('.mobilePageBtns');
     while(pageBtns.hasChildNodes()){
         pageBtns.removeChild(pageBtns.firstChild);
     }

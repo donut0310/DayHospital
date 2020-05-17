@@ -1,8 +1,8 @@
-const photos = document.querySelectorAll('.fa img');
-const bigPhoto = document.querySelector('#fa_photo_big img');
-const photoDiv = document.querySelectorAll('.fa');
+var photos = document.querySelectorAll('.fa img');
+var bigPhoto = document.querySelector('#fa_photo_big img');
+var photoDiv = document.querySelectorAll('.fa');
 //params
-let currentValue = 0;
+var currentValue = 0;
 
 function init(){
     

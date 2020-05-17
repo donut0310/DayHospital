@@ -1,22 +1,22 @@
 //dynamic add elements
 
 //btns
-const pcPageBtns = document.querySelector('.pcPageBtns');
+var pcPageBtns = document.querySelector('.pcPageBtns');
 
 //params
-let pages;
-let pcCurrentPage;
+var pages;
+var pcCurrentPage;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
-    axios.get('/photo/createBtns').then((res)=>{
+    axios.get('/photo/createBtns').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.get('/photo/init').then((res)=>{
+    axios.get('/photo/init').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);
@@ -33,8 +33,8 @@ function createBtns(item = []){
             pages = parseInt(item.length/6);
         }
         else pages = parseInt(item.length/6 + 1);
-        let prevBtn = document.createElement('button');
-        let nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','pc');
         prevBtn.innerText = '←';
@@ -42,7 +42,7 @@ function createBtns(item = []){
         pcPageBtns.appendChild(prevBtn);
         
         for(i=1;i<=pages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','pc');
             if(i==1){
                 pageButton.classList.add('current');
@@ -67,7 +67,7 @@ function createBtns(item = []){
 
 //버튼 리셋 함수
 function resetBtns(){
-    let pcPageBtns = document.querySelector('.pcPageBtns');
+    var pcPageBtns = document.querySelector('.pcPageBtns');
     while(pcPageBtns.hasChildNodes()){
         pcPageBtns.removeChild(pcPageBtns.firstChild);
     }
@@ -84,12 +84,12 @@ function pcGoToPrev(){
         pcCurrentPage.classList.add('current');
 
 
-        let pcPage_num = pcCurrentPage.value;
+        var pcPage_num = pcCurrentPage.value;
         
         axios.get('/photo/page_num', {params :{
             page_num : pcPage_num
         }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addImg(res.data["data"]);
@@ -109,11 +109,11 @@ function pcGoToNext(){
         pcCurrentPage.classList.remove('notCurrent');
         pcCurrentPage.classList.add('current');
 
-        let pcPage_num = pcCurrentPage.value;
+        var pcPage_num = pcCurrentPage.value;
         
         axios.get('/photo/page_num', {params :{
             page_num : pcPage_num
-        }}).then((res)=>{
+        }}).then(function (res){
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);
@@ -125,12 +125,12 @@ function pcGoToNext(){
 
 //사진 나열
 function addImg(item = []){
-    let len = item.length;
+    var len = item.length;
     for(i=0;i<len;i++){
-        let img = document.querySelector('#td' + (i + 1) + ' img');
-        let a = document.querySelector('#td' + (i + 1) + ' a');
-        let title = document.querySelector('#td' + (i + 1) + ' .photo_title');
-        let date = document.querySelector('#td' + (i + 1) + ' .photo_date');
+        var img = document.querySelector('#td' + (i + 1) + ' img');
+        var a = document.querySelector('#td' + (i + 1) + ' a');
+        var title = document.querySelector('#td' + (i + 1) + ' .photo_title');
+        var date = document.querySelector('#td' + (i + 1) + ' .photo_date');
     
         img.style.cursor = "pointer";
 
@@ -141,7 +141,7 @@ function addImg(item = []){
     }
     //사진 없는 경우
     for(i=len;i<6;i++){
-        let img = document.querySelector('#td' + (i + 1) + ' img');
+        var img = document.querySelector('#td' + (i + 1) + ' img');
         img.src = '/assets/images/SMH/none.png';
         
         img.style.cursor = "default";
@@ -149,7 +149,7 @@ function addImg(item = []){
 }
 
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }
@@ -159,7 +159,7 @@ function pcDeleteAndGet(){
     pcCurrentPage.classList.remove('current');
     pcCurrentPage.classList.add('notCurrent');
     
-    let pcPage_num = this.value;
+    var pcPage_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     pcCurrentPage = this;
@@ -167,7 +167,7 @@ function pcDeleteAndGet(){
     //이후 데이터 출력 위해 db 호출    
     axios.get('/photo/page_num', {params:{
         page_num:pcPage_num
-    }}).then((res)=>{
+    }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     addImg(res.data["data"]);

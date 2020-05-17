@@ -1,6 +1,6 @@
 
-const a1 = document.querySelector('#week');
-const a2 = document.querySelector('#year');
+var a1 = document.querySelector('#week');
+var a2 = document.querySelector('#year');
 function init(){
     a1.innerText = "주간계획표.pdf";
     a1.setAttribute('target','_blank');

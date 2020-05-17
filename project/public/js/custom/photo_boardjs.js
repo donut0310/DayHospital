@@ -1,15 +1,15 @@
 //para에 게시글 id값 저장
-const para = window.location.href.split('?');
+var para = window.location.href.split('?');
 
 //parmas
-let currentID;
-let list;
+var currentID;
+var list;
 
 function init(){
     axios.get('/photo/select_content_order', {params :{
         id : para[1]
     }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data['result'] == "success"){ 
                 initShow(res.data['data']);
@@ -21,13 +21,13 @@ function init(){
 function initShow(item = []){
     list = item.length;
     
-    let a1 = document.querySelector('.pabBefore a');
-    let a2 = document.querySelector('.pabNext a');    
+    var a1 = document.querySelector('.pabBefore a');
+    var a2 = document.querySelector('.pabNext a');    
 
-    let img = document.querySelector('.main_photo img');
-    let title = document.querySelector('.main_photo_box h3 span');
-    let p = document.querySelectorAll('.main_photo_box p span');
-    let content = document.querySelector('.photo_content_text');
+    var img = document.querySelector('.main_photo img');
+    var title = document.querySelector('.main_photo_box h3 span');
+    var p = document.querySelectorAll('.main_photo_box p span');
+    var content = document.querySelector('.photo_content_text');
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -96,7 +96,7 @@ function getCursor(){
 }
 
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }

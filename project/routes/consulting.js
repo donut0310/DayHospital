@@ -1,23 +1,23 @@
-let express = require('express');
-let router = express.Router();
+var express = require('express');
+var router = express.Router();
 router.use(express.json());
 
 //DB 연결
-let mysql = require('mysql');
-let dbconfig = require('./config/dbconfig.js');
-let pool = mysql.createPool(dbconfig);
+var mysql = require('mysql');
+var dbconfig = require('./config/dbconfig.js');
+var pool = mysql.createPool(dbconfig);
 
 // 상담신청 고객정보
 router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from consulting order by ID desc limit 0,5";
+            var sql = "select * from consulting order by ID desc limit 0,5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -32,12 +32,12 @@ router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from consulting order by ID desc";
+            var sql = "select * from consulting order by ID desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -52,14 +52,14 @@ router.get('/page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.query.page_num;
+            var page_num = req.query.page_num;
        
-            let sql = "select * from consulting order by ID desc limit " + (page_num-1)*5 + ", 5";
+            var sql = "select * from consulting order by ID desc limit " + (page_num-1)*5 + ", 5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -73,17 +73,17 @@ router.post('/insertData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let uname = req.body.uname;
-            let upw = req.body.upw;
-            let utitle = req.body.utitle;
-            let ucon = req.body.ucon;
-            let uphone = req.body.uphone;
-            let date = req.body.date;
+            var uname = req.body.uname;
+            var upw = req.body.upw;
+            var utitle = req.body.utitle;
+            var ucon = req.body.ucon;
+            var uphone = req.body.uphone;
+            var date = req.body.date;
 
             
             //쿼리문 작성 및 실행 할 query함수 선언
-            let sql = "insert into consulting (USER_NAME, USER_PASSWORD, TITLE, CONTENT, USER_PHONE, DATE) values (?,?,?,?,?,?)";
-            let params = [uname, upw, utitle, ucon, uphone, date];
+            var sql = "insert into consulting (USER_NAME, USER_PASSWORD, TITLE, CONTENT, USER_PHONE, DATE) values (?,?,?,?,?,?)";
+            var params = [uname, upw, utitle, ucon, uphone, date];
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
@@ -100,18 +100,18 @@ router.get('/selectData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let otn = req.query.value;
-            let text;
-            let sql;
+            var otn = req.query.value;
+            var text;
+            var sql;
             if(req.query.text == ''){
                 sql = 'select * from consulting order by ID desc';
-                let params = text;
+                var params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = 'init';
                             res.send(output);
@@ -121,12 +121,12 @@ router.get('/selectData', function(req, res, next){
             else if(otn == 0){
                 text = req.query.text + '%';
                 sql = 'select * from consulting where TITLE like ?';
-                let params = text;
+                var params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = rows;
                             res.send(output);
@@ -135,12 +135,12 @@ router.get('/selectData', function(req, res, next){
             }else{
                 text = req.query.text + '%';
                 sql = 'select * from consulting where USER_NAME like ?';
-                let params = text;
+                var params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = rows;
                             res.send(output);
@@ -156,19 +156,19 @@ router.get('/selectData_page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.query.page_num;
-            let otn = req.query.value;
-            let text;
-            let sql;
+            var page_num = req.query.page_num;
+            var otn = req.query.value;
+            var text;
+            var sql;
             if(req.query.text == ''){
                 sql = 'select * from consulting order by ID desc';
-                let params = text;
+                var params = text;
  
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = 'init';
                             res.send(output);
@@ -178,12 +178,12 @@ router.get('/selectData_page_num', function(req, res, next){
             else if(otn == 0){
                 text = req.query.text + '%';
                 sql = 'select * from consulting where TITLE like ? limit ' + (page_num-1)*5 + ', 5';
-                let params = text;
+                var params = text;
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = rows;
                             res.send(output);
@@ -193,13 +193,13 @@ router.get('/selectData_page_num', function(req, res, next){
             else{
                 text = req.query.text + '%';
                 sql = 'select * from consulting where USER_NAME like ? limit ' + (page_num-1)*5 + ', 5';
-                let params = text;
+                var params = text;
 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                             conn.release();
-                            let output = {};
+                            var output = {};
                             output['result'] = "success";
                             output['data'] = rows;
                             res.send(output);
@@ -214,17 +214,17 @@ router.post('/getPw', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let id = req.body.id;
-            let pw = req.body.pw;
+            var id = req.body.id;
+            var pw = req.body.pw;
 
-            let params = [id];
-            let sql = 'select USER_PASSWORD from consulting where ID = ?';
+            var params = [id];
+            var sql = 'select USER_PASSWORD from consulting where ID = ?';
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
                     conn.release();
                                  
-                        let output = {};
+                        var output = {};
                         output['result'] = "success";
                         if(rows[0].USER_PASSWORD == pw)output['data'] = 'correct'
                         else output['data'] = 'incorrect'
@@ -239,16 +239,16 @@ router.post('/getData', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let id = req.body.id;
+            var id = req.body.id;
 
-            let params = id;
-            let sql = 'select USER_NAME, TITLE, CONTENT, USER_PHONE from consulting where ID = ?';
+            var params = id;
+            var sql = 'select USER_NAME, TITLE, CONTENT, USER_PHONE from consulting where ID = ?';
             conn.query(sql, params, function(err,rows){
                 if(err) throw err;
                 else{
                     conn.release();
                                  
-                        let output = {};
+                        var output = {};
                         output['result'] = "success";
                         output['data'] = rows;
                         res.send(output);

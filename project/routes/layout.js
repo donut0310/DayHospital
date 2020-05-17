@@ -11,12 +11,12 @@ router.get('/postListInit', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from postlist order by date desc limit 0,6";
+            var sql = "select * from postlist order by date desc limit 0,6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -30,12 +30,12 @@ router.get('/photoListInit', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by date desc limit 0,5";
+            var sql = "select * from img order by date desc limit 0,5";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -48,12 +48,12 @@ router.get('/getImages', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by date desc";
+            var sql = "select * from img order by date desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);

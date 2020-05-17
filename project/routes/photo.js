@@ -10,12 +10,12 @@ router.get('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by date desc limit 0,6";
+            var sql = "select * from img order by date desc limit 0,6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -29,12 +29,12 @@ router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from img order by date desc";
+            var sql = "select * from img order by date desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -48,13 +48,13 @@ router.get('/page_num', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let page_num = req.query.page_num;
-            let sql = "select * from img order by date desc limit " + (page_num-1)*6 + ", 6";
+            var page_num = req.query.page_num;
+            var sql = "select * from img order by date desc limit " + (page_num-1)*6 + ", 6";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -69,18 +69,18 @@ router.get('/select_content_order', function(req, res, next){
         if(err) throw err;
         else{
 
-            let id = req.query.id;
+            var id = req.query.id;
             
-            let sql;
+            var sql;
             if(parseInt(id) == 1){
                 sql = 'select * from img where id between ' + parseInt(id) + ' and ' + (parseInt(id)+1);
-                let params = id;
+                var params = id;
                 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                         conn.release();
-                        let output = {};
+                        var output = {};
                         output['result'] = "success";
                         output['data'] = rows;
                         res.send(output);
@@ -89,13 +89,13 @@ router.get('/select_content_order', function(req, res, next){
             }
             else{
                 sql = 'select * from img where ID between ' + (parseInt(id) - 1) + ' and ' + (parseInt(id) + 1);
-                let params = id;
+                var params = id;
                 
                 conn.query(sql, params, function(err,rows){
                     if(err) throw err;
                     else{
                         conn.release();
-                        let output = {};
+                        var output = {};
                         output['result'] = "success";
                         output['data'] = rows;
                         res.send(output);

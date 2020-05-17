@@ -1,11 +1,11 @@
-const addTable = document.querySelector('.t_body');
-const writeBtnClicked = document.querySelector('#writeBtn');
+var addTable = document.querySelector('.t_body');
+var writeBtnClicked = document.querySelector('#writeBtn');
 writeBtnClicked.addEventListener("click",textField)
 
-let modal_div = document.querySelector('#modal');
+var modal_div = document.querySelector('#modal');
 
 //db상에 모든 데이터 저장해 놓을 배열
-let dbData = [];
+var dbData = [];
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
@@ -17,7 +17,7 @@ function init(){
     modal_div.style.backgroundColor = 'orange';
     modal_div.style.position = 'absolute';
 
-    axios.post('/adm_pmpc/init').then((res)=>{
+    axios.post('/adm_pmpc/init').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     initShow(res.data["data"]);
@@ -31,14 +31,14 @@ function initShow(item = []){
     
     item.forEach(function(data){
   
-        let topic_link = document.createElement('a');
+        var topic_link = document.createElement('a');
         topic_link.href = './board?'+data.content_order;
         topic_link.innerText = data.title;
 
-        let tr = document.createElement('tr');
-        let td1 = document.createElement('td');
-        let td2 = document.createElement('td');
-        let td3 = document.createElement('td');
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        var td2 = document.createElement('td');
+        var td3 = document.createElement('td');
 
         td1.innerText = data.content_order;
         td2.appendChild(topic_link);
@@ -54,26 +54,26 @@ function initShow(item = []){
 }
 
 function insertData(){
-    let topic = document.querySelector('#pmpc_topic').value;
-    let content = document.querySelector('#pmpc_content').value;
-    let date = new Date();
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
+    var topic = document.querySelector('#pmpc_topic').value;
+    var content = document.querySelector('#pmpc_content').value;
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
     if(month<10){
         month = '0'+month;
     }
-    let day = date.getDate();
+    var day = date.getDate();
     if(day<10){
         day = '0'+day;
     }
 
-    let sendData = {};
+    var sendData = {};
     sendData['content_order'] = dbData.length + 1;
     sendData['topic'] = topic;
     sendData['content'] = content;
     sendData['date'] = year+'-'+month+'-'+day;
 
-    axios.post('/adm_pmpc/insert', sendData).then((res)=>{
+    axios.post('/adm_pmpc/insert', sendData).then(function (res){
         if(res.status === 200){
             if(res.data == "success"){ 
                 window.location.reload();
@@ -84,7 +84,7 @@ function insertData(){
 
 function textField(){
     modal_div.style.display = 'block'; 
-    let btn = document.querySelector('#pmpc_btn');
+    var btn = document.querySelector('#pmpc_btn');
     
     btn.addEventListener("click",function(){
         modal_div.style.display = 'none'; 

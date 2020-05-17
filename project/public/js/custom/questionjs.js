@@ -1,51 +1,51 @@
-const tbody = document.querySelector('.questionTb tbody');
-const pageBtns = document.querySelector('.pageBtns');
+var tbody = document.querySelector('.questionTb tbody');
+var pageBtns = document.querySelector('.pageBtns');
 // btns
-const wri_btn = document.querySelector("#wri_question");
+var wri_btn = document.querySelector("#wri_question");
 wri_btn.addEventListener('mouseover',getCursor);
 wri_btn.addEventListener('click',wri_modal);
 
-const submitBtn = document.querySelector('#submitBtn');
+var submitBtn = document.querySelector('#submitBtn');
 submitBtn.addEventListener('mouseover',getCursor);
 submitBtn.addEventListener('click',insertContent);
 
-const modal_ask_closeBtn = document.querySelector('#modal_ask_closeBtn');
+var modal_ask_closeBtn = document.querySelector('#modal_ask_closeBtn');
 modal_ask_closeBtn.addEventListener('mouseover',getCursor);
 
-const modal_answer_closeBtn = document.querySelector('#modal_answer_closeBtn');
+var modal_answer_closeBtn = document.querySelector('#modal_answer_closeBtn');
 modal_answer_closeBtn.addEventListener('mouseover',getCursor);
 
-const pw_modal_closeBtn = document.querySelector('#pw_modal_closeBtn');
+var pw_modal_closeBtn = document.querySelector('#pw_modal_closeBtn');
 pw_modal_closeBtn.addEventListener('mouseover',getCursor);
 
-const submit_pw = document.querySelector('#submit_pw');
+var submit_pw = document.querySelector('#submit_pw');
 
-const searchBtn = document.querySelector('#searchBtn');
+var searchBtn = document.querySelector('#searchBtn');
 searchBtn.addEventListener("click",search);
 
-const cancleBtn = document.querySelector('#cancleBtn');
+var cancleBtn = document.querySelector('#cancleBtn');
 cancleBtn.addEventListener("click",getCursor)
 
 //parmas
-let pages;
-let postId;
-let currentPage;
+var pages;
+var postId;
+var currentPage;
 
 //modal
-const modal_ask = document.querySelector('#modal-ask');
-const check_pw_modal = document.querySelector('#check_pw_modal');
-const modal_answer = document.querySelector('#modal-answer');
+var modal_ask = document.querySelector('#modal-ask');
+var check_pw_modal = document.querySelector('#check_pw_modal');
+var modal_answer = document.querySelector('#modal-answer');
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-    axios.get('/question/createBtns').then((res)=>{
+    axios.get('/question/createBtns').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                     createBtns(res.data["data"]);
             }
         }
     });
-    axios.get('/question/init').then((res)=>{
+    axios.get('/question/init').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 addList(res.data['data']);
@@ -61,8 +61,8 @@ function createBtns(item = []){
         pages = parseInt(item.length/5);
     }
     else pages = parseInt(item.length/5 + 1);
-    let prevBtn = document.createElement('button');
-    let nextBtn = document.createElement('button');
+    var prevBtn = document.createElement('button');
+    var nextBtn = document.createElement('button');
     
     prevBtn.className += 'prevBtn';
     prevBtn.innerText = '←';
@@ -70,7 +70,7 @@ function createBtns(item = []){
     pageBtns.appendChild(prevBtn);
     
     for(i=1;i<=pages;i++){
-        let pageButton = document.createElement('button');
+        var pageButton = document.createElement('button');
         pageButton.className += 'pageButton';
         if(i==1){
             pageButton.className += ' current';
@@ -98,8 +98,8 @@ function createSearchedBtns(item = []){
         pages = parseInt(item.length/5);
     }
     else pages = parseInt(item.length/5 + 1);
-    let nextBtn = document.createElement('button');
-    let prevBtn = document.createElement('button');
+    var nextBtn = document.createElement('button');
+    var prevBtn = document.createElement('button');
     
     prevBtn.className += 'prevBtn';
     prevBtn.innerText = '←';
@@ -107,7 +107,7 @@ function createSearchedBtns(item = []){
     pageBtns.appendChild(prevBtn);
 
     for(i=1;i<=pages;i++){
-        let pageButton = document.createElement('button');
+        var pageButton = document.createElement('button');
         pageButton.className += 'pageButton';
         if(i==1){
             pageButton.className += ' current';
@@ -128,7 +128,7 @@ function createSearchedBtns(item = []){
 }
 
 function resetBtns(){
-    let pageBtns = document.querySelector('.pageBtns');
+    var pageBtns = document.querySelector('.pageBtns');
     while(pageBtns.hasChildNodes()){
         pageBtns.removeChild(pageBtns.firstChild);
     }
@@ -149,7 +149,7 @@ function goToPrev(){
         
         axios.get('/question/page_num', {params :{
             page_num : page_num}
-        }).then((res)=>{
+        }).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -175,7 +175,7 @@ function goToNext(){
         axios.get('/question/page_num',  {params :{
             page_num : page_num
         }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -190,7 +190,7 @@ function deleteAndGet(){
     currentPage.classList.remove('current');
     currentPage.classList.add('notCurrent');
 
-    let page_num = this.value;
+    var page_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     currentPage = this;
@@ -201,7 +201,7 @@ function deleteAndGet(){
     axios.get('/question/page_num',  {params :{
         page_num : page_num
     }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -215,15 +215,15 @@ function searchedDeleteAndGet(){
     currentPage.classList.remove('current');
     currentPage.classList.add('notCurrent');
 
-    let page_num = this.value;
+    var page_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     currentPage = this;
 
-    let target = document.querySelector('#selectBy');
-    let searchText = document.querySelector('#searchText').value;
+    var target = document.querySelector('#selectBy');
+    var searchText = document.querySelector('#searchText').value;
     
-    let otn = target.options[target.selectedIndex].value;
+    var otn = target.options[target.selectedIndex].value;
     
     //이전 데이터 삭제
     resetList();
@@ -233,7 +233,7 @@ function searchedDeleteAndGet(){
         page_num : page_num,
         value : otn,
         text: searchText
-    }}).then((res)=>{
+    }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
@@ -248,16 +248,16 @@ function searchedDeleteAndGet(){
 
 //고객 정보 검색
 function search(){
-    let target = document.querySelector('#selectBy');
-    let searchText = document.querySelector('#searchText').value;
+    var target = document.querySelector('#selectBy');
+    var searchText = document.querySelector('#searchText').value;
     
-    let otn = target.options[target.selectedIndex].value;
+    var otn = target.options[target.selectedIndex].value;
 
     axios.get('/question/selectData',   {params :{
         value : otn,
         text: searchText
     }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -280,10 +280,10 @@ function showSearchedInit(item = []){
     //이후 데이터 출력
     for(i=0;i<10;i++){
         if(item[i]==null)break;
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
 
         tdId.innerText = item[i].ID;
         tdTitle.innerText = item[i].TITLE;
@@ -302,7 +302,7 @@ function showSearchedInit(item = []){
 
 //게시글 목록 초기화
 function resetList(){
-    let tbody = document.querySelector('.questionTb tbody');
+    var tbody = document.querySelector('.questionTb tbody');
     while(tbody.hasChildNodes()){
         tbody.removeChild(tbody.firstChild);
     }
@@ -310,26 +310,26 @@ function resetList(){
 
 //글쓰기 버튼 시에 고객 정보  전송
 function insertContent(){
-    let uname = document.querySelector('#uname').value;
-    let upw = document.querySelector('#upw').value;
-    let utitle = document.querySelector('#utitle').value;
-    let uphone = document.querySelector('#uphone').value;
-    let ucon = document.querySelector('#mod_cont_question').value;
-    let date = new Date();
+    var uname = document.querySelector('#uname').value;
+    var upw = document.querySelector('#upw').value;
+    var utitle = document.querySelector('#utitle').value;
+    var uphone = document.querySelector('#uphone').value;
+    var ucon = document.querySelector('#mod_cont_question').value;
+    var date = new Date();
    
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
     if(month<10){
         month = '0'+month;
     }
-    let day = date.getDate();
+    var day = date.getDate();
     if(day<10){
         day = '0'+day;
     }
     if(uname==''||upw==''||utitle==''||uphone==''||ucon==''){
         alert('제출 오류');
 
-        let input;
+        var input;
         if(utitle==''){
             input = document.querySelector('#utitle');
             input.focus();
@@ -349,7 +349,7 @@ function insertContent(){
        
     }
     else{
-        let sendData = {};
+        var sendData = {};
         sendData['uname'] = uname;
         sendData['upw'] = upw;
         sendData['utitle'] = utitle;
@@ -357,7 +357,7 @@ function insertContent(){
         sendData['uphone'] = uphone;
         sendData['date'] = year+'-'+month+'-'+day;
 
-        axios.post('/question/insertData', sendData).then((res)=>{
+        axios.post('/question/insertData', sendData).then(function (res){
             if(res.status === 200){
                 if(res.data == "success"){
                     window.location.reload();
@@ -368,10 +368,10 @@ function insertContent(){
 }
 function addList(item = []){
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
 
         tdId.innerText = data.ID;
         tdTitle.innerText = data.TITLE;
@@ -390,16 +390,16 @@ function addList(item = []){
 }
 
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }
 
 function showContent(item = []){
-    let title = document.querySelector('#modal-answer .modal_title .modalspan');
-    let name = document.querySelector('#modal-answer .modal_name .modalspan');
-    let phoneNum = document.querySelector('#modal-answer .modal_num .modalspan');
-    let content = document.querySelector('#modal-answer .answer-textarea .modalspan');
+    var title = document.querySelector('#modal-answer .modal_title .modalspan');
+    var name = document.querySelector('#modal-answer .modal_name .modalspan');
+    var phoneNum = document.querySelector('#modal-answer .modal_num .modalspan');
+    var content = document.querySelector('#modal-answer .answer-textarea .modalspan');
 
     title.innerText = '제목 ' + item[0].TITLE;
     name.innerText = '이름 ' + item[0].USER_NAME;
@@ -409,15 +409,15 @@ function showContent(item = []){
 
 function checkPw(check){ 
     // 비번 일치 시 내용 출력 아니면 경고창 모달
-    let reset_pw = document.querySelector('#inputPw');
+    var reset_pw = document.querySelector('#inputPw');
 
     if(check == 'correct'){
         reset_pw.value = null;
         check_pw_modal.style.display = 'none';
 
-        let sendData = {};
+        var sendData = {};
         sendData['id'] = postId;
-        axios.post('/question/getData', sendData).then((res)=>{
+        axios.post('/question/getData', sendData).then(function (res){
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     showContent(res.data['data']);
@@ -428,9 +428,9 @@ function checkPw(check){
     }
     else{
         reset_pw.value = null;
-        let changeText = document.querySelector('#check_pw_box span');
-        let changeHeader = document.querySelector('#check_pw_modal .modal_head');
-        let head = document.querySelector('#check_pw_modal h4');
+        var changeText = document.querySelector('#check_pw_box span');
+        var changeHeader = document.querySelector('#check_pw_modal .modal_head');
+        var head = document.querySelector('#check_pw_modal h4');
         
         head.style.color = 'white';
         changeHeader.style.backgroundColor = 'black';
@@ -439,28 +439,28 @@ function checkPw(check){
         changeText.innerText = "비밀번호 오류";
 
 
-        let inputPw = document.querySelector('#inputPw');
+        var inputPw = document.querySelector('#inputPw');
         inputPw.focus();
     }
 }
 
 function pwModal(){
-    let changeText = document.querySelector('#check_pw_box span');
+    var changeText = document.querySelector('#check_pw_box span');
     changeText.innerText = '비밀번호 입력';
     check_pw_modal.style.display = 'block';
 
     postId = this.value;
-    let input = document.querySelector('#inputPw');
+    var input = document.querySelector('#inputPw');
     input.focus();
 }
 
 submit_pw.onclick = function(event){
     if(event.target == submit_pw){
-        let pw = document.querySelector('#inputPw').value;
+        var pw = document.querySelector('#inputPw').value;
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/question/getPw', sendData).then((res)=>{
+        axios.post('/question/getPw', sendData).then(function (res){
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])
@@ -474,16 +474,16 @@ submit_pw.onclick = function(event){
 modal_ask_closeBtn.onclick = function(){
     modal_ask.style.display = 'none';
     
-    let utitle = document.querySelector('#utitle');
-    let uname = document.querySelector('#uname');
-    let upw = document.querySelector('#upw');
-    let uphone = document.querySelector('#uphone');
+    var utitle = document.querySelector('#utitle');
+    var uname = document.querySelector('#uname');
+    var upw = document.querySelector('#upw');
+    var uphone = document.querySelector('#uphone');
     utitle.value = null;
     uname.value = null;
     upw.value = null;
     uphone.value = null;
     
-    let removeContent = document.querySelector('#mod_cont_question');
+    var removeContent = document.querySelector('#mod_cont_question');
     removeContent.value = null;
 }
 
@@ -492,7 +492,7 @@ modal_answer_closeBtn.onclick = function(){
 }
 
 pw_modal_closeBtn.onclick = function(){
-    let reset_pw = document.querySelector('#inputPw');
+    var reset_pw = document.querySelector('#inputPw');
     reset_pw.value = null;
     check_pw_modal.style.display = 'none';
 }
@@ -500,36 +500,36 @@ pw_modal_closeBtn.onclick = function(){
 cancleBtn.onclick = function(){
     modal_ask.style.display = 'none';
     
-    let utitle = document.querySelector('#utitle');
-    let uname = document.querySelector('#uname');
-    let upw = document.querySelector('#upw');
-    let uphone = document.querySelector('#uphone');
+    var utitle = document.querySelector('#utitle');
+    var uname = document.querySelector('#uname');
+    var upw = document.querySelector('#upw');
+    var uphone = document.querySelector('#uphone');
     utitle.value = null;
     uname.value = null;
     upw.value = null;
     uphone.value = null;
     
-    let removeContent = document.querySelector('#mod_cont_question');
+    var removeContent = document.querySelector('#mod_cont_question');
     removeContent.value = null;
 }
 
 window.onclick = function(event) {
-    let reset_pw = document.querySelector('#inputPw'); 
+    var reset_pw = document.querySelector('#inputPw'); 
 
     if (event.target == modal_ask) {
         modal_ask.style.display = "none";
         
-        let utitle = document.querySelector('#utitle');
-        let uname = document.querySelector('#uname');
-        let upw = document.querySelector('#upw');
-        let uphone = document.querySelector('#uphone');
+        var utitle = document.querySelector('#utitle');
+        var uname = document.querySelector('#uname');
+        var upw = document.querySelector('#upw');
+        var uphone = document.querySelector('#uphone');
         
         utitle.value = null;
         uname.value = null;
         upw.value = null;
         uphone.value = null;
         
-        let removeContent = document.querySelector('#mod_cont_question');
+        var removeContent = document.querySelector('#mod_cont_question');
         removeContent.value = null;
     }
     else if(event.target == modal_answer){
@@ -544,7 +544,7 @@ window.onclick = function(event) {
 //modal control functions
 function wri_modal(){
     modal_ask.style.display = 'block';
-    let utitle = document.querySelector('#utitle');
+    var utitle = document.querySelector('#utitle');
     utitle.focus();
  }
 
@@ -560,11 +560,11 @@ function pressKey(){
 
 function pressKey2(){
     if(window.event.keyCode == 13){
-        let pw = document.querySelector('#inputPw').value;
+        var pw = document.querySelector('#inputPw').value;
         sendData = {};
         sendData['id'] = postId;
         sendData['pw'] = pw;
-        axios.post('/question/getPw', sendData).then((res)=>{
+        axios.post('/question/getPw', sendData).then(function (res){
             if(res.status === 200){
                 if(res.data['result'] == "success"){
                     checkPw(res.data['data'])

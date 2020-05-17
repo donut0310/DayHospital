@@ -1,16 +1,16 @@
 //para에 게시글 id값 저장
-const para = window.location.href.split('?');
+var para = window.location.href.split('?');
 
 //parmas
-let pcCurrentID;
-let mobileCurrentID;
-let list;
+var pcCurrentID;
+var mobileCurrentID;
+var list;
 
 function init(){
     axios.get('/meal/select_content_order', {params :{
         id : para[1]
     }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data['result'] == "success"){ 
                 initShowPC(res.data['data']);
@@ -23,15 +23,15 @@ function init(){
 function initShowPC(item = []){
     list = item.length;
     
-    let a1 = document.querySelector('.pabBefore a');
-    let a2 = document.querySelector('.pabNext a');    
+    var a1 = document.querySelector('.pabBefore a');
+    var a2 = document.querySelector('.pabNext a');    
     
-    let pabNum = document.querySelector('.pabNum');
-    let pabTitle = document.querySelector('.pabTitle');
-    let pabDate = document.querySelector('.pabDate');
+    var pabNum = document.querySelector('.pabNum');
+    var pabTitle = document.querySelector('.pabTitle');
+    var pabDate = document.querySelector('.pabDate');
 
-    let download = document.querySelector('.download a');
-    let pabText = document.querySelector('.pabText');
+    var download = document.querySelector('.download a');
+    var pabText = document.querySelector('.pabText');
     
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -113,15 +113,15 @@ function initShowPC(item = []){
 function initShowMobile(item = []){
     list = item.length;
     
-    let a1 = document.querySelector('.mobile_pabBefore a');
-    let a2 = document.querySelector('.mobile_pabNext a');    
+    var a1 = document.querySelector('.mobile_pabBefore a');
+    var a2 = document.querySelector('.mobile_pabNext a');    
     
-    let pabNum = document.querySelector('.mobile_pabNum');
-    let pabTitle = document.querySelector('.mobile_pabTitle');
-    let pabDate = document.querySelector('.mobile_pabDate');
+    var pabNum = document.querySelector('.mobile_pabNum');
+    var pabTitle = document.querySelector('.mobile_pabTitle');
+    var pabDate = document.querySelector('.mobile_pabDate');
 
-    let download = document.querySelector('.download a');
-    let pabText = document.querySelector('.mobile_pabText');
+    var download = document.querySelector('.download a');
+    var pabText = document.querySelector('.mobile_pabText');
     
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -201,7 +201,7 @@ function initShowMobile(item = []){
 }
 
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }

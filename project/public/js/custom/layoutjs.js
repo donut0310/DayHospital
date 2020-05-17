@@ -1,48 +1,48 @@
-const postUl = document.querySelector('#postUl');
-const mobileUl = document.querySelector('#mobile_post_list');
-const img = document.querySelectorAll('.photoList img');
-const photoSlide = document.querySelector('#photoSlide');
+var postUl = document.querySelector('#postUl');
+var mobileUl = document.querySelector('#mobile_post_list');
+var img = document.querySelectorAll('.photoList img');
+var photoSlide = document.querySelector('#photoSlide');
 
 //btns
-const prevBtn = document.querySelector('.prevBtn');
+var prevBtn = document.querySelector('.prevBtn');
 prevBtn.addEventListener('click',goToPrev);
 
-const nextBtn = document.querySelector('.nextBtn');
+var nextBtn = document.querySelector('.nextBtn');
 nextBtn.addEventListener('click',goToNext);
 
-const post_modal_closeBtn = document.querySelector('#post_modal_closeBtn');
+var post_modal_closeBtn = document.querySelector('#post_modal_closeBtn');
 post_modal_closeBtn.addEventListener('mouseover',getCursor);
 
-const img_modal_closeBtn = document.querySelector('#img_modal_closeBtn');
+var img_modal_closeBtn = document.querySelector('#img_modal_closeBtn');
 img_modal_closeBtn.addEventListener('mouseover',getCursor);
 
-const moreBtn = document.querySelector('.moreBtn');
+var moreBtn = document.querySelector('.moreBtn');
 moreBtn.addEventListener('mouseover',getCursor);
 
-const plusBtn = document.querySelectorAll('.plusBtn');
+var plusBtn = document.querySelectorAll('.plusBtn');
 plusBtn[0].addEventListener('mouseover',getCursor);
 plusBtn[1].addEventListener('mouseover',getCursor);
 
 // modal
-const imgModal = document.querySelector('#modal-in-photo');
-const postModal = document.querySelector('#modal-in-text');
-//const centerGuideModal = document.querySelector('#modal4');
-const err_modal = document.querySelector('#err_modal');
-const err_close = document.querySelector("#err_close");
+var imgModal = document.querySelector('#modal-in-photo');
+var postModal = document.querySelector('#modal-in-text');
+//var centerGuideModal = document.querySelector('#modal4');
+var err_modal = document.querySelector('#err_modal');
+var err_close = document.querySelector("#err_close");
 err_close.addEventListener('mouseover',getCursor);
 
 
 // params
-let photoCnt; //메인 페이지에 로드될 사진개수 최대 5개
-let index = 0; //이미지 슬라이드 용도
-let currentImgNum; //모달에 로드된 이미지 id값
-let dbImg; //db에저장된 이미지 집합
-let dbCnt; //db에저장된 이미지 개수
+var photoCnt; //메인 페이지에 로드될 사진개수 최대 5개
+var index = 0; //이미지 슬라이드 용도
+var currentImgNum; //모달에 로드된 이미지 id값
+var dbImg; //db에저장된 이미지 집합
+var dbCnt; //db에저장된 이미지 개수
 
 function init(){
     //추후에 삭제 예정
     resetList();
-    axios.get('/layout/postListInit').then((res)=>{
+    axios.get('/layout/postListInit').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -50,7 +50,7 @@ function init(){
             }
         }
     });
-    axios.get('/layout/photoListInit').then((res)=>{
+    axios.get('/layout/photoListInit').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 showImg(res.data["data"]);
@@ -62,9 +62,9 @@ function init(){
 function addList(item = []){
     item = item.slice(0,4);
     item.forEach(function (data) {
-        let li = document.createElement('li');
-        let span = document.createElement('span');
-        let a = document.createElement('a');
+        var li = document.createElement('li');
+        var span = document.createElement('span');
+        var a = document.createElement('a');
 
         span.style.float = 'right';
         span.addEventListener('mouseover',getCursor);
@@ -83,8 +83,8 @@ function addList(item = []){
 
 function addListMobile(item = []){
     item.forEach(function (data) {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
+        var li = document.createElement('li');
+        var a = document.createElement('a');
         a.href = 'pmpc_board?' + data.ID;
 
         li.innerText = data.TITLE;
@@ -95,8 +95,8 @@ function addListMobile(item = []){
 }
 //프론트용 데이터 삭제 용도 함수
 function resetList(){
-    let resetPostUl = document.querySelector('#postUl');
-    let resetMobileUl = document.querySelector('#mobile_post_list');
+    var resetPostUl = document.querySelector('#postUl');
+    var resetMobileUl = document.querySelector('#mobile_post_list');
      //이전 데이터 삭제
      while(resetPostUl.hasChildNodes()){
         resetPostUl.removeChild(resetPostUl.firstChild);
@@ -116,34 +116,34 @@ function showImg(item = []){
         img[i].setAttribute('imgId',i);
         img[i].setAttribute('title',item[i].TITLE);
         img[i].setAttribute('content',item[i].CONTENT);
-        let date = date_format(item[i].DATE);
+        var date = date_format(item[i].DATE);
         img[i].setAttribute('date',date);
     }
 }
 
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }
 
 function getImgModal(){
     //console.log(this);
-    let modalImg = document.querySelector('#modalImg');
+    var modalImg = document.querySelector('#modalImg');
     modalImg.src = this.getAttribute('src');
     currentImgNum = Number(this.getAttribute('imgid'));
     modalImg.setAttribute('imgid',currentImgNum);
 
-    let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+    var photo_title = document.querySelector('#modal-in-photo .modal_body h2');
     photo_title.innerText = this.getAttribute('title');
     
-    let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+    var photo_date = document.querySelector('#modal-in-photo .modal_body h5');
     photo_date.innerText = this.getAttribute('date');
     
-    let photo_content = document.querySelector('#modal-in-photo .modalspan');
+    var photo_content = document.querySelector('#modal-in-photo .modalspan');
     photo_content.innerText = this.getAttribute('content');
     
-    axios.get('/layout/getImages').then((res)=>{
+    axios.get('/layout/getImages').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){
                 dbImg = (res.data["data"]);
@@ -156,7 +156,7 @@ function getImgModal(){
 }
 
 function goToPrev(){
-    let modalImg = document.querySelector('#modalImg');
+    var modalImg = document.querySelector('#modalImg');
     currentImgNum = Number(modalImg.getAttribute('imgid'));
 
 
@@ -165,13 +165,13 @@ function goToPrev(){
         err_modal.style.display = 'block';
     }
     else{
-        let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+        var photo_title = document.querySelector('#modal-in-photo .modal_body h2');
         photo_title.innerText = dbImg[currentImgNum - 1].TITLE;
         
-        let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+        var photo_date = document.querySelector('#modal-in-photo .modal_body h5');
         photo_date.innerText = date_format(dbImg[currentImgNum - 1].DATE);
         
-        let photo_content = document.querySelector('#modal-in-photo .modalspan');
+        var photo_content = document.querySelector('#modal-in-photo .modalspan');
         photo_content.innerText = dbImg[currentImgNum - 1].CONTENT;
         
         modalImg.src = dbImg[currentImgNum - 1].PATH + dbImg[currentImgNum - 1].FILE_NAME;
@@ -181,20 +181,20 @@ function goToPrev(){
 }
 
 function goToNext(){
-    let modalImg = document.querySelector('#modalImg');
+    var modalImg = document.querySelector('#modalImg');
     currentImgNum = Number(modalImg.getAttribute('imgid'));
     
     if(currentImgNum == dbCnt - 1){
         err_modal.style.display = 'block';
     }
     else{
-        let photo_title = document.querySelector('#modal-in-photo .modal_body h2');
+        var photo_title = document.querySelector('#modal-in-photo .modal_body h2');
         photo_title.innerText = dbImg[currentImgNum + 1].TITLE;
         
-        let photo_date = document.querySelector('#modal-in-photo .modal_body h5');
+        var photo_date = document.querySelector('#modal-in-photo .modal_body h5');
         photo_date.innerText = date_format(dbImg[currentImgNum + 1].DATE);
         
-        let photo_content = document.querySelector('#modal-in-photo .modalspan');
+        var photo_content = document.querySelector('#modal-in-photo .modalspan');
         photo_content.innerText = dbImg[currentImgNum + 1].CONTENT;
 
         modalImg.src = dbImg[currentImgNum + 1].PATH + dbImg[currentImgNum + 1].FILE_NAME;
@@ -206,7 +206,7 @@ function goToNext(){
 setInterval(() => {
     photoSlide.style.transition = 0.8 + "s";
     
-    let miniPhoto = document.querySelector('.miniPhoto');
+    var miniPhoto = document.querySelector('.miniPhoto');
    
     photoSlide.style.transform = "translateX(-" + (miniPhoto.clientWidth * (index + 1)) + "px)";
     index++;

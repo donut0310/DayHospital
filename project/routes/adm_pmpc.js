@@ -10,12 +10,12 @@ router.post('/init', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "select * from postlist order by content_order desc";
+            var sql = "select * from postlist order by content_order desc";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);
@@ -29,15 +29,15 @@ router.post('/insert', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let content_order = req.body.content_order;
-            let topic = req.body.topic;
-            let content = req.body.content;
-            let date = req.body.date;
+            var content_order = req.body.content_order;
+            var topic = req.body.topic;
+            var content = req.body.content;
+            var date = req.body.date;
 
             console.log(content_order, topic,content,date);
             var params = [content_order, topic, content, date];
 
-            let sql = "insert into postlist (content_order, title, content, date) values (?,?,?,?)";
+            var sql = "insert into postlist (content_order, title, content, date) values (?,?,?,?)";
             conn.query(sql, params, function(err,rows){
                 if(err)throw err;
                 else{
@@ -53,10 +53,10 @@ router.post('/delete', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let topic = req.body.topic;
-            let date = req.body.date;
-            let params = [topic, date];
-            let sql = "delete from postlist where title = ? and where date = ?";
+            var topic = req.body.topic;
+            var date = req.body.date;
+            var params = [topic, date];
+            var sql = "delete from postlist where title = ? and where date = ?";
             conn.query(sql, params, function(err,rows){
                 if(err)throw err;
                 else{
@@ -72,12 +72,12 @@ router.post('/update', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;
         else{
-            let sql = "update list set";
+            var sql = "update list set";
             conn.query(sql, function(err,rows){
                 if(err)throw err;
                 else{
                     conn.release();
-                    let output = {};
+                    var output = {};
                     output['result'] = "success";
                     output['data'] = rows;
                     res.send(output);

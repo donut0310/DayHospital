@@ -1,15 +1,15 @@
 //para에 게시글 id값 저장
-const para = window.location.href.split('?');
+var para = window.location.href.split('?');
 
 //params
-let currentID;
-let list;
+var currentID;
+var list;
 
 function init(){
     axios.get('/pmpc/select_content_order', {params:{
         id : para[1]
     }
-    }).then((res)=>{
+    }).then(function (res){
         if(res.status === 200){
             if(res.data['result'] == "success"){ 
                 initShow(res.data['data']);
@@ -21,15 +21,15 @@ function init(){
 function initShow(item = []){
     list = item.length;
 
-    let a1 = document.querySelector('.pabBefore a');
-    let a2 = document.querySelector('.pabNext a');    
+    var a1 = document.querySelector('.pabBefore a');
+    var a2 = document.querySelector('.pabNext a');    
 
-    let pabNum = document.querySelector('.pabNum');
-    let pabTitle = document.querySelector('.pabTitle');
-    let pabDate = document.querySelector('.pabDate');
+    var pabNum = document.querySelector('.pabNum');
+    var pabTitle = document.querySelector('.pabTitle');
+    var pabDate = document.querySelector('.pabDate');
     
-    let pabText = document.querySelector('.pabText');
-    let download = document.querySelector('.download a');
+    var pabText = document.querySelector('.pabText');
+    var download = document.querySelector('.download a');
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
@@ -109,7 +109,7 @@ function getCursor(){
 
 //날짜 폼 변경
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }

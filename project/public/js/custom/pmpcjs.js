@@ -1,26 +1,26 @@
 //dynamic add elements
-const preTbody_PC = document.querySelector('#preListPC tbody');
-const fixedTbody_PC = document.querySelector('#fixListPC tbody');
+var preTbody_PC = document.querySelector('#preListPC tbody');
+var fixedTbody_PC = document.querySelector('#fixListPC tbody');
 
-const preTbody_Mobile = document.querySelector('#preListMobile tbody');
-const fixedTbody_Mobile = document.querySelector('#fixListMobile tbody');
+var preTbody_Mobile = document.querySelector('#preListMobile tbody');
+var fixedTbody_Mobile = document.querySelector('#fixListMobile tbody');
 
-const pcPageBtns = document.querySelector('.pcPageBtns');
-const mobilePageBtns = document.querySelector('.mobilePageBtns');
+var pcPageBtns = document.querySelector('.pcPageBtns');
+var mobilePageBtns = document.querySelector('.mobilePageBtns');
 
 //btns
-const searchClicked = document.querySelector('#searchBtn');
+var searchClicked = document.querySelector('#searchBtn');
 searchClicked.addEventListener("click",search);
 
 //params
-let pages;
-let pcCurrentPage;
-let mobileCurrentPage;
+var pages;
+var pcCurrentPage;
+var mobileCurrentPage;
 
 //DB상에 저장된 내용 모두 가져오기
 function init(){
     resetList();
-    axios.get('/pmpc/createBtns').then((res)=>{
+    axios.get('/pmpc/createBtns').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 createBtns(res.data["data"]);
@@ -28,7 +28,7 @@ function init(){
             }
         }
     });
-    axios.get('/pmpc/preList').then((res)=>{
+    axios.get('/pmpc/preList').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 //우선순위 공지사항 리스트
@@ -37,7 +37,7 @@ function init(){
             }
         }
     });
-    axios.get('/pmpc/init').then((res)=>{
+    axios.get('/pmpc/init').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 //추가 공지사항 리스트
@@ -56,8 +56,8 @@ function createBtns(item = []){
             pages = parseInt(item.length/8);
         }
         else pages = parseInt(item.length/8 + 1);
-        let prevBtn = document.createElement('button');
-        let nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','pc');
         prevBtn.innerText = '←';
@@ -65,7 +65,7 @@ function createBtns(item = []){
         pcPageBtns.appendChild(prevBtn);
     
         for(i=1;i<=pages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','pc');
     
             if(i==1){
@@ -98,8 +98,8 @@ function mobileCreateBtns(item = []){
             pages = parseInt(item.length/8);
         }
         else pages = parseInt(item.length/8 + 1);
-        let prevBtn = document.createElement('button');
-        let nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','mobile');
     
@@ -109,7 +109,7 @@ function mobileCreateBtns(item = []){
         mobilePageBtns.appendChild(prevBtn);
     
         for(i=1;i<=pages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','mobile');
     
             if(i==1){
@@ -139,8 +139,8 @@ function createSearchedBtnsPC(item = []){
             pages = parseInt(item.length/8);
         }
         else pages = parseInt(item.length/8 + 1);
-        let nextBtn = document.createElement('button');
-        let prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','searchedPC');
         prevBtn.innerText = '←';
@@ -148,7 +148,7 @@ function createSearchedBtnsPC(item = []){
         pcPageBtns.appendChild(prevBtn);
     
         for(i=1;i<=pages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','searchedPC');
             if(i==1){
                 pageButton.classList.add('current');
@@ -178,8 +178,8 @@ function createSearchedBtnsMobile(item = []){
             pages = parseInt(item.length/8);
         }
         else pages = parseInt(item.length/8 + 1);
-        let nextBtn = document.createElement('button');
-        let prevBtn = document.createElement('button');
+        var nextBtn = document.createElement('button');
+        var prevBtn = document.createElement('button');
         
         prevBtn.classList.add('prevBtn','searchedMobile');
         prevBtn.innerText = '←';
@@ -187,7 +187,7 @@ function createSearchedBtnsMobile(item = []){
         mobilePageBtns.appendChild(prevBtn);
     
         for(i=1;i<=pages;i++){
-            let pageButton = document.createElement('button');
+            var pageButton = document.createElement('button');
             pageButton.classList.add('pageButton','searchedMobile');
             if(i==1){
                 pageButton.classList.add('current');
@@ -228,7 +228,7 @@ function goToPrev(){
         pcCurrentPage.classList.add('current');
         mobileCurrentPage.classList.add('current');
         
-        axios.get('/pmpc/preList').then((res)=>{
+        axios.get('/pmpc/preList').then(function (res){
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 
                     addPreList(res.data["data"]);
@@ -240,7 +240,7 @@ function goToPrev(){
         page_num = pcCurrentPage.value;
         axios.get('/pmpc/page_num', { params :{
             page_num : page_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -267,7 +267,7 @@ function goToNext(){
         pcCurrentPage.classList.add('current');
         mobileCurrentPage.classList.add('current');
         
-        axios.get('/pmpc/preList').then((res)=>{
+        axios.get('/pmpc/preList').then(function (res){
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 
                     addPreList(res.data["data"]);
@@ -279,7 +279,7 @@ function goToNext(){
         page_num = pcCurrentPage.value;
         axios.get('/pmpc/page_num', { params :{
             page_num : page_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -311,7 +311,7 @@ function goToPrevNoPre(){
         page_num = pcCurrentPage.value;
         axios.get('/pmpc/page_num', { params :{
             page_num : page_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -342,7 +342,7 @@ function goToNextNoPre(){
         page_num = pcCurrentPage.value;
         axios.get('/pmpc/page_num', { params :{
             page_num : page_num
-        }}).then((res)=>{
+        }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addList(res.data["data"]);
@@ -355,15 +355,15 @@ function goToNextNoPre(){
 
 //게시글 검색
 function search(){
-    let target = document.querySelector('#selectBy');
-    let searchText = document.querySelector('#searchText').value;
+    var target = document.querySelector('#selectBy');
+    var searchText = document.querySelector('#searchText').value;
     
-    let otn = target.options[target.selectedIndex].value;
+    var otn = target.options[target.selectedIndex].value;
     
     axios.get('/pmpc/selectData',  { params :{
         value: otn,
         text: searchText
-    }}).then((res)=>{
+    }}).then(function (res){
         if(res.status === 200){
             if(res.data['result'] == "success"){
                 if(res.data['data'] == 'init'){
@@ -384,11 +384,11 @@ function showSearchedInit(item = []){
     //이후 데이터 출력
     for(i=0;i<12;i++){
         if(item[i]==null)break;
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
-        let url = document.createElement('a');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
+        var url = document.createElement('a');
         url.innerText = item[i].TITLE;        
 
         tdId.innerText = item[i].ID;
@@ -407,11 +407,11 @@ function showSearchedInit(item = []){
     
     for(i=0;i<12;i++){
         if(item[i]==null)break;
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
-        let url = document.createElement('a');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
+        var url = document.createElement('a');
         url.innerText = item[i].TITLE;        
 
         tdId.innerText = item[i].ID;
@@ -437,7 +437,7 @@ function deleteAndGet(){
     pcCurrentPage.classList.add('notCurrent');
     mobileCurrentPage.classList.add('notCurrent');
     
-    let page_num = this.value;
+    var page_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     pcCurrentPage = this;
@@ -446,7 +446,7 @@ function deleteAndGet(){
     //이전 데이터 삭제
     resetList();
     
-    axios.get('/pmpc/preList').then((res)=>{
+    axios.get('/pmpc/preList').then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){ 
                 addPreList(res.data["data"]);
@@ -457,7 +457,7 @@ function deleteAndGet(){
     //이후 데이터 출력 위해 db 호출
         axios.get('/pmpc/page_num', { params:{
             page_num: page_num
-        }}).then((res)=>{
+        }}).then(function (res){
             if(res.status === 200){
                 if(res.data["result"] == "success"){ 
                     addList(res.data["data"]);
@@ -474,16 +474,16 @@ function searchedDeleteAndGet(){
     pcCurrentPage.classList.add('notCurrent');
     mobileCurrentPage.classList.add('notCurrent');
 
-    let page_num = this.value;
+    var page_num = this.value;
     this.classList.remove('notCurrent');
     this.classList.add('current');
     pcCurrentPage = this;
     mobileCurrentPage = this;
 
-    let target = document.querySelector('#selectBy');
-    let searchText = document.querySelector('#searchText').value;
+    var target = document.querySelector('#selectBy');
+    var searchText = document.querySelector('#searchText').value;
     
-    let otn = target.options[target.selectedIndex].value;
+    var otn = target.options[target.selectedIndex].value;
     
     //이전 데이터 삭제
     resetList();
@@ -493,7 +493,7 @@ function searchedDeleteAndGet(){
         page_num: page_num,
         value: otn,
         text: searchText
-    }}).then((res)=>{
+    }}).then(function (res){
         if(res.status === 200){
             if(res.data["result"] == "success"){
                     if(res.data['data']=='init'){
@@ -512,12 +512,12 @@ function searchedDeleteAndGet(){
 //table에 추가할 공지사항 list 함수
 function addPreList(item = []){
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
         
-        let url = document.createElement('a');
+        var url = document.createElement('a');
         url.innerText = data.TITLE;        
 
         tdId.innerText = "필독";
@@ -537,12 +537,12 @@ function addPreList(item = []){
 
 function addPreListMobile(item = []){
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
         
-        let url = document.createElement('a');
+        var url = document.createElement('a');
         url.innerText = data.TITLE;        
 
         tdId.innerText = "필독";
@@ -562,11 +562,11 @@ function addPreListMobile(item = []){
 
 function addList(item = []){
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
-        let url = document.createElement('a');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
+        var url = document.createElement('a');
         url.innerText = data.TITLE;        
 
         tdId.innerText = data.ID;
@@ -586,12 +586,12 @@ function addList(item = []){
 function addListMobile(item = []){
     
     item.forEach(function(data){
-        let tr = document.createElement('tr');
-        let tdId = document.createElement('td');
-        let tdTitle = document.createElement('td');
-        let tdDate = document.createElement('td');
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdTitle = document.createElement('td');
+        var tdDate = document.createElement('td');
         
-        let url = document.createElement('a');
+        var url = document.createElement('a');
         url.innerText = data.TITLE;        
 
         tdId.innerText = data.ID;
@@ -611,7 +611,7 @@ function addListMobile(item = []){
 
 //날짜 폼 변경
 function date_format(data){
-    let date;
+    var date;
     date = data.slice(0,10);
     return date;
 }
@@ -634,14 +634,14 @@ function resetList(){
 //버튼 리셋 함수
 //PC 버전만
 function resetBtns(){
-    let pageBtns = document.querySelector('.pcPageBtns');
+    var pageBtns = document.querySelector('.pcPageBtns');
     while(pageBtns.hasChildNodes()){
         pageBtns.removeChild(pageBtns.firstChild);
     }
 }
 //Mobile버전
 function mobileResetBtns(){
-    let pageBtns = document.querySelector('.mobilePageBtns');
+    var pageBtns = document.querySelector('.mobilePageBtns');
     while(pageBtns.hasChildNodes()){
         pageBtns.removeChild(pageBtns.firstChild);
     }
