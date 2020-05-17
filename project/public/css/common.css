@@ -1645,6 +1645,7 @@ aside li{
     display:flex;
     justify-content: center;
 }
+
 .horizonlist>li{
     float:left;
     padding : 20px;
@@ -1660,6 +1661,7 @@ aside li{
 
 .programNav #articleList{
     margin-top: 3%;
+    cursor: pointer;
 }
 
 .programNav #articleList span{
