@@ -112,7 +112,7 @@
     #mobile_page_id .mCenterintro_article{height : 700px;}
     #mobile_page_id .sub_article_body #mobile_articleList h4{font-size: 1.1em;}
     #mobile_page_id .sub_article_body #mobile_articleList span{font-size: 0.9em;}
-    #mobile_page_id .mobile_sub_article .sub_article_body{height : 550px;}
+    #mobile_page_id .mobile_sub_article .sub_article_body{height : 450px;}
 
     #mobile_page_id #plani_img_div {width : 95%; height : 800px; margin : 0 auto;}
     #mobile_page_id .download{font-size: 1.2em;}
@@ -135,7 +135,8 @@
     }
 
     #mobile_page_id .graphImg{height : 150px;}
-    #mobile_page_id #mobile_articleList li ul li{height: 50px; margin-bottom: 20px;}
+    #mobile_page_id #mobile_articleList li ul li{height: 20px; margin-bottom: 20px;}
+    #mobile_page_id #mobile_articleList li #insurance_inside_ul li{height: 50px; margin-bottom: 20px;}
     #mobile_page_id #mobile_articleList li ul li h4{text-decoration: underline;}
     #mobile_page_id #mobile_articleList li ul li img{display: none;}
 }
@@ -2585,22 +2586,84 @@ aside li{
 }
 
 /* mobile_facility */
-.mobile_facility_photozone{
+.mobile-slideShow-container{
     width : 90%;
-    height : 100%;
+    height : 400px;
+    position: relative;
     margin : 0 auto;
 }
 
-.mobile_facility_ph{
-    float : left;
-    width : 45%;
-    margin : 2%;
-    height : 25%;
+.mobile-facilitySlide{
+    display: none;
 }
 
-.mobile_facility_ph img{
+.mobile-facilitySlide img{
     width : 100%;
-    height : 100%;
+    height: 400px;
+}
+
+.mobile-facility-prev, .mobile-facility-next{ /* facility slide show prev next btn */
+    cursor: pointer;
+    position : absolute;
+    top : 50%;
+    width : auto;
+    margin-top : -22px;
+    padding : 16px;
+    color : white;
+    background-color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    font-size: 18px;
+    transition : 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.mobile-facility-next{
+    right : 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.mobile-facility-text{
+    color : #f2f2f2;
+    font-size : 15px;
+    padding : 8px 12px;
+    position : absolute;
+    bottom : 8px;
+    width : 100%;
+    text-align: center;
+}
+
+.numbertext{
+    color : #f2f2f2;
+    font-size : 15px;
+    padding : 8px 12px;
+    position : absolute;
+    top : 0;
+}
+
+.mobile-dot-slide{
+    text-align: center;
+}
+
+.mobile-dot-slide .dot{
+    margin-top : 10px;
+}
+
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration : 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4;}
+    to{opacity: 1;}
+}
+
+@keyframes fade{
+    from{opacity: .4;}
+    to{opacity: 1;}
 }
 
 /* mobile_mapin */

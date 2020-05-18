@@ -1,4 +1,4 @@
-//Facility Slide Show
+//Facility Slide Show PC
 let slideIndex = 1;
 showSlides(slideIndex); //first slide show on
 
