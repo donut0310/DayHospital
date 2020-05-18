@@ -139,6 +139,10 @@
     #mobile_page_id #mobile_articleList li #insurance_inside_ul li{height: 50px; margin-bottom: 20px;}
     #mobile_page_id #mobile_articleList li ul li h4{text-decoration: underline;}
     #mobile_page_id #mobile_articleList li ul li img{display: none;}
+
+    #mobile_page_id .mobile-slideShow-container {height: 400px;}
+    #mobile_page_id .mobile-slideShow-container img {height: 400px;}
+    #mobile_page_id .mobile-dot-slide { display: none;}
 }
 
 @media (max-width:375px){
@@ -2588,7 +2592,7 @@ aside li{
 /* mobile_facility */
 .mobile-slideShow-container{
     width : 90%;
-    height : 400px;
+    height : 600px;
     position: relative;
     margin : 0 auto;
 }
@@ -2599,7 +2603,7 @@ aside li{
 
 .mobile-facilitySlide img{
     width : 100%;
-    height: 400px;
+    height: 600px;
 }
 
 .mobile-facility-prev, .mobile-facility-next{ /* facility slide show prev next btn */
@@ -2666,6 +2670,16 @@ aside li{
     to{opacity: 1;}
 }
 
+.mdot{
+    cursor : pointer;
+    height : 15px;
+    width : 15px;
+    margin : 20px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
 /* mobile_mapin */
 
 .mobile_main_map{
