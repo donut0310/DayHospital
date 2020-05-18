@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../../css/common.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="../../assets/images/favicon-16x16.png">
     <link rel="icon" href="../../assets/images/favicon-16x16.png">
@@ -94,30 +93,49 @@
                 <span id="pageLocation_right">홈 > 센터소개 > 시설현황</span>
             </div>
             <div class="articleBody">
-                <div class="facility_big_photo">
-                    <div id="fa_photo_big">
-                       <img style = "width:100%;height:100%" src = "../../assets/images/facility1.png">
+                <div class="slideshow-container">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">1 / 6</div>
+                        <img src='../../assets/images/facility1.png'>
+                        <div class="facility-text"></div>
                     </div>
-                </div>
-                <div class="facility_photo">
-                    <div class="fa fa_current" value = 0 id="fa_photo1">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility1.png">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">2 / 6</div>
+                        <img src='../../assets/images/facility2.png'>
+                        <div class="facility-text"></div>
                     </div>
-                    <div class="fa" value = 1 id="fa_photo2">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility2.png">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">3 / 6</div>
+                        <img src='../../assets/images/facility3.png'>
+                        <div class="facility-text"></div>
                     </div>
-                    <div class="fa" value = 2 id="fa_photo3">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility3.png">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">4 / 6</div>
+                        <img src='../../assets/images/facility4.png'>
+                        <div class="facility-text"></div>
                     </div>
-                    <div class="fa" value = 3 id="fa_photo4">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility4.png">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">5 / 6</div>
+                        <img src='../../assets/images/facility5.png'>
+                        <div class="facility-text"></div>
                     </div>
-                    <div class="fa" value = 4 id="fa_photo5">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility5.png">
+                    <div class="facilitySlide fade">
+                        <div class="numbertext">6 / 6</div>
+                        <img src='../../assets/images/facility6.png'>
+                        <div class="facility-text"></div>
                     </div>
-                    <div class="fa" value = 5 id="fa_photo6">
-                        <img style = "width:100%;height:100%" src = "/assets/images/facility6.png">
-                    </div>
+
+                    <a class="facility-prev" onclick="plusSlides(-1)">&#10094</a>
+                    <a class="facility-next" onclick="plusSlides(1)">&#10095</a>
+                </div><br>
+
+                <div class="dot-slide">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span> 
                 </div>
             </div>
         </article>
@@ -264,9 +282,7 @@
         </footer>        
 </div>
   
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/custom/facilityjs.js"></script>
+    <script src="../../js/custom/facilityjs.js"></script>
 
     <script>
         $(document).ready(function () {
