@@ -5,6 +5,10 @@ router.get('/',function(req, res, next){
     res.render('./index.html');
 });
 
+router.get('/text/plain',function(req, res, next){
+    res.render('./robots.txt');
+});
+
 router.get('/popup',function(req, res, next){
     res.render('popup.html');
 });
