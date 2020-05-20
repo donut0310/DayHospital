@@ -5,8 +5,16 @@ router.get('/',function(req, res, next){
     res.render('./index.html');
 });
 
-router.get('/text/plain',function(req, res, next){
+router.get('/robots.txt',function(req, res, next){
     res.render('./robots.txt');
+});
+
+router.get('/sitemap.xml',function(req, res, next){
+    res.render('./sitemap.xml');
+});
+
+router.get('/rss.xml',function(req, res, next){
+    res.render('./rss.xml');
 });
 
 router.get('/popup',function(req, res, next){
