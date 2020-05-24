@@ -107,6 +107,7 @@ router.get('/personal',function(req, res, next){
     res.render('./personal.html');
 });
 
+/*
 // error 500
 app.use(function(err, req, res, next) {
     res.status(500).render('./error500.html');
@@ -116,5 +117,6 @@ app.use(function(err, req, res, next) {
 app.use(function(req, res, next){
     res.status(404),send('Sorry cant finde that!');
 });
+*/
 
 module.exports = router;
