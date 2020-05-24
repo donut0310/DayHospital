@@ -1,0 +1,34 @@
+<%- include('../header') %>
+
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">이름</label>
+      <input disabled value="<%=customer.USER_NAME%>" type="text" class="form-control"  >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">비밀번호</label>
+      <input disabled value="<%=customer.USER_PASSWORD%>" type="text" class="form-control"  >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">제목</label>
+      <input disabled value="<%=customer.TITLE%>" type="text" class="form-control"  placeholder="암호">
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">내용</label>
+    <textarea disabled type="text" class="form-control" ><%=customer.CONTENT%></textarea>
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">휴대폰번호</label>
+    <input disabled value="<%=customer.USER_PHONE%>" type="text" class="form-control"  placeholder="암호">
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">등록일</label>
+    <input disabled value="<%=customer.DATE%>" type="text" class="form-control"  placeholder="암호">
+    </div>
+
+    <button onclick="window.history.back(-1);" class="btn btn-default" type="submit">뒤로가기</button>
+
+</form>
+  
+
+<%- include('../footer') %>
