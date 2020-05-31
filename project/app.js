@@ -17,6 +17,7 @@ var consultingRouter = require('./routes/consulting');
 var questionRouter = require('./routes/question');
 
 var mealRouter = require('./routes/meal');
+var adminRouter = require('./routes/admin');
 
 //라우터<<//
 
@@ -46,6 +47,9 @@ app.use('/photo',photoRouter);
 app.use('/photoMobile',photoMobileRouter);
 app.use('/meal',mealRouter);
 
+/* Admin Router */
+app.use('/admin', adminRouter);
+
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -54,6 +58,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  console.error(err);
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
