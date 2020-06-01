@@ -119,4 +119,8 @@ app.use(function(req, res, next){
 });
 */
 
+router.get('/soccer', function(req,res,next){
+    res.render('./soccer.html')
+})
+
 module.exports = router;
