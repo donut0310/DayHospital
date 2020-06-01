@@ -29,7 +29,7 @@ function initShow(item = []){
     var pabDate = document.querySelector('.pabDate');
     
     var pabText = document.querySelector('.pabText');
-    var download = document.querySelector('.download a');
+    //var download = document.querySelector('.download a');
 
     if(list == 1){
         //이전 글, 다음 글 모두 없을때
