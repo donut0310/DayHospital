@@ -42,6 +42,10 @@
 //     infowindow.close();
 // });
 
+
+//지도를 삽입할 HTML 요소 또는 HTML 요소의 id를 지정합니다.
+var mapDiv = document.querySelector('.map'); // 'map'으로 선언해도 동일
+
 var mapOptions = {
     center : new naver.maps.LatLng(37.657607, 127.045947),
     zoom : 10
