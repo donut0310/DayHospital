@@ -1,6 +1,8 @@
 <%- inclue('../header') %>
     <ul class="list-group">
-
+        <% preposts.map((prepostlist) => { %>
+            <li class="list-group-item" onclick="location.href=('/admin/prepostlist/<%=prepostlist.ID%>');"><%= prepostlist.TITLE %></li></a>
+        <% }) %>
     </ul>
 
     <nav>
@@ -10,7 +12,14 @@
                     <span aria-hidden="true">&laquo;</span>
                   </a>
             </li>
-
+            <% for let i =1; i<=parseInt((preposts.length)/10 +1; i++) { %>
+                <li><a href="?page=<%=i%>"><%= i %></a></li>
+            <% } %>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
         </ul>
     </nav>
 

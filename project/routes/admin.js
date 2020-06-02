@@ -21,9 +21,43 @@ router.get('/prepost', function(req,res,next) { //우선순위 공지사항
     con.query("SELECT * FROM prepostlist order by id desc", function(err,result,fields){
         if(err) throw err;
         res.render('admin/prepostlist/index.ejs',{
-            preposts: result
+            preposts: result 
         });
     })
+});
+
+router.get('/prepost/:id', function(req,res,next) { //우선순위 공지사항 디테일 페이지
+    const id = req.params.id;
+  
+    con.connect(function(err) {
+        con.query("SELECT * FROM customer where id = ? order by id desc", id,  function (err, result, fields) {
+          if (err) throw err;
+          res.render('admin/prepostlist/detail.ejs', {
+              preposts: result[0]
+            }
+          );
+        });
+      });
+});
+
+router.get('/prepost/:id', function(req,res,next) { //우선순위 공지사항 등록 페이지
+    
+    let id=req.params.id;
+    let title = req.params.title;
+    let content = req.params.content;
+    let date = req.params.date;
+    
+    let DATA = [id,title,content,date];
+    
+    con.connect(function(err) {
+        con.query("SELECT * FROM customer where id = ? order by id desc", id,  function (err, result, fields) {
+          if (err) throw err;
+          res.render('admin/prepostlist/register.ejs', {
+              preposts: result[0]
+            }
+          );
+        });
+      });
 });
 
 router.get('/post', function(req,res,next) { // 공지사항
