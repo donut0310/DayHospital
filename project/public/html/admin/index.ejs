@@ -1,24 +1,24 @@
-      <%- include('./header') %>
-      <ul class="list-group">
-        <% customers.map((customer) => { %>
-          <li class="list-group-item" onclick="location.href=('./customer/<%=customer.ID%>');"><%= customer.TITLE %></li></a>
-        <% }) %>
-      </ul>
-      
-      <nav>
-        <ul class="pagination">
-          <li>
-            <a href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <% for(let i = 1; i <= parseInt((customers.length) / 10) + 1; i++) { %>
-          <li><a href="?page=<%=i%>"><%= i %></a></li>
-          <% } %>
-          <li>
-            <a href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+<%- include('./header') %>
+<ul class="list-group">
+  <% customers.map((customer) => { %>
+    <li class="list-group-item" onclick="location.href=('./customer/<%=customer.ID%>');"><%= customer.TITLE %></li></a>
+  <% }) %>
+</ul>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <% for(let i = 1; i <= parseInt((customers.length) / 10) + 1; i++) { %>
+    <li><a href="?page=<%=i%>"><%= i %></a></li>
+    <% } %>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

@@ -16,51 +16,7 @@ router.get('/', function(req,res,next) {
     res.redirect('/admin/customer');
 });
 
-router.get('/prepost', function(req,res,next) { //우선순위 공지사항
-    let page = req.query.page ? req.query.page : 1;
-    con.query("SELECT * FROM prepostlist order by id desc", function(err,result,fields){
-        if(err) throw err;
-        res.render('admin/prepostlist/index.ejs',{
-            preposts: result 
-        });
-    })
-});
-
-router.get('/prepost/:id', function(req,res,next) { //우선순위 공지사항 디테일 페이지
-    const id = req.params.id;
-  
-    con.connect(function(err) {
-        con.query("SELECT * FROM customer where id = ? order by id desc", id,  function (err, result, fields) {
-          if (err) throw err;
-          res.render('admin/prepostlist/detail.ejs', {
-              preposts: result[0]
-            }
-          );
-        });
-      });
-});
-
-router.get('/prepost/:id', function(req,res,next) { //우선순위 공지사항 등록 페이지
-    
-    let id=req.params.id;
-    let title = req.params.title;
-    let content = req.params.content;
-    let date = req.params.date;
-    
-    let DATA = [id,title,content,date];
-    
-    con.connect(function(err) {
-        con.query("SELECT * FROM customer where id = ? order by id desc", id,  function (err, result, fields) {
-          if (err) throw err;
-          res.render('admin/prepostlist/register.ejs', {
-              preposts: result[0]
-            }
-          );
-        });
-      });
-});
-
-router.get('/post', function(req,res,next) { // 공지사항
+router.get('/prepost', function(req,res,next) {
     res.render('./admin/index.ejs');
 });
 
@@ -68,22 +24,22 @@ router.get('/meal', function(req,res,next) {
     res.render('./admin/index.ejs');
 });
 
-router.get('/photo', function(req,res,next){ // 갤러리
-    res.render('./admin/photo/index.ejs');
+router.get('/post', function(req,res,next) {
+    res.render('./admin/index.ejs');
 });
 
-router.get('/customer', function(req,res,next) { //문의 및 상담 요청시
+router.get('/customer', function(req,res,next) {
     let page = req.query.page ? req.query.page : 1;
     
     con.query("SELECT * FROM customer order by id desc", function (err, result, fields) {
         if (err) throw err;
         res.render('admin/customer/index.ejs', {
-            customers: result //프론트로 넘기는 인자
+            customers: result
         });
     });
 });
 
-router.get('/customer/:id', function(req,res,next) { //문의및 상담 디테일 페이지
+router.get('/customer/:id', function(req,res,next) {
 
     const id = req.params.id;
   
