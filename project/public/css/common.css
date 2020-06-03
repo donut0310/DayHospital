@@ -543,10 +543,22 @@ footer{
 }
 
 .footer_logo{
-    width : 30%;
+    width : 20%;
     height : 100%;
     float : left;
 }
+
+#footer_logo_div{
+    width : 30%;
+    height : 55%;
+    float : right;
+}
+
+#footer_logo_div img{
+    width : 100%;
+    height : 100%;
+}
+
 
 .footer_information1{
     width : 25%;
@@ -571,15 +583,27 @@ footer{
 }
 
 .footer_information2{
-    width:30%;
+    width:40%;
     height : 100%;
     float : left;
     margin-left : 5%;
 }
 
 .footer_information2 p{
+    display: inline-block;
     margin : 5px 0 5px 0;
     color : black;
+}
+
+.footer_inf2_left{
+    float : left;
+    margin-right: 50px;
+}
+
+.footer_information2 img{
+    width : 30%;
+    height: 150px;
+    float: left;
 }
 
 /* modal last of css */
@@ -1298,7 +1322,7 @@ aside li{
 
 .howEnter{
     width : 100%;
-    height : 150px;
+    height : 300px;
 }
 
 .howEnter img{
