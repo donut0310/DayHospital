@@ -16,8 +16,19 @@ router.get('/', function(req,res,next) {
     res.redirect('/admin/customer');
 });
 
-router.get('/prepost', function(req,res,next) {
-    res.render('./admin/index.ejs');
+// router.get('/prepost', function(req,res,next) { //우선순위 공지사항
+//     let page = req.query.page ? req.query.page : 1;
+    
+//     con.query("SELECT * FROM prepostlist order by id desc", function (err, result, fields) {
+//         if (err) throw err;
+//         res.render('admin/prepostlist/index.ejs', {
+//             preposts: result
+//         });
+//     });
+// });
+
+router.get('/prepost',function(req,res,next){
+    res.render('/.admin/index.ejs');
 });
 
 router.get('/meal', function(req,res,next) {
