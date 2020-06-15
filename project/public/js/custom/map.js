@@ -23,7 +23,7 @@ var map = new kakao.maps.Map(mapContainer, options);
 // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
 // marker.setMap(null); 
 // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
-var iwContent = '<div style="padding:8px; text-align : center; width : 150px;">성모사랑데이케어센터</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:8px; text-align : center; width : 200px;">성모사랑데이케어센터</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 var iwPosition = new kakao.maps.LatLng(37.657607, 127.045947);
 
 // 인포윈도우를 생성합니다
