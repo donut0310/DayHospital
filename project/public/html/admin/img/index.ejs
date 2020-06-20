@@ -1,0 +1,28 @@
+<%- include('../header') %>
+    <ul class="list-group">
+        <% imgs.map((img) => { %>
+            <li class="list-group-item" onclick="location.href=('/admin/img/<%=img.ID%>');"><%= img.TITLE %></li></a>
+        <% }) %>
+    </ul>
+
+    <nav>
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+            </li>
+            <% for (let i =1; i<=parseInt(imgs.length)/10 +1; i++) { %>
+                <li><a href="?page=<%=i%>"><%= i %></a></li>
+            <% } %>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+        </ul>
+        <a href ="./img/register"><button type="button" value="글쓰기" style="float: right; margin-right: 20px;">글쓰기</button></a>
+    </nav>
+
+<%- include('../footer') %>
+

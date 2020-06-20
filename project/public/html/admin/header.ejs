@@ -29,7 +29,7 @@
           <li id="1"><a href="/admin/prepostlist">우선순위</a></li>
           <li id="2"><a href="/admin/postlist">공지사항</a></li>
           <li id="3"><a href="/admin/meal">주간식단표</a></li>
-          <li id="4"><a href="/admin/post">갤러리</a></li>
+          <li id="4"><a href="/admin/img">갤러리</a></li>
           <li id="5"><a href="/admin/customer">입소문의 및 상담</a></li>
           <li id="6"><a href="/admin/consulting">데이케어센터 컨설팅 문의</a></li>
 
@@ -53,6 +53,7 @@
       } // function handleClick
 
     function init(){
+      li[0].className = "active";
       for ( var i =0; i < li.length; i++){
       li[i].addEventListener("click",handleClick);
       }
