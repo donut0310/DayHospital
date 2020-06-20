@@ -63,7 +63,7 @@ router.get('/prepostlist/:id',function(req,res,next){
 router.get('/meal', function(req,res,next) {
     let page = req.query.page ? req.query.page : 1;
     
-    con.query("SELECT * FROM postlist order by id desc", function (err, result, fields) {
+    con.query("SELECT * FROM meal order by id desc", function (err, result, fields) {
         if (err) throw err;
         res.render('admin/meal/index.ejs', {
             meals: result
@@ -77,14 +77,14 @@ router.get('/meal/register',function(req,res,next){
   
 })
 
-router.post('/meal/register',function(req,res,next){
-    const id = req.body.name;
+router.post('/meal',function(req,res,next){
+    const file_name = req.body.file_name;
     const title = req.body.title;
     const content = req.body.content;
     const date = req.body.date;
-    const datas = [name,title,content];
+    const datas = [file_name,title,content,date];
     
-    con.query("insert into meal(ID, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into meal(FILE_NAME, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/meal');
     });
@@ -118,18 +118,16 @@ router.get('/postlist', function(req,res,next) {
 });
 
 router.get('/postlist/register',function(req,res,next){
-    res.render('admin/prepostlist/register.ejs');
+    res.render('admin/postlist/register.ejs');
   
 })
 
-router.post('/postlist/register',function(req,res,next){
-    const id = req.body.name;
+router.post('/postlist',function(req,res,next){
     const title = req.body.title;
     const content = req.body.content;
-    const date = req.body.date;
-    const datas = [name,title,content];
+    const datas = [title,content];
     
-    con.query("insert into postlist(ID, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into postlist(TITLE, CONTENT, DATE) values(?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/postlist');
     });
@@ -179,6 +177,51 @@ router.get('/customer/:id', function(req,res,next) {
 
 router.get('/consultings', function(req,res,next) {
     res.render('./admin/index.ejs');
+});
+
+
+router.get('/img',function(req,res,next){
+    let page = req.query.page ? req.query.page : 1;
+    
+    con.query("SELECT * FROM img order by id desc", function (err, result, fields) {
+        if (err) throw err;
+        res.render('admin/img/index.ejs', {
+            imgs: result
+        });
+    
+    });
+});
+
+router.get('/img/register',function(req,res,next){
+    res.render('admin/img/register.ejs');
+  
+})
+
+router.post('/img',function(req,res,next){
+    const title = req.body.title;
+    const content = req.body.content;
+    const date = req.body.date;
+    const datas = [name,title,content];
+    
+    con.query("insert into prepostlist(TITLE, CONTENT, DATE) values(?,?,now())",datas,function(err,rows){
+        if(err) throw err;
+        res.redirect('/admin/prepostlist');
+    });
+});
+
+router.get('/prepostlist/:id',function(req,res,next){
+    const id = req.params.id;
+  
+    con.connect(function(err) {
+        con.query("SELECT * FROM prepostlist where id = ? order by id desc", id,  function (err, result, fields) {
+            
+            if (err) throw err;
+          res.render('admin/prepostlist/detail.ejs', {
+              prepost: result[0]
+            }
+          );
+        });
+      });
 });
 
 
