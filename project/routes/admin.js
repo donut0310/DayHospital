@@ -33,14 +33,12 @@ router.get('/prepostlist/register',function(req,res,next){
   
 })
 
-router.post('/prepostlist/register',function(req,res,next){
-    const id = req.body.name;
+router.post('/prepostlist',function(req,res,next){
     const title = req.body.title;
     const content = req.body.content;
-    const date = req.body.date;
-    const datas = [name,title,content];
+    const datas = [title,content];
     
-    con.query("insert into prepostlist(ID, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into prepostlist(TITLE, CONTENT, DATE) values(?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/prepostlist');
     });
@@ -107,7 +105,7 @@ router.get('/meal/:id',function(req,res,next){
       });
 });
 
-router.get('/post', function(req,res,next) {
+router.get('/postlist', function(req,res,next) {
     let page = req.query.page ? req.query.page : 1;
     
     con.query("SELECT * FROM postlist order by id desc", function (err, result, fields) {
