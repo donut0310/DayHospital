@@ -18,11 +18,14 @@ var questionRouter = require('./routes/question');
 
 var mealRouter = require('./routes/meal');
 var adminRouter = require('./routes/admin');
+var methodOverride = require('method-override');
 
 //라우터<<//
 
 // express 연결
 var app = express();
+
+app.use(methodOverride('_method'));
 
 app.set('views', path.join(__dirname, 'public/html'));
 app.set('view engine', 'ejs');

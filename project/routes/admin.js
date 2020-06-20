@@ -62,6 +62,32 @@ router.get('/prepostlist/:id',function(req,res,next){
       });
 });
 
+router.put('/prepostlist/:id',function(req,res,next){
+    const id = req.params.id;
+    const title = req.body.title;
+    const content = req.body.content;
+
+    con.connect(function(err) {
+        con.query("update prepostlist set title = ?, content = ? where id = ?", [title, content, id],  function (err, result, fields) {
+            if (err) throw err;
+            res.redirect("/admin/prepostlist");
+        });
+      });
+});
+
+router.delete('/prepostlist/:id',function(req,res,next){
+    const id = req.params.id;
+    console.log('delete')
+    con.connect(function(err) {
+        con.query("delete FROM prepostlist where id = ?", id,  function (err, result, fields) {
+            if (err) throw err;
+            res.redirect("/admin/prepostlist");
+        });
+      });
+});
+
+
+
 
 router.get('/meal', function(req,res,next) {
     let page = req.query.page ? req.query.page : 1;
@@ -137,7 +163,6 @@ router.get('/postlist', function(req,res,next) {
 
 router.get('/postlist/register',function(req,res,next){
     res.render('admin/postlist/register.ejs');
-  
 })
 
 router.post('/postlist',function(req,res,next){
@@ -162,6 +187,29 @@ router.get('/postlist/:id',function(req,res,next){
               post: result[0]
             }
           );
+        });
+      });
+});
+
+router.put('/postlist/:id',function(req,res,next){
+    const id = req.params.id;
+    const title = req.body.title;
+    const content = req.body.content;
+
+    con.connect(function(err) {
+        con.query("update postlist set title = ?, content = ? where id = ?", [title, content, id],  function (err, result, fields) {
+            if (err) throw err;
+            res.redirect("/admin/postlist");
+        });
+      });
+});
+
+router.delete('/postlist/:id',function(req,res,next){
+    const id = req.params.id;
+    con.connect(function(err) {
+        con.query("delete FROM postlist where id = ?", id,  function (err, result, fields) {
+            if (err) throw err;
+            res.redirect("/admin/postlist");
         });
       });
 });

@@ -1,26 +1,42 @@
 <%- include('../header') %>
 
-<form>
+<form id="form" method="post" action="/admin/prepostlist/<%=prepost.ID%>">
     <div class="form-group">
       <label for="exampleInputEmail1">번호</label>
-      <input disabled value="<%=prepost.ID%>" type="text" class="form-control">
+      <input disabled value="<%=prepost.ID%>" name="id" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">제목</label>
-      <input disabled value="<%=prepost.TITLE%>" type="text" class="form-control"  placeholder="암호">
+      <input  value="<%=prepost.TITLE%>" name="title" type="text" class="form-control"  placeholder="암호">
     </div>
     <div class="form-group">
     <label for="exampleInputPassword1">내용</label>
-    <textarea disabled type="text" class="form-control" ><%=prepost.CONTENT%></textarea>
+    <textarea  type="text" name="content" class="form-control" ><%=prepost.CONTENT%></textarea>
     </div>
     <div class="form-group">
     <label for="exampleInputPassword1">등록일</label>
     <input disabled value="<%=prepost.DATE%>" type="text" class="form-control"  placeholder="암호">
     </div>
 
-    <button onclick="window.history.back(-1);" class="btn btn-default" type="submit">뒤로가기</button>
-
+    <button onclick="window.history.back();" class="btn btn-default" type="button">뒤로가기</button>
+    <button onclick="del()"; class="btn btn-alert" type="button">삭제</button>
+    <button onclick="edit()"; class="btn btn-alert" type="button">수정</button>
 </form>
+
+<script>
+  function edit() {
+    var form = document.getElementById('form');
+    form.action = form.action + '?_method=PUT';
+    form.submit();
+  }
+  
+  function del() {
+    var form = document.getElementById('form');
+    form.action = form.action + '?_method=DELETE';
+    form.submit();
+  }
+
+</script>
   
 
 <%- include('../footer') %>
