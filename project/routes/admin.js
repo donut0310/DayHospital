@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-
 //DB 연결
 const mysql = require('mysql');
 const dbconfig = require('./config/dbconfig.js');
 const con = mysql.createConnection(dbconfig);
+
+const fs = require('fs'); // file System
+const multer = require('multer');   
+const upload = multer({dest :'../project/public/assets/uploads/' , limits :{fileSize : 10 * 1024 * 1024}});
 
 router.get('/', function(req,res,next) {
     /*
@@ -74,16 +77,31 @@ router.get('/meal', function(req,res,next) {
 
 router.get('/meal/register',function(req,res,next){
     res.render('admin/meal/register.ejs');
-  
-})
+});
 
-router.post('/meal',function(req,res,next){
-    const file_name = req.body.file_name;
+router.post('/meal',upload.array('file_name',10), function(req,res,next){
+
+    const file_name = req.files[0].originalname;
     const title = req.body.title;
     const content = req.body.content;
     const date = req.body.date;
     const datas = [file_name,title,content,date];
-    
+
+    console.log(req.files[0].originalname);
+    console.log(req.body.file_name);
+
+    // fs.readFile(req.files.file_name.path, function(error, data){
+    //     const filePath = __dirname + "\\files\\" + file_name;
+    //     console.log(filePath);
+    //     fs.writeFile(filePath, data, function(error){
+    //         if(err) {
+    //             throw err;
+    //         } else{
+    //             res.redirect("/admin/meal");
+    //         }
+    //     })
+    // });
+
     con.query("insert into meal(FILE_NAME, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/meal');
@@ -175,9 +193,32 @@ router.get('/customer/:id', function(req,res,next) {
       });
 })
 
-router.get('/consultings', function(req,res,next) {
-    res.render('./admin/index.ejs');
+router.get('/consulting', function(req,res,next) {
+    let page = req.query.page ? req.query.page : 1;
+    
+    con.query("SELECT * FROM consulting order by id desc", function (err, result, fields) {
+       
+        if (err) throw err;
+        res.render('admin/consulting/index.ejs', {
+            consults: result
+        });
+    });
 });
+
+router.get('/consulting/:id', function(req,res,next) {
+
+    const id = req.params.id;
+  
+    con.connect(function(err) {
+        con.query("SELECT * FROM consulting where id = ? order by id desc", id,  function (err, result, fields) {
+          if (err) throw err;
+          res.render('admin/consulting/detail.ejs', {
+              consult : result[0]
+            }
+          );
+        });
+      });
+})
 
 
 router.get('/img',function(req,res,next){
