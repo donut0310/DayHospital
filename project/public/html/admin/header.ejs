@@ -1,65 +1,66 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-      
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
-  </head>
-  <body>
+
+<head>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hello, world!</title>
+</head>
+
+<body>
 
 
-<nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-9">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand" >데이케어센터 관리자</span>
+        <span class="navbar-brand">데이케어센터 관리자</span>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
         <ul class="nav navbar-nav">
-          <li id="1"><a href="/admin/prepostlist">우선순위</a></li>
-          <li id="2"><a href="/admin/postlist">공지사항</a></li>
-          <li id="3"><a href="/admin/meal">주간식단표</a></li>
-          <li id="4"><a href="/admin/img">갤러리</a></li>
-          <li id="5"><a href="/admin/customer">입소문의 및 상담</a></li>
-          <li id="6"><a href="/admin/consulting">데이케어센터 컨설팅 문의</a></li>
+          <li id="prepostlist"><a href="/admin/prepostlist">우선순위</a></li>
+          <li id="postlist"><a href="/admin/postlist">공지사항</a></li>
+          <li id="meal"><a href="/admin/meal">주간식단표</a></li>
+          <li id="img"><a href="/admin/img">갤러리</a></li>
+          <li id="customer"><a href="/admin/customer">입소문의 및 상담</a></li>
+          <li id="consulting"><a href="/admin/consulting">데이케어센터 컨설팅 문의</a></li>
 
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-  </body>
-  <script>
+</body>
+<script>
+  
+  function liActive(){
     const li = document.querySelectorAll('li');
+    console.log(window.location.href);
+    const link = window.location.href;
+    let id;
+    if (link.indexOf("/prepostlist")>-1) id = "prepostlist";
+    if (link.indexOf("/consulting")>-1) id = "consulting";
+    if (link.indexOf("/customer")>-1) id = "customer";
+    if (link.indexOf("/img")>-1) id = "img";
+    if (link.indexOf("/meal")>-1) id = "meal";
+    if (link.indexOf("/postlist")>-1) id = "postlist";
 
-    function handleClick(event){
-      const target = event.target;
-      const index = target.parentNode;
-
-      for ( var i=0; i<li.length;i++){
-        li[i].className = "";
-      }
-
-      li[index.id-1].className = "active";
-      } // function handleClick
-
-    function init(){
-      li[0].className = "active";
-      for ( var i =0; i < li.length; i++){
-      li[i].addEventListener("click",handleClick);
-      }
+    for(let i=0;i<li.length;i++){
+      if (li[i].id == id) li[i].className = "active";
     }
+  }
+  liActive();
 
-    init();
+</script>
 
-  </script>
-  </html>
+</html>
