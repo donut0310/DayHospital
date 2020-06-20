@@ -1,7 +1,7 @@
 <%- include('../header') %>
     <ul class="list-group">
-        <% preposts.map((prepostlist) => { %>
-            <li class="list-group-item" onclick="location.href=('/admin/prepostlist/<%=prepostlist.ID%>');"><%= prepostlist.TITLE %></li></a>
+        <% meals.map((meal) => { %>
+            <li class="list-group-item" onclick="location.href=('/admin/meal/<%=meal.ID%>');"><%= meal.TITLE %></li></a>
         <% }) %>
     </ul>
 
@@ -12,7 +12,7 @@
                     <span aria-hidden="true">&laquo;</span>
                   </a>
             </li>
-            <% for (let i =1; i<=parseInt(preposts.length)/10 +1; i++) { %>
+            <% for (let i =1; i<=parseInt(meals.length)/10 +1; i++) { %>
                 <li><a href="?page=<%=i%>"><%= i %></a></li>
             <% } %>
                 <li>
@@ -21,7 +21,7 @@
                     </a>
                 </li>
         </ul>
-        <a href ="./prepostlist/register"><button type="button" value="글쓰기" style="float: right; margin-right: 20px;">글쓰기</button></a>
+        <a href ="./meal/register"><button type="button" value="글쓰기" style="float: right; margin-right: 20px;">글쓰기</button></a>
     </nav>
 
 <%- include('../footer') %>

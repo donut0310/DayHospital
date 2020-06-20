@@ -26,13 +26,42 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/admin/prepostlist">공지사항</a></li>
-          <li><a href="/admin/meal">주간식단표</a></li>
-          <li><a href="/admin/post">갤러리</a></li>
-          <li><a href="/admin/customer">입소문의 및 상담</a></li>
-          <li><a href="/admin/consulting">데이케어센터 컨설팅 문의</a></li>
+          <li id="1"><a href="/admin/prepostlist">우선순위</a></li>
+          <li id="2"><a href="/admin/postlist">공지사항</a></li>
+          <li id="3"><a href="/admin/meal">주간식단표</a></li>
+          <li id="4"><a href="/admin/post">갤러리</a></li>
+          <li id="5"><a href="/admin/customer">입소문의 및 상담</a></li>
+          <li id="6"><a href="/admin/consulting">데이케어센터 컨설팅 문의</a></li>
 
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-  </nav>            
+  </nav>
+  </body>
+  <script>
+
+    const li = document.querySelectorAll('li');
+
+    function handleClick(event){
+      event.preventDefault();
+
+      const target = event.target;
+      const index = target.parentNode;
+
+      for ( var i=0; i<li.length;i++){
+        li[i].className = "";
+      }
+
+      li[index.id-1].className = "active";
+      } // function handleClick
+
+    function init(){
+      for ( var i =0; i < li.length; i++){
+      li[i].addEventListener("click",handleClick);
+      }
+    }
+
+    init();
+
+  </script>
+  </html>

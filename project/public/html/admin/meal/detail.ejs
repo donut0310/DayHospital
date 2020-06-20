@@ -3,19 +3,19 @@
 <form>
     <div class="form-group">
       <label for="exampleInputEmail1">번호</label>
-      <input disabled value="<%=prepost.ID%>" type="text" class="form-control">
+      <input disabled value="<%=meal.ID%>" type="text" class="form-control">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">제목</label>
-      <input disabled value="<%=prepost.TITLE%>" type="text" class="form-control"  placeholder="암호">
+      <input disabled value="<%=meal.TITLE%>" type="text" class="form-control"  placeholder="암호">
     </div>
     <div class="form-group">
     <label for="exampleInputPassword1">내용</label>
-    <textarea disabled type="text" class="form-control" ><%=prepost.CONTENT%></textarea>
+    <textarea disabled type="text" class="form-control" ><%=meal.CONTENT%></textarea>
     </div>
     <div class="form-group">
     <label for="exampleInputPassword1">등록일</label>
-    <input disabled value="<%=prepost.DATE%>" type="text" class="form-control"  placeholder="암호">
+    <input disabled value="<%=meal.DATE%>" type="text" class="form-control"  placeholder="암호">
     </div>
 
     <button onclick="window.history.back(-1);" class="btn btn-default" type="submit">뒤로가기</button>
