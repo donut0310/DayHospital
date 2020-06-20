@@ -33,14 +33,12 @@ router.get('/prepostlist/register',function(req,res,next){
   
 })
 
-router.post('/prepostlist/register',function(req,res,next){
-    const id = req.body.name;
+router.post('/prepostlist',function(req,res,next){
     const title = req.body.title;
     const content = req.body.content;
-    const date = req.body.date;
-    const datas = [name,title,content];
+    const datas = [title,content];
     
-    con.query("insert into prepostlist(ID, TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into prepostlist(TITLE, CONTENT, DATE) values(?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/prepostlist');
     });
@@ -179,32 +177,9 @@ router.get('/customer/:id', function(req,res,next) {
       });
 })
 
-router.get('/consulting', function(req,res,next) {
-    let page = req.query.page ? req.query.page : 1;
-    
-    con.query("SELECT * FROM consulting order by id desc", function (err, result, fields) {
-        if (err) throw err;
-        res.render('admin/consulting/index.ejs', {
-            consults: result
-        });
-    
-    });
+router.get('/consultings', function(req,res,next) {
+    res.render('./admin/index.ejs');
 });
-
-router.get('/consulting/:id', function(req,res,next) {
-
-    const id = req.params.id;
-  
-    con.connect(function(err) {
-        con.query("SELECT * FROM consulting where id = ? order by id desc", id,  function (err, result, fields) {
-          if (err) throw err;
-          res.render('admin/consulting/detail.ejs', {
-              consult: result[0]
-            }
-          );
-        });
-      });
-})
 
 
 
