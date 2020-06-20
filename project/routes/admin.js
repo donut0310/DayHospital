@@ -107,7 +107,7 @@ router.get('/meal/:id',function(req,res,next){
       });
 });
 
-router.get('/post', function(req,res,next) {
+router.get('/postlist', function(req,res,next) {
     let page = req.query.page ? req.query.page : 1;
     
     con.query("SELECT * FROM postlist order by id desc", function (err, result, fields) {
