@@ -25,6 +25,25 @@ router.get('/init', function(req, res, next){
     });
 });
 
+router.get('/init', function(req, res, next){
+    pool.getConnection(function(err,conn){
+        if(err) throw err;
+        else{
+            var sql = "select * from filename order by id desc limit 0,6";
+            conn.query(sql, function(err,rows){
+                if(err)throw err;
+                else{
+                    conn.release();
+                    var output = {};
+                    output['result'] = "success";
+                    output['data'] = rows;
+                    res.send(output);
+            }
+        });
+     }
+    });
+});
+
 router.get('/createBtns', function(req, res, next){
     pool.getConnection(function(err,conn){
         if(err) throw err;

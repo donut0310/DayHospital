@@ -107,7 +107,7 @@ router.get('/meal/register',function(req,res,next){
 
 router.post('/meal',upload.array('file_name',10), function(req,res,next){
 
-    const file_name = req.files[0].originalname;
+    const file_name = req.files[0].filename;
     const title = req.body.title;
     const content = req.body.content;
     const date = req.body.date;
@@ -286,16 +286,60 @@ router.get('/img/register',function(req,res,next){
   
 })
 
-router.post('/img',function(req,res,next){
+router.get('/img/:id',function(req,res,next){
+    const id = req.params.id;
+  
+    con.connect(function(err) {
+        con.query("SELECT * FROM img where id = ? order by id desc", id,  function (err, result, fields) {
+            
+            if (err) throw err;
+          res.render('admin/img/detail.ejs', {
+              img : result[0]
+            }
+          );
+        });
+      });
+});
+
+router.get('/img/:id',function(req,res,next){
+    const id = req.params.id;
+  
+    con.connect(function(err) {
+        con.query("SELECT * FROM filename where id = ? order by id desc", id,  function (err, result, fields) {
+            
+            if (err) throw err;
+          res.render('admin/img/detail.ejs', {
+              filename : result[0]
+            }
+          );
+        });
+      });
+});
+
+router.post('/img', upload.array('file_name',10), function(req,res,next){
+    // let file_name=[];
+
+    // for (let i=0;i<req.files.length;i++){
+    //     file_name.push(req.files[i].filename);
+    // }
+    const file_name = req.files[0].filename;
     const title = req.body.title;
     const content = req.body.content;
     const date = req.body.date;
-    const datas = [name,title,content];
+    const datas = [file_name,title,content,date];
+
+
+    console.log(req.files);
     
-    con.query("insert into prepostlist(TITLE, CONTENT, DATE) values(?,?,now())",datas,function(err,rows){
+    // con.query("insert into filename(FILE_NAME) values(?)",file_name,function(err,rows){
+    //     if(err) throw err;
+    // });
+
+    con.query("insert into img(FILE_NAME,TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
         if(err) throw err;
-        res.redirect('/admin/prepostlist');
+        res.redirect('/admin/img');
     });
+
 });
 
 router.get('/prepostlist/:id',function(req,res,next){
