@@ -20,7 +20,7 @@ var mealRouter = require('./routes/meal');
 var adminRouter = require('./routes/admin');
 var methodOverride = require('method-override');
 
-//라우터<<//
+//라우터
 
 // express 연결
 var app = express();
@@ -51,7 +51,6 @@ app.use('/meal',mealRouter);
 
 /* Admin Router */
 app.use('/admin', adminRouter);
-
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {

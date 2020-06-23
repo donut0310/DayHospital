@@ -24,9 +24,9 @@ function initShow(item = []){
     var a1 = document.querySelector('.pabBefore a');
     var a2 = document.querySelector('.pabNext a');    
 
-    var img = document.querySelector('.main_photo img');
+    var img = document.querySelector('.main_photo img'); //html 
     var title = document.querySelector('.main_photo_box h3 span');
-    var p = document.querySelectorAll('.main_photo_box p span');
+    var p = document.querySelectorAll('.main_photo_box p span'); //촬영일자, 촬영장소
     var content = document.querySelector('.photo_content_text');
 
     if(list == 1){
