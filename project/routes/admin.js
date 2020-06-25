@@ -322,20 +322,22 @@ router.post('/img', upload.array('file_name',10), function(req,res,next){
     // for (let i=0;i<req.files.length;i++){
     //     file_name.push(req.files[i].filename);
     // }
-    const file_name = req.files[0].filename;
+    let file_name = req.files[0].filename;
+    for(let i=1;i<req.files.length;i++){
+        file_name = file_name + "," + req.files[i].filename;
+    }
     const title = req.body.title;
     const content = req.body.content;
     const date = req.body.date;
     const datas = [file_name,title,content,date];
 
-
-    console.log(req.files);
+    console.log(file_name);
     
     // con.query("insert into filename(FILE_NAME) values(?)",file_name,function(err,rows){
     //     if(err) throw err;
     // });
 
-    con.query("insert into img(FILE_NAME,TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into img(file_name,TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/img');
     });

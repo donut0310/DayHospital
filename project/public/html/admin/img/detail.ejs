@@ -15,7 +15,13 @@
     <!-- for(let i = 0;i<filename.length;i++){%>
       <img src="../../../assets/uploads/filename[i].FILE_NAME" alt="" style="width: 500px; height: 500px;">
     } -->
-    <img src="../../../assets/uploads/<%=img.FILE_NAME%>" alt="" style="width: 500px; height: 500px;">
+    <%let filenameArray = img.file_name.split(",");%>
+    <%console.log(filenameArray);%>
+    
+    <%for(let i = 0;i<filenameArray.length;i++){%>
+      <img src="../../../assets/uploads/<%=filenameArray[i]%>" alt="" style="width: 250px; height: 250px;">  
+    <%}%>
+    
     </div>
     <div class="form-group">
     <label for="exampleInputPassword1">등록일</label>

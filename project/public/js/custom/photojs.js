@@ -131,10 +131,11 @@ function addImg(item = []){
         var a = document.querySelector('#td' + (i + 1) + ' a');
         var title = document.querySelector('#td' + (i + 1) + ' .photo_title');
         var date = document.querySelector('#td' + (i + 1) + ' .photo_date');
-    
+        var filename = item[i].file_name.substring(0,32);
         img.style.cursor = "pointer";
-
-        img.src = item[i].PATH + item[i].FILE_NAME;
+        
+        img.src = '/assets/uploads/' + filename;
+        console.log(item[i].PATH);
         title.innerText = item[i].TITLE;
         date.innerText = date_format(item[i].DATE);
         a.href = 'photo_board?' + (item[i].ID);    
