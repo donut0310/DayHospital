@@ -1638,13 +1638,35 @@ aside li{
     width:50%;
 }
 
+.boardTitleDiv{
+    width : 100%;
+    float: left;
+}
+
+#boardTitle{
+    display: inline-block;
+    width : 200px;
+    margin : 0 0 0 0;
+    font-weight: 400;
+}
+
+.backList{
+    float : right;
+    width : 100px;
+}
+
+.backList button{
+    text-align: center;
+    float : right; 
+    margin: 0 0 10px 0; 
+    padding : 5px; 
+    border-radius: 1em;
+}
 /* 포토보드 */
 .main_photo_box{
     width : 100%;
-    height : 70%;
-    padding:20px;
+    height : 550px;
     float : left;
-    border-top : 2px solid #2d99a2;
     overflow: auto;
 }
 
@@ -1664,8 +1686,8 @@ aside li{
 
 .main_photo img{
     display:block;
-    max-width:400px;
-    max-height: 350px;
+    max-width:700px;
+    max-height: 500px;
     margin:0 auto;
 }
 
@@ -2080,6 +2102,7 @@ aside li{
     width : 100%;
     float : left;
     height : 40px;
+   
 }
 
 .pabBefore{
