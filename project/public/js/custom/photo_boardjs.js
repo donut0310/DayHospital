@@ -37,8 +37,11 @@ function initShow(item = []){
         //이전 글, 다음 글 모두 없을때
         a1.innerText = '이전 글이 없습니다.';
         a2.innerText = '다음 글이 없습니다.';
-        if (item[0].file_name.length>33){
-            filename = item[0].file_name.split(",");
+        if (item[0].FILE_NAME.length>33){
+            filename = item[0].FILE_NAME.split(",");
+        }
+        else {
+            filename[0]=item[0].FILE_NAME;
         }
         img.src = '/assets/uploads/' + filename[0];
         title.innerText = item[0].TITLE;
@@ -49,8 +52,11 @@ function initShow(item = []){
     else if(list == 2){
         //이전 글이 없고 다음글만 있을때
         if(item[0].ID == parseInt(para[1])){
-            if (item[0].file_name.length>33){
-                filename = item[0].file_name.split(",");
+            if (item[0].FILE_NAME.length>33){
+                filename = item[0].FILE_NAME.split(",");
+            }
+            else {
+                filename[0]=item[0].FILE_NAME;
             }
             img.src = '/assets/uploads/' + filename[0];
 
@@ -67,8 +73,11 @@ function initShow(item = []){
         }
         //이전 글만 있을때
         else{
-            if (item[1].file_name.length>33){
-                filename = item[1].file_name.split(",");
+            if (item[1].FILE_NAME.length>33){
+                filename = item[1].FILE_NAME.split(",");
+            }
+            else {
+                filename[0]=item[1].FILE_NAME;
             }
             img.src = '/assets/uploads/' + filename[0];
             
@@ -88,8 +97,11 @@ function initShow(item = []){
     }
     else if(list==3){
         //이전 글, 다음 글 모두 있을때
-        if (item[1].file_name.length>33){
-            filename = item[1].file_name.split(",");
+        if (item[1].FILE_NAME.length>33){
+            filename = item[1].FILE_NAME.split(",");
+        }
+        else {
+            filename[0]=item[1].FILE_NAME;
         }
         img.src = '/assets/uploads/' + filename[0];
         title.innerText = item[1].TITLE;

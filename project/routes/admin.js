@@ -337,7 +337,7 @@ router.post('/img', upload.array('file_name',10), function(req,res,next){
     //     if(err) throw err;
     // });
 
-    con.query("insert into img(file_name,TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
+    con.query("insert into img(FILE_NAME,TITLE, CONTENT, DATE) values(?,?,?,now())",datas,function(err,rows){
         if(err) throw err;
         res.redirect('/admin/img');
     });
