@@ -108,23 +108,26 @@
                 <span id="pageLocation_right">홈 > 알림마당 > 갤러리</span>
             </div>
             <div class="articleBody">
-                <button style="text-align: center;float : right; margin: 20px auto; padding : 5px; border-radius: 1em;"><a href="/photo">목록보기</a></button>
-                <div class="main_photo_box">
-                    <div class="main_photo"> <img src=""> </div>
-                    <h3> <span></span> </h3>
-                    <p> <strong> 촬영일자 </strong> <span></span><br> 
-                        <strong> 촬영장소 </strong> <span></span><br>
-                    </p>
+                <div class="boardTitleDiv">
+                    <h2 id="boardTitle"><!--사진제목--></h2>
+                    <div class="backList">
+                        <button><a href="/photo">목록보기</a></button>
+                    </div>  
                 </div>
-                <div class="photo_content_box">
-                    <pre class="photo_content_text"><!--사진텍스트--></pre>
-                </div> 
+                <div class="empty" style="height: 20px;  border-top : 2px solid #2d99a2;"></div>
+                <div class="main_photo_box">
+                    <div class="main_photo"> <img src="">
+                        <a class="" onclick="plusSlides(-1)">&#10094</a>
+                        <a class="" onclick="plusSlides(1)">&#10095</a> 
+                    </div>
+                </div>
+                 
                 <div class="pabMovePost">
                     <div class="pabBefore">
-                        <span><a>이전글</a></span>
+                        <span><a>이전글▹</a></span>
                     </div>
                     <div class="pabNext">
-                        <span><a>다음글</a></span>
+                        <span><a>다음글▹</a></span>
                     </div>
                 </div>
             </div>
