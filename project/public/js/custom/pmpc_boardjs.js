@@ -42,8 +42,10 @@ function initShow(item = []){
         pabDate.innerText = date_format(item[0].DATE);
         pabText.innerText = item[0].CONTENT;
 
-        download.innerText = item[0].TITLE;
-        download.href = item[0].PATH;
+        console.log(item[0]);
+
+        //download.innerText = item[0].TITLE;
+        //download.href = item[0].PATH;
     }
     else if(list == 2){
         //이전 글이 없고 다음글만 있을때
@@ -54,8 +56,8 @@ function initShow(item = []){
             pabDate.innerText = date_format(item[0].DATE);
             pabText.innerText = item[0].CONTENT;
 
-            download.innerText = item[0].TITLE;
-            download.href = item[0].PATH;
+            // download.innerText = item[0].TITLE;
+            // download.href = item[0].PATH;
 
             a1.innerText = '이전 글이 없습니다.';
 
@@ -71,8 +73,8 @@ function initShow(item = []){
             pabDate.innerText = date_format(item[1].DATE);
             pabText.innerText = item[1].CONTENT;
             
-            download.innerText = item[1].TITLE;
-            download.href = item[1].PATH;
+            // download.innerText = item[1].TITLE;
+            // download.href = item[1].PATH;
 
             a1.innerText = item[1].TITLE;
 

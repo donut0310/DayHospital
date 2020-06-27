@@ -31,6 +31,9 @@ function initShow(item = []){
 
     var filename = [];
 
+    var testimg = document.createElement('img');
+    var testdiv = document.querySelector('.main_photo');
+
     console.log(list);
     console.log(item[0]);
     if(list == 1){

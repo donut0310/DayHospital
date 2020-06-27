@@ -325,11 +325,12 @@ router.post('/img', upload.array('file_name',10), function(req,res,next){
     let file_name = req.files[0].filename;
     for(let i=1;i<req.files.length;i++){
         file_name = file_name + "," + req.files[i].filename;
+        console.log('hello world');
     }
     const title = req.body.title;
     const content = req.body.content;
-    const date = req.body.date;
-    const datas = [file_name,title,content,date];
+    //const date = req.body.date;
+    const datas = [file_name,title,content];
 
     console.log(file_name);
     
@@ -344,20 +345,20 @@ router.post('/img', upload.array('file_name',10), function(req,res,next){
 
 });
 
-router.get('/prepostlist/:id',function(req,res,next){
-    const id = req.params.id;
+// router.get('/prepostlist/:id',function(req,res,next){
+//     const id = req.params.id;
   
-    con.connect(function(err) {
-        con.query("SELECT * FROM prepostlist where id = ? order by id desc", id,  function (err, result, fields) {
+//     con.connect(function(err) {
+//         con.query("SELECT * FROM prepostlist where id = ? order by id desc", id,  function (err, result, fields) {
             
-            if (err) throw err;
-          res.render('admin/prepostlist/detail.ejs', {
-              prepost: result[0]
-            }
-          );
-        });
-      });
-});
+//             if (err) throw err;
+//           res.render('admin/prepostlist/detail.ejs', {
+//               prepost: result[0]
+//             }
+//           );
+//         });
+//       });
+// });
 
 
 

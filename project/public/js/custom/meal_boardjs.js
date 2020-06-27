@@ -30,7 +30,6 @@ function initShowPC(item = []){
     var pabTitle = document.querySelector('.pabTitle');
     var pabDate = document.querySelector('.pabDate');
 
-    var download = document.querySelector('.download a');
     var pabText = document.querySelector('.pabText');
     
     if(list == 1){
@@ -44,9 +43,9 @@ function initShowPC(item = []){
         pabDate.innerText = date_format(item[0].DATE);
         pabText.innerText = item[0].CONTENT;
 
-        download.innerText = item[0].TITLE;
-        download.setAttribute('target','_blank');
-        download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
+        // download.innerText = item[0].TITLE;
+        // download.setAttribute('target','_blank');
+        // download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
     }
     else if(list == 2){
         //이전 글이 없고 다음글만 있을때
@@ -57,9 +56,9 @@ function initShowPC(item = []){
             pabDate.innerText = date_format(item[0].DATE);
             pabText.innerText = item[0].CONTENT;
 
-            download.innerText = item[0].TITLE;
-            download.setAttribute('target','_blank');
-            download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
+            // download.innerText = item[0].TITLE;
+            // download.setAttribute('target','_blank');
+            // download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
 
             a1.innerText = '이전 글이 없습니다.';
 
@@ -75,9 +74,9 @@ function initShowPC(item = []){
             pabDate.innerText = date_format(item[1].DATE);
             pabText.innerText = item[1].CONTENT;
             
-            download.innerText = item[1].TITLE;
-            download.setAttribute('target','_blank');
-            download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
+            // download.innerText = item[1].TITLE;
+            // download.setAttribute('target','_blank');
+            // download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
 
             a1.innerText = item[1].TITLE;
 
@@ -95,9 +94,9 @@ function initShowPC(item = []){
         pabDate.innerText = date_format(item[1].DATE);
         pabText.innerText = item[1].CONTENT;
 
-        download.innerText = item[1].TITLE;
-        download.setAttribute('target','_blank');
-        download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
+        // download.innerText = item[1].TITLE;
+        // download.setAttribute('target','_blank');
+        // download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
 
         a1.innerText = item[0].TITLE;
         a1.href = 'meal_board?' + (parseInt(para[1]) - 1);
@@ -120,7 +119,7 @@ function initShowMobile(item = []){
     var pabTitle = document.querySelector('.mobile_pabTitle');
     var pabDate = document.querySelector('.mobile_pabDate');
 
-    var download = document.querySelector('.download a');
+   // var download = document.querySelector('.download a');
     var pabText = document.querySelector('.mobile_pabText');
     
     if(list == 1){
@@ -134,9 +133,9 @@ function initShowMobile(item = []){
         pabDate.innerText = date_format(item[0].DATE);
         pabText.innerText = item[0].CONTENT;
 
-        download.innerText = item[0].TITLE;
-        download.setAttribute('target','_blank');
-        download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
+        // download.innerText = item[0].TITLE;
+        // download.setAttribute('target','_blank');
+        // download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
     }
     else if(list == 2){
         //이전 글이 없고 다음글만 있을때
@@ -147,9 +146,9 @@ function initShowMobile(item = []){
             pabDate.innerText = date_format(item[0].DATE);
             pabText.innerText = item[0].CONTENT;
 
-            download.innerText = item[0].TITLE;
-            download.setAttribute('target','_blank');
-            download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
+            // download.innerText = item[0].TITLE;
+            // download.setAttribute('target','_blank');
+            // download.href = './assets/save/meal_file/' + item[0].FILE_NAME;
 
             a1.innerText = '이전 글이 없습니다.';
 
@@ -165,9 +164,9 @@ function initShowMobile(item = []){
             pabDate.innerText = date_format(item[1].DATE);
             pabText.innerText = item[1].CONTENT;
             
-            download.innerText = item[1].TITLE;
-            download.setAttribute('target','_blank');
-            download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
+            // download.innerText = item[1].TITLE;
+            // download.setAttribute('target','_blank');
+            // download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
 
             a1.innerText = item[1].TITLE;
 
@@ -185,9 +184,9 @@ function initShowMobile(item = []){
         pabDate.innerText = date_format(item[1].DATE);
         pabText.innerText = item[1].CONTENT;
 
-        download.innerText = item[1].TITLE;
-        download.setAttribute('target','_blank');
-        download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
+        // download.innerText = item[1].TITLE;
+        // download.setAttribute('target','_blank');
+        // download.href = './assets/save/meal_file/' + item[1].FILE_NAME;
 
         a1.innerText = item[0].TITLE;
         a1.href = 'meal_board?' + (parseInt(para[1]) - 1);
