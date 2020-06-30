@@ -110,7 +110,7 @@ function resetList(){
 function showImg(item = []){
     photoCnt = item.length;
     for(i=0;i<photoCnt;i++){
-        img[i].src = item[i].PATH + item[i].FILE_NAME;
+        img[i].src = '../../../assets/uploads/'+ item[i].FILE_NAME.slice(0,32);
         img[i].addEventListener('mouseover',getCursor);
         img[i].addEventListener('click',getImgModal);
         img[i].setAttribute('imgId',i);
@@ -207,12 +207,14 @@ setInterval(() => {
     photoSlide.style.transition = 0.8 + "s";
     
     var miniPhoto = document.querySelector('.miniPhoto');
+    let dbindex = 
    
     photoSlide.style.transform = "translateX(-" + (miniPhoto.clientWidth * (index + 1)) + "px)";
     index++;
     if(index==photoCnt-1){
         index = -1;
     }
+
 }, 4000);
 
 function getCursor(){
