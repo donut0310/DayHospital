@@ -111,6 +111,7 @@ function showImg(item = []){
     photoCnt = item.length;
     for(i=0;i<photoCnt;i++){
         img[i].src = '../../../assets/uploads/'+ item[i].FILE_NAME.slice(0,32);
+        //console.log(item[i].FILE_NAME.slice(0,32));
         img[i].addEventListener('mouseover',getCursor);
         img[i].addEventListener('click',getImgModal);
         img[i].setAttribute('imgId',i);
@@ -127,10 +128,13 @@ function date_format(data){
     return date;
 }
 
-function getImgModal(){
-    //console.log(this);
-    var modalImg = document.querySelector('#modalImg');
-    modalImg.src = this.getAttribute('src');
+function getImgModal(event){
+    const target = event.target;
+    const source = target.getAttribute('src');
+    //console.log(source);
+    var modalImg = document.querySelector('#modalImg'); //모달에 들어가는 사진
+    
+    modalImg.src = target.getAttribute('src');
     currentImgNum = Number(this.getAttribute('imgid'));
     modalImg.setAttribute('imgid',currentImgNum);
 
@@ -152,15 +156,13 @@ function getImgModal(){
         }
     });
 
-    imgModal.style.display = 'block';
+    imgModal.style.display = 'block'; //모달 자체
 }
 
 function goToPrev(){
     var modalImg = document.querySelector('#modalImg');
     currentImgNum = Number(modalImg.getAttribute('imgid'));
 
-
-    
     if(currentImgNum == 0){
         err_modal.style.display = 'block';
     }
@@ -174,8 +176,8 @@ function goToPrev(){
         var photo_content = document.querySelector('#modal-in-photo .modalspan');
         photo_content.innerText = dbImg[currentImgNum - 1].CONTENT;
         
-        modalImg.src = dbImg[currentImgNum - 1].PATH + dbImg[currentImgNum - 1].FILE_NAME;
-
+        //modalImg.src = dbImg[currentImgNum - 1].PATH + dbImg[currentImgNum - 1].FILE_NAME;
+        modalImg.src = '../../../assets/uploads/'+dbImg[currentImgNum-1].FILE_NAME.slice(0,32);
         modalImg.setAttribute('imgid',currentImgNum - 1);
     }
 }
@@ -197,7 +199,8 @@ function goToNext(){
         var photo_content = document.querySelector('#modal-in-photo .modalspan');
         photo_content.innerText = dbImg[currentImgNum + 1].CONTENT;
 
-        modalImg.src = dbImg[currentImgNum + 1].PATH + dbImg[currentImgNum + 1].FILE_NAME;
+        //modalImg.src = dbImg[currentImgNum + 1].PATH + dbImg[currentImgNum + 1].FILE_NAME;
+        modalImg.src = '../../../assets/uploads/'+dbImg[currentImgNum+1].FILE_NAME.slice(0,32);
         modalImg.setAttribute('imgid',currentImgNum + 1);
     }
 }

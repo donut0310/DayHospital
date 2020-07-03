@@ -20,8 +20,19 @@
     </div>
 
     <button onclick="window.history.back(-1);" class="btn btn-default" type="submit">뒤로가기</button>
-
+    <button onclick="del()"; class="btn btn-alert" type="button">삭제</button>
+    <button onclick="edit()"; class="btn btn-alert" type="button">수정</button>
 </form>
-  
 
-<%- include('../footer') %>
+<script>
+  function edit() {
+    var form = document.getElementById('form');
+    form.action = form.action + '?_method=PUT';
+    form.submit();
+  }
+  
+  function del() {
+    var form = document.getElementById('form');
+    form.action = form.action + '?_method=DELETE';
+    form.submit();
+  }

@@ -19,7 +19,8 @@ router.get('/', function(req,res,next) {
     res.redirect('/admin/prepostlist');
 });
 
-router.get('/prepostlist',function(req,res,next){
+/* 우선순위 공지사항 작성 */
+router.get('/prepostlist',function(req,res,next){ //렌더링
     let page = req.query.page ? req.query.page : 1;
     
     con.query("SELECT * FROM prepostlist order by id desc", function (err, result, fields) {
@@ -31,12 +32,12 @@ router.get('/prepostlist',function(req,res,next){
     });
 });
 
-router.get('/prepostlist/register',function(req,res,next){
+router.get('/prepostlist/register',function(req,res,next){ //등록
     res.render('admin/prepostlist/register.ejs');
   
 })
 
-router.post('/prepostlist',function(req,res,next){
+router.post('/prepostlist',function(req,res,next){ //등록기능
     const title = req.body.title;
     const content = req.body.content;
     const datas = [title,content];
@@ -47,7 +48,7 @@ router.post('/prepostlist',function(req,res,next){
     });
 });
 
-router.get('/prepostlist/:id',function(req,res,next){
+router.get('/prepostlist/:id',function(req,res,next){ //디테일 페이지 불러오는 함수
     const id = req.params.id;
   
     con.connect(function(err) {
@@ -62,7 +63,7 @@ router.get('/prepostlist/:id',function(req,res,next){
       });
 });
 
-router.put('/prepostlist/:id',function(req,res,next){
+router.put('/prepostlist/:id',function(req,res,next){ // 수정기능
     const id = req.params.id;
     const title = req.body.title;
     const content = req.body.content;
@@ -75,7 +76,7 @@ router.put('/prepostlist/:id',function(req,res,next){
       });
 });
 
-router.delete('/prepostlist/:id',function(req,res,next){
+router.delete('/prepostlist/:id',function(req,res,next){ //삭제기능
     const id = req.params.id;
     console.log('delete')
     con.connect(function(err) {
@@ -328,8 +329,8 @@ router.post('/img', upload.array('file_name',10), function(req,res,next){
     }
     const title = req.body.title;
     const content = req.body.content;
-    const date = req.body.date;
-    const datas = [file_name,title,content,date];
+    //const date = req.body.date;
+    const datas = [file_name,title,content];
 
     console.log(file_name);
     

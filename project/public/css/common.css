@@ -1681,14 +1681,15 @@ aside li{
 }
 
 .main_photo{
-    float:left;
+    width : 80%;
+    margin : 0 auto;
 }
 
 .main_photo img{
-    display:block;
     max-width:700px;
     max-height: 500px;
-    margin:0 auto;
+    margin-bottom: 20px;
+    float: left;
 }
 
 .main_photo_box h2{
@@ -2102,7 +2103,7 @@ aside li{
     width : 100%;
     float : left;
     height : 40px;
-   
+    margin-top : 20px;
 }
 
 .pabBefore{
